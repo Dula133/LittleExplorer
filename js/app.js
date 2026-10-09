@@ -244,7 +244,8 @@ function frame(){
         u.opDimmed=dimming;
       }
       if(!mat.emissive||u.glass)continue;// 玻璃不发光，否则选中驾驶室/车身时窗户变成一块白板
-      if(isSel&&!u.keepEm)mat.emissive.copy(mat.color);else mat.emissive.setHex(u.baseEm);mat.emissiveIntensity=u.dynInt+(isSel?pulse:0);}}
+      const selectGlow=isSel&&!(u.suppressSelectGlowWhenOff&&u.dynInt<=.001);// 闪烁灯可在熄灭相位只保留描边，避免选中高亮把灯重新点亮
+      if(selectGlow&&!u.keepEm)mat.emissive.copy(mat.color);else mat.emissive.setHex(u.baseEm);mat.emissiveIntensity=u.dynInt+(selectGlow?pulse:0);}}
   if(OCC.length){const cp=camera.position,u=_occU.subVectors(cam.target,cp),L=u.length();u.normalize();
     for(const o of OCC){
       const hideNow=clean&&!o.userData.keepOnClean;

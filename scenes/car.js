@@ -2,14 +2,45 @@
 window.SCENES=window.SCENES||{};
 (function(){
 const WX=[1.44,-1.45],WY=.385,WZ=.80,TIRE_R=.385,SILL=.50,ARCH_R=.58,ARCH_CY=.40;// 轮拱开大一点，轮胎整个露在外面// 方盒子越野车：长 4.82、宽 1.93、高 1.97、轴距 2.89、离地高
+const LAMP_MODES=Object.freeze({OFF:'OFF',POSITION:'POSITION',HEADLIGHT:'HEADLIGHT'});
+const TURN_MODES=Object.freeze({OFF:'OFF',LEFT:'LEFT',RIGHT:'RIGHT',HAZARD:'HAZARD'});
+const RAIN_LEVELS=Object.freeze({NONE:'NONE',LIGHT:'LIGHT',MEDIUM:'MEDIUM',HEAVY:'HEAVY'});
+const RAIN_PROFILES=Object.freeze({
+  NONE:Object.freeze({count:0,speedMin:0,speedMax:0,opacity:0,gloom:0}),
+  LIGHT:Object.freeze({count:80,speedMin:7,speedMax:9,opacity:.42,gloom:.22}),
+  MEDIUM:Object.freeze({count:190,speedMin:8.5,speedMax:11.5,opacity:.62,gloom:.55}),
+  HEAVY:Object.freeze({count:360,speedMin:10.5,speedMax:14.5,opacity:.82,gloom:1})
+});
 const C={wheelW:0,shaftW:0,steer:0,steerDemoUntil:0,pistonPh:0,pistonSpd:0,lights:0,fuel:0,puffTimer:0,
   wheelUntil:0,engineUntil:0,shaftUntil:0,lightsUntil:0,fuelUntil:0,puffUntil:0,startOn:false,fuelOn:false,engineOn:false,shaftOn:false,wheelsOn:false,
-  rainUntil:0,wipeFrom:0,wipeUntil:0,rain:0,wipe:0,wipePh:0,rainLoop:false,brakeUntil:0,brake:0,door:0,doorT:0};
+  lampMode:LAMP_MODES.OFF,turnMode:TURN_MODES.OFF,turnEpoch:0,fogLight:false,position:0,
+  rainLevel:RAIN_LEVELS.NONE,wipeFrom:0,wipeUntil:0,rain:0,wipe:0,wipePh:0,
+  brakeUntil:0,brake:0,door:0,doorT:0};
 let api=null;
-const now=()=>api.now();
+const now=()=>api?api.now():performance.now();
+const setMode=(value,modes,label)=>{const v=String(value).toUpperCase();if(!Object.values(modes).includes(v))throw new RangeError(`${label}: ${value}`);return v;};
+const effectiveLampState=(t=now())=>{
+  const demo=!!(api&&(api.S.drive||api.S.nightT||t<C.lightsUntil));
+  const headlight=C.lampMode===LAMP_MODES.HEADLIGHT||demo;
+  return {position:C.lampMode!==LAMP_MODES.OFF||headlight,headlight,demo};
+};
+const lighting={
+  modes:{lamp:LAMP_MODES,turn:TURN_MODES},
+  setLampMode(mode){C.lampMode=setMode(mode,LAMP_MODES,'lamp mode');return this.getState();},
+  setTurnMode(mode){const next=setMode(mode,TURN_MODES,'turn mode');if(next!==C.turnMode){C.turnMode=next;C.turnEpoch=now();}return this.getState();},
+  triggerBrake(duration=3000){const ms=Number(duration);if(!Number.isFinite(ms)||ms<0)throw new RangeError(`brake duration: ${duration}`);C.brakeUntil=Math.max(C.brakeUntil,now()+ms);return this.getState();},
+  setFogLight(on){C.fogLight=!!on;return this.getState();},
+  getState(){const display=effectiveLampState();return {lampMode:C.lampMode,turnMode:C.turnMode,fogLight:C.fogLight,brakeActive:now()<C.brakeUntil,display};}
+};
+const weather={
+  levels:RAIN_LEVELS,
+  setRainLevel(level){C.rainLevel=setMode(level,RAIN_LEVELS,'rain level');return this.getState();},
+  getState(){const p=RAIN_PROFILES[C.rainLevel];return {rainLevel:C.rainLevel,dropCount:p.count,speedMin:p.speedMin,speedMax:p.speedMax};}
+};
 
 SCENES.car={
   id:'car',title:'汽车',subtitle:'越野车 · 拖一拖转圈，点零件听听',night:true,
+  lighting,weather,
   /* 线性色彩 + 软阴影：车漆和镀铬件才有真实的高光过渡，不然像塑料玩具 */
   look:{srgb:true,hemi:.55,sun:.95,fill:.28,rim:.4,exposure:1.0,autoRotate:.10},
   sky:'linear-gradient(180deg,#7FBFFF 0%,#A9D4FF 28%,#D6ECFB 48%,#D6ECFB 100%)',
@@ -90,7 +121,7 @@ SCENES.car={
     const dark=(c=0x222830)=>new THREE.MeshStandardMaterial({color:c,metalness:.05,roughness:.82});
     const glassMat=(c=0x75909c,op=.54)=>new THREE.MeshPhysicalMaterial({color:c,metalness:.12,roughness:.08,transparent:true,opacity:op,depthWrite:false,envMapIntensity:1.1});
     /* 车壳：方盒子一样的越野车 —— 全是平面和直角 */
-    const shell=new THREE.Group(),tailLights=[];
+    const shell=new THREE.Group(),tailLights=[],turnLamps={LEFT:[],RIGHT:[]};
     {
       const BELT=1.34,ROOF=1.97,GW=.93;                       // 窗台线 / 车顶 / 座舱半宽
       const CAB0=-1.95,CAB1=1.02,FLOOR=.62;
@@ -184,13 +215,13 @@ SCENES.car={
 
     /* 尾灯（刹车时亮红） */
     const tailG=new THREE.Group();
-    for(const z of [.80,-.80]){const t=roundedBox(.05,.34,.20,.02,new THREE.MeshStandardMaterial({color:0xE04848,emissive:0xE04848,emissiveIntensity:.5,roughness:.3}));
+    for(const z of [.80,-.80]){const side=z<0?TURN_MODES.LEFT:TURN_MODES.RIGHT,t=roundedBox(.05,.34,.20,.02,new THREE.MeshStandardMaterial({color:0xE04848,emissive:0xE04848,emissiveIntensity:.5,roughness:.3}));
       t.position.set(-2.47,1.10,z);t.userData.keepEm=true;tailG.add(t);tailLights.push(t);
       const amber=roundedBox(.055,.11,.20,.02,new THREE.MeshStandardMaterial({color:0xF2A03C,emissive:0xF2A03C,emissiveIntensity:.35,roughness:.3}));
-      amber.position.set(-2.472,1.24,z);amber.userData.keepEm=true;tailG.add(amber);
+      amber.position.set(-2.472,1.24,z);amber.userData.keepEm=true;amber.userData.suppressSelectGlowWhenOff=true;amber.userData.carLamp=`turn-${side.toLowerCase()}-rear`;tailG.add(amber);turnLamps[side].push(amber);
       const rim=roundedBox(.04,.40,.25,.01,dark(0x262b35));rim.position.set(-2.45,1.10,z);tailG.add(rim);}
     place(tailG,V(0,0,0),V(-2.1,.7,0));
-    defPart('tail',{name:'尾灯',more:'越野车的尾灯是两根竖着的方灯，装在车尾的两个角上，上面橙色的一格是转向灯。踩刹车时红灯变得更亮，提醒后面的车减速。',outside:true,text:'尾灯亮红，是告诉后面的车：我要停啦，你也慢一点。',action(){C.brakeUntil=now()+3000;}},[tailG]);
+    defPart('tail',{name:'尾灯',more:'越野车的尾灯是两根竖着的方灯，装在车尾的两个角上，上面橙色的一格是转向灯。踩刹车时红灯变得更亮，提醒后面的车减速。',outside:true,text:'尾灯亮红，是告诉后面的车：我要停啦，你也慢一点。',action(){lighting.triggerBrake();}},[tailG]);
 
     /* 轮子 */
     const wheelsG=new THREE.Group(),wheelSpin=[],frontYaw=[],wheelYaws=[];
@@ -295,12 +326,12 @@ SCENES.car={
 
     /* 车灯（含夜晚聚光灯） */
     const lightsG=new THREE.Group(),lamps=[],beams=[],spots=[];
-    for(const z of [.68,-.68]){
+    for(const z of [.68,-.68]){const side=z<0?TURN_MODES.LEFT:TURN_MODES.RIGHT;
       const l=mm(new THREE.CylinderGeometry(.17,.17,.06,22),new THREE.MeshPhysicalMaterial({color:0xFFF6D5,emissive:0xFFD740,emissiveIntensity:0,roughness:.1,metalness:.1,clearcoat:1}));
-      l.rotation.z=Math.PI/2;l.position.set(2.46,1.04,z);l.userData.keepEm=true;lightsG.add(l);lamps.push(l);// 圆圆的大灯，嵌在平平的车头上
+      l.rotation.z=Math.PI/2;l.position.set(2.46,1.04,z);l.userData.keepEm=true;l.userData.carLamp=`headlight-${side.toLowerCase()}`;lightsG.add(l);lamps.push(l);// 圆圆的大灯，嵌在平平的车头上
       const ring=mm(new THREE.TorusGeometry(.185,.025,10,24),dark(0x262b35));ring.rotation.y=Math.PI/2;ring.position.set(2.45,1.04,z);lightsG.add(ring);
       const blink=mm(new THREE.CylinderGeometry(.055,.055,.09,14),new THREE.MeshStandardMaterial({color:0xF2A03C,emissive:0xF2A03C,emissiveIntensity:.2,roughness:.3}));
-      blink.position.set(2.16,1.38,z*1.25);blink.userData.keepEm=true;lightsG.add(blink);// 立在翼子板上的小转向灯
+      blink.position.set(2.16,1.38,z*1.25);blink.userData.keepEm=true;blink.userData.suppressSelectGlowWhenOff=true;blink.userData.positionLamp=true;blink.userData.carLamp=`turn-${side.toLowerCase()}-front`;lightsG.add(blink);turnLamps[side].push(blink);// 立在翼子板上的小转向灯，同时作为前位置灯的基础视觉
       const b=mm(new THREE.ConeGeometry(.5,2.2,20,1,true),new THREE.MeshStandardMaterial({color:0xFFE58A,transparent:true,opacity:0,depthWrite:false,emissive:0xFFE58A,emissiveIntensity:.6,side:THREE.DoubleSide}));
       b.rotation.z=Math.PI/2;b.position.set(3.7,1.0,z);b.castShadow=false;b.userData.noHit=true;b.userData.keepEm=true;lightsG.add(b);beams.push(b);
       const sp=new THREE.SpotLight(0xfff1c4,0,18,Math.PI/7,.55,1.1);sp.position.set(2.5,1.04,z);sp.target.position.set(9,-.4,z*1.6);lightsG.add(sp);lightsG.add(sp.target);spots.push(sp);
@@ -333,10 +364,10 @@ SCENES.car={
       place(wiperG,V(0,0,0),V(1.1,3.1,0));// 拆开：浮在抬起的挡风玻璃前上方
     }
     defPart('wiper',{name:'雨刮器',more:'雨刮器由一个小电机带动，左右摆动把雨水刮到旁边。刮之前喷一点玻璃水，刮得更干净。',outside:true,text:'下雨啦！雨刮器左右摆，把玻璃上的雨水刮掉，才能看清路。',
-      action(){const t=now();if(t<C.rainUntil){C.rainUntil=t;C.wipeUntil=t+1500;}else{C.rainUntil=t+13000;C.wipeFrom=t+3000;C.wipeUntil=t+15000;}}},[wiperG]);
+      action(){const t=now();if(C.rainLevel!==RAIN_LEVELS.NONE){weather.setRainLevel(RAIN_LEVELS.NONE);C.wipeUntil=t+1500;}else{weather.setRainLevel(RAIN_LEVELS.MEDIUM);C.wipeFrom=t+3000;C.wipeUntil=t+15000;}}},[wiperG]);
     // 雨：一束会往下落的短线
-    const RAIN_N=520,rainX=new Float32Array(RAIN_N),rainY=new Float32Array(RAIN_N),rainZ=new Float32Array(RAIN_N),rainV=new Float32Array(RAIN_N),_rm=new THREE.Matrix4();
-    for(let i=0;i<RAIN_N;i++){rainX[i]=(Math.random()-.5)*12;rainZ[i]=(Math.random()-.5)*10;rainY[i]=Math.random()*7;rainV[i]=8+Math.random()*3;}
+    const RAIN_N=RAIN_PROFILES.HEAVY.count,rainX=new Float32Array(RAIN_N),rainY=new Float32Array(RAIN_N),rainZ=new Float32Array(RAIN_N),rainV=new Float32Array(RAIN_N),_rm=new THREE.Matrix4();
+    for(let i=0;i<RAIN_N;i++){rainX[i]=(Math.random()-.5)*12;rainZ[i]=(Math.random()-.5)*10;rainY[i]=Math.random()*7;rainV[i]=Math.random();}
     const rain=new THREE.InstancedMesh(new THREE.BoxGeometry(.018,.6,.018),new THREE.MeshBasicMaterial({color:0xF4FAFF,transparent:true,opacity:0,depthWrite:false}),RAIN_N);
     rain.visible=false;rain.frustumCulled=false;rain.castShadow=false;ctx.scene.add(rain);
 
@@ -424,10 +455,11 @@ SCENES.car={
     function update(dt){
       for(const e of windowEdges)e.material.opacity=1-api.S.xr*.9;
       const S=api.S,t=now(),drv=S.drive,ee=api.ee,nn=S.night;
+      const lampDisplay=effectiveLampState(t);
       const fuelT=((drv&&C.fuelOn)||t<C.fuelUntil)?1:0,pistT=((drv&&C.engineOn)||t<C.engineUntil)?1:0,wheelWT=((drv&&C.wheelsOn)||t<C.wheelUntil)?9:0,
-            shaftWT=(((drv&&C.shaftOn)||t<C.shaftUntil)||wheelWT>0)?12:0,lightsT=(drv||t<C.lightsUntil||S.nightT)?1:0,puffOn=(drv&&C.engineOn)||t<C.puffUntil;
+            shaftWT=(((drv&&C.shaftOn)||t<C.shaftUntil)||wheelWT>0)?12:0,lightsT=lampDisplay.headlight?1:0,positionT=lampDisplay.position?1:0,puffOn=(drv&&C.engineOn)||t<C.puffUntil;
       const e=Math.min(1,dt*3.5);
-      C.fuel+=(fuelT-C.fuel)*e;C.pistonSpd+=(pistT-C.pistonSpd)*e;C.wheelW+=(wheelWT-C.wheelW)*Math.min(1,dt*2.5);C.shaftW+=(shaftWT-C.shaftW)*e;C.lights+=(lightsT-C.lights)*Math.min(1,dt*6);
+      C.fuel+=(fuelT-C.fuel)*e;C.pistonSpd+=(pistT-C.pistonSpd)*e;C.wheelW+=(wheelWT-C.wheelW)*Math.min(1,dt*2.5);C.shaftW+=(shaftWT-C.shaftW)*e;C.lights+=(lightsT-C.lights)*Math.min(1,dt*6);C.position+=(positionT-C.position)*Math.min(1,dt*8);
       engine.position.x+=.012*Math.sin(t*.06)*C.pistonSpd;engine.position.y+=.006*Math.sin(t*.083)*C.pistonSpd;
       shell.position.y+=.008*Math.sin(t*.05)*C.pistonSpd*(1-ee);
       for(const s of wheelSpin)s.rotation.z-=C.wheelW*dt;for(const a of axles)a.rotation.z-=C.wheelW*dt;shaftG.rotation.x+=C.shaftW*dt;
@@ -435,13 +467,15 @@ SCENES.car={
       for(const y of frontYaw)y.rotation.y=C.steer;steerSpin.rotation.z=-2.6*C.steer;
       C.pistonPh+=dt*26*C.pistonSpd;pistons.forEach((p,i)=>{p.position.y=PIST_Y+PIST_AMP*Math.sin(C.pistonPh+i*1.05);});fan.rotation.x+=dt*22*C.pistonSpd;
       for(const l of lamps)l.userData.dynInt=(1.6+1.6*nn)*C.lights;for(const b of beams)b.material.opacity=(.32+.3*nn)*C.lights;
+      const blinkOn=C.turnMode!==TURN_MODES.OFF&&((t-C.turnEpoch)%900)<450;
+      for(const side of [TURN_MODES.LEFT,TURN_MODES.RIGHT]){const sideOn=blinkOn&&(C.turnMode===side||C.turnMode===TURN_MODES.HAZARD);for(const l of turnLamps[side])l.userData.dynInt=sideOn?2.6:(l.userData.positionLamp?.22*C.position:0);}
       for(const sp of spots)sp.intensity=C.lights*nn*2.6;C.brake+=(((t<C.brakeUntil)?1:0)-C.brake)*Math.min(1,dt*8);for(const tl of tailLights)tl.userData.dynInt=.5+1.0*nn+2.4*C.brake;
       startBtn.userData.dynInt=drv?1.3:0;
       // 雨 + 雨刮
-      const raining=t<C.rainUntil,wiping=t>C.wipeFrom&&t<C.wipeUntil;
+      const rainProfile=RAIN_PROFILES[C.rainLevel],raining=C.rainLevel!==RAIN_LEVELS.NONE,wiping=t>C.wipeFrom&&t<C.wipeUntil;
       C.rain+=((raining?1:0)-C.rain)*Math.min(1,dt*2);C.wipe+=((wiping?1:0)-C.wipe)*Math.min(1,dt*3);
-      rain.visible=C.rain>.01;rain.material.opacity=.8*C.rain;S.gloom=C.rain;
-      if(rain.visible){for(let i=0;i<RAIN_N;i++){let y=rainY[i]-rainV[i]*dt;if(y<0){y+=7;rainX[i]=(Math.random()-.5)*12;rainZ[i]=(Math.random()-.5)*10;}rainY[i]=y;_rm.makeTranslation(rainX[i],y,rainZ[i]);rain.setMatrixAt(i,_rm);}rain.instanceMatrix.needsUpdate=true;}
+      rain.count=rainProfile.count;rain.visible=rainProfile.count>0&&C.rain>.01;rain.material.opacity=rainProfile.opacity*C.rain;S.gloom=rainProfile.gloom*C.rain;
+      if(rain.visible){for(let i=0;i<rainProfile.count;i++){const speed=rainProfile.speedMin+(rainProfile.speedMax-rainProfile.speedMin)*rainV[i];let y=rainY[i]-speed*dt;if(y<0){y+=7;rainX[i]=(Math.random()-.5)*12;rainZ[i]=(Math.random()-.5)*10;}rainY[i]=y;_rm.makeTranslation(rainX[i],y,rainZ[i]);rain.setMatrixAt(i,_rm);}rain.instanceMatrix.needsUpdate=true;}
       const wantWater=raining&&!drv;if(wantWater&&!api.sfx.wantLoop)api.sfx.loop('water');else if(!wantWater&&api.sfx.wantLoop==='water')api.sfx.stopLoop();// 雨声只在没开车时放，开车让位给发动机
       for(const pv of doorPivots){const u=pv.userData,tg=drv?0:u.open;u.k+=(tg-u.k)*Math.min(1,dt*4);pv.rotation.y=u.sd*.95*u.k;}// 开车时门自动关上
       if(C.wipe>.01)C.wipePh+=dt*4.2*C.wipe;const wa=(.5-.5*Math.cos(C.wipePh))*Math.min(1,C.wipe*1.2);for(const sw of sweeps)sw.rotation.z=WIPE_REST-WIPE_SWEEP*wa;
