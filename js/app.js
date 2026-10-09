@@ -261,7 +261,9 @@ function frame(){
 const ray=new THREE.Raycaster(),m2=new THREE.Vector2();
 function visibleForPick(object){for(let o=object;o;o=o.parent)if(!o.visible)return false;return true;}
 function pick(x,y){m2.set((x/W)*2-1,-(y/H)*2+1);ray.setFromCamera(m2,camera);
-  for(const h of ray.intersectObjects(hitTargets,false)){const id=h.object.userData.part;if(!id||!visibleForPick(h.object))continue;if(S.xray&&h.object.userData.baseCol)continue;S.hit=h.object;return id;}return null;}
+  let fallback=null;for(const h of ray.intersectObjects(hitTargets,false)){const id=h.object.userData.part;if(!id||!visibleForPick(h.object))continue;if(S.xray&&h.object.userData.baseCol)continue;
+    if(!fallback)fallback={id,object:h.object};if(h.object.userData.touchProxy){S.hit=h.object;return id;}}
+  if(fallback){S.hit=fallback.object;return fallback.id;}return null;}
 const ptrs=new Map();let down=null,moved=false,pinchD=0;
 const pdist=()=>{const a=[...ptrs.values()];return Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)};
 canvas.addEventListener('pointerdown',e=>{cancelTour();canvas.setPointerCapture(e.pointerId);ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
