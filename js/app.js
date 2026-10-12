@@ -310,7 +310,7 @@ function paintGo(){const go=$('#go'),ic=go.querySelector('svg');
 let cockpitBtn=null;
 function paintCockpit(){if(!cockpitBtn)return;cockpitBtn.classList.toggle('on',S.cockpit);cockpitBtn.style.background=S.cockpit?'linear-gradient(180deg,#7056C8,#5034A0)':'linear-gradient(180deg,#9B7BE5,#7455C2)';cockpitBtn.querySelector('span').textContent=S.cockpit?'回车外':'驾驶舱';cockpitBtn.setAttribute('aria-label',S.cockpit?'回到车外':'进入驾驶舱');}
 function setCockpit(on){if(!OBJ.cockpitView)return;cancelTour();hush();unfocus();cam.last=now();hideHint();S.cockpit=!!on;S.sel=null;
-  if(S.cockpit){S.xray=false;S.explode=false;$('#xr').classList.remove('on');$('#xrtxt').textContent='看里面';$('#ex').classList.remove('on');$('#extxt').textContent='拆开看';$('#infoBtn').classList.remove('show');closeSheet();caption(null,'进入驾驶舱','坐到驾驶员的位置，直接操作方向盘旁边的灯光和天气控制。');say('进入驾驶舱');}
+  if(S.cockpit){S.xray=false;S.explode=false;$('#xr').classList.remove('on');$('#xrtxt').textContent='看里面';$('#ex').classList.remove('on');$('#extxt').textContent='拆开看';$('#infoBtn').classList.remove('show');closeSheet();caption(null,'进入驾驶舱','看看仪表、中控、拨杆、档把和踏板，直接点一点，每个控件都会有反应。');say('进入驾驶舱');}
   else{caption(null,'回到车外','可以继续拖一拖看整辆汽车。');say('回到车外');}
   paintCockpit();paintGo();}
 function setMode(m){ // 'whole' | 'xray' | 'explode'，一次只在一个模式里
