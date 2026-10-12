@@ -277,7 +277,7 @@ canvas.addEventListener('pointermove',e=>{const p=ptrs.get(e.pointerId);if(!p)re
   if(ptrs.size===1){if(down&&Math.hypot(e.clientX-down.x,e.clientY-down.y)>6)moved=true;cam.tTheta-=dx*.006;cam.tPhi=clamp(cam.tPhi-dy*.005,.5,1.45);}
   else if(ptrs.size===2){const d=pdist();if(d>0&&pinchD>0)cam.zoom=clamp(cam.zoom*(pinchD/d),.6,1.8);pinchD=d;}cam.last=now();});
 const up=e=>{if(!ptrs.has(e.pointerId))return;ptrs.delete(e.pointerId);
-  if(ptrs.size===0&&down&&!moved&&now()-down.t<600&&!busy()){const id=pick(e.clientX,e.clientY);if(id){if(S.explode||S.xray)focusPart(id);else select(id);}else unfocus();}
+  if(ptrs.size===0&&down&&!moved&&now()-down.t<600){const id=pick(e.clientX,e.clientY);if(id){const p=PARTS[id];if(!busy()||p.immediate){if(S.explode||S.xray)focusPart(id);else select(id);}}else if(!busy())unfocus();}
   if(ptrs.size===0)down=null;};
 canvas.addEventListener('pointerup',up);canvas.addEventListener('pointercancel',up);
 canvas.addEventListener('wheel',e=>{cam.zoom=clamp(cam.zoom*(1+e.deltaY*.0012),.6,1.8);cam.last=now();e.preventDefault();},{passive:false});
@@ -285,10 +285,12 @@ function hideHint(){$('#hint').classList.add('hide');}setTimeout(hideHint,7000);
 function caption(icon,n,d){const ce=$('#ce');if(icon&&ICONS[icon]){ce.innerHTML=`<img src="${ICONS[icon]}" alt="">`;ce.style.display='';}else{ce.innerHTML='';ce.style.display='none';}$('#cn').textContent=n;$('#cd').textContent=d;}
 function hop(p){const tg=p.hopTargets||p.groups.filter(g=>g.userData.home);for(const g of tg)g.userData.hopT0=now();}
 function select(id,force){const p=PARTS[id];if(!p)return Promise.resolve();
-  if(busy()&&!force&&!p.isStart)return Promise.resolve();
+  if(busy()&&!force&&!p.isStart&&!p.immediate)return Promise.resolve();
+  // 明确声明的实体控件可立即操作；启动讲解链期间保留旁白，仅更新文字与模型。
+  if(p.immediate&&!hold)hush();
   hideHint();sfx.ac();cam.last=now();S.sel=id;hop(p);sfx.click();
   if(p.isStart){toggleDrive();return Promise.resolve();}
-  const txt=p.pickText?p.pickText():p.text;caption(id,p.name,txt);const pr=speak(p.name+'。'+txt);const hit=S.hit;S.hit=null;p.action&&p.action(hit);return pr;}// 把点中的那块网格交给零件，零件可以只动被点的那一个（比如四扇车门）
+  const txt=p.pickText?p.pickText():p.text;caption(id,p.name,txt);const pr=p.immediate&&hold?Promise.resolve():speak(p.name+'。'+txt);const hit=S.hit;S.hit=null;p.action&&p.action(hit);return pr;}// 把点中的那块网格交给零件，零件可以只动被点的那一个（比如四扇车门）
 
 /* ---- 「开起来」：一步一步讲 ---- */
 let chainId=0;
