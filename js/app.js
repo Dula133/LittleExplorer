@@ -75,7 +75,7 @@ const root=new THREE.Group();scene.add(root);
 const ctx=L3.makeCtx(scene,root),{PARTS,placed,hitTargets,shellMeshes}=ctx;
 
 /* ================= 状态 & 场景接入 ================= */
-const S={drive:false,xray:false,explode:false,ex:0,xr:0,sel:null,nightT:0,night:0,gloom:0};let lastGloom=-1;
+const S={drive:false,xray:false,explode:false,cockpit:false,ex:0,xr:0,sel:null,nightT:0,night:0,gloom:0};let lastGloom=-1;
 let EE=0;
 const api={S,now,sfx,get ee(){return EE},get focusedPart(){return cam.focus},say,caption,toggleNight,camera,hop:p=>hop(p),select:id=>select(id),focusPart:id=>focusPart(id),setExplode:on=>setExplode(on)};
 const ENV=SC.env?SC.env(ctx,api):{update(){},occluders:[]};const OCC=ENV.occluders||[];
@@ -102,7 +102,9 @@ function toggleNight(){if(!SC.night)return;S.nightT=S.nightT?0:1;document.body.c
 const FIT=Object.assign({w:6,h:4.6,ty:.8,tyEx:1.5,rEx:1.28},SC.fit||{});
 const cam={theta:(SC.cameraStart||{}).theta||.95,phi:(SC.cameraStart||{}).phi||1.15,r:9.5,rBase:9.5,tTheta:0,tPhi:0,zoom:1,last:0,focus:null,target:new THREE.Vector3(0,FIT.ty,0)};
 cam.tTheta=cam.theta;cam.tPhi=cam.phi;
-const _tgt=new THREE.Vector3(),_box=new THREE.Box3(),_sph=new THREE.Sphere(),_occU=new THREE.Vector3(),_occW=new THREE.Vector3();
+const _tgt=new THREE.Vector3(),_box=new THREE.Box3(),_sph=new THREE.Sphere(),_occU=new THREE.Vector3(),_occW=new THREE.Vector3(),
+      _camPos=new THREE.Vector3(),_viewPos=new THREE.Vector3(),_viewTarget=new THREE.Vector3(),_lookTarget=new THREE.Vector3();
+let cockpitK=0;
 function fadeObj(o,k){o.visible=k>.02;o.traverse(m=>{if(!m.isMesh)return;const mat=m.material;if(mat.userData.baseOp==null)mat.userData.baseOp=mat.transparent?mat.opacity:1;mat.transparent=true;mat.opacity=mat.userData.baseOp*k;mat.depthWrite=k>.9&&mat.userData.baseOp>.99;m.castShadow=k>.5&&m.userData.cs!==false;});}
 function partBounds(p){_box.makeEmpty();for(const m of p.meshes){if(m.userData.noHit)continue;m.updateWorldMatrix(true,false);_box.expandByObject(m);}return _box.getBoundingSphere(_sph);}
 let W=1,H=1,freeRatio=1;
@@ -128,9 +130,11 @@ function updateCamera(dt){
     rT=clamp(distance,cam.rBase*.22,cam.rBase*1.6)*cam.zoom;}
   else{const oy=OBJ.camY?OBJ.camY():0,ox=OBJ.camX?OBJ.camX():0;tgt=_tgt.set((FIT.cx||0)+ox,(S.explode?FIT.tyEx:FIT.ty)+oy,0);rT=cam.rBase*(S.explode?FIT.rEx:1)*cam.zoom;}// 主体自己会升高时（比如飞机爬升），镜头跟着抬
   if(!isFinite(cam.r))cam.r=rT;cam.r+=(rT-cam.r)*Math.min(1,dt*4);cam.target.lerp(tgt,Math.min(1,dt*4));
-  const sp=Math.sin(cam.phi);
-  camera.position.set(cam.target.x+cam.r*sp*Math.sin(cam.theta),cam.target.y+cam.r*Math.cos(cam.phi),cam.target.z+cam.r*sp*Math.cos(cam.theta));
-  camera.lookAt(cam.target);
+  const sp=Math.sin(cam.phi);_camPos.set(cam.target.x+cam.r*sp*Math.sin(cam.theta),cam.target.y+cam.r*Math.cos(cam.phi),cam.target.z+cam.r*sp*Math.cos(cam.theta));
+  const cockpitView=S.cockpit&&OBJ.cockpitView?OBJ.cockpitView():null;cockpitK+=((cockpitView?1:0)-cockpitK)*Math.min(1,dt*6);
+  if(cockpitView){_viewPos.copy(cockpitView.position);_viewTarget.copy(cockpitView.target);}
+  const viewFov=48+24*cockpitK;if(Math.abs(camera.fov-viewFov)>.01){camera.fov=viewFov;camera.updateProjectionMatrix();}
+  camera.position.copy(_camPos);_lookTarget.copy(cam.target);if(cockpitK>.001){camera.position.lerp(_viewPos,cockpitK);_lookTarget.lerp(_viewTarget,cockpitK);}camera.lookAt(_lookTarget);
 }
 
 /* ================= 零件图标（用模型本身离屏渲染）+ 图标栏 + 巡游 ================= */
@@ -226,7 +230,8 @@ function frame(){
   for(const o of placed){const u=o.userData;const hk=(t-u.hopT0)/520;const hop=hk<1?Math.sin(Math.PI*hk)*.16:0;o.position.copy(u.home).addScaledVector(u.explode,EE);o.position.y+=hop;}
   OBJ.update&&OBJ.update(dt);ENV.update&&ENV.update(dt);
   const clean=S.explode||S.xray; // 看里面 / 拆开看：只留主体
-  if(OBJ.hideOnExplode)for(const m of OBJ.hideOnExplode)m.visible=S.ex<.5&&S.xr<.5;
+  if(OBJ.hideOnExplode)for(const m of OBJ.hideOnExplode)m.visible=S.ex<.5&&S.xr<.5&&!S.cockpit;
+  if(OBJ.hideInCockpit)for(const m of OBJ.hideInCockpit)m.visible=!S.cockpit;
   for(const m of shellMeshes){const op=m.userData.baseOp*(1-(LOOK.srgb?.91:.76)*S.xr),mat=m.material;mat.opacity=op;const tr=op<.995;
     if(!m.userData.keepEm&&!m.userData.glass)mat.color.copy(m.userData.baseCol).lerp(GHOST,S.xr*(LOOK.srgb?.3:1));
     mat.transparent=tr||!!m.userData.glass;mat.depthWrite=!tr&&!m.userData.glass;if(!m.userData.glass)m.castShadow=S.xr<.5;}
@@ -302,9 +307,15 @@ function paintGo(){const go=$('#go'),ic=go.querySelector('svg');
   if($('#resetView'))$('#resetView').textContent=S.explode?'看全部':'看整车';
   if(S.explode){go.classList.toggle('on',touring);$('#gotxt').textContent=touring?'停下':'全部讲一遍';}
   else{go.classList.toggle('on',S.drive);$('#gotxt').textContent=S.drive?SC.go.off:SC.go.on;}}
+let cockpitBtn=null;
+function paintCockpit(){if(!cockpitBtn)return;cockpitBtn.classList.toggle('on',S.cockpit);cockpitBtn.style.background=S.cockpit?'linear-gradient(180deg,#7056C8,#5034A0)':'linear-gradient(180deg,#9B7BE5,#7455C2)';cockpitBtn.querySelector('span').textContent=S.cockpit?'回车外':'驾驶舱';cockpitBtn.setAttribute('aria-label',S.cockpit?'回到车外':'进入驾驶舱');}
+function setCockpit(on){if(!OBJ.cockpitView)return;cancelTour();hush();unfocus();cam.last=now();hideHint();S.cockpit=!!on;S.sel=null;
+  if(S.cockpit){S.xray=false;S.explode=false;$('#xr').classList.remove('on');$('#xrtxt').textContent='看里面';$('#ex').classList.remove('on');$('#extxt').textContent='拆开看';$('#infoBtn').classList.remove('show');closeSheet();caption(null,'进入驾驶舱','坐到驾驶员的位置，直接操作方向盘旁边的灯光和天气控制。');say('进入驾驶舱');}
+  else{caption(null,'回到车外','可以继续拖一拖看整辆汽车。');say('回到车外');}
+  paintCockpit();paintGo();}
 function setMode(m){ // 'whole' | 'xray' | 'explode'，一次只在一个模式里
   cancelTour();if(S.drive&&m==='explode')toggleDrive();
-  const wasX=S.xray,wasE=S.explode;S.xray=(m==='xray');S.explode=(m==='explode');unfocus();cam.last=now();hideHint();
+  const wasX=S.xray,wasE=S.explode;S.cockpit=false;paintCockpit();S.xray=(m==='xray');S.explode=(m==='explode');unfocus();cam.last=now();hideHint();
   $('#xr').classList.toggle('on',S.xray);$('#xrtxt').textContent=S.xray?'合上':'看里面';
   $('#ex').classList.toggle('on',S.explode);$('#extxt').textContent=S.explode?'装回去':'拆开看';paintGo();$('#infoBtn').classList.toggle('show',S.explode);if(!S.explode)closeSheet();
   if(m==='xray'){sfx.click();caption(null,'看里面！','外壳变透明了。点零件或下面的图标，镜头会推过去；按左边的按钮看它里面怎么动。');say('看里面');}
@@ -312,10 +323,11 @@ function setMode(m){ // 'whole' | 'xray' | 'explode'，一次只在一个模式�
   else{sfx.click();if(wasE){caption(null,'装回去啦','又变完整了。');say('装回去');}else if(wasX){caption(null,'合上啦','再点「看里面」，或者拖一拖转个圈。');say('合上');}}
 }
 function setExplode(on){setMode(on?'explode':'whole');}
+if(OBJ.cockpitView){const ctrl=$('.ctrl');ctrl.style.gridTemplateColumns='repeat(4,1fr)';ctrl.style.gap='7px';cockpitBtn=document.createElement('button');cockpitBtn.className='big';cockpitBtn.setAttribute('aria-label','进入驾驶舱');cockpitBtn.innerHTML='<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M4.5 10.5h15M12 14v6M7 17l5-3 5 3"/></svg><span>驾驶舱</span>';cockpitBtn.onclick=()=>setCockpit(!S.cockpit);ctrl.insertBefore(cockpitBtn,$('#xr'));paintCockpit();}
 $('#go').onclick=()=>{if(S.explode){if(touring){cancelTour();hush();}else tour();}else{cancelTour();toggleDrive();}};
 $('#ex').onclick=()=>setMode(S.explode?'whole':'explode');
 $('#xr').onclick=()=>setMode(S.xray?'whole':'xray');
-if($('#resetView'))$('#resetView').onclick=()=>{cancelTour();hush();unfocus();cam.zoom=1;cam.tTheta=(SC.cameraStart||{}).theta||.95;cam.tPhi=(SC.cameraStart||{}).phi||1.15;cam.last=now();S.sel=null;if(SC.intro)caption(SC.intro.icon,SC.intro.name,SC.intro.text);};
+if($('#resetView'))$('#resetView').onclick=()=>{cancelTour();hush();unfocus();S.cockpit=false;paintCockpit();cam.zoom=1;cam.tTheta=(SC.cameraStart||{}).theta||.95;cam.tPhi=(SC.cameraStart||{}).phi||1.15;cam.last=now();S.sel=null;if(SC.intro)caption(SC.intro.icon,SC.intro.name,SC.intro.text);};
 const muteBtn=$('#mute');const paintMute=()=>{muteBtn.classList.toggle('off',muted);};paintMute();
 muteBtn.onclick=()=>{muted=!muted;localStorage.setItem('muted',muted?'1':'0');paintMute();if(muted){sfx.pauseLoop();hush();}else if(S.drive&&sfx.wantLoop)sfx.loop(sfx.wantLoop);};
 document.addEventListener('visibilitychange',()=>{if(document.hidden){sfx.pauseLoop();hush();}else if(S.drive&&sfx.wantLoop&&!muted)sfx.loop(sfx.wantLoop);});
@@ -324,6 +336,6 @@ voiceBtn.onclick=()=>{const i=VOICE_OPTS.findIndex(v=>v.id===voiceMode);voiceMod
   if(muted){muted=false;localStorage.setItem('muted','0');paintMute();}
   if(voiceMode==='sys')saySys('你好，这是手机自带的声音。');else playClip(`voice/${voiceMode}/sample.mp3`,'你好。');};
 if(SC.intro)caption(SC.intro.icon,SC.intro.name,SC.intro.text);
-window.__dbg={S,cam,camera,PARTS,root,ICONS,OCC,focusPart,unfocus,toggleNight,setExplode,setMode,tour,cancelTour,hush,frame:()=>frame(),THREE};
+window.__dbg={S,cam,camera,PARTS,root,ICONS,OCC,focusPart,unfocus,toggleNight,setExplode,setMode,setCockpit,tour,cancelTour,hush,frame:()=>frame(),THREE};
 frame();
 })();

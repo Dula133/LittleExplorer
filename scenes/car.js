@@ -57,7 +57,7 @@ SCENES.car={
   fog:{color:0xD6ECFB,near:20,far:44},nightFog:0x2b4a7e,
   envMap:['#cfe0f0','#eef4fa','#b6bfc9','#8d97a2'],hemi:{sky:0xdfefff,ground:0x9fcf8a},
   fit:{w:6.6,h:5.6,ty:1.05,tyEx:1.95,rEx:1.28},cameraStart:{theta:.95,phi:1.12},
-  order:['engine','tank','battery','shaft','wheels','exhaust','door','lampKnob','hazard','rainControl','steer','wiper','mirror','start','belt','seat','body','lights','positionLights','fogLights','turnLeft','turnRight','tail'],
+  order:['engine','tank','battery','shaft','wheels','exhaust','door','lampKnob','hazard','rainControl','fogControl','steer','wiper','mirror','start','belt','seat','body','lights','positionLights','fogLights','turnLeft','turnRight','tail'],
   go:{on:'开起来',off:'停下',stopSaid:'停车啦',stopHint:'再按一下，再开一次！',done:'嘟嘟～车子跑起来啦！',doneHintXray:'看，里面的零件都在忙！点「停下」再开一次。',doneHint:'点「看里面」，看看它为什么会动。'},
   intro:{icon:'body',name:'汽车',text:'点一点车上的零件，听听它叫什么。点车门可以开关门，点车灯试试天黑。'},
   poster:{title:'汽车里面到底长什么样',sub:'每天都坐，但你可能从没看过它的内部！',summary:'汽油 + 发动机 + 四个轮子一起转 = 哪儿都能去！',angle:{theta:.95,phi:1.15},keys:['engine','tank','battery','shaft','wheels','exhaust'],anchors:{wheels:[1.44,.385,.86],exhaust:[-1.9,.42,-.7],shaft:[0,.42,0],engine:[1.55,1.0,0]}},
@@ -123,7 +123,7 @@ SCENES.car={
 
   /* ---------- 汽车本体 ---------- */
   build(ctx,_api){
-    api=_api;const {THREE,V,mm,roundedBox,capsule,tubeM,pathTube,loft,stationsX,steel,matte,flat,place,defPart,markShell,root}=ctx;
+    api=_api;const {THREE,V,mm,roundedBox,capsule,tubeM,pathTube,loft,stationsX,canvasTex,steel,matte,flat,place,defPart,markShell,root}=ctx;
     /* 这一页用更实体的材质参数：清漆更亮、橡胶更哑、玻璃更深更透，
        配合 look.srgb 的线性色彩，看起来像模型店里的实体车，而不是塑料玩具。 */
     const paint=(c=0xbd1829)=>new THREE.MeshPhysicalMaterial({color:c,metalness:.2,roughness:.24,clearcoat:.7,clearcoatRoughness:.18,envMapIntensity:.9});
@@ -412,7 +412,7 @@ SCENES.car={
     defPart('steer',{name:'方向盘',more:'方向盘连着一根轴，轴带动前面两个轮子转向。轮子偏一点，车就慢慢拐过去。',outside:true,text:'转一转方向盘，前面的轮子跟着转，车就拐弯啦。',action(){C.steerDemoUntil=now()+3800;}},[steer]);
 
     /* 仪表台 + 中央扶手箱 + 启动按钮 */
-    const dash=new THREE.Group();let startBtn,hazardButton,rainButton;
+    const dash=new THREE.Group(),cockpitHide=[];let startBtn,hazardButton,rainButton,fogButton,lampKnobRotor;
     {
       const top=roundedBox(.3,.09,1.56,.045,dark(0x262b35));top.position.set(.47,.82,0);top.rotation.z=-.22;dash.add(top); // 向前倾斜的台面
       const glove=roundedBox(.02,.16,.5,.01,dark(0x3a4150));glove.position.set(.335,.6,.45);dash.add(glove);           // 手套箱
@@ -423,36 +423,53 @@ SCENES.car={
       for(const z of [.62,-.62,.22]){const vent=roundedBox(.02,.06,.14,.01,dark(0x141820));vent.position.set(.33,.8,z);dash.add(vent);}
       const box=roundedBox(.55,.28,.3,.05,dark(0x2e3440));box.position.set(.05,.46,0);dash.add(box);                 // 中央扶手箱
       const lever=mm(new THREE.CylinderGeometry(.015,.015,.14,8),chrome());lever.position.set(.1,.67,0);dash.add(lever);
-      const knob=mm(new THREE.SphereGeometry(.035,12,8),dark(0x1f242e));knob.position.set(.1,.75,0);dash.add(knob);
-      startBtn=mm(new THREE.CylinderGeometry(.04,.04,.025,16),new THREE.MeshStandardMaterial({color:0x4CC38A,emissive:0x4CC38A,emissiveIntensity:0,roughness:.4}));
-      startBtn.position.set(.44,.885,-.18);startBtn.userData.keepEm=true;dash.add(startBtn);
-      const ring=mm(new THREE.CylinderGeometry(.055,.055,.016,16),chrome());ring.position.set(.44,.878,-.18);dash.add(ring);
+      const knob=mm(new THREE.SphereGeometry(.035,12,8),dark(0x1f242e));knob.position.set(.1,.75,0);dash.add(knob);cockpitHide.push(box,lever,knob);
+      startBtn=mm(new THREE.CylinderGeometry(.055,.055,.035,16),new THREE.MeshStandardMaterial({color:0x4CC38A,emissive:0x4CC38A,emissiveIntensity:0,roughness:.4}));
+      startBtn.rotation.z=Math.PI/2;startBtn.position.set(.22,.57,-.60);startBtn.userData.keepEm=true;startBtn.userData.carControl='start-face';dash.add(startBtn);
+      const ring=mm(new THREE.CylinderGeometry(.072,.072,.022,16),chrome());ring.rotation.z=Math.PI/2;ring.position.set(.24,.57,-.60);dash.add(ring);
+      const startHit=mm(new THREE.SphereGeometry(.13,14,10),new THREE.MeshBasicMaterial({transparent:true,opacity:.001,depthWrite:false}));startHit.position.set(.18,.57,-.60);startHit.castShadow=false;startHit.userData.touchProxy=true;dash.add(startHit);
       dash.add(tubeM(V(.4,.8,-.45),V(.2,.96,-.45),.02,dark()));                                                       // 转向柱
       place(dash,V(.42,.32,0),V(.55,1.45,0));
     }
     defPart('start',{name:'启动按钮',more:'按下按钮，电池先给起动机送电，起动机把发动机转起来，车就醒了。',outside:true,isStart:true,text:'按一下，汽车就醒过来啦！'},[dash]);
-    /* 驾驶舱控制件后注册，避免它们被仪表台的启动按钮零件抢走点击。 */
-    const lampKnobG=new THREE.Group();lampKnobG.userData.carControl='lamp-knob';lampKnobG.position.set(.43,.94,-.30);
-    {const base=mm(new THREE.CylinderGeometry(.095,.095,.035,22),dark(0x171b22));base.position.y=-.015;lampKnobG.add(base);
-      const lampKnob=mm(new THREE.CylinderGeometry(.073,.073,.055,22),new THREE.MeshStandardMaterial({color:0x38404c,metalness:.3,roughness:.45}));lampKnobG.add(lampKnob);
-      const mark=roundedBox(.025,.025,.09,.008,matte(0xF7D774));mark.position.set(0,.035,-.04);lampKnobG.add(mark);dash.add(lampKnobG);}
-    const hazardG=new THREE.Group();hazardG.userData.carControl='hazard';hazardG.position.set(.70,.70,-.55);
+    /* 驾驶舱面板：在现有仪表台上集中显示仪表与灯光/天气控制，不另建状态系统。 */
+    {const panel=roundedBox(.045,.39,1.48,.035,dark(0x202632));panel.position.set(.255,.69,-.02);dash.add(panel);
+      const display=roundedBox(.025,.20,.54,.025,new THREE.MeshStandardMaterial({color:0x14263c,emissive:0x215f88,emissiveIntensity:.34,roughness:.3}));display.position.set(.218,.83,.18);display.userData.keepEm=true;display.castShadow=false;dash.add(display);
+      for(const z of [-.55,-.34]){const rim=mm(new THREE.CylinderGeometry(.115,.115,.025,24),chrome());rim.rotation.z=Math.PI/2;rim.position.set(.22,.84,z);dash.add(rim);
+        const dial=mm(new THREE.CylinderGeometry(.092,.092,.032,24),new THREE.MeshStandardMaterial({color:0x17263a,emissive:0x347fb4,emissiveIntensity:.28,roughness:.3}));dial.rotation.z=Math.PI/2;dial.position.set(.197,.84,z);dial.userData.keepEm=true;dash.add(dial);
+        const needle=roundedBox(.012,.012,.072,.005,matte(0xF7D774));needle.position.set(.175,.84,z);needle.rotation.x=z<-.45?-.5:.55;dash.add(needle);}
+      const label=(text,z,color)=>{const tex=canvasTex(256,80,(g,w,h)=>{g.fillStyle='rgba(0,0,0,0)';g.fillRect(0,0,w,h);g.fillStyle=color;g.font='700 36px "PingFang SC","Microsoft YaHei",sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(text,w/2,h/2);});const plate=mm(new THREE.PlaneGeometry(.22,.07),new THREE.MeshBasicMaterial({map:tex,transparent:true,depthWrite:false,side:THREE.DoubleSide}));plate.rotation.y=-Math.PI/2;plate.position.set(.188,.525,z);plate.castShadow=false;dash.add(plate);};
+      label('启动',-.60,'#BDEFD7');label('灯光',-.34,'#FFE48A');label('双闪',-.03,'#FFB4B4');label('雨量',.24,'#B9E5FF');label('雾灯',.50,'#FFE2A0');}
+    /* 控制件在仪表台注册完成后再登记，避免被启动按钮零件抢走点击。 */
+    const lampKnobG=new THREE.Group();lampKnobG.userData.carControl='lamp-knob';lampKnobG.position.set(.21,.66,-.34);lampKnobG.rotation.z=Math.PI/2;
+    {const base=mm(new THREE.CylinderGeometry(.10,.10,.035,22),dark(0x171b22));base.position.y=-.015;lampKnobG.add(base);lampKnobRotor=new THREE.Group();lampKnobRotor.userData.carControl='lamp-knob-rotor';
+      const lampKnob=mm(new THREE.CylinderGeometry(.076,.076,.055,22),new THREE.MeshStandardMaterial({color:0x38404c,metalness:.3,roughness:.45}));lampKnobRotor.add(lampKnob);
+      const mark=roundedBox(.025,.025,.09,.008,matte(0xF7D774));mark.position.set(0,.035,-.04);lampKnobRotor.add(mark);lampKnobG.add(lampKnobRotor);
+      const hit=mm(new THREE.SphereGeometry(.14,16,10),new THREE.MeshBasicMaterial({transparent:true,opacity:.001,depthWrite:false}));hit.castShadow=false;hit.userData.touchProxy=true;lampKnobG.add(hit);dash.add(lampKnobG);}
+    const hazardG=new THREE.Group();hazardG.userData.carControl='hazard';hazardG.position.set(.20,.67,-.03);
     {const shape=new THREE.Shape();shape.moveTo(-.095,-.072);shape.lineTo(.095,-.072);shape.lineTo(0,.095);shape.closePath();
       const bezel=mm(new THREE.ExtrudeGeometry(shape,{depth:.035,bevelEnabled:true,bevelThickness:.012,bevelSize:.012,bevelSegments:2}),dark(0x2a2022));bezel.rotation.y=Math.PI/2;hazardG.add(bezel);
       const faceShape=new THREE.Shape();faceShape.moveTo(-.070,-.052);faceShape.lineTo(.070,-.052);faceShape.lineTo(0,.070);faceShape.closePath();
       hazardButton=mm(new THREE.ExtrudeGeometry(faceShape,{depth:.042,bevelEnabled:true,bevelThickness:.008,bevelSize:.006,bevelSegments:2}),new THREE.MeshStandardMaterial({color:0xD93434,emissive:0xFF3030,emissiveIntensity:0,roughness:.35}));hazardButton.rotation.y=Math.PI/2;hazardButton.position.x=-.018;hazardButton.userData.keepEm=true;hazardButton.userData.carControl='hazard-face';hazardG.add(hazardButton);
-      const hit=mm(new THREE.SphereGeometry(.14,16,10),new THREE.MeshBasicMaterial({transparent:true,opacity:.001,depthWrite:false}));hit.position.x=.10;hit.castShadow=false;hit.userData.touchProxy=true;hazardG.add(hit);dash.add(hazardG);}
-    const rainControlG=new THREE.Group();rainControlG.userData.carControl='rain';rainControlG.position.set(.43,.94,.30);
+      const hit=mm(new THREE.SphereGeometry(.14,16,10),new THREE.MeshBasicMaterial({transparent:true,opacity:.001,depthWrite:false}));hit.castShadow=false;hit.userData.touchProxy=true;hazardG.add(hit);dash.add(hazardG);}
+    const rainControlG=new THREE.Group();rainControlG.userData.carControl='rain';rainControlG.position.set(.21,.67,.24);rainControlG.rotation.z=Math.PI/2;
     {const base=mm(new THREE.CylinderGeometry(.085,.085,.035,20),dark(0x171b22));base.position.y=-.015;rainControlG.add(base);
       rainButton=mm(new THREE.CylinderGeometry(.065,.065,.055,20),new THREE.MeshStandardMaterial({color:0x3D9BE9,emissive:0x5AB8FF,emissiveIntensity:.12,roughness:.35}));rainButton.userData.keepEm=true;rainButton.userData.carControl='rain-face';rainControlG.add(rainButton);
       for(const z of [-.025,0,.025]){const dot=mm(new THREE.SphereGeometry(.009,8,6),matte(0xEAF7FF));dot.position.set(0,.035,z);dot.castShadow=false;rainControlG.add(dot);}
-      const hit=mm(new THREE.SphereGeometry(.14,16,10),new THREE.MeshBasicMaterial({transparent:true,opacity:.001,depthWrite:false}));hit.position.x=.10;hit.castShadow=false;hit.userData.touchProxy=true;rainControlG.add(hit);dash.add(rainControlG);}
+      const hit=mm(new THREE.SphereGeometry(.14,16,10),new THREE.MeshBasicMaterial({transparent:true,opacity:.001,depthWrite:false}));hit.castShadow=false;hit.userData.touchProxy=true;rainControlG.add(hit);dash.add(rainControlG);}
+    const fogControlG=new THREE.Group();fogControlG.userData.carControl='fog';fogControlG.position.set(.21,.67,.50);fogControlG.rotation.z=Math.PI/2;
+    {const base=mm(new THREE.CylinderGeometry(.085,.085,.035,20),dark(0x171b22));base.position.y=-.015;fogControlG.add(base);
+      fogButton=mm(new THREE.CylinderGeometry(.065,.065,.055,20),new THREE.MeshStandardMaterial({color:0xE8B447,emissive:0xFFD36A,emissiveIntensity:0,roughness:.35}));fogButton.userData.keepEm=true;fogButton.userData.carControl='fog-face';fogControlG.add(fogButton);
+      const mark=mm(new THREE.TorusGeometry(.027,.007,6,16,Math.PI),matte(0xFFF2C7));mark.rotation.x=Math.PI/2;mark.position.set(0,.035,0);mark.castShadow=false;fogControlG.add(mark);
+      const hit=mm(new THREE.SphereGeometry(.14,16,10),new THREE.MeshBasicMaterial({transparent:true,opacity:.001,depthWrite:false}));hit.castShadow=false;hit.userData.touchProxy=true;fogControlG.add(hit);dash.add(fogControlG);}
     defPart('lampKnob',{name:'灯光旋钮',more:'旋钮有关闭、小灯和前照灯三档。',outside:true,
       pickText(){return lampFeedback[nextIn(C.lampMode,LAMP_SEQUENCE)]},action(){lighting.setLampMode(nextIn(C.lampMode,LAMP_SEQUENCE));}},[lampKnobG]);
     defPart('hazard',{name:'危险报警闪光灯（双闪）',more:'左右四盏转向灯一起闪。儿童有时也把它叫作“四角灯”。',outside:true,text:'左右两边一起闪，提醒别人：这里有特殊情况，请注意。',
       action(){lighting.setTurnMode(C.turnMode===TURN_MODES.HAZARD?TURN_MODES.OFF:TURN_MODES.HAZARD);}},[hazardG]);
     defPart('rainControl',{name:'雨量按钮',more:'这个按钮依次演示小雨、中雨和大雨，不会自动改变雨刮器。',outside:true,
       pickText(){return rainFeedback[nextIn(C.rainLevel,RAIN_SEQUENCE)]},action(){weather.setRainLevel(nextIn(C.rainLevel,RAIN_SEQUENCE));}},[rainControlG]);
+    defPart('fogControl',{name:'前雾灯开关',more:'驾驶舱里的雾灯开关控制车头下方两盏前雾灯。',outside:true,
+      pickText(){return C.fogLight?'前雾灯关掉了。':'前雾灯打开了，照亮汽车附近较低的路面。'},action(){lighting.setFogLight(!C.fogLight);}},[fogControlG]);
 
     /* 座椅 + 安全座椅 */
     const TAN=0xc9a97c,seatsG=new THREE.Group(),driverMeshes=[];
@@ -460,7 +477,7 @@ SCENES.car={
       for(const z of [.45,-.45]){
         const c=roundedBox(.44,.13,.42,.05,matte(TAN));c.position.set(-.28,.47,z);seatsG.add(c);
         const b=roundedBox(.12,.5,.42,.05,matte(TAN));b.position.set(-.55,.8,z);b.rotation.z=.15;seatsG.add(b);
-        const h=roundedBox(.1,.12,.24,.04,matte(TAN));h.position.set(-.62,1.12,z);seatsG.add(h);
+        const h=roundedBox(.1,.12,.24,.04,matte(TAN));h.position.set(-.62,1.12,z);seatsG.add(h);cockpitHide.push(c,b,h);
       }
       const bench=roundedBox(.36,.12,1.3,.05,matte(TAN));bench.position.set(-1.0,.46,0);seatsG.add(bench);
       const back=roundedBox(.12,.36,1.3,.05,matte(TAN));back.position.set(-1.16,.66,0);back.rotation.z=.12;seatsG.add(back);
@@ -510,7 +527,7 @@ SCENES.car={
             shaftWT=(((drv&&C.shaftOn)||t<C.shaftUntil)||wheelWT>0)?12:0,lightsT=lampDisplay.headlight?1:0,positionT=lampDisplay.position?1:0,puffOn=(drv&&C.engineOn)||t<C.puffUntil;
       const e=Math.min(1,dt*3.5);
       C.fuel+=(fuelT-C.fuel)*e;C.pistonSpd+=(pistT-C.pistonSpd)*e;C.wheelW+=(wheelWT-C.wheelW)*Math.min(1,dt*2.5);C.shaftW+=(shaftWT-C.shaftW)*e;C.lights+=(lightsT-C.lights)*Math.min(1,dt*6);C.position+=(positionT-C.position)*Math.min(1,dt*8);
-      const knobTarget=C.lampMode===LAMP_MODES.OFF?-.65:(C.lampMode===LAMP_MODES.POSITION?0:.65);C.lampKnobAngle+=(knobTarget-C.lampKnobAngle)*Math.min(1,dt*10);lampKnobG.rotation.y=C.lampKnobAngle;
+      const knobTarget=C.lampMode===LAMP_MODES.OFF?-.65:(C.lampMode===LAMP_MODES.POSITION?0:.65);C.lampKnobAngle+=(knobTarget-C.lampKnobAngle)*Math.min(1,dt*10);lampKnobRotor.rotation.y=C.lampKnobAngle;
       engine.position.x+=.012*Math.sin(t*.06)*C.pistonSpd;engine.position.y+=.006*Math.sin(t*.083)*C.pistonSpd;
       shell.position.y+=.008*Math.sin(t*.05)*C.pistonSpd*(1-ee);
       for(const s of wheelSpin)s.rotation.z-=C.wheelW*dt;for(const a of axles)a.rotation.z-=C.wheelW*dt;shaftG.rotation.x+=C.shaftW*dt;
@@ -522,7 +539,7 @@ SCENES.car={
       C.fog+=((C.fogLight?1:0)-C.fog)*Math.min(1,dt*8);for(const l of fogLamps)l.userData.dynInt=1.8*C.fog;for(const b of fogBeams)b.material.opacity=.2*C.fog;for(const sp of fogSpots)sp.intensity=1.35*C.fog;
       const blinkOn=C.turnMode!==TURN_MODES.OFF&&((t-C.turnEpoch)%900)<450;
       for(const side of [TURN_MODES.LEFT,TURN_MODES.RIGHT]){const sideOn=blinkOn&&(C.turnMode===side||C.turnMode===TURN_MODES.HAZARD);for(const l of turnLamps[side])l.userData.dynInt=sideOn?2.6:0;}
-      hazardButton.userData.dynInt=C.turnMode===TURN_MODES.HAZARD?(blinkOn?1.2:.12):0;rainButton.userData.dynInt=.12+RAIN_SEQUENCE.indexOf(C.rainLevel)*.18;
+      hazardButton.userData.dynInt=C.turnMode===TURN_MODES.HAZARD?(blinkOn?1.2:.12):0;rainButton.userData.dynInt=.12+RAIN_SEQUENCE.indexOf(C.rainLevel)*.18;fogButton.userData.dynInt=C.fogLight?1.05:0;
       for(const sp of spots)sp.intensity=C.lights*nn*2.6;C.brake+=(((t<C.brakeUntil)?1:0)-C.brake)*Math.min(1,dt*8);for(const tl of tailLights)tl.userData.dynInt=.5+1.0*nn+2.4*C.brake;
       startBtn.userData.dynInt=drv?1.3:0;
       // 雨 + 雨刮
@@ -554,8 +571,10 @@ SCENES.car={
       const edge=new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry),new THREE.LineBasicMaterial({color:0x18232b,transparent:true}));
       m.add(edge);windowEdges.push(edge);
     });
+    const cockpitEye=V(-1.25,1.55,-.24),cockpitLook=V(.64,1.04,-.08),cockpitViewState={position:V(),target:V()};
     ctx.linearize();
-    return {update,chain,hideOnExplode:driverMeshes,iconFor(id){return id==='wheels'?wheelYaws[0]:null;},
+    return {update,chain,hideOnExplode:driverMeshes,hideInCockpit:cockpitHide,iconFor(id){return id==='wheels'?wheelYaws[0]:null;},
+      cockpitView(){root.updateWorldMatrix(true,false);cockpitViewState.position.copy(cockpitEye);cockpitViewState.target.copy(cockpitLook);root.localToWorld(cockpitViewState.position);root.localToWorld(cockpitViewState.target);return cockpitViewState;},
       onStop(){C.startOn=C.fuelOn=C.engineOn=C.shaftOn=C.wheelsOn=false;},onStart(){for(const p of doorPivots)p.userData.open=0;C.lightReminderBeeps=0;C.lightReminderCondition=false;}};
   }
 };
