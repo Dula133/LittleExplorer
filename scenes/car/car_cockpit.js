@@ -1,6 +1,6 @@
 /* 驾驶舱几何与视图。保留原父子结构、局部坐标和注册顺序。 */
 (function(M){
-const {LAMP_MODES,TURN_MODES,RAIN_LEVELS,WIPER_MODES,GEAR_MODES}=M.modes;
+const {LAMP_MODES,TURN_MODES,GEAR_MODES}=M.modes;
 const {LAMP_SEQUENCE,RAIN_SEQUENCE,WIPER_SEQUENCE,nextIn,lampFeedback,rainFeedback,wiperFeedback}=M.presentation;
 M.createCockpitBuilder=function(ctx,runtime,materials){
  const {THREE,V,mm,roundedBox,capsule,tubeM,pathTube,canvasTex,matte,place,defPart,root}=ctx;
@@ -62,7 +62,7 @@ M.createCockpitBuilder=function(ctx,runtime,materials){
     }
     defPart('steer',{immediate:true,name:'方向盘',more:'方向盘连着一根轴，轴带动前面两个轮子转向。轮子偏一点，车就慢慢拐过去。',outside:true,text:'转一转方向盘，前面的轮子跟着偏转。' ,action(){controls.setSteering(C.steerTarget>0?0:C.steerTarget<0?1:-1);}},[steer]);
     steerSpin.add(hornG);
-    defPart('horn',{name:'方向盘喇叭',outside:true,immediate:true,text:'嘟！提醒别人注意汽车。',more:'短促提醒声；连续点按不会堆叠无限音效。喇叭不改变方向盘或转向灯。',action(){if(now()>=C.hornUntil){C.hornUntil=now()+500;api.sfx.horn();}}},[hornG]);
+    defPart('horn',{name:'方向盘喇叭',outside:true,immediate:true,text:'嘟！提醒别人注意汽车。',more:'短促提醒声；连续点按不会堆叠无限音效。喇叭不改变方向盘或转向灯。',action(){runtime.audio.pressHorn();}},[hornG]);
 
     /* V0.3 驾驶舱：分区建模，所有操作继续调用原来的 lighting/weather/controls。 */
     const dash=new THREE.Group(),cockpitHide=[];

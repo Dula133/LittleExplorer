@@ -5,7 +5,6 @@ const WX=[1.44,-1.45],WY=.385,WZ=.80,TIRE_R=.385,SILL=.50,ARCH_R=.58,ARCH_CY=.40
 const M=window.LECar;
 if(!M?.createRuntime)throw new Error('Missing car module dependencies');
 const {LAMP_MODES,TURN_MODES,RAIN_LEVELS,WIPER_MODES,GEAR_MODES}=M.modes;
-const RAIN_PROFILES=M.RAIN_PROFILES;
 const instances=new WeakMap();
 const idleApi={S:{drive:false,nightT:0},now:()=>performance.now(),caption(){},sfx:{}};
 let active=M.createRuntime(idleApi);
@@ -14,10 +13,11 @@ const facade=(key,names,constants={})=>Object.assign({},constants,Object.fromEnt
 const lighting=facade('lighting',['setLampMode','setTurnMode','triggerBrake','setFogLight','getState'],{modes:{lamp:LAMP_MODES,turn:TURN_MODES}});
 const weather=facade('weather',['setRainLevel','setWiperMode','demonstrateMist','getState'],{levels:RAIN_LEVELS,wiperModes:WIPER_MODES});
 const controls=facade('controls',['setGearMode','setVolumeLevel','setMediaPage','setClimate','setMusic','setTemperature','setFanLevel','setDefog','setLocked','setSteering','setWindow','getState'],{gears:GEAR_MODES});
-const {LAMP_SEQUENCE,RAIN_SEQUENCE,WIPER_SEQUENCE,nextIn,lampFeedback,rainFeedback,wiperFeedback}=M.presentation;
+const {WIPER_SEQUENCE,nextIn,wiperFeedback}=M.presentation;
 SCENES.car={
   id:'car',title:'汽车',subtitle:'越野车 · 拖一拖转圈，点零件听听',night:true,
   lighting,weather,controls,
+  mountCockpitUI(options){return M.mountCockpitUI(options);},
   cockpitControls:{
     front:{name:'驾驶',view:'front',parts:['horn','steer','turnControlLeft','turnControlRight','start','gearControl','brakePedal','accelerator']},
     lighting:{name:'灯光',view:'front',parts:['lampKnob','hazard','fogControl','instruments']},
@@ -102,7 +102,7 @@ SCENES.car={
   /* ---------- 汽车本体 ---------- */
   build(ctx,_api,options={}){
     const runtime=runtimeFor(ctx,_api,options);if(runtime.built)throw new Error("car already built for ctx");runtime.built=true;
-    const {state:C,api,now,lighting,weather,controls,startLightReminder}=runtime;
+    const {state:C,api,now,lighting,weather,controls}=runtime;
     const {THREE,V,mm,roundedBox,capsule,tubeM,pathTube,loft,stationsX,canvasTex,steel,matte,flat,place,defPart,markShell,root}=ctx;
     /* 这一页用更实体的材质参数：清漆更亮、橡胶更哑、玻璃更深更透，
        配合 look.srgb 的线性色彩，看起来像模型店里的实体车，而不是塑料玩具。 */
@@ -291,7 +291,7 @@ SCENES.car={
       battery.add(tubeM(V(.08,.16,0),V(-.3,-.02,-.5),.016,matte(0xE04848)));
       place(battery,V(1.95,.95,.66),V(1.2,1.9,1.05));// 电池放在发动机旁边，不埋进缸体
     }
-    defPart('battery',{name:'电池',more:'电池给车灯、喇叭、收音机供电，也负责把发动机叫醒。车开起来以后，发电机会给它充电。',text:'小电池管电：让车灯亮起来，让喇叭叭叭叫。',action(){C.lightsUntil=now()+3500;setTimeout(()=>api.sfx.horn(),350);}},[battery]);
+    defPart('battery',{name:'电池',more:'电池给车灯、喇叭、收音机供电，也负责把发动机叫醒。车开起来以后，发电机会给它充电。',text:'小电池管电：让车灯亮起来，让喇叭叭叭叫。',action(){C.lightsUntil=now()+3500;setTimeout(()=>runtime.audio.playHorn(),350);}},[battery]);
 
     /* 油箱 + 油管 */
     const tank=new THREE.Group();
@@ -370,7 +370,7 @@ SCENES.car={
       const d=V(-.33,.60,0).normalize(),n=V(d.y,-d.x,0),X=V().crossVectors(d,n);
       for(const z of [.40,-.40]){const pv=new THREE.Group();pv.position.copy(V(1.02,1.36,z)).addScaledVector(n,.03);pv.setRotationFromMatrix(new THREE.Matrix4().makeBasis(X,d,n));
         // 细细的臂 + 胶条；不刮的时候平躺在挡风玻璃底边（朝副驾一侧），不挡视线
-        const sw=new THREE.Group();const arm=mm(new THREE.BoxGeometry(.016,.4,.012),dark(0x1f242e));arm.position.set(0,.2,.01);sw.add(arm);
+        const sw=new THREE.Group();sw.userData.carWiper=true;const arm=mm(new THREE.BoxGeometry(.016,.4,.012),dark(0x1f242e));arm.position.set(0,.2,.01);sw.add(arm);
         const blade=mm(new THREE.BoxGeometry(.026,.34,.01),dark(0x0f1218));blade.position.set(.018,.32,.014);sw.add(blade);
         const hub=mm(new THREE.CylinderGeometry(.02,.02,.024,10),dark());hub.rotation.x=Math.PI/2;sw.add(hub);sw.rotation.z=WIPE_REST;pv.add(sw);wiperG.add(pv);sweeps.push(sw);}
       place(wiperG,V(0,0,0),V(1.1,3.1,0));// 拆开：浮在抬起的挡风玻璃前上方
@@ -398,12 +398,9 @@ SCENES.car={
       C.pistonPh+=dt*26*C.pistonSpd;pistons.forEach((p,i)=>{p.position.y=PIST_Y+PIST_AMP*Math.sin(C.pistonPh+i*1.05);});fan.rotation.x+=dt*22*C.pistonSpd;
       const {lampDisplay,blinkOn}=lighting.update(dt,t,nn,lightView);
       weather.update(dt,t);
-      const wantWater=C.rainLevel!==RAIN_LEVELS.NONE&&!drv;if(wantWater&&!api.sfx.wantLoop)api.sfx.loop('water');else if(!wantWater&&api.sfx.wantLoop==='water')api.sfx.stopLoop();// 雨声只在没开车时放，开车让位给发动机
       for(const pv of doorPivots){const u=pv.userData,tg=u.open;u.k+=(tg-u.k)*Math.min(1,dt*4);pv.rotation.y=u.sd*.95*u.k;}// 只读取同一扇门的开启状态；启动和挂 D 时会先关门。
-      const reminderCondition=!drv&&C.lampMode!==LAMP_MODES.OFF&&!!driverDoor?.userData.open;if(reminderCondition&&!C.lightReminderCondition)startLightReminder(driverDoor);if(!reminderCondition)C.lightReminderBeeps=0;C.lightReminderCondition=reminderCondition;
-      if(C.lightReminderBeeps>0&&t>=C.lightReminderNext){api.sfx.tone(1120,.11,'square',.045);C.lightReminderBeeps--;C.lightReminderNext=t+230;}
+      runtime.audio.sync(t,driverDoor);
       cockpit.update(dt,t,lampDisplay,blinkOn);
-      api.sfx.setMusic(C.musicPlaying,C.volumeLevel);
       fuelDots.forEach((d,i)=>{const u=((t/1000*.45)+i/6)%1;d.position.lerpVectors(FUEL_A,FUEL_B,u);d.scale.setScalar(C.fuel*(1-ee)*(.6+.4*Math.sin(u*Math.PI)));});
       if(puffOn){C.puffTimer-=dt;if(C.puffTimer<=0){C.puffTimer=.2;const p=puffs.find(p=>!p.visible);if(p){p.visible=true;p.userData.life=0;p.position.copy(exhaust.position).add(PUFF_AT);p.scale.setScalar(.5);}}}
       for(const p of puffs){if(!p.visible)continue;p.userData.life+=dt;const L=p.userData.life;if(L>1.5){p.visible=false;continue;}
@@ -424,7 +421,7 @@ SCENES.car={
       m.add(edge);windowEdges.push(edge);
     });
     ctx.linearize();
-    return {runtime,update,chain,hideOnExplode:cockpit.hideOnExplode,hideInCockpit:cockpit.hideInCockpit,iconFor(id){return id==='wheels'?wheelYaws[0]:null;},
+    return {runtime,audio:runtime.audio,update,chain,hideOnExplode:cockpit.hideOnExplode,hideInCockpit:cockpit.hideInCockpit,iconFor(id){return id==='wheels'?wheelYaws[0]:null;},
       cockpitView:cockpit.cockpitView,showSeatsInCockpit:cockpit.showSeatsInCockpit,
       onStop(){C.startOn=C.fuelOn=C.engineOn=C.shaftOn=C.wheelsOn=false;C.throttleUntil=0;C.motionW=0;},onStart(){C.startOn=C.fuelOn=C.engineOn=C.shaftOn=C.wheelsOn=true;api.sfx.loop('engine');for(const p of doorPivots)p.userData.open=0;C.lightReminderBeeps=0;C.lightReminderCondition=false;}};
   }

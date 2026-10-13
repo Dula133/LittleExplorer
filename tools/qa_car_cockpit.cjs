@@ -88,7 +88,9 @@ const out=process.env.LE_QA_OUT||'/tmp/littleexplorer-cockpit-v03';
     for(const mode of ['SLOW','FAST','OFF']){await tap('wiperControl');assert.equal((await state()).w.wiperMode,mode);}
     for(const level of ['NONE','LIGHT','MEDIUM','HEAVY']){
       await page.evaluate(level=>{SCENES.car.weather.setRainLevel(level);SCENES.car.weather.setWiperMode('FAST');},level);
-      const a=await page.evaluate(()=>__dbg.PARTS.wiper.groups[0].children[0].children[0].rotation.z);await wait(a=>Math.abs(__dbg.PARTS.wiper.groups[0].children[0].children[0].rotation.z-a)>.1,a);assert.equal((await state()).w.rainLevel,level);
+      const a=await page.evaluate(()=>{let sweep;__dbg.PARTS.wiper.groups[0].traverse(o=>{if(o.userData.carWiper&&!sweep)sweep=o;});return sweep.rotation.z;});
+      await wait(a=>{let sweep;__dbg.PARTS.wiper.groups[0].traverse(o=>{if(o.userData.carWiper&&!sweep)sweep=o;});return Math.abs(sweep.rotation.z-a)>.1;},a);
+      assert.equal((await state()).w.rainLevel,level);
     }
     await tap('mistControl');await wait(()=>SCENES.car.weather.getState().mist>.75);await tap('defogControl');await wait(()=>SCENES.car.weather.getState().mist<.04);
     assert.equal((await state()).w.rainLevel,'HEAVY');assert.equal((await state()).w.wiperMode,'FAST');await tap('defogControl');

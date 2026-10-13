@@ -44,3 +44,23 @@ if(sandbox.LECar){
  a.controls.setGearMode('D');assert.equal(doors[0].userData.open,0);
  console.log('PASS: isolated runtimes, single port binding, window source, gear/door/lock invariants');
 }
+// Audio policy uses fake primitives so finite alerts and preview silence are deterministic.
+if(sandbox.LECar?.createAudio){
+ let beeps=0,horns=0,captions=0;
+ const sfx={wantLoop:null,isMuted:()=>true,tone(){beeps++;},horn(){horns++;},loop(name){this.wantLoop=name;},stopLoop(){this.wantLoop=null;}};
+ const api={S:{drive:false,nightT:0},now:()=>time,sfx,caption(){captions++;}};
+ const r=sandbox.LECar.createRuntime(api),door={userData:{driverDoor:true,open:1}};
+ r.lighting.setLampMode('POSITION');r.audio.sync(time,door);
+ for(let i=0;i<10;i++){time+=250;r.audio.sync(time,door);}
+ assert.equal(beeps,3);assert.equal(captions,1);
+ door.userData.open=0;r.audio.sync(time,door);door.userData.open=1;r.audio.sync(time,door);
+ r.lighting.setLampMode('OFF');time+=250;r.audio.sync(time,door);assert.equal(beeps,3);
+ r.audio.pressHorn();r.audio.pressHorn();assert.equal(horns,1);time+=500;r.audio.pressHorn();assert.equal(horns,2);
+ r.weather.setRainLevel('HEAVY');r.audio.sync(time,door);assert.equal(sfx.wantLoop,'water');
+ api.S.drive=true;r.audio.sync(time,door);assert.equal(sfx.wantLoop,null);
+ sfx.wantLoop='engine';r.audio.sync(time,door);assert.equal(sfx.wantLoop,'engine');
+ const preview=sandbox.LECar.createRuntime(api,{preview:true});preview.lighting.setLampMode('HEADLIGHT');preview.controls.setMusic(true);
+ preview.audio.sync(time,door);preview.audio.pressHorn();preview.audio.startReminder(door);
+ assert.equal(horns,2);assert.equal(captions,2);assert.equal(preview.audio.getMusicState().active,false);
+ console.log('PASS: finite door alert, immediate lamp-off cancellation, horn debounce, rain/engine priority, silent previews');
+}

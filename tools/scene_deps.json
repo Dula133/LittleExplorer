@@ -3,6 +3,8 @@
     "scenes/car/car_controls.js",
     "scenes/car/car_lighting.js",
     "scenes/car/car_weather.js",
-    "scenes/car/car_cockpit.js"
+    "scenes/car/car_cockpit.js",
+    "scenes/car/car_audio.js",
+    "scenes/car/car_cockpit_ui.js"
   ]
 }

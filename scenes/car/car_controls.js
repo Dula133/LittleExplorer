@@ -61,13 +61,8 @@ const wiperFeedback={OFF:'雨刮器停下来了。',SLOW:'雨刮器开始慢慢�
 M.presentation={LAMP_SEQUENCE,RAIN_SEQUENCE,WIPER_SEQUENCE,nextIn,lampFeedback,rainFeedback,wiperFeedback};
 M.createRuntime=function(api,{preview=false}={}){
  const C=M.createState(),now=()=>api.now(),lighting=M.createLighting(C,now),weather=M.createWeather(C,now,api);
-function startLightReminder(door){
-  if(!api||!door?.userData.driverDoor||!door.userData.open||api.S.drive||C.lampMode===LAMP_MODES.OFF)return;
-  C.lightReminderBeeps=3;C.lightReminderNext=now()+80;
-  api.caption('door','车灯提醒','灯还开着，汽车在提醒你别忘了关灯。');
-}
-
- const controls=M.createControls(C,api,now,startLightReminder,.385);
- return {state:C,api,now,lighting,weather,controls,startLightReminder,preview};
+ const audio=M.createAudio(C,api,now,{preview});
+ const controls=M.createControls(C,api,now,door=>audio.startReminder(door),.385);
+ return {state:C,api,now,lighting,weather,controls,audio,preview};
 };
 })(window.LECar=window.LECar||{});
