@@ -2,61 +2,18 @@
 window.SCENES=window.SCENES||{};
 (function(){
 const WX=[1.44,-1.45],WY=.385,WZ=.80,TIRE_R=.385,SILL=.50,ARCH_R=.58,ARCH_CY=.40;// 轮拱开大一点，轮胎整个露在外面// 方盒子越野车：长 4.82、宽 1.93、高 1.97、轴距 2.89、离地高
-const LAMP_MODES=Object.freeze({OFF:'OFF',POSITION:'POSITION',HEADLIGHT:'HEADLIGHT'});
-const TURN_MODES=Object.freeze({OFF:'OFF',LEFT:'LEFT',RIGHT:'RIGHT',HAZARD:'HAZARD'});
-const RAIN_LEVELS=Object.freeze({NONE:'NONE',LIGHT:'LIGHT',MEDIUM:'MEDIUM',HEAVY:'HEAVY'});
-const WIPER_MODES=Object.freeze({OFF:'OFF',SLOW:'SLOW',FAST:'FAST'});
-const GEAR_MODES=Object.freeze({P:'P',D:'D'});
-const RAIN_PROFILES=Object.freeze({
-  NONE:Object.freeze({count:0,speedMin:0,speedMax:0,opacity:0,gloom:0}),
-  LIGHT:Object.freeze({count:80,speedMin:7,speedMax:9,opacity:.42,gloom:.22}),
-  MEDIUM:Object.freeze({count:190,speedMin:8.5,speedMax:11.5,opacity:.62,gloom:.55}),
-  HEAVY:Object.freeze({count:360,speedMin:10.5,speedMax:14.5,opacity:.82,gloom:1})
-});
-const C={wheelW:0,shaftW:0,steer:0,steerDemoUntil:0,pistonPh:0,pistonSpd:0,lights:0,fuel:0,puffTimer:0,
-  motionW:0,steerTarget:0,hornUntil:0,musicPlaying:false,temperature:22,fanLevel:0,defog:false,mist:0,mistTarget:0,locked:false,beltFastened:false,cup:false,armrestOpen:false,
-  wheelUntil:0,engineUntil:0,shaftUntil:0,lightsUntil:0,fuelUntil:0,puffUntil:0,startOn:false,fuelOn:false,engineOn:false,shaftOn:false,wheelsOn:false,
-  lampMode:LAMP_MODES.OFF,turnMode:TURN_MODES.OFF,turnEpoch:0,fogLight:false,position:0,fog:0,lampKnobAngle:-.65,
-  rainLevel:RAIN_LEVELS.NONE,wiperMode:WIPER_MODES.OFF,rain:0,wipe:0,wipePh:0,
-  gearMode:GEAR_MODES.P,gearK:0,volumeLevel:2,mediaPage:0,climateOn:false,throttleUntil:0,pedalBrake:0,pedalGas:0,
-  brakeUntil:0,brake:0,lightReminderBeeps:0,lightReminderNext:0,lightReminderCondition:false};
-let api=null;
-const now=()=>api?api.now():performance.now();
-const setMode=(value,modes,label)=>{const v=String(value).toUpperCase();if(!Object.values(modes).includes(v))throw new RangeError(`${label}: ${value}`);return v;};
-const effectiveLampState=(t=now())=>{
-  const demo=t<C.lightsUntil;
-  const headlight=C.lampMode===LAMP_MODES.HEADLIGHT||demo;
-  return {position:C.lampMode!==LAMP_MODES.OFF||headlight,headlight,demo};
-};
-const lighting={
-  modes:{lamp:LAMP_MODES,turn:TURN_MODES},
-  setLampMode(mode){C.lampMode=setMode(mode,LAMP_MODES,'lamp mode');C.lightsUntil=0;if(C.lampMode===LAMP_MODES.OFF){C.lightReminderBeeps=0;C.lightReminderCondition=false;}return this.getState();},
-  setTurnMode(mode){const next=setMode(mode,TURN_MODES,'turn mode');if(next!==C.turnMode){C.turnMode=next;C.turnEpoch=now();}return this.getState();},
-  triggerBrake(duration=3000){const ms=Number(duration);if(!Number.isFinite(ms)||ms<0)throw new RangeError(`brake duration: ${duration}`);C.brakeUntil=Math.max(C.brakeUntil,now()+ms);return this.getState();},
-  setFogLight(on){C.fogLight=!!on;return this.getState();},
-  getState(){const display=effectiveLampState();return {lampMode:C.lampMode,turnMode:C.turnMode,fogLight:C.fogLight,brakeActive:now()<C.brakeUntil,reminderActive:C.lightReminderCondition,display};}
-};
-const weather={
-  levels:RAIN_LEVELS,wiperModes:WIPER_MODES,
-  setRainLevel(level){C.rainLevel=setMode(level,RAIN_LEVELS,'rain level');return this.getState();},
-  setWiperMode(mode){C.wiperMode=setMode(mode,WIPER_MODES,'wiper mode');return this.getState();},
-  demonstrateMist(){C.mistTarget=1;return this.getState();},
-  getState(){const p=RAIN_PROFILES[C.rainLevel];return {rainLevel:C.rainLevel,wiperMode:C.wiperMode,dropCount:p.count,speedMin:p.speedMin,speedMax:p.speedMax,mist:C.mist};}
-};
-const controls={
-  gears:GEAR_MODES,
-  setGearMode(mode){C.gearMode=setMode(mode,GEAR_MODES,'gear mode');return this.getState();},
-  setVolumeLevel(level){const n=Number(level);if(!Number.isInteger(n)||n<0||n>3)throw new RangeError(`volume level: ${level}`);C.volumeLevel=n;return this.getState();},
-  setMediaPage(page){const n=Number(page);if(!Number.isInteger(n)||n<0||n>2)throw new RangeError(`media page: ${page}`);C.mediaPage=n;return this.getState();},
-  setClimate(on){C.climateOn=!!on;C.fanLevel=on?Math.max(1,C.fanLevel):0;return this.getState();},
-  setMusic(on){C.musicPlaying=!!on;return this.getState();},
-  setTemperature(value){const n=Number(value);if(!Number.isInteger(n)||n<18||n>26||n%2)throw new RangeError('temperature: '+value);C.temperature=n;return this.getState();},
-  setFanLevel(level){const n=Number(level);if(!Number.isInteger(n)||n<0||n>3)throw new RangeError('fan level: '+level);C.fanLevel=n;C.climateOn=n>0;return this.getState();},
-  setDefog(on){C.defog=!!on;return this.getState();},
-  setLocked(on){C.locked=!!on;return this.getState();},
-  setSteering(value){const n=Number(value);if(![-1,0,1].includes(n))throw new RangeError('steering: '+value);C.steerTarget=n*.42;C.steerDemoUntil=0;return this.getState();},
-  getState(){return {gearMode:C.gearMode,steering:C.steerTarget/.42,volumeLevel:C.volumeLevel,mediaPage:C.mediaPage,climateOn:C.climateOn,musicPlaying:C.musicPlaying,temperature:C.temperature,fanLevel:C.fanLevel,defog:C.defog,locked:C.locked,beltFastened:C.beltFastened,cup:C.cup,armrestOpen:C.armrestOpen,engineOn:!!api?.S.drive,moving:!!api?.S.drive&&C.gearMode==='D'&&now()>=C.brakeUntil,speed:Math.round(C.motionW*TIRE_R*3.6)};}
-};
+const M=window.LECar;
+if(!M?.createRuntime)throw new Error('Missing car module dependencies');
+const {LAMP_MODES,TURN_MODES,RAIN_LEVELS,WIPER_MODES,GEAR_MODES}=M.modes;
+const RAIN_PROFILES=M.RAIN_PROFILES;
+const instances=new WeakMap();
+const idleApi={S:{drive:false,nightT:0},now:()=>performance.now(),caption(){},sfx:{}};
+let active=M.createRuntime(idleApi);
+function runtimeFor(ctx,api,options={}){let r=instances.get(ctx);if(!r){r=M.createRuntime(api,options);instances.set(ctx,r);}if(!r.preview)active=r;return r;}
+const facade=(key,names,constants={})=>Object.assign({},constants,Object.fromEntries(names.map(name=>[name,(...args)=>active[key][name](...args)])));
+const lighting=facade('lighting',['setLampMode','setTurnMode','triggerBrake','setFogLight','getState'],{modes:{lamp:LAMP_MODES,turn:TURN_MODES}});
+const weather=facade('weather',['setRainLevel','setWiperMode','demonstrateMist','getState'],{levels:RAIN_LEVELS,wiperModes:WIPER_MODES});
+const controls=facade('controls',['setGearMode','setVolumeLevel','setMediaPage','setClimate','setMusic','setTemperature','setFanLevel','setDefog','setLocked','setSteering','setWindow','getState'],{gears:GEAR_MODES});
 const LAMP_SEQUENCE=[LAMP_MODES.OFF,LAMP_MODES.POSITION,LAMP_MODES.HEADLIGHT];
 const RAIN_SEQUENCE=[RAIN_LEVELS.NONE,RAIN_LEVELS.LIGHT,RAIN_LEVELS.MEDIUM,RAIN_LEVELS.HEAVY];
 const WIPER_SEQUENCE=[WIPER_MODES.OFF,WIPER_MODES.SLOW,WIPER_MODES.FAST];
@@ -64,12 +21,6 @@ const nextIn=(value,sequence)=>sequence[(sequence.indexOf(value)+1)%sequence.len
 const lampFeedback={OFF:'灯关掉了。',POSITION:'现在只打开小灯。',HEADLIGHT:'前照灯亮了，小灯也继续亮着。'};
 const rainFeedback={NONE:'雨停了。',LIGHT:'现在下小雨了。',MEDIUM:'雨变大了一些。',HEAVY:'现在是大雨，前面更难看清了。'};
 const wiperFeedback={OFF:'雨刮器停下来了。',SLOW:'雨刮器开始慢慢摆动。',FAST:'雨刮器现在摆得更快了。'};
-function startLightReminder(door){
-  if(!api||!door?.userData.driverDoor||!door.userData.open||api.S.drive||C.lampMode===LAMP_MODES.OFF)return;
-  C.lightReminderBeeps=3;C.lightReminderNext=now()+80;
-  api.caption('door','车灯提醒','灯还开着，汽车在提醒你别忘了关灯。');
-}
-
 SCENES.car={
   id:'car',title:'汽车',subtitle:'越野车 · 拖一拖转圈，点零件听听',night:true,
   lighting,weather,controls,
@@ -82,19 +33,8 @@ SCENES.car={
     right:{name:'右门',view:'right',parts:['doorHandleright','windowright','lockright','speakerright','seat']}
   },
   cockpitShortNames:{horn:'喇叭',steer:'方向盘',turnControlLeft:'左转',turnControlRight:'右转',start:'启动',gearControl:'档位',brakePedal:'刹车',accelerator:'油门',lampKnob:'车灯',hazard:'双闪',fogControl:'雾灯',instruments:'仪表',wiperControl:'雨刮',defogControl:'除雾',rainControl:'天气演示',mistControl:'起雾演示',dayNightControl:'昼夜',screenMap:'导航',screenMusic:'音乐',screenClimate:'空调屏',musicPlay:'播放',volumeControl:'音量',climateControl:'空调',temperatureDown:'温度 −',temperatureUp:'温度 +',fanControl:'风量',doorHandleleft:'开关门',doorHandleright:'开关门',windowleft:'车窗',windowright:'车窗',lockleft:'门锁',lockright:'门锁',speakerleft:'音响',speakerright:'音响',belt:'安全带',cupHolder:'杯架',armrest:'扶手',seat:'安全座椅'},
-  driveFeedback(){return C.gearMode==='P'?'发动机启动了。P 档停车，选择 D 档才会前进。':'发动机启动了。现在是 D 档，汽车向前走。';},
-  cockpitStatus(){return {
-    start:api?.S.drive?'运行':'停止',gearControl:C.gearMode,
-    lampKnob:{OFF:'关',POSITION:'小灯',HEADLIGHT:'大灯'}[C.lampMode],
-    hazard:C.turnMode==='HAZARD'?'开启':'关闭',fogControl:C.fogLight?'开启':'关闭',
-    turnControlLeft:C.turnMode==='LEFT'?'闪烁':'关闭',turnControlRight:C.turnMode==='RIGHT'?'闪烁':'关闭',
-    dayNightControl:api?.S.nightT?'夜晚':'白天',rainControl:{NONE:'无雨',LIGHT:'小雨',MEDIUM:'中雨',HEAVY:'大雨'}[C.rainLevel],
-    wiperControl:{OFF:'关',SLOW:'慢',FAST:'快'}[C.wiperMode],defogControl:C.defog?'开启':'关闭',
-    musicPlay:C.musicPlaying?'播放中':'暂停',volumeControl:['静音','小','中','大'][C.volumeLevel],
-    climateControl:C.climateOn?'开启':'关闭',temperatureDown:C.temperature+'°',temperatureUp:C.temperature+'°',
-    fanControl:['关','小','中','大'][C.fanLevel],lockleft:C.locked?'锁住':'解锁',lockright:C.locked?'锁住':'解锁',
-    windowleft:['关','半开','全开'][controls.getState().windows?.left||0],windowright:['关','半开','全开'][controls.getState().windows?.right||0]
-  };},
+  driveFeedback(){return active.controls.driveFeedback();},
+  cockpitStatus(){return active.controls.cockpitStatus();},
   /* 线性色彩 + 软阴影：车漆和镀铬件才有真实的高光过渡，不然像塑料玩具 */
   look:{srgb:true,hemi:.55,sun:.95,fill:.28,rim:.4,exposure:1.0,autoRotate:.10},
   sky:'linear-gradient(180deg,#7FBFFF 0%,#A9D4FF 28%,#D6ECFB 48%,#D6ECFB 100%)',
@@ -108,7 +48,7 @@ SCENES.car={
 
   /* ---------- 街景：草地、马路、树、房子、路灯、云 ---------- */
   env(ctx,_api){
-    api=_api;const {THREE,scene,V,flat,canvasTex,rngFactory}=ctx;
+    const runtime=runtimeFor(ctx,_api),{state:C,api,now}=runtime;const {THREE,scene,V,flat,canvasTex,rngFactory}=ctx;
     const grassTex=canvasTex(512,512,(g,w,h)=>{const gr=g.createRadialGradient(w/2,h/2,w*.05,w/2,h/2,w/2);
       gr.addColorStop(0,'rgba(136,204,114,1)');gr.addColorStop(.75,'rgba(126,196,106,1)');gr.addColorStop(1,'rgba(126,196,106,0)');g.fillStyle=gr;g.fillRect(0,0,w,h);});
     const ground=new THREE.Mesh(new THREE.CircleGeometry(34,72),new THREE.MeshStandardMaterial({map:grassTex,transparent:true,roughness:1,metalness:0}));
@@ -166,8 +106,10 @@ SCENES.car={
   },
 
   /* ---------- 汽车本体 ---------- */
-  build(ctx,_api){
-    api=_api;const {THREE,V,mm,roundedBox,capsule,tubeM,pathTube,loft,stationsX,canvasTex,steel,matte,flat,place,defPart,markShell,root}=ctx;
+  build(ctx,_api,options={}){
+    const runtime=runtimeFor(ctx,_api,options);if(runtime.built)throw new Error("car already built for ctx");runtime.built=true;
+    const {state:C,api,now,lighting,weather,controls,startLightReminder}=runtime,effectiveLampState=lighting.effectiveLampState;
+    const {THREE,V,mm,roundedBox,capsule,tubeM,pathTube,loft,stationsX,canvasTex,steel,matte,flat,place,defPart,markShell,root}=ctx;
     /* 这一页用更实体的材质参数：清漆更亮、橡胶更哑、玻璃更深更透，
        配合 look.srgb 的线性色彩，看起来像模型店里的实体车，而不是塑料玩具。 */
     const paint=(c=0xbd1829)=>new THREE.MeshPhysicalMaterial({color:c,metalness:.2,roughness:.24,clearcoat:.7,clearcoatRoughness:.18,envMapIntensity:.9});
@@ -236,11 +178,7 @@ SCENES.car={
 
     /* 车门：点一下就开，再点一下就关 */
     const doorPivots=[],doorExtras=[],frontWindows=[],speakerFaces=[];let driverDoor=null;
-    const toggleDoor=pv=>{
-      if(controls.getState().moving){api.caption('door','车门','汽车正在走，停稳后再开门。');return false;}
-      if(C.locked&&!pv.userData.open){api.caption('door','门锁','门锁着，先按门锁解锁。');return false;}
-      pv.userData.open=pv.userData.open?0:1;api.sfx.door();startLightReminder(pv);return true;
-    };
+    const toggleDoor=pv=>controls.toggleDoor(pv);
     const doorButton=(parent,x,y,z,color)=>{
       const g=new THREE.Group();g.position.set(x,y,z);parent.add(g);
       const face=roundedBox(.15,.08,.045,.016,matte(color));face.castShadow=false;g.add(face);
@@ -298,10 +236,7 @@ SCENES.car={
         if(hit){let o=hit;while(o&&!o.userData.doorPivot)o=o.parent;if(o){toggleDoor(o);return;}}
         toggleDoor(driverDoor);
       }},doorPivots);
-    controls.setGearMode=function(mode){C.gearMode=setMode(mode,GEAR_MODES,'gear mode');if(C.gearMode==='D'&&api.S.drive)for(const p of doorPivots)p.userData.open=0;return this.getState();};
-    controls.setWindow=(side,level)=>{const w=frontWindows.find(w=>w.userData.windowSide===side);if(!w||![0,1,2].includes(level))throw new RangeError('window state');w.userData.windowLevel=level;return controls.getState();};
-    const baseControlState=controls.getState;
-    controls.getState=function(){return {...baseControlState.call(this),doors:doorPivots.map(p=>({driver:p.userData.driverDoor,open:!!p.userData.open})),windows:Object.fromEntries(frontWindows.map(w=>[w.userData.windowSide,w.userData.windowLevel]))};};
+    controls.bindVehicle({doorPivots,frontWindows,driverDoor});
     for(const d of doorExtras){
       const {side,pv,inner,windowButton,lockButton,handleGroup,speakerGroup}=d;
       for(const g of [windowButton,lockButton,handleGroup,speakerGroup])inner.add(g);
@@ -900,7 +835,7 @@ SCENES.car={
     });
     const cockpitEye=V(-1.47,1.55,-.12),cockpitLook=V(.64,1.04,-.08),cockpitViewState={position:V(),target:V()};
     ctx.linearize();
-    return {update,chain,hideOnExplode:driverMeshes,hideInCockpit:cockpitHide,iconFor(id){return id==='wheels'?wheelYaws[0]:null;},
+    return {runtime,update,chain,hideOnExplode:driverMeshes,hideInCockpit:cockpitHide,iconFor(id){return id==='wheels'?wheelYaws[0]:null;},
       cockpitView({zone='front',yaw=0,pitch=0}={}){
         const views={front:[cockpitEye,cockpitLook],center:[V(-.75,1.52,.16),V(.56,1.03,.18)],left:[V(-.70,1.55,-.10),V(.30,1.13,-.85)],right:[V(-.70,1.55,-.10),V(.30,1.13,.85)]};
         const [eye,target]=views[zone]||views.front;root.updateWorldMatrix(true,false);cockpitViewState.position.copy(eye);cockpitViewState.target.copy(target);

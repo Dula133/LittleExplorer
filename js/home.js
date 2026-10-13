@@ -33,7 +33,7 @@ document.querySelectorAll('.card[data-scene]').forEach(card=>{
   if(LOOK.srgb){hemi.color.convertSRGBToLinear();hemi.groundColor.convertSRGBToLinear();sun.color.convertSRGBToLinear();}
   const root=new THREE.Group();scene.add(root);
   const ctx=L3.makeCtx(scene,root);
-  try{SC.build(ctx,stubApi);}catch(e){return;}
+  try{SC.build(ctx,stubApi,{preview:true});}catch(e){return;}
   root.updateWorldMatrix(true,true);
   const box=new THREE.Box3();
   root.traverse(o=>{if(o.isMesh&&!o.userData.noHit&&o.visible&&o.material.opacity>.05)box.expandByObject(o);});

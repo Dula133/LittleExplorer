@@ -4,7 +4,7 @@ import asyncio, hashlib, json, re, pathlib, sys
 import edge_tts
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SRC = '\n'.join(f.read_text(encoding='utf-8') for f in sorted((ROOT / 'scenes').glob('*.js')))
+SRC = '\n'.join(f.read_text(encoding='utf-8') for f in sorted((ROOT / 'scenes').rglob('*.js')))
 OUT = ROOT / 'voice'
 VOICES = {'yunxia': 'zh-CN-YunxiaNeural', 'xiaoyi': 'zh-CN-XiaoyiNeural'}
 SAMPLE = {'yunxia': '你好，我是云夏，我来给你讲这些东西是怎么动的。', 'xiaoyi': '你好，我是小依，我来给你讲这些东西是怎么动的。'}

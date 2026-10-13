@@ -44,7 +44,7 @@ def defpart_blocks(src):
 def collect_lines(root=ROOT):
     """页面实际会朗读的全部句子。要和 app.js 里 say() 的拼法一致。"""
     src = '\n'.join(f.read_text(encoding='utf-8')
-                    for f in sorted((root / 'scenes').glob('*.js')))
+                    for f in sorted((root / 'scenes').rglob('*.js')))
     lines = set()
     for blk in defpart_blocks(src):
         m = re.search(r"name:'([^']+)'", blk)
