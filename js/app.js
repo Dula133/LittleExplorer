@@ -28,6 +28,18 @@ const sfx={ctx:null,cur:null,wantLoop:null,
     else if(name==='water'){const buf=c.createBuffer(1,c.sampleRate*2,c.sampleRate),d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;const src=c.createBufferSource();src.buffer=buf;src.loop=true;const f=c.createBiquadFilter();f.type='bandpass';f.frequency.value=900;f.Q.value=.6;g.gain.value=.05;src.connect(f).connect(g);src.start();nodes.push(src);}
     g.connect(c.destination);this.cur={g,nodes,name};},
   stopLoop(){this.wantLoop=null;if(!this.cur)return;const {g,nodes}=this.cur,c=this.ctx;g.gain.setTargetAtTime(0,c.currentTime,.08);setTimeout(()=>{for(const n of nodes){try{n.stop()}catch(e){}}},400);this.cur=null;},
+  // 独立的演示音乐通道；发动机/雨声循环不占用它。
+  music:null,
+  stopMusic(){if(!this.music)return;for(const o of this.music.nodes){o.stop();o.disconnect();}this.music.g.disconnect();this.music=null;},
+  setMusic(on,level){
+    if(!on||muted||document.hidden){this.stopMusic();return;}
+    const c=this.ac();if(!c)return;
+    if(!this.music){const g=c.createGain(),o=c.createOscillator();o.type='triangle';o.connect(g).connect(c.destination);o.start();this.music={g,nodes:[o],start:c.currentTime,note:-1};}
+    const m=this.music,notes=[262,330,392,330,294,349,440,349],step=Math.floor((c.currentTime-m.start)/.42)%notes.length;
+    if(step!==m.note){m.note=step;m.nodes[0].frequency.setTargetAtTime(notes[step],c.currentTime,.012);}
+    m.g.gain.setTargetAtTime(level*.018,c.currentTime,.025);
+  },
+  getMusicState(){return {active:!!this.music,gain:this.music?.g.gain.value||0,context:this.ctx?.state||'uninitialized'};},
   pauseLoop(){const w=this.wantLoop;this.stopLoop();this.wantLoop=w;}
 };
 
@@ -75,7 +87,7 @@ const root=new THREE.Group();scene.add(root);
 const ctx=L3.makeCtx(scene,root),{PARTS,placed,hitTargets,shellMeshes}=ctx;
 
 /* ================= 状态 & 场景接入 ================= */
-const S={drive:false,xray:false,explode:false,cockpit:false,ex:0,xr:0,sel:null,nightT:0,night:0,gloom:0};let lastGloom=-1;
+const S={drive:false,xray:false,explode:false,cockpit:false,cockpitZone:'front',ex:0,xr:0,sel:null,nightT:0,night:0,gloom:0};let lastGloom=-1;
 let EE=0;
 const api={S,now,sfx,get ee(){return EE},get focusedPart(){return cam.focus},say,caption,toggleNight,camera,hop:p=>hop(p),select:id=>select(id),focusPart:id=>focusPart(id),setExplode:on=>setExplode(on)};
 const ENV=SC.env?SC.env(ctx,api):{update(){},occluders:[]};const OCC=ENV.occluders||[];
@@ -85,7 +97,10 @@ const ORDER=SC.order||Object.keys(PARTS);
 const outlineMat=new THREE.ShaderMaterial({uniforms:{width:{value:.022},color:{value:new THREE.Color(0xffffff)}},
   vertexShader:'uniform float width;void main(){vec3 p=position+normal*width;gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.0);}',
   fragmentShader:'uniform vec3 color;void main(){gl_FragColor=vec4(color,1.0);}',side:THREE.BackSide});
-for(const id in PARTS){const p=PARTS[id];for(const m of p.meshes){if(m.userData.noHit||m.userData.glass)continue;const ol=new THREE.Mesh(m.geometry,outlineMat);ol.visible=false;ol.castShadow=false;ol.userData.noHit=true;m.add(ol);p.outlines.push(ol);}}
+for(const id in PARTS){const p=PARTS[id];for(const m of p.meshes){
+  // 扩大的触控命中区只参与拾取；不绘制、不投影、不描边。Mesh.raycast 不依赖 material.visible。
+  if(m.userData.touchProxy){m.material.visible=false;m.castShadow=false;continue;}
+  if(m.userData.noHit||m.userData.glass)continue;const ol=new THREE.Mesh(m.geometry,outlineMat);ol.visible=false;ol.castShadow=false;ol.userData.noHit=true;m.add(ol);p.outlines.push(ol);}}
 for(const id in PARTS)for(const m of PARTS[id].meshes){const u=m.userData,mt=m.material;
   if(u.opBase==null)u.opBase=mt.transparent?mt.opacity:1;
   if(u.trBase==null)u.trBase=!!mt.transparent;
@@ -100,28 +115,28 @@ function toggleNight(){if(!SC.night)return;S.nightT=S.nightT?0:1;document.body.c
 
 /* ================= 相机 ================= */
 const FIT=Object.assign({w:6,h:4.6,ty:.8,tyEx:1.5,rEx:1.28},SC.fit||{});
-const cam={theta:(SC.cameraStart||{}).theta||.95,phi:(SC.cameraStart||{}).phi||1.15,r:9.5,rBase:9.5,tTheta:0,tPhi:0,zoom:1,last:0,focus:null,target:new THREE.Vector3(0,FIT.ty,0)};
+const cam={theta:(SC.cameraStart||{}).theta||.95,phi:(SC.cameraStart||{}).phi||1.15,r:9.5,rBase:9.5,tTheta:0,tPhi:0,zoom:1,cockpitYaw:0,cockpitPitch:0,cockpitZoom:1,last:0,focus:null,target:new THREE.Vector3(0,FIT.ty,0)};
 cam.tTheta=cam.theta;cam.tPhi=cam.phi;
 const _tgt=new THREE.Vector3(),_box=new THREE.Box3(),_sph=new THREE.Sphere(),_occU=new THREE.Vector3(),_occW=new THREE.Vector3(),
       _camPos=new THREE.Vector3(),_viewPos=new THREE.Vector3(),_viewTarget=new THREE.Vector3(),_lookTarget=new THREE.Vector3();
 let cockpitK=0;
 function fadeObj(o,k){o.visible=k>.02;o.traverse(m=>{if(!m.isMesh)return;const mat=m.material;if(mat.userData.baseOp==null)mat.userData.baseOp=mat.transparent?mat.opacity:1;mat.transparent=true;mat.opacity=mat.userData.baseOp*k;mat.depthWrite=k>.9&&mat.userData.baseOp>.99;m.castShadow=k>.5&&m.userData.cs!==false;});}
-function partBounds(p){_box.makeEmpty();for(const m of p.meshes){if(m.userData.noHit)continue;m.updateWorldMatrix(true,false);_box.expandByObject(m);}return _box.getBoundingSphere(_sph);}
+function partBounds(p){_box.makeEmpty();for(const m of p.meshes){if(m.userData.noHit||m.userData.touchProxy)continue;m.updateWorldMatrix(true,false);_box.expandByObject(m);}return _box.getBoundingSphere(_sph);}
 let W=1,H=1,freeRatio=1;
 function resize(){
   if(!innerWidth||!innerHeight)return;// 页面还没排好版（宽高为 0）就先不算，否则相机距离会变成 NaN，之后一直黑屏
   const first=W===1&&H===1,changed=W!==innerWidth||H!==innerHeight,previousBase=cam.rBase;
-  W=innerWidth;H=innerHeight;renderer.setSize(W,H,false);const aspect=W/H;camera.aspect=aspect;camera.fov=48;
+  W=innerWidth;H=innerHeight;renderer.setSize(W,H,false);const aspect=W/H;camera.aspect=aspect;const savedFov=camera.fov;camera.fov=48;
   const topH=$('.top').offsetHeight,botH=$('.bottom').offsetHeight,freeH=Math.max(H-topH-botH,H*.4),tv=Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
   freeRatio=freeH/H;
   const rH=(FIT.w/2)/(tv*aspect),rV=(FIT.h/2)/tv*(H/freeH);cam.rBase=clamp(Math.max(rH,rV),3,40);
   if(first)cam.r=cam.rBase;else if(changed)cam.r*=cam.rBase/previousBase;
-  camera.setViewOffset(W,H,0,Math.round((botH-topH)/2),W,H);camera.updateProjectionMatrix();
+  camera.setViewOffset(W,H,0,Math.round((botH-topH)/2),W,H);camera.fov=savedFov;camera.updateProjectionMatrix();
 }
 addEventListener('resize',resize);resize();
 if(typeof ResizeObserver!=='undefined')new ResizeObserver(resize).observe($('.bottom'));
 function updateCamera(dt){
-  const t=now();if(!cam.focus&&t-cam.last>3500)cam.tTheta+=dt*LOOK.autoRotate;
+  const t=now();if(!S.cockpit&&!cam.focus&&t-cam.last>3500)cam.tTheta+=dt*LOOK.autoRotate;
   const k=Math.min(1,dt*7);cam.theta+=(cam.tTheta-cam.theta)*k;cam.phi+=(cam.tPhi-cam.phi)*k;
   let rT,tgt;
   if(cam.focus&&PARTS[cam.focus]){const b=partBounds(PARTS[cam.focus]);tgt=_tgt.copy(b.center);
@@ -131,9 +146,9 @@ function updateCamera(dt){
   else{const oy=OBJ.camY?OBJ.camY():0,ox=OBJ.camX?OBJ.camX():0;tgt=_tgt.set((FIT.cx||0)+ox,(S.explode?FIT.tyEx:FIT.ty)+oy,0);rT=cam.rBase*(S.explode?FIT.rEx:1)*cam.zoom;}// 主体自己会升高时（比如飞机爬升），镜头跟着抬
   if(!isFinite(cam.r))cam.r=rT;cam.r+=(rT-cam.r)*Math.min(1,dt*4);cam.target.lerp(tgt,Math.min(1,dt*4));
   const sp=Math.sin(cam.phi);_camPos.set(cam.target.x+cam.r*sp*Math.sin(cam.theta),cam.target.y+cam.r*Math.cos(cam.phi),cam.target.z+cam.r*sp*Math.cos(cam.theta));
-  const cockpitView=S.cockpit&&OBJ.cockpitView?OBJ.cockpitView():null;cockpitK+=((cockpitView?1:0)-cockpitK)*Math.min(1,dt*6);
+  const cockpitView=S.cockpit&&OBJ.cockpitView?OBJ.cockpitView({zone:SC.cockpitControls?.[S.cockpitZone]?.view||S.cockpitZone,yaw:cam.cockpitYaw,pitch:cam.cockpitPitch}):null;cockpitK+=((cockpitView?1:0)-cockpitK)*Math.min(1,dt*6);
   if(cockpitView){_viewPos.copy(cockpitView.position);_viewTarget.copy(cockpitView.target);}
-  const viewFov=48+24*cockpitK;if(Math.abs(camera.fov-viewFov)>.01){camera.fov=viewFov;camera.updateProjectionMatrix();}
+  const viewFov=48+(clamp((cockpitView?.fov||72)*cam.cockpitZoom,52,82)-48)*cockpitK;if(Math.abs(camera.fov-viewFov)>.01){camera.fov=viewFov;camera.updateProjectionMatrix();}
   camera.position.copy(_camPos);_lookTarget.copy(cam.target);if(cockpitK>.001){camera.position.lerp(_viewPos,cockpitK);_lookTarget.lerp(_viewTarget,cockpitK);}camera.lookAt(_lookTarget);
 }
 
@@ -201,8 +216,8 @@ function openSheet(){cancelTour();hush();unfocus();if(OBJ.clearFocus)OBJ.clearFo
 function closeSheet(){$('#poster').classList.remove('show');}
 $('#infoBtn').onclick=openSheet;$('#posterClose').onclick=closeSheet;
 const trayEl=$('#tray'),trayIn=$('#trayIn'),tiles={};
-for(const id of ORDER){const p=PARTS[id];if(!p)continue;const b=document.createElement('button');b.className='tile';
-  b.innerHTML=`<img alt="" src="${ICONS[id]||''}"><span>${p.name}</span>`;b.onclick=()=>{if(busy())return;cancelTour();focusPart(id);};trayIn.appendChild(b);tiles[id]=b;}
+for(const id of ORDER){const p=PARTS[id];if(!p)continue;const b=document.createElement('button');b.className='tile'+(p.immediate?' immediate':'');
+  b.innerHTML=`<img alt="" src="${ICONS[id]||''}"><span>${p.name}</span>`;b.onclick=()=>{if(busy()&&!p.immediate)return;cancelTour();focusPart(id);};trayIn.appendChild(b);tiles[id]=b;}
 function focusPart(id,force){cam.focus=id;cam.last=now();const pr=select(id,force);const t=tiles[id];if(t&&t.scrollIntoView)t.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});return pr;}
 function unfocus(){cam.focus=null;}
 let trayShown=false;
@@ -228,10 +243,10 @@ function frame(){
   sun.intensity=LOOK.sun*(1-.825*nn)*(1-.6*gl);sun.color.copy(C_SUN_D).lerp(C_SUN_N,nn);fill.intensity=LOOK.fill*(1-.8*nn);rim.intensity=LOOK.rim*(1-.8*nn);
   if(scene.fog&&C_FOG_D)scene.fog.color.copy(C_FOG_D).lerp(C_FOG_N,nn);renderer.toneMappingExposure=LOOK.exposure-.1*nn;
   for(const o of placed){const u=o.userData;const hk=(t-u.hopT0)/520;const hop=hk<1?Math.sin(Math.PI*hk)*.16:0;o.position.copy(u.home).addScaledVector(u.explode,EE);o.position.y+=hop;}
-  OBJ.update&&OBJ.update(dt);ENV.update&&ENV.update(dt);
+  OBJ.update&&OBJ.update(dt);if(cockpitRefresh)cockpitRefresh();ENV.update&&ENV.update(dt);
   const clean=S.explode||S.xray; // 看里面 / 拆开看：只留主体
   if(OBJ.hideOnExplode)for(const m of OBJ.hideOnExplode)m.visible=S.ex<.5&&S.xr<.5&&!S.cockpit;
-  if(OBJ.hideInCockpit)for(const m of OBJ.hideInCockpit)m.visible=!S.cockpit;
+  if(OBJ.hideInCockpit)for(const m of OBJ.hideInCockpit)m.visible=!S.cockpit||!!OBJ.showSeatsInCockpit?.();
   for(const m of shellMeshes){const op=m.userData.baseOp*(1-(LOOK.srgb?.91:.76)*S.xr),mat=m.material;mat.opacity=op;const tr=op<.995;
     if(!m.userData.keepEm&&!m.userData.glass)mat.color.copy(m.userData.baseCol).lerp(GHOST,S.xr*(LOOK.srgb?.3:1));
     mat.transparent=tr||!!m.userData.glass;mat.depthWrite=!tr&&!m.userData.glass;if(!m.userData.glass)m.castShadow=S.xr<.5;}
@@ -274,15 +289,16 @@ const pdist=()=>{const a=[...ptrs.values()];return Math.hypot(a[0].x-a[1].x,a[0]
 canvas.addEventListener('pointerdown',e=>{cancelTour();canvas.setPointerCapture(e.pointerId);ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
   if(ptrs.size===1){down={x:e.clientX,y:e.clientY,t:now()};moved=false;}else{moved=true;if(ptrs.size===2)pinchD=pdist();}cam.last=now();hideHint();});
 canvas.addEventListener('pointermove',e=>{const p=ptrs.get(e.pointerId);if(!p)return;const dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;
-  if(ptrs.size===1){if(down&&Math.hypot(e.clientX-down.x,e.clientY-down.y)>6)moved=true;cam.tTheta-=dx*.006;cam.tPhi=clamp(cam.tPhi-dy*.005,.5,1.45);}
-  else if(ptrs.size===2){const d=pdist();if(d>0&&pinchD>0)cam.zoom=clamp(cam.zoom*(pinchD/d),.6,1.8);pinchD=d;}cam.last=now();});
+  if(ptrs.size===1){if(down&&Math.hypot(e.clientX-down.x,e.clientY-down.y)>6)moved=true;if(S.cockpit){cam.cockpitYaw=clamp(cam.cockpitYaw-dx*.003,-.45,.45);cam.cockpitPitch=clamp(cam.cockpitPitch+dy*.002,-.25,.25);}else{cam.tTheta-=dx*.006;cam.tPhi=clamp(cam.tPhi-dy*.005,.5,1.45);}}
+  else if(ptrs.size===2){const d=pdist();if(d>0&&pinchD>0){if(S.cockpit)cam.cockpitZoom=clamp(cam.cockpitZoom*(pinchD/d),.75,1.2);else cam.zoom=clamp(cam.zoom*(pinchD/d),.6,1.8);}pinchD=d;}cam.last=now();});
 const up=e=>{if(!ptrs.has(e.pointerId))return;ptrs.delete(e.pointerId);
   if(ptrs.size===0&&down&&!moved&&now()-down.t<600){const id=pick(e.clientX,e.clientY);if(id){const p=PARTS[id];if(!busy()||p.immediate){if(S.explode||S.xray)focusPart(id);else select(id);}}else if(!busy())unfocus();}
   if(ptrs.size===0)down=null;};
 canvas.addEventListener('pointerup',up);canvas.addEventListener('pointercancel',up);
-canvas.addEventListener('wheel',e=>{cam.zoom=clamp(cam.zoom*(1+e.deltaY*.0012),.6,1.8);cam.last=now();e.preventDefault();},{passive:false});
+canvas.addEventListener('wheel',e=>{if(S.cockpit)cam.cockpitZoom=clamp(cam.cockpitZoom*(1+e.deltaY*.0012),.75,1.2);else cam.zoom=clamp(cam.zoom*(1+e.deltaY*.0012),.6,1.8);cam.last=now();e.preventDefault();},{passive:false});
 function hideHint(){$('#hint').classList.add('hide');}setTimeout(hideHint,7000);
-function caption(icon,n,d){const ce=$('#ce');if(icon&&ICONS[icon]){ce.innerHTML=`<img src="${ICONS[icon]}" alt="">`;ce.style.display='';}else{ce.innerHTML='';ce.style.display='none';}$('#cn').textContent=n;$('#cd').textContent=d;}
+var cockpitParent=null;
+function caption(icon,n,d){if(cockpitParent)cockpitParent.disabled=!S.cockpit||!PARTS[S.sel]?.more;const ce=$('#ce');if(icon&&ICONS[icon]){ce.innerHTML=`<img src="${ICONS[icon]}" alt="">`;ce.style.display='';}else{ce.innerHTML='';ce.style.display='none';}$('#cn').textContent=n;$('#cd').textContent=d;}
 function hop(p){const tg=p.hopTargets||p.groups.filter(g=>g.userData.home);for(const g of tg)g.userData.hopT0=now();}
 function select(id,force){const p=PARTS[id];if(!p)return Promise.resolve();
   if(busy()&&!force&&!p.isStart&&!p.immediate)return Promise.resolve();
@@ -290,14 +306,14 @@ function select(id,force){const p=PARTS[id];if(!p)return Promise.resolve();
   if(p.immediate&&!hold)hush();
   hideHint();sfx.ac();cam.last=now();S.sel=id;hop(p);sfx.click();
   if(p.isStart){toggleDrive();return Promise.resolve();}
-  const txt=p.pickText?p.pickText():p.text;caption(id,p.name,txt);const pr=p.immediate&&hold?Promise.resolve():speak(p.name+'。'+txt);const hit=S.hit;S.hit=null;p.action&&p.action(hit);return pr;}// 把点中的那块网格交给零件，零件可以只动被点的那一个（比如四扇车门）
+  const txt=p.pickText?p.pickText(S.hit):p.text||'点一下，看看它的变化。';caption(id,p.name,txt);const pr=p.immediate&&hold?Promise.resolve():speak(p.name+'。'+txt);const hit=S.hit;S.hit=null;p.action&&p.action(hit);return pr;}// 把点中的那块网格交给零件，零件可以只动被点的那一个（比如四扇车门）
 
 /* ---- 「开起来」：一步一步讲 ---- */
 let chainId=0;
 async function toggleDrive(){
   const id=++chainId,go=$('#go');S.drive=!S.drive;sfx.ac();
   if(!S.drive){OBJ.onStop&&OBJ.onStop();sfx.stopLoop();hush();hold=0;talking=0;paintTalk();paintGo();S.sel=null;caption(null,SC.go.stopSaid,SC.go.stopHint);say(SC.go.stopSaid);return;}
-  OBJ.onStart&&OBJ.onStart();paintGo();holdTalk(true);
+  OBJ.onStart&&OBJ.onStart();paintGo();if(S.cockpit&&SC.cockpitControls){const feedback=SC.driveFeedback?.()||SC.go.done;caption('start','启动按钮',feedback);speak(feedback);return;}holdTalk(true);
   try{
     for(const s of OBJ.chain){if(id!==chainId)return;s.on&&s.on();if(s.inner&&!S.xray)continue;
       const p=PARTS[s.part];if(p){hop(p);S.sel=s.part;caption(s.part,p.name,s.t);}else caption(null,'',s.t);
@@ -309,9 +325,10 @@ function paintGo(){const go=$('#go'),ic=go.querySelector('svg');
   if($('#resetView'))$('#resetView').textContent=S.explode?'看全部':'看整车';
   if(S.explode){go.classList.toggle('on',touring);$('#gotxt').textContent=touring?'停下':'全部讲一遍';}
   else{go.classList.toggle('on',S.drive);$('#gotxt').textContent=S.drive?SC.go.off:SC.go.on;}}
-let cockpitBtn=null;
-function paintCockpit(){if(!cockpitBtn)return;cockpitBtn.classList.toggle('on',S.cockpit);cockpitBtn.style.background=S.cockpit?'linear-gradient(180deg,#7056C8,#5034A0)':'linear-gradient(180deg,#9B7BE5,#7455C2)';cockpitBtn.querySelector('span').textContent=S.cockpit?'回车外':'驾驶舱';cockpitBtn.setAttribute('aria-label',S.cockpit?'回到车外':'进入驾驶舱');}
-function setCockpit(on){if(!OBJ.cockpitView)return;cancelTour();hush();unfocus();cam.last=now();hideHint();S.cockpit=!!on;S.sel=null;
+var cockpitRefresh=null;
+let cockpitBtn=null,cockpitPanel=null,cockpitReset=null;
+function paintCockpit(){document.body.classList.toggle('cockpit-mode',S.cockpit);if(cockpitPanel)cockpitPanel.hidden=!S.cockpit;if(!cockpitBtn)return;cockpitBtn.classList.toggle('on',S.cockpit);cockpitBtn.style.background=S.cockpit?'linear-gradient(180deg,#7056C8,#5034A0)':'linear-gradient(180deg,#9B7BE5,#7455C2)';cockpitBtn.querySelector('span').textContent=S.cockpit?'回车外':'驾驶舱';cockpitBtn.setAttribute('aria-label',S.cockpit?'回到车外':'进入驾驶舱');}
+function setCockpit(on){if(!OBJ.cockpitView)return;cancelTour();hush();unfocus();cam.last=now();hideHint();S.cockpit=!!on;S.sel=null;S.cockpitZone='front';cam.cockpitYaw=cam.cockpitPitch=0;cam.cockpitZoom=1;if(cockpitReset)cockpitReset();
   if(S.cockpit){S.xray=false;S.explode=false;$('#xr').classList.remove('on');$('#xrtxt').textContent='看里面';$('#ex').classList.remove('on');$('#extxt').textContent='拆开看';$('#infoBtn').classList.remove('show');closeSheet();caption(null,'进入驾驶舱','看看仪表、中控、拨杆、档把和踏板，直接点一点，每个控件都会有反应。');say('进入驾驶舱');}
   else{caption(null,'回到车外','可以继续拖一拖看整辆汽车。');say('回到车外');}
   paintCockpit();paintGo();}
@@ -326,18 +343,49 @@ function setMode(m){ // 'whole' | 'xray' | 'explode'，一次只在一个模式�
 }
 function setExplode(on){setMode(on?'explode':'whole');}
 if(OBJ.cockpitView){const ctrl=$('.ctrl');ctrl.style.gridTemplateColumns='repeat(4,1fr)';ctrl.style.gap='7px';cockpitBtn=document.createElement('button');cockpitBtn.className='big';cockpitBtn.setAttribute('aria-label','进入驾驶舱');cockpitBtn.innerHTML='<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M4.5 10.5h15M12 14v6M7 17l5-3 5 3"/></svg><span>驾驶舱</span>';cockpitBtn.onclick=()=>setCockpit(!S.cockpit);ctrl.insertBefore(cockpitBtn,$('#xr'));paintCockpit();}
+// 汽车声明后才创建分区入口与 48px 触控替代入口；其它场景不变。
+if(SC.cockpitControls){
+  document.body.classList.add('car-controls');
+  const style=document.createElement('style');style.textContent=`
+    body.car-controls.talking .tile.immediate{pointer-events:auto;opacity:1;filter:none}
+    .cockpit-panel{background:rgba(18,34,49,.96);border:1px solid #698596;border-radius:18px;padding:6px;color:#eff9ff}
+    .cockpit-panel[hidden]{display:none}.cockpit-nav{display:flex;overflow-x:auto;gap:4px}
+    .cockpit-panel button{border:1px solid #607F8B;border-radius:10px;background:#304C5D;color:#fff;font-size:13px;font-weight:700;min-height:48px;min-width:48px;touch-action:manipulation;cursor:pointer}
+    .cockpit-nav button{flex:1;min-width:48px}.cockpit-panel button[aria-pressed=true]{background:#58795C;border-color:#D3D896}
+    .cockpit-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:5px}.cockpit-actions button{padding:3px;line-height:1.3;display:flex;align-items:center;justify-content:center;gap:2px}.cockpit-actions img{width:24px;height:24px;object-fit:contain;flex:none}.cockpit-actions span{min-width:0;font-size:12px}
+    .cockpit-help{display:flex;justify-content:space-between;align-items:center;margin-top:4px;font-size:12px}.cockpit-help button{min-height:44px;padding:4px 10px}
+    .cockpit-details{max-width:420px;width:85%;border:0;border-radius:20px;padding:20px;background:#F1F7F8;color:#18384A}.cockpit-details button{min-height:48px;min-width:80px}
+    @media(max-height:520px){body.car-controls.cockpit-mode .bottom{max-width:480px;right:0;left:auto}body.car-controls.cockpit-mode .cap{min-height:40px;padding:5px}.cockpit-actions{grid-template-columns:repeat(6,1fr)}.cockpit-help{display:none}.cockpit-panel{padding:4px}}
+  `;document.head.appendChild(style);
+  cockpitPanel=document.createElement('section');cockpitPanel.className='cockpit-panel';cockpitPanel.hidden=true;cockpitPanel.setAttribute('aria-label','驾驶舱分区控制');
+  const nav=document.createElement('div');nav.className='cockpit-nav';cockpitPanel.appendChild(nav);
+  const actions=document.createElement('div');actions.className='cockpit-actions';cockpitPanel.appendChild(actions);
+  const help=document.createElement('div');help.className='cockpit-help';help.append('拖动看一看，也可以直接点车里的控件');
+  cockpitParent=document.createElement('button');cockpitParent.textContent='给家长';cockpitParent.disabled=true;help.appendChild(cockpitParent);cockpitPanel.appendChild(help);
+  const detail=document.createElement('dialog');detail.className='cockpit-details';const heading=document.createElement('h3'),body=document.createElement('p'),close=document.createElement('button');close.textContent='关闭';close.onclick=()=>detail.close();detail.append(heading,body,close);document.body.appendChild(detail);
+  cockpitParent.onclick=()=>{const p=PARTS[S.sel];if(!p)return;heading.textContent=p.name;body.textContent=p.more||p.text;detail.showModal();};
+  cockpitRefresh=()=>{if(!S.cockpit)return;const statuses=SC.cockpitStatus?.()||{};for(const b of actions.children){const id=b.dataset.part,text=(SC.cockpitShortNames?.[id]||PARTS[id].name)+(statuses[id]?' · '+statuses[id]:'');const span=b.querySelector('span');if(span.textContent!==text)span.textContent=text;const pressed=String(S.sel===id);if(b.getAttribute('aria-pressed')!==pressed)b.setAttribute('aria-pressed',pressed);}};
+  const zoneButtons={};
+  const showZone=key=>{
+    S.cockpitZone=key;cam.cockpitYaw=cam.cockpitPitch=0;cam.cockpitZoom=1;cam.last=now();actions.replaceChildren();
+    for(const [id,b] of Object.entries(zoneButtons))b.setAttribute('aria-pressed',String(id===key));
+    for(const id of SC.cockpitControls[key].parts){const p=PARTS[id];if(!p)continue;const b=document.createElement('button');const img=document.createElement('img');img.src=ICONS[id]||'';img.alt='';const text=document.createElement('span');text.textContent=SC.cockpitShortNames?.[id]||p.name;b.append(img,text);b.setAttribute('aria-label',p.name);b.dataset.part=id;b.onclick=()=>{S.hit=null;select(id);};actions.appendChild(b);}
+  };
+  for(const [key,zone] of Object.entries(SC.cockpitControls)){const b=document.createElement('button');b.textContent=zone.name;b.setAttribute('aria-label','查看'+zone.name+'区');b.onclick=()=>showZone(key);nav.appendChild(b);zoneButtons[key]=b;}
+  cockpitReset=()=>showZone('front');$('.bottom').insertBefore(cockpitPanel,$('.bottom').firstChild);showZone('front');
+}
 $('#go').onclick=()=>{if(S.explode){if(touring){cancelTour();hush();}else tour();}else{cancelTour();toggleDrive();}};
 $('#ex').onclick=()=>setMode(S.explode?'whole':'explode');
 $('#xr').onclick=()=>setMode(S.xray?'whole':'xray');
 if($('#resetView'))$('#resetView').onclick=()=>{cancelTour();hush();unfocus();S.cockpit=false;paintCockpit();cam.zoom=1;cam.tTheta=(SC.cameraStart||{}).theta||.95;cam.tPhi=(SC.cameraStart||{}).phi||1.15;cam.last=now();S.sel=null;if(SC.intro)caption(SC.intro.icon,SC.intro.name,SC.intro.text);};
 const muteBtn=$('#mute');const paintMute=()=>{muteBtn.classList.toggle('off',muted);};paintMute();
-muteBtn.onclick=()=>{muted=!muted;localStorage.setItem('muted',muted?'1':'0');paintMute();if(muted){sfx.pauseLoop();hush();}else if(S.drive&&sfx.wantLoop)sfx.loop(sfx.wantLoop);};
-document.addEventListener('visibilitychange',()=>{if(document.hidden){sfx.pauseLoop();hush();}else if(S.drive&&sfx.wantLoop&&!muted)sfx.loop(sfx.wantLoop);});
+muteBtn.onclick=()=>{muted=!muted;localStorage.setItem('muted',muted?'1':'0');paintMute();if(muted){sfx.pauseLoop();sfx.stopMusic();hush();}else if(S.drive&&sfx.wantLoop)sfx.loop(sfx.wantLoop);};
+document.addEventListener('visibilitychange',()=>{if(document.hidden){sfx.pauseLoop();sfx.stopMusic();hush();}else if(S.drive&&sfx.wantLoop&&!muted)sfx.loop(sfx.wantLoop);});
 const voiceBtn=$('#voice');function paintVoice(){voiceBtn.textContent=(VOICE_OPTS.find(v=>v.id===voiceMode)||VOICE_OPTS[0]).label;}paintVoice();
 voiceBtn.onclick=()=>{const i=VOICE_OPTS.findIndex(v=>v.id===voiceMode);voiceMode=VOICE_OPTS[(i+1)%VOICE_OPTS.length].id;localStorage.setItem('voice',voiceMode);paintVoice();hush();
   if(muted){muted=false;localStorage.setItem('muted','0');paintMute();}
   if(voiceMode==='sys')saySys('你好，这是手机自带的声音。');else playClip(`voice/${voiceMode}/sample.mp3`,'你好。');};
 if(SC.intro)caption(SC.intro.icon,SC.intro.name,SC.intro.text);
-window.__dbg={S,cam,camera,PARTS,root,ICONS,OCC,focusPart,unfocus,toggleNight,setExplode,setMode,setCockpit,tour,cancelTour,hush,frame:()=>frame(),THREE};
+window.__dbg={S,cam,sfx,camera,PARTS,root,ICONS,OCC,focusPart,unfocus,toggleNight,setExplode,setMode,setCockpit,tour,cancelTour,hush,frame:()=>frame(),THREE};
 frame();
 })();
