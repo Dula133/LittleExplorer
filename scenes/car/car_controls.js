@@ -51,8 +51,16 @@ const controls={
 };
 return controls;
 };
+const LAMP_SEQUENCE=[LAMP_MODES.OFF,LAMP_MODES.POSITION,LAMP_MODES.HEADLIGHT];
+const RAIN_SEQUENCE=[RAIN_LEVELS.NONE,RAIN_LEVELS.LIGHT,RAIN_LEVELS.MEDIUM,RAIN_LEVELS.HEAVY];
+const WIPER_SEQUENCE=[WIPER_MODES.OFF,WIPER_MODES.SLOW,WIPER_MODES.FAST];
+const nextIn=(value,sequence)=>sequence[(sequence.indexOf(value)+1)%sequence.length];
+const lampFeedback={OFF:'灯关掉了。',POSITION:'现在只打开小灯。',HEADLIGHT:'前照灯亮了，小灯也继续亮着。'};
+const rainFeedback={NONE:'雨停了。',LIGHT:'现在下小雨了。',MEDIUM:'雨变大了一些。',HEAVY:'现在是大雨，前面更难看清了。'};
+const wiperFeedback={OFF:'雨刮器停下来了。',SLOW:'雨刮器开始慢慢摆动。',FAST:'雨刮器现在摆得更快了。'};
+M.presentation={LAMP_SEQUENCE,RAIN_SEQUENCE,WIPER_SEQUENCE,nextIn,lampFeedback,rainFeedback,wiperFeedback};
 M.createRuntime=function(api,{preview=false}={}){
- const C=M.createState(),now=()=>api.now(),lighting=M.createLighting(C,now),weather=M.createWeather(C,now);
+ const C=M.createState(),now=()=>api.now(),lighting=M.createLighting(C,now),weather=M.createWeather(C,now,api);
 function startLightReminder(door){
   if(!api||!door?.userData.driverDoor||!door.userData.open||api.S.drive||C.lampMode===LAMP_MODES.OFF)return;
   C.lightReminderBeeps=3;C.lightReminderNext=now()+80;
