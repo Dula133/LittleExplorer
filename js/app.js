@@ -126,7 +126,8 @@ function resize(){
   freeRatio=freeH/H;
   const rH=(FIT.w/2)/(tv*aspect),rV=(FIT.h/2)/tv*(H/freeH);cam.rBase=clamp(Math.max(rH,rV),3,40);
   if(first)cam.r=cam.rBase;else if(changed)cam.r*=cam.rBase/previousBase;
-  camera.setViewOffset(W,H,0,Math.round((botH-topH)/2),W,H);camera.fov=savedFov;camera.updateProjectionMatrix();
+  const sidePanel=SC.cockpitPanelOnSide&&S.cockpit&&H<=520&&aspect>1.3?$('.bottom').getBoundingClientRect():null;
+  camera.setViewOffset(W,H,sidePanel?Math.round((W-sidePanel.left)/2):0,sidePanel?-Math.round(topH/2):Math.round((botH-topH)/2),W,H);camera.fov=savedFov;camera.updateProjectionMatrix();
 }
 addEventListener('resize',resize);resize();
 if(typeof ResizeObserver!=='undefined')new ResizeObserver(resize).observe($('.bottom'));
@@ -276,8 +277,16 @@ function frame(){
 const ray=new THREE.Raycaster(),m2=new THREE.Vector2();
 function visibleForPick(object){for(let o=object;o;o=o.parent)if(!o.visible)return false;return true;}
 function pick(x,y){m2.set((x/W)*2-1,-(y/H)*2+1);ray.setFromCamera(m2,camera);
-  let fallback=null;for(const h of ray.intersectObjects(hitTargets,false)){const id=h.object.userData.part;if(!id||!visibleForPick(h.object))continue;if(S.xray&&h.object.userData.baseCol)continue;
-    if(!fallback)fallback={id,object:h.object};if(h.object.userData.touchProxy){S.hit=h.object;return id;}}
+  let fallback=null,proxy=null,priority=-1;
+  for(const h of ray.intersectObjects(hitTargets,false)){const id=h.object.userData.part;if(!id||!visibleForPick(h.object))continue;if(S.xray&&h.object.userData.baseCol)continue;
+    if(!fallback)fallback={id,object:h.object};
+    if(h.object.userData.touchProxy){
+      // Explicit driving controls may outrank overlapping door proxies only in front cockpit zones.
+      const score=S.cockpit&&!['left','right'].includes(S.cockpitZone)?Number(h.object.userData.cockpitPickPriority||0):0;
+      if(!proxy||score>priority){proxy={id,object:h.object};priority=score;}
+    }
+  }
+  if(proxy){S.hit=proxy.object;return proxy.id;}
   if(fallback){S.hit=fallback.object;return fallback.id;}return null;}
 const ptrs=new Map();let down=null,moved=false,pinchD=0;
 const pdist=()=>{const a=[...ptrs.values()];return Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)};
@@ -299,7 +308,7 @@ function select(id,force){const p=PARTS[id];if(!p)return Promise.resolve();
   if(busy()&&!force&&!p.isStart&&!p.immediate)return Promise.resolve();
   // 明确声明的实体控件可立即操作；启动讲解链期间保留旁白，仅更新文字与模型。
   if(p.immediate&&!hold)hush();
-  hideHint();sfx.ac();cam.last=now();S.sel=id;hop(p);sfx.click();
+  hideHint();sfx.ac();cam.last=now();S.sel=id;hop(p);if(p.selectSound!==false)sfx.click();
   if(p.isStart){toggleDrive();return Promise.resolve();}
   const txt=p.pickText?p.pickText(S.hit):p.text||'点一下，看看它的变化。';caption(id,p.name,txt);const pr=p.immediate&&hold?Promise.resolve():speak(p.name+'。'+txt);const hit=S.hit;S.hit=null;p.action&&p.action(hit);return pr;}// 把点中的那块网格交给零件，零件可以只动被点的那一个（比如四扇车门）
 

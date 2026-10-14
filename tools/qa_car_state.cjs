@@ -46,8 +46,8 @@ if(sandbox.LECar){
 }
 // Audio policy uses fake primitives so finite alerts and preview silence are deterministic.
 if(sandbox.LECar?.createAudio){
- let beeps=0,horns=0,captions=0;
- const sfx={wantLoop:null,isMuted:()=>true,tone(){beeps++;},horn(){horns++;},loop(name){this.wantLoop=name;},stopLoop(){this.wantLoop=null;}};
+ let beeps=0,horns=0,captions=0,muted=false;const hornCalls=[];
+ const sfx={wantLoop:null,isMuted:()=>muted,tone(f,d,type,g){if(f===1120)beeps++;else{hornCalls.push({f,d,type,g});if(f===420)horns++;}},loop(name){this.wantLoop=name;},stopLoop(){this.wantLoop=null;}};
  const api={S:{drive:false,nightT:0},now:()=>time,sfx,caption(){captions++;}};
  const r=sandbox.LECar.createRuntime(api),door={userData:{driverDoor:true,open:1}};
  r.lighting.setLampMode('POSITION');r.audio.sync(time,door);
@@ -55,7 +55,8 @@ if(sandbox.LECar?.createAudio){
  assert.equal(beeps,3);assert.equal(captions,1);
  door.userData.open=0;r.audio.sync(time,door);door.userData.open=1;r.audio.sync(time,door);
  r.lighting.setLampMode('OFF');time+=250;r.audio.sync(time,door);assert.equal(beeps,3);
- r.audio.pressHorn();r.audio.pressHorn();assert.equal(horns,1);time+=500;r.audio.pressHorn();assert.equal(horns,2);
+ r.audio.pressHorn();r.audio.pressHorn();assert.equal(horns,1);time+=500;r.audio.pressHorn();assert.equal(horns,2);assert.equal(hornCalls.length,4);assert.ok(hornCalls.every(x=>x.type==='triangle'&&x.d===.22&&x.g>0&&x.g<=.055));
+ r.controls.setVolumeLevel(0);time+=500;r.audio.pressHorn();assert.equal(horns,2);r.controls.setVolumeLevel(3);muted=true;time+=500;r.audio.pressHorn();assert.equal(horns,2);
  r.weather.setRainLevel('HEAVY');r.audio.sync(time,door);assert.equal(sfx.wantLoop,'water');
  api.S.drive=true;r.audio.sync(time,door);assert.equal(sfx.wantLoop,null);
  sfx.wantLoop='engine';r.audio.sync(time,door);assert.equal(sfx.wantLoop,'engine');

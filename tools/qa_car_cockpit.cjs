@@ -11,9 +11,10 @@ const out=process.env.LE_QA_OUT||'/tmp/littleexplorer-cockpit-v03';
 (async()=>{
   fs.mkdirSync(out,{recursive:true});
   const browser=await chromium.launch({executablePath:process.env.LE_QA_CHROMIUM||'/usr/bin/chromium',headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
-  const errors=[],checks=[],touch={};const push=checks.push.bind(checks);checks.push=(...items)=>{console.log('PASS',...items);return push(...items);};let page;
+  const errors=[],checks=[],touch={},renderTiming={};const push=checks.push.bind(checks);checks.push=(...items)=>{console.log('PASS',...items);return push(...items);};let page;
   try{
     page=await browser.newPage({viewport:{width:390,height:844},hasTouch:true,isMobile:true});
+    const input=await page.context().newCDPSession(page);
     await page.route('**/favicon.ico',r=>r.fulfill({status:204,body:''}));
     page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
     page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
@@ -31,7 +32,7 @@ const out=process.env.LE_QA_OUT||'/tmp/littleexplorer-cockpit-v03';
     const tap3D=async id=>{
       const point=await page.evaluate(id=>{const d=__dbg,m=d.PARTS[id].meshes.find(m=>m.userData.touchProxy)||d.PARTS[id].meshes[0];m.updateWorldMatrix(true,false);d.camera.updateMatrixWorld();const v=m.getWorldPosition(new d.THREE.Vector3()).project(d.camera);return {x:(v.x+1)*innerWidth/2,y:(1-v.y)*innerHeight/2,bottom:document.querySelector('.bottom').getBoundingClientRect().top};},id);
       assert.ok(point.x>0&&point.x<390&&point.y>70&&point.y<point.bottom,id+' 3D target occluded/offscreen: '+JSON.stringify(point));
-      await page.touchscreen.tap(point.x,point.y);await wait(id=>__dbg.S.sel===id,id);touch[id]=point;
+      await Promise.all([input.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:point.x,y:point.y}]}),input.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]})]);await wait(id=>__dbg.S.sel===id,id);touch[id]=point;
     };
     await load('car');
     assert.equal(await page.evaluate(()=>__dbg.PARTS.instruments.meshes.some(m=>m.userData.part!=='instruments')),false);
@@ -39,7 +40,7 @@ const out=process.env.LE_QA_OUT||'/tmp/littleexplorer-cockpit-v03';
     assert.ok(await page.evaluate(()=>Object.values(__dbg.PARTS).every(p=>p.meshes.filter(m=>m.userData.touchProxy).every(m=>!m.castShadow&&!m.material.visible&&!m.children.some(c=>c.userData.noHit)))),'touch proxies must not create visible outlines');
     assert.equal(geometry.zones.length,6);assert.equal(geometry.doors.length,4);assert.ok(geometry.doors.every(Boolean)&&geometry.icons);
     checks.push('layered cockpit, instruments/screen, four original door pivots, independent selectable children');
-    await page.getByRole('button',{name:'进入驾驶舱'}).tap();await settle([-1.47,1.55,-.12]);await shot('390-front');
+    await page.getByRole('button',{name:'进入驾驶舱'}).tap();await settle([-1.62,1.60,-.34]);await shot('390-front');
     await tap3D('horn');await tap3D('lampKnob');assert.equal((await state()).l.lampMode,'POSITION');
     await zone('灯光');
     for(const mode of ['HEADLIGHT','OFF','POSITION']){await tap('lampKnob');assert.equal((await state()).l.lampMode,mode);}
@@ -64,7 +65,7 @@ const out=process.env.LE_QA_OUT||'/tmp/littleexplorer-cockpit-v03';
     assert.equal((await state()).c.steering,0);
     checks.push('left/right/same-side OFF and hazard entry/exit; front/rear/four-lamp synchronization');
     await zone('驾驶');await tap('start');assert.equal((await state()).c.engineOn,true);assert.equal((await state()).c.moving,false);assert.equal((await state()).l.display.headlight,false);
-    await wait(()=>{let n;__dbg.root.traverse(o=>{if(o.userData.carInstrument==='速度')n=o;});return Math.abs(n.rotation.x+2.15)<.01;});
+    await wait(()=>{let n;__dbg.root.traverse(o=>{if(o.userData.carInstrument==='速度')n=o;});return Math.abs(n.rotation.x+2.35)<.01;});
     await tap('gearControl');assert.equal((await state()).c.gearMode,'D');assert.equal((await state()).c.moving,true);await tap('accelerator');await tap('brakePedal');assert.equal((await state()).l.brakeActive,true);assert.equal((await state()).c.moving,false);
     await wait(()=>!SCENES.car.lighting.getState().brakeActive);assert.equal((await state()).c.moving,true);
     await zone('左门');await tap('doorHandleleft');assert.equal((await state()).c.doors.find(d=>d.driver).open,false);assert.ok((await page.locator('#cd').innerText()).includes('停稳'));
@@ -92,7 +93,9 @@ const out=process.env.LE_QA_OUT||'/tmp/littleexplorer-cockpit-v03';
       await wait(a=>{let sweep;__dbg.PARTS.wiper.groups[0].traverse(o=>{if(o.userData.carWiper&&!sweep)sweep=o;});return Math.abs(sweep.rotation.z-a)>.1;},a);
       assert.equal((await state()).w.rainLevel,level);
     }
-    await tap('mistControl');await wait(()=>SCENES.car.weather.getState().mist>.75);await tap('defogControl');await wait(()=>SCENES.car.weather.getState().mist<.04);
+    await tap('mistControl');await wait(()=>SCENES.car.weather.getState().mist>.75);await page.evaluate(()=>{window.__defogTiming={start:performance.now(),frames:0,active:true};const sample=()=>{const s=__defogTiming;s.frames++;if(s.active)requestAnimationFrame(sample);};requestAnimationFrame(sample);});
+    await tap('defogControl');await page.waitForFunction(()=>SCENES.car.weather.getState().mist<.04,null,{timeout:180000});
+    renderTiming.defog=await page.evaluate(()=>{const s=__defogTiming;s.active=false;return {wallSeconds:(performance.now()-s.start)/1000,frames:s.frames,remainingMist:SCENES.car.weather.getState().mist};});
     assert.equal((await state()).w.rainLevel,'HEAVY');assert.equal((await state()).w.wiperMode,'FAST');await tap('defogControl');
     await page.evaluate(()=>{SCENES.car.weather.setRainLevel('NONE');SCENES.car.weather.setWiperMode('OFF');});
     checks.push('four bounded rain counts, all wiper speeds independent at every rain level, condensation gradually clears without changing rain/fog');
@@ -127,7 +130,7 @@ const out=process.env.LE_QA_OUT||'/tmp/littleexplorer-cockpit-v03';
     const before=await page.evaluate(()=>({yaw:__dbg.cam.cockpitYaw,pitch:__dbg.cam.cockpitPitch}));
     await page.mouse.move(200,170);await page.mouse.down();await page.mouse.move(330,230,{steps:8});await page.mouse.up();
     assert.notEqual(await page.evaluate(()=>__dbg.cam.cockpitYaw),before.yaw);
-    const exteriorZoom=await page.evaluate(()=>__dbg.cam.zoom);await page.mouse.wheel(0,-120);await wait(()=>__dbg.camera.fov<65);assert.equal(await page.evaluate(()=>__dbg.cam.zoom),exteriorZoom);
+    const exteriorZoom=await page.evaluate(()=>__dbg.cam.zoom),beforeFov=await page.evaluate(()=>__dbg.camera.fov);await page.mouse.wheel(0,-120);await wait(fov=>__dbg.camera.fov<fov-5,beforeFov);assert.ok(Math.abs(await page.evaluate(()=>__dbg.camera.fov)-Math.max(52,beforeFov*.856))<.15);assert.equal(await page.evaluate(()=>__dbg.cam.zoom),exteriorZoom);
     await page.evaluate(()=>__dbg.setCockpit(false));await page.getByRole('button',{name:'进入驾驶舱'}).tap();assert.equal(await page.locator('.cockpit-actions button').first().getAttribute('data-part'),'horn');
     checks.push('390x844, 360x800 and landscape 44px+ targets; bounded interior look; independent parent explanation; immediate repeat control during narration');
     await page.setViewportSize({width:1100,height:820});
@@ -139,7 +142,7 @@ const out=process.env.LE_QA_OUT||'/tmp/littleexplorer-cockpit-v03';
     await page.evaluate(()=>__dbg.setMode('xray'));await wait(()=>__dbg.S.xr>.99);await page.locator('#mute').tap();
     await page.locator('#trayIn .tile').filter({hasText:'灯光旋钮'}).tap();await page.locator('#trayIn .tile').filter({hasText:'危险报警闪光灯'}).tap();assert.equal((await state()).l.turnMode,'HAZARD');await page.locator('#mute').tap();
     checks.push('xray/explode/reassembly retain attachment and state; selectable tray remains operable during narration');
-    await page.setViewportSize({width:390,height:844});await page.evaluate(()=>{__dbg.setCockpit(true);SCENES.car.weather.setRainLevel('HEAVY');});await settle([-1.47,1.55,-.12]);await shot('390-heavy-rain');
+    await page.setViewportSize({width:390,height:844});await page.evaluate(()=>{__dbg.setCockpit(true);SCENES.car.weather.setRainLevel('HEAVY');});await settle([-1.62,1.60,-.34]);await shot('390-heavy-rain');
     const performance=await page.evaluate(()=>new Promise(resolve=>{let prev=performance.now(),deltas=[];function sample(t){deltas.push(t-prev);prev=t;if(deltas.length===30)resolve({meanFrameMs:deltas.reduce((a,b)=>a+b,0)/deltas.length,maxFrameMs:Math.max(...deltas),lost:(document.querySelector('#c').getContext('webgl2')||document.querySelector('#c').getContext('webgl')).isContextLost()});else requestAnimationFrame(sample);}requestAnimationFrame(sample);}));
     assert.equal(performance.lost,false);checks.push('heavy rain bounded at 360 instances, no context loss (software-renderer timing recorded)');
     for(const id of ['washer','elevator','jet','excavator']){
@@ -147,8 +150,8 @@ const out=process.env.LE_QA_OUT||'/tmp/littleexplorer-cockpit-v03';
       assert.ok(r.count>0&&r.drive&&!r.lost&&!r.carUI&&!r.immediate);checks.push(id+' minimal regression: load/start/view transitions and unaffected control policy');
     }
     assert.deepEqual(errors,[]);
-    const report={status:'PASS',checks,touch,geometry,performance,errors,screenshots:fs.readdirSync(out).filter(n=>n.endsWith('.png')),limitations:['HarmonyOS hardware not available','WebAudio nodes/gain verified; human audible quality not verified','New narration uses system speech fallback; formal MP3 not generated','SwiftShader timing does not measure mobile GPU performance']};
+    const report={status:'PASS',checks,touch,geometry,performance,renderTiming,errors,screenshots:fs.readdirSync(out).filter(n=>n.endsWith('.png')),limitations:['HarmonyOS hardware not available','WebAudio nodes/gain verified; human audible quality not verified','New narration uses system speech fallback; formal MP3 not generated','SwiftShader timing does not measure mobile GPU performance']};
     fs.writeFileSync(path.join(out,'qa-result.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
-  }catch(e){fs.writeFileSync(path.join(out,'qa-failure.json'),JSON.stringify({status:'FAIL',error:e.stack,checks,errors},null,2));if(page)await page.screenshot({path:path.join(out,'failure.png')}).catch(()=>{});throw e;
+  }catch(e){const diagnostics=page?await page.evaluate(()=>window.SCENE_ID==='car'?{controls:SCENES.car.controls.getState(),weather:SCENES.car.weather.getState(),defogTiming:window.__defogTiming||null}:null).catch(()=>null):null;fs.writeFileSync(path.join(out,'qa-failure.json'),JSON.stringify({status:'FAIL',error:e.stack,checks,diagnostics,errors},null,2));if(page)await page.screenshot({path:path.join(out,'failure.png')}).catch(()=>{});throw e;
   }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

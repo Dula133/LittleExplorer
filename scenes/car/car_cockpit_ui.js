@@ -12,7 +12,7 @@ M.mountCockpitUI=function({SC,S,cam,PARTS,ICONS,select,now}){
     .cockpit-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:5px}.cockpit-actions button{padding:3px;line-height:1.3;display:flex;align-items:center;justify-content:center;gap:2px}.cockpit-actions img{width:24px;height:24px;object-fit:contain;flex:none}.cockpit-actions span{min-width:0;font-size:12px}
     .cockpit-help{display:flex;justify-content:space-between;align-items:center;margin-top:4px;font-size:12px}.cockpit-help button{min-height:44px;padding:4px 10px}
     .cockpit-details{max-width:420px;width:85%;border:0;border-radius:20px;padding:20px;background:#F1F7F8;color:#18384A}.cockpit-details button{min-height:48px;min-width:80px}
-    @media(max-height:520px){body.car-controls.cockpit-mode .bottom{max-width:480px;right:0;left:auto}body.car-controls.cockpit-mode .cap{min-height:40px;padding:5px}.cockpit-actions{grid-template-columns:repeat(6,1fr)}.cockpit-help{display:none}.cockpit-panel{padding:4px}}
+    @media(max-height:520px){body.car-controls.cockpit-mode .bottom{max-width:420px;right:0;left:auto}body.car-controls.cockpit-mode .cap{min-height:40px;padding:5px}.cockpit-actions{grid-template-columns:repeat(6,1fr)}.cockpit-help{display:none}.cockpit-panel{padding:4px}}
   `;document.head.appendChild(style);
   cockpitPanel=document.createElement('section');cockpitPanel.className='cockpit-panel';cockpitPanel.hidden=true;cockpitPanel.setAttribute('aria-label','驾驶舱分区控制');
   const nav=document.createElement('div');nav.className='cockpit-nav';cockpitPanel.appendChild(nav);

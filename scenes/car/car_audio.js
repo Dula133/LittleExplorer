@@ -16,8 +16,13 @@ M.createAudio=function(C,api,now,{preview=false}={}){
       music.g.gain.setTargetAtTime(level*.018,c.currentTime,.025);
     },
     getMusicState(){return {active:!!music,gain:music?.g.gain.value||0,context:api.sfx.ctx?.state||'uninitialized'};},
-    playHorn(){if(!preview)api.sfx.horn?.();},
-    pressHorn(){if(now()<C.hornUntil)return;C.hornUntil=now()+500;this.playHorn();},
+    // Procedural two-note car-horn demonstration, not a recording of a real SUV.
+    playHorn(){
+      if(preview||hidden()||api.sfx.isMuted?.()||C.volumeLevel===0)return false;
+      const gain=.055*C.volumeLevel/3;
+      api.sfx.tone?.(420,.22,'triangle',gain);api.sfx.tone?.(525,.22,'triangle',gain*.85);return true;
+    },
+    pressHorn(){if(now()<C.hornUntil)return false;C.hornUntil=now()+500;this.playHorn();return true;},
     startReminder(door){
       if(preview||!door?.userData.driverDoor||!door.userData.open||api.S.drive||C.lampMode===LAMP_MODES.OFF)return;
       C.lightReminderBeeps=3;C.lightReminderNext=now()+80;

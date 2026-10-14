@@ -16,7 +16,7 @@ const controls=facade('controls',['setGearMode','setVolumeLevel','setMediaPage',
 const {WIPER_SEQUENCE,nextIn,wiperFeedback}=M.presentation;
 SCENES.car={
   id:'car',title:'汽车',subtitle:'越野车 · 拖一拖转圈，点零件听听',night:true,
-  lighting,weather,controls,
+  lighting,weather,controls,cockpitPanelOnSide:true,
   mountCockpitUI(options){return M.mountCockpitUI(options);},
   cockpitControls:{
     front:{name:'驾驶',view:'front',parts:['horn','steer','turnControlLeft','turnControlRight','start','gearControl','brakePedal','accelerator']},
