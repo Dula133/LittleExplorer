@@ -1,0 +1,4136 @@
+{
+  "status": "PASS",
+  "mode": "candidate-phase1",
+  "baselineCommit": "70091609b45fd2b2cf98a5853bfee2d8cbe28991",
+  "qaScriptSHA256": "0818db542d0acc91d9138a144b806da380a7ef8edf18c69a1cca854badfc59db",
+  "environment": {
+    "browser": "151.0.7922.173",
+    "playwright": "1.58.2",
+    "platform": "linux x64",
+    "timezone": "UTC",
+    "locale": "zh-CN",
+    "colorScheme": "light",
+    "dpr": 1,
+    "seed": 20261016,
+    "fixedDate": "2026-10-16T12:00:01.000Z",
+    "stepMs": 50,
+    "viewportPolicy": "Mobile below 800px; desktop at 1280px; native touch input enabled",
+    "animation": "Original rAF via Playwright clock; performance.now starts at 0; CSS screenshot animations disabled",
+    "renderer": "ANGLE SwiftShader",
+    "fonts": "OpenAISans-Regular.woff2: \"OpenAI Sans\" \"Regular\""
+  },
+  "checks": [
+    {
+      "name": "Phase 1 scope: two product files only; exact opt-in engine patch; all frozen Phase 0 artifacts immutable",
+      "evidence": {
+        "policy": {
+          "checkpoint": "31b095dd89e2b2a805bda32724fb083eb5c9b448",
+          "allowedProductFiles": [
+            "scenes/car.js",
+            "js/app.js"
+          ],
+          "allowedSupportFiles": [
+            "tools/qa_car_simple_plus.cjs",
+            "tools/qa_car_simple_plus.phase1.json",
+            "tools/qa_car_simple_plus_phase1.cjs",
+            "docs/SIMPLE_PLUS_PHASE1.md"
+          ],
+          "artifactDirectory": "docs/qa/simple-plus-phase1",
+          "localBehaviorChanges": [
+            "Existing four amber lamps only: explicit turn control and opt-in off-phase selection glow",
+            "Existing headlamps: explicit mode and temporary battery override",
+            "Existing red tail lamps: bounded brake trigger",
+            "Position/fog: state only, no geometry or child UI",
+            "Existing rain InstancedMesh: maximum 360, level profiles; legacy timing unchanged",
+            "Per-context state; homepage preview cannot take over live APIs"
+          ]
+        },
+        "changed": [
+          "js/app.js",
+          "scenes/car.js",
+          "tools/qa_car_simple_plus.cjs",
+          "docs/SIMPLE_PLUS_PHASE1.md",
+          "tools/qa_car_simple_plus.phase1.json",
+          "tools/qa_car_simple_plus_phase1.cjs"
+        ]
+      }
+    },
+    {
+      "name": "All unapproved original files are byte-identical to pinned main",
+      "evidence": {
+        "files": 671,
+        "allowedChanges": [
+          "scenes/car.js",
+          "js/app.js"
+        ],
+        "commit": "70091609b45fd2b2cf98a5853bfee2d8cbe28991"
+      }
+    },
+    {
+      "name": "Voice mapping, both voice sets, and all existing MP3 decode",
+      "evidence": {
+        "voiceCheck": "场景里会念的句子 295 条，lines.json 295 条\n✓ yunxia: 299 个文件，缺 0，空/截断 0，多余 3\n✓ xiaoyi: 299 个文件，缺 0，空/截断 0，多余 3\n全部通过",
+        "decoded": 598
+      }
+    },
+    {
+      "name": "J: Homepage has 20 cards, rendered car thumbnail and working car link",
+      "evidence": {
+        "width": 149,
+        "height": 149,
+        "painted": 13821
+      }
+    },
+    {
+      "name": "A–H,L: native touch, default camera, lights, doors, rain/wiper, start/stop, narration text, xray and reassembly 390×844",
+      "evidence": {
+        "parts": 16,
+        "rain": {
+          "early": {
+            "logicalMs": 2600,
+            "visible": true,
+            "count": 360,
+            "opacity": 0.7949098516470913,
+            "gloom": 0.9936373145588641,
+            "wipers": [
+              1,
+              1
+            ]
+          },
+          "wiping": {
+            "logicalMs": 3700,
+            "visible": true,
+            "count": 360,
+            "opacity": 0.7994987370014258,
+            "gloom": 0.9993734212517822,
+            "wipers": [
+              0.576215618256409,
+              0.576215618256409
+            ]
+          },
+          "ended": {
+            "logicalMs": 7200,
+            "visible": false,
+            "count": 0,
+            "opacity": 0.000500948917832063,
+            "gloom": 0.0006261861472900787,
+            "wipers": [
+              0.998488111720492,
+              0.998488111720492
+            ]
+          }
+        },
+        "door": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "A–H,L: native touch, default camera, lights, doors, rain/wiper, start/stop, narration text, xray and reassembly 360×800",
+      "evidence": {
+        "parts": 16,
+        "rain": {
+          "early": {
+            "logicalMs": 2600,
+            "visible": true,
+            "count": 360,
+            "opacity": 0.7949098516470913,
+            "gloom": 0.9936373145588641,
+            "wipers": [
+              1,
+              1
+            ]
+          },
+          "wiping": {
+            "logicalMs": 3700,
+            "visible": true,
+            "count": 360,
+            "opacity": 0.7994987370014258,
+            "gloom": 0.9993734212517822,
+            "wipers": [
+              0.576215618256409,
+              0.576215618256409
+            ]
+          },
+          "ended": {
+            "logicalMs": 7200,
+            "visible": false,
+            "count": 0,
+            "opacity": 0.000500948917832063,
+            "gloom": 0.0006261861472900787,
+            "wipers": [
+              0.998488111720492,
+              0.998488111720492
+            ]
+          }
+        },
+        "door": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "G,I: Native lamp clicks play and finish original MP3 in both voices",
+      "evidence": [
+        {
+          "voice": "yunxia",
+          "events": [
+            {
+              "type": "playing",
+              "trusted": true,
+              "src": "http://127.0.0.1:43327/voice/yunxia/fc7c9c95.mp3",
+              "duration": 6.576,
+              "time": 0,
+              "error": null
+            },
+            {
+              "type": "ended",
+              "trusted": true,
+              "src": "http://127.0.0.1:43327/voice/yunxia/fc7c9c95.mp3",
+              "duration": 6.576,
+              "time": 6.576,
+              "error": null
+            }
+          ]
+        },
+        {
+          "voice": "xiaoyi",
+          "events": [
+            {
+              "type": "playing",
+              "trusted": true,
+              "src": "http://127.0.0.1:43327/voice/xiaoyi/fc7c9c95.mp3",
+              "duration": 6.096,
+              "time": 0.000562,
+              "error": null
+            },
+            {
+              "type": "ended",
+              "trusted": true,
+              "src": "http://127.0.0.1:43327/voice/xiaoyi/fc7c9c95.mp3",
+              "duration": 6.096,
+              "time": 6.096,
+              "error": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 1: original model/material/config contract, default states, invalid inputs and preview isolation",
+      "evidence": {
+        "nodes": 344,
+        "partIDs": [
+          "body",
+          "door",
+          "tail",
+          "wheels",
+          "shaft",
+          "engine",
+          "battery",
+          "tank",
+          "exhaust",
+          "lights",
+          "mirror",
+          "wiper",
+          "steer",
+          "start",
+          "belt",
+          "seat"
+        ],
+        "geometryAttributes": "SHA256",
+        "materials": "exact JSON excluding UUID",
+        "previewIsolation": true,
+        "rainCapacity": 360
+      }
+    },
+    {
+      "name": "Phase 1 API: LEFT/RIGHT/OFF/HAZARD, four physical lamp owners, shared phases and selected-off suppression",
+      "evidence": [
+        {
+          "mode": "LEFT",
+          "samples": [
+            {
+              "at": 300,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8783009771491805,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 400,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8799893400760372,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 500,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8777324356706417,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 600,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 700,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 800,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 900,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 1000,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.836079937617302,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 1100,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.831209948152762,
+                  "signalOff": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "RIGHT",
+          "samples": [
+            {
+              "at": 1200,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.830095884779104,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 1300,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8329136336069958,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 1400,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8392183340531916,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 1500,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 1600,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 1700,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 1800,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 1900,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.879197991800787,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 2000,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8797339561655844,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "HAZARD",
+          "samples": [
+            {
+              "at": 2100,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.876364972702207,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.876364972702207,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 2200,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.869622929822294,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.869622929822294,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 2300,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.860572247852506,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.860572247852506,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 2400,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 2500,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 2600,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 2700,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 2800,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.830520556771217,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.830520556771217,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 2900,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.834429285125782,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.834429285125782,
+                  "signalOff": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "LEFT",
+          "samples": [
+            {
+              "at": 3000,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8415856770499888,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 3100,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8508598956137923,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 3200,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.860787745627538,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 3300,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 3400,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 3500,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 3600,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 3700,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8747063016843826,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 3800,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.867159967221345,
+                  "signalOff": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "HAZARD",
+          "samples": [
+            {
+              "at": 3900,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8576938413074857,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8576938413074857,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 4000,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8478024170833733,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8478024170833733,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 4100,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.839047332941301,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.839047332941301,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 4200,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 4300,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 4400,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 4500,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 4600,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8441358594482025,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8441358594482025,
+                  "signalOff": false
+                }
+              ]
+            },
+            {
+              "at": 4700,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8537616089780404,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8537616089780404,
+                  "signalOff": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "RIGHT",
+          "samples": [
+            {
+              "at": 4800,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8635828732204973,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 4900,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.872049090501703,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 5000,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.8778236312681904,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 5100,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 5200,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 5300,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 5400,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 5500,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.85477871726774,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 5600,
+              "blinkOn": true,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 2.8,
+                  "emission": 2.8,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 2.8,
+                  "emission": 2.845061107921964,
+                  "signalOff": false
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mode": "OFF",
+          "samples": [
+            {
+              "at": 5700,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 5800,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 5900,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 6000,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 6100,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 6200,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 6300,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 6400,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            },
+            {
+              "at": 6500,
+              "blinkOn": false,
+              "lamps": [
+                {
+                  "side": "RIGHT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": 0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "REAR",
+                  "owner": "tail",
+                  "z": -0.8,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "RIGHT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": 0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                },
+                {
+                  "side": "LEFT",
+                  "end": "FRONT",
+                  "owner": "lights",
+                  "z": -0.8500000000000001,
+                  "dynamic": 0,
+                  "emission": 0,
+                  "signalOff": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 1: API brake and original native tail tile restore; fog state explicitly has no fixture",
+      "evidence": {
+        "red": [
+          2.7133760000000002,
+          2.7133760000000002
+        ],
+        "restored": true,
+        "fogVisualAvailable": false
+      }
+    },
+    {
+      "name": "Phase 1 API + native legacy inputs: lamp modes, night/drive ownership, battery expiry and latest-request restore",
+      "evidence": [
+        {
+          "mode": "OFF",
+          "state": {
+            "lampMode": "OFF",
+            "requestedLampMode": "OFF",
+            "source": "EXPLICIT",
+            "headlightTarget": false,
+            "headlightIntensity": 0,
+            "positionRequested": false,
+            "positionVisualAvailable": false,
+            "turnMode": "OFF",
+            "turnSource": "ORIGINAL_LENS",
+            "blinkOn": false,
+            "brakeUntil": 0,
+            "brakeActive": false,
+            "brakeIntensity": 0,
+            "fogLight": false,
+            "fogVisualAvailable": false
+          },
+          "actual": [
+            0,
+            0
+          ]
+        },
+        {
+          "mode": "POSITION",
+          "state": {
+            "lampMode": "POSITION",
+            "requestedLampMode": "POSITION",
+            "source": "EXPLICIT",
+            "headlightTarget": false,
+            "headlightIntensity": 0,
+            "positionRequested": true,
+            "positionVisualAvailable": false,
+            "turnMode": "OFF",
+            "turnSource": "ORIGINAL_LENS",
+            "blinkOn": false,
+            "brakeUntil": 0,
+            "brakeActive": false,
+            "brakeIntensity": 0,
+            "fogLight": false,
+            "fogVisualAvailable": false
+          },
+          "actual": [
+            0,
+            0
+          ]
+        },
+        {
+          "mode": "HEADLIGHT",
+          "state": {
+            "lampMode": "HEADLIGHT",
+            "requestedLampMode": "HEADLIGHT",
+            "source": "EXPLICIT",
+            "headlightTarget": true,
+            "headlightIntensity": 0.9999774606597093,
+            "positionRequested": true,
+            "positionVisualAvailable": false,
+            "turnMode": "OFF",
+            "turnSource": "ORIGINAL_LENS",
+            "blinkOn": false,
+            "brakeUntil": 0,
+            "brakeActive": false,
+            "brakeIntensity": 0,
+            "fogLight": false,
+            "fogVisualAvailable": false
+          },
+          "actual": [
+            1.599963937055535,
+            1.599963937055535
+          ]
+        },
+        {
+          "batteryOverrideRestored": {
+            "lampMode": "POSITION",
+            "requestedLampMode": "POSITION",
+            "source": "EXPLICIT",
+            "headlightTarget": false,
+            "headlightIntensity": 0.000015670531299115316,
+            "positionRequested": true,
+            "positionVisualAvailable": false,
+            "turnMode": "OFF",
+            "turnSource": "ORIGINAL_LENS",
+            "blinkOn": false,
+            "brakeUntil": 0,
+            "brakeActive": false,
+            "brakeIntensity": 0,
+            "fogLight": false,
+            "fogVisualAvailable": false
+          }
+        },
+        {
+          "batteryOverrideRestored": {
+            "lampMode": "POSITION",
+            "requestedLampMode": "POSITION",
+            "source": "EXPLICIT",
+            "headlightTarget": false,
+            "headlightIntensity": 0.00001567053297591599,
+            "positionRequested": true,
+            "positionVisualAvailable": false,
+            "turnMode": "OFF",
+            "turnSource": "ORIGINAL_LENS",
+            "blinkOn": false,
+            "brakeUntil": 0,
+            "brakeActive": false,
+            "brakeIntensity": 0,
+            "fogLight": false,
+            "fogVisualAvailable": false
+          }
+        },
+        {
+          "batteryOverrideRestored": {
+            "lampMode": "HEADLIGHT",
+            "requestedLampMode": "HEADLIGHT",
+            "source": "EXPLICIT",
+            "headlightTarget": true,
+            "headlightIntensity": 0.9999998929947724,
+            "positionRequested": true,
+            "positionVisualAvailable": false,
+            "turnMode": "OFF",
+            "turnSource": "ORIGINAL_LENS",
+            "blinkOn": false,
+            "brakeUntil": 0,
+            "brakeActive": false,
+            "brakeIntensity": 0,
+            "fogLight": false,
+            "fogVisualAvailable": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "Phase 1 API: four bounded rain profiles, measured fall speed, independent wipers and superseded legacy deadlines",
+      "evidence": [
+        {
+          "level": "NONE",
+          "count": 0,
+          "capacity": 360,
+          "opacity": 0,
+          "gloom": 0,
+          "profile": {
+            "count": 0,
+            "minSpeed": 0,
+            "maxSpeed": 0,
+            "opacity": 0,
+            "gloom": 0
+          },
+          "measuredSpeedRange": null,
+          "file": "rain-none-390x844.png"
+        },
+        {
+          "level": "LIGHT",
+          "count": 72,
+          "capacity": 360,
+          "opacity": 0.43986222020477733,
+          "gloom": 0.29324148013651824,
+          "profile": {
+            "count": 72,
+            "minSpeed": 6,
+            "maxSpeed": 8,
+            "opacity": 0.45,
+            "gloom": 0.3
+          },
+          "measuredSpeedRange": [
+            6.003875732421875,
+            7.958207130432129
+          ],
+          "file": "rain-light-390x844.png"
+        },
+        {
+          "level": "MEDIUM",
+          "count": 180,
+          "capacity": 360,
+          "opacity": 0.6353565402957895,
+          "gloom": 0.6353565402957895,
+          "profile": {
+            "count": 180,
+            "minSpeed": 8,
+            "maxSpeed": 11,
+            "opacity": 0.65,
+            "gloom": 0.65
+          },
+          "measuredSpeedRange": [
+            8.005812168121338,
+            10.986733436584473
+          ],
+          "file": "rain-medium-390x844.png"
+        },
+        {
+          "level": "HEAVY",
+          "count": 360,
+          "capacity": 360,
+          "opacity": 0.7819772803640487,
+          "gloom": 0.9774716004550608,
+          "profile": {
+            "count": 360,
+            "minSpeed": 11,
+            "maxSpeed": 15,
+            "opacity": 0.8,
+            "gloom": 1
+          },
+          "measuredSpeedRange": [
+            11.007752418518066,
+            14.993057250976562
+          ],
+          "file": "rain-heavy-390x844.png"
+        }
+      ]
+    },
+    {
+      "name": "Phase 1: immutable original vs candidate screenshots (structure + decoded pixels)",
+      "evidence": [
+        {
+          "file": "car-default-1280x900.png",
+          "dimensions": [
+            1280,
+            900
+          ],
+          "changedPixels": 0,
+          "maxChannelDelta": 0,
+          "boundingBox": null,
+          "baselineSHA256": "affe821eb9e6cdfe1d2418372f387d1a8a5723dfef0669b77be21b79bf7ea925",
+          "candidateSHA256": "affe821eb9e6cdfe1d2418372f387d1a8a5723dfef0669b77be21b79bf7ea925"
+        },
+        {
+          "file": "car-default-360x800.png",
+          "dimensions": [
+            360,
+            800
+          ],
+          "changedPixels": 0,
+          "maxChannelDelta": 0,
+          "boundingBox": null,
+          "baselineSHA256": "49a3e9b2dacc17db26f29b521f0471bd53e17d614467f457445dda2035fe8a88",
+          "candidateSHA256": "49a3e9b2dacc17db26f29b521f0471bd53e17d614467f457445dda2035fe8a88"
+        },
+        {
+          "file": "car-default-390x844.png",
+          "dimensions": [
+            390,
+            844
+          ],
+          "changedPixels": 0,
+          "maxChannelDelta": 0,
+          "boundingBox": null,
+          "baselineSHA256": "cd6f20ab609aa567b50426fcc75acfe253cf673910a8a7dcfd477ef030f98066",
+          "candidateSHA256": "cd6f20ab609aa567b50426fcc75acfe253cf673910a8a7dcfd477ef030f98066"
+        },
+        {
+          "file": "car-door-390x844.png",
+          "dimensions": [
+            390,
+            844
+          ],
+          "changedPixels": 0,
+          "maxChannelDelta": 0,
+          "boundingBox": null,
+          "baselineSHA256": "d8316ebb9d57540db067e112fbaf9c130178c4740727c2fcac072d4a6c9f1d8c",
+          "candidateSHA256": "d8316ebb9d57540db067e112fbaf9c130178c4740727c2fcac072d4a6c9f1d8c"
+        },
+        {
+          "file": "car-exploded-390x844.png",
+          "dimensions": [
+            390,
+            844
+          ],
+          "changedPixels": 0,
+          "maxChannelDelta": 0,
+          "boundingBox": null,
+          "baselineSHA256": "830328f993ef0f45e6c0cba55297782722b393a9d93061ec32317f0f7fcbe376",
+          "candidateSHA256": "830328f993ef0f45e6c0cba55297782722b393a9d93061ec32317f0f7fcbe376"
+        },
+        {
+          "file": "car-night-390x844.png",
+          "dimensions": [
+            390,
+            844
+          ],
+          "changedPixels": 0,
+          "maxChannelDelta": 0,
+          "boundingBox": null,
+          "baselineSHA256": "02e41aac0285a58e42d9cc0bd8e4e26478eb403981350e872b3244c00b912832",
+          "candidateSHA256": "02e41aac0285a58e42d9cc0bd8e4e26478eb403981350e872b3244c00b912832"
+        },
+        {
+          "file": "car-xray-390x844.png",
+          "dimensions": [
+            390,
+            844
+          ],
+          "changedPixels": 913,
+          "maxChannelDelta": 2,
+          "boundingBox": [
+            125,
+            746,
+            390,
+            844
+          ],
+          "baselineSHA256": "ad1c449eb5b1ef0232a50dea7847ed1c5d2fce211ada0c69d9952f94f941e4ee",
+          "candidateSHA256": "40bdfa6d95c072c055c286d1d9f451d83343f43a76302f923f4072fb6db02477"
+        },
+        {
+          "file": "home-390x844.png",
+          "dimensions": [
+            390,
+            844
+          ],
+          "changedPixels": 0,
+          "maxChannelDelta": 0,
+          "boundingBox": null,
+          "baselineSHA256": "6d4004c0d11320db97de6aae2e383a2684877a480734e2d1c0a5106f174de470",
+          "candidateSHA256": "6d4004c0d11320db97de6aae2e383a2684877a480734e2d1c0a5106f174de470"
+        }
+      ]
+    },
+    {
+      "name": "K: All other 19 scenes load and render without context loss",
+      "evidence": [
+        "washer",
+        "elevator",
+        "excavator",
+        "jet",
+        "dozer",
+        "crane",
+        "mixer",
+        "roller",
+        "loader",
+        "dump",
+        "firetruck",
+        "garbage",
+        "towercrane",
+        "pumptruck",
+        "grader",
+        "piler",
+        "forklift",
+        "sweeper",
+        "towtruck"
+      ]
+    },
+    {
+      "name": "No new browser JS, console, HTTP or WebGL context errors",
+      "evidence": {
+        "errors": 0,
+        "knownOriginalIssues": [
+          {
+            "path": "/favicon.ico",
+            "status": 404,
+            "reason": "The pinned original has no favicon; automatic browser request, not a new product failure"
+          }
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "Phase 1 scope: two product files only; exact opt-in engine patch; all frozen Phase 0 artifacts immutable",
+      "evidence": {
+        "policy": {
+          "checkpoint": "31b095dd89e2b2a805bda32724fb083eb5c9b448",
+          "allowedProductFiles": [
+            "scenes/car.js",
+            "js/app.js"
+          ],
+          "allowedSupportFiles": [
+            "tools/qa_car_simple_plus.cjs",
+            "tools/qa_car_simple_plus.phase1.json",
+            "tools/qa_car_simple_plus_phase1.cjs",
+            "docs/SIMPLE_PLUS_PHASE1.md"
+          ],
+          "artifactDirectory": "docs/qa/simple-plus-phase1",
+          "localBehaviorChanges": [
+            "Existing four amber lamps only: explicit turn control and opt-in off-phase selection glow",
+            "Existing headlamps: explicit mode and temporary battery override",
+            "Existing red tail lamps: bounded brake trigger",
+            "Position/fog: state only, no geometry or child UI",
+            "Existing rain InstancedMesh: maximum 360, level profiles; legacy timing unchanged",
+            "Per-context state; homepage preview cannot take over live APIs"
+          ]
+        },
+        "changed": [
+          "js/app.js",
+          "scenes/car.js",
+          "tools/qa_car_simple_plus.cjs",
+          "docs/SIMPLE_PLUS_PHASE1.md",
+          "docs/qa/simple-plus-phase1/car-default-1280x900.png",
+          "docs/qa/simple-plus-phase1/car-default-360x800.png",
+          "docs/qa/simple-plus-phase1/car-default-390x844.png",
+          "docs/qa/simple-plus-phase1/car-door-390x844.png",
+          "docs/qa/simple-plus-phase1/car-exploded-390x844.png",
+          "docs/qa/simple-plus-phase1/car-night-390x844.png",
+          "docs/qa/simple-plus-phase1/car-xray-390x844.png",
+          "docs/qa/simple-plus-phase1/default-original-vs-candidate.png",
+          "docs/qa/simple-plus-phase1/foundation-api-evidence.json",
+          "docs/qa/simple-plus-phase1/home-390x844.png",
+          "docs/qa/simple-plus-phase1/rain-heavy-390x844.png",
+          "docs/qa/simple-plus-phase1/rain-light-390x844.png",
+          "docs/qa/simple-plus-phase1/rain-medium-390x844.png",
+          "docs/qa/simple-plus-phase1/rain-none-390x844.png",
+          "docs/qa/simple-plus-phase1/visual-comparison.json",
+          "tools/qa_car_simple_plus.phase1.json",
+          "tools/qa_car_simple_plus_phase1.cjs"
+        ]
+      }
+    },
+    {
+      "name": "Protected original files and frozen artifacts unchanged after QA"
+    }
+  ],
+  "inputs": [
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 264,
+        "y": 434
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 264,
+          "y": 434,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 264,
+        "y": 434
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 264,
+          "y": 434,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 149,
+        "y": 387
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 149,
+          "y": 387,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 119,
+        "y": 410
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 119,
+          "y": 410,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 208,
+        "y": 370
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208,
+          "y": 370,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 209,
+        "y": 367
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 209,
+          "y": 367,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 208,
+        "y": 370
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208,
+          "y": 370,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 149,
+        "y": 387
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 149,
+          "y": 387,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "selector": "#go",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 78.52999877929688,
+          "y": 799,
+          "target": "gotxt"
+        }
+      ]
+    },
+    {
+      "selector": "#go",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 78.52999877929688,
+          "y": 799,
+          "target": "gotxt"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "mirror",
+      "selected": "mirror",
+      "point": {
+        "x": 176,
+        "y": 372
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 176,
+          "y": 372,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "selector": "#xr",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208.2899932861328,
+          "y": 799,
+          "target": "xrtxt"
+        }
+      ]
+    },
+    {
+      "selector": ".tile:has-text(\"发动机\")",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 45,
+          "y": 609,
+          "target": "IMG"
+        }
+      ]
+    },
+    {
+      "selector": "#xr",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208.2899932861328,
+          "y": 799,
+          "target": "xrtxt"
+        }
+      ]
+    },
+    {
+      "selector": "#ex",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 324.760009765625,
+          "y": 799,
+          "target": "extxt"
+        }
+      ]
+    },
+    {
+      "selector": "#ex",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 324.760009765625,
+          "y": 799,
+          "target": "extxt"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 236,
+        "y": 408
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 236,
+          "y": 408,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 236,
+        "y": 418
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 236,
+          "y": 418,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 137,
+        "y": 362
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 137,
+          "y": 362,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 110,
+        "y": 393
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 110,
+          "y": 393,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 192,
+        "y": 346
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 192,
+          "y": 346,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 193,
+        "y": 354
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 193,
+          "y": 354,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 192,
+        "y": 346
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 192,
+          "y": 346,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 137,
+        "y": 362
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 137,
+          "y": 362,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "selector": "#go",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 72.76000213623047,
+          "y": 758,
+          "target": "gotxt"
+        }
+      ]
+    },
+    {
+      "selector": "#go",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 72.76000213623047,
+          "y": 758,
+          "target": "gotxt"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "mirror",
+      "selected": "mirror",
+      "point": {
+        "x": 162,
+        "y": 348
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 162,
+          "y": 348,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "selector": "#xr",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 192.13999938964844,
+          "y": 758,
+          "target": "xrtxt"
+        }
+      ]
+    },
+    {
+      "selector": ".tile:has-text(\"发动机\")",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 45,
+          "y": 576.2100219726562,
+          "target": "IMG"
+        }
+      ]
+    },
+    {
+      "selector": "#xr",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 192.13999938964844,
+          "y": 758,
+          "target": "xrtxt"
+        }
+      ]
+    },
+    {
+      "selector": "#ex",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 299.3699951171875,
+          "y": 758,
+          "target": "extxt"
+        }
+      ]
+    },
+    {
+      "selector": "#ex",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 299.3699951171875,
+          "y": 758,
+          "target": "extxt"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 264,
+        "y": 434
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 264,
+          "y": 434,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 264,
+        "y": 434
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 264,
+          "y": 434,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 264,
+        "y": 434
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 264,
+          "y": 434,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "selector": "#xr",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208.2899932861328,
+          "y": 799,
+          "target": "xrtxt"
+        }
+      ]
+    },
+    {
+      "selector": ".tile:has-text(\"尾灯\")",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 349,
+          "y": 609,
+          "target": "IMG"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 237,
+        "y": 440
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 237,
+          "y": 440,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 236,
+        "y": 440
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 236,
+          "y": 440,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "selector": "#xr",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208.2899932861328,
+          "y": 799,
+          "target": "xrtxt"
+        }
+      ]
+    },
+    {
+      "selector": ".tile:has-text(\"电池\")",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 193,
+          "y": 609,
+          "target": "IMG"
+        }
+      ]
+    },
+    {
+      "selector": ".tile:has-text(\"电池\")",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 193,
+          "y": 609,
+          "target": "IMG"
+        }
+      ]
+    },
+    {
+      "selector": ".tile:has-text(\"电池\")",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 193,
+          "y": 609,
+          "target": "IMG"
+        }
+      ]
+    },
+    {
+      "selector": "#go",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 78.52999877929688,
+          "y": 799,
+          "target": "gotxt"
+        }
+      ]
+    },
+    {
+      "selector": "#go",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 78.52999877929688,
+          "y": 799,
+          "target": "gotxt"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 208,
+        "y": 370
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208,
+          "y": 370,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 208,
+        "y": 370
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208,
+          "y": 370,
+          "target": "c"
+        }
+      ]
+    }
+  ],
+  "audio": [
+    {
+      "voice": "yunxia",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:43327/voice/yunxia/fc7c9c95.mp3",
+          "duration": 6.576,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:43327/voice/yunxia/fc7c9c95.mp3",
+          "duration": 6.576,
+          "time": 6.576,
+          "error": null
+        }
+      ]
+    },
+    {
+      "voice": "xiaoyi",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:43327/voice/xiaoyi/fc7c9c95.mp3",
+          "duration": 6.096,
+          "time": 0.000562,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:43327/voice/xiaoyi/fc7c9c95.mp3",
+          "duration": 6.096,
+          "time": 6.096,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "knownOriginalIssues": [
+    {
+      "path": "/favicon.ico",
+      "status": 404,
+      "reason": "The pinned original has no favicon; automatic browser request, not a new product failure"
+    }
+  ],
+  "warnings": [],
+  "boundaries": [
+    "No HarmonyOS physical-device test",
+    "Software-rendered Chromium, not mobile GPU performance proof",
+    "Native MP3 playback/decoding observed; no human speaker/ear listening test",
+    "Other 19 scenes: loading smoke only"
+  ],
+  "screenshotComparison": "Structure, layout, camera, scene state and mesh ownership must match; PNG hashes identify artifacts, not a pixel-only correctness decision"
+}

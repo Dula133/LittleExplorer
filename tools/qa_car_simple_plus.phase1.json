@@ -1,0 +1,19 @@
+{
+  "checkpoint": "31b095dd89e2b2a805bda32724fb083eb5c9b448",
+  "allowedProductFiles": ["scenes/car.js", "js/app.js"],
+  "allowedSupportFiles": [
+    "tools/qa_car_simple_plus.cjs",
+    "tools/qa_car_simple_plus.phase1.json",
+    "tools/qa_car_simple_plus_phase1.cjs",
+    "docs/SIMPLE_PLUS_PHASE1.md"
+  ],
+  "artifactDirectory": "docs/qa/simple-plus-phase1",
+  "localBehaviorChanges": [
+    "Existing four amber lamps only: explicit turn control and opt-in off-phase selection glow",
+    "Existing headlamps: explicit mode and temporary battery override",
+    "Existing red tail lamps: bounded brake trigger",
+    "Position/fog: state only, no geometry or child UI",
+    "Existing rain InstancedMesh: maximum 360, level profiles; legacy timing unchanged",
+    "Per-context state; homepage preview cannot take over live APIs"
+  ]
+}

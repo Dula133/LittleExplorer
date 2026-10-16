@@ -16,6 +16,8 @@ const BASE = '70091609b45fd2b2cf98a5853bfee2d8cbe28991';
 const BASEDIR = path.join(ROOT, 'docs/baselines/simple-plus');
 const RECORD = process.argv.includes('--record-baseline');
 const VISUAL = process.argv.includes('--visual-only');
+const CANDIDATE = process.argv.includes('--candidate-phase1');
+const policy = CANDIDATE ? require('./qa_car_simple_plus.phase1.json') : null;
 const OUT = process.env.LE_QA_OUT || fs.mkdtempSync(path.join(os.tmpdir(), RECORD ? 'le-simple-plus-record-' : 'le-simple-plus-'));
 const sha256 = data => crypto.createHash('sha256').update(data).digest('hex');
 const git = (...args) => execFileSync('git', args, {cwd: ROOT, encoding: 'utf8'}).trim();
@@ -28,9 +30,29 @@ function protectedFiles() {
     assert.equal(type, 'blob', file); assert.equal(mode, '100644', file);
     const bytes = fs.readFileSync(path.join(ROOT, file));
     const actual = crypto.createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex');
+    if(CANDIDATE&&policy.allowedProductFiles.includes(file)){
+      const original=execFileSync('git',['show',`${BASE}:${file}`],{cwd:ROOT});
+      return [file,{gitBlob:oid,bytes:original.length,sha256:sha256(original)}];
+    }
     assert.equal(actual, oid, `Protected original changed: ${file}`);
     return [file, {gitBlob: oid, bytes: bytes.length, sha256: sha256(bytes)}];
   }));
+}
+function candidateScope(){
+  assert.equal(git('branch','--show-current'),'feature/car-simple-plus');
+  assert.equal(git('rev-parse','origin/main'),BASE);
+  execFileSync('git',['merge-base','--is-ancestor',policy.checkpoint,'HEAD'],{cwd:ROOT});
+  const frozen=git('ls-tree','-r',policy.checkpoint,'--','docs/baselines/simple-plus').split('\n');
+  for(const row of frozen){const [meta,file]=row.split('\t'),oid=meta.split(' ')[2],bytes=fs.readFileSync(path.join(ROOT,file));
+    assert.equal(crypto.createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex'),oid,`Frozen evidence changed: ${file}`);}
+  const changes=new Set([...git('diff','--name-only',policy.checkpoint).split('\n'),...git('ls-files','--others','--exclude-standard').split('\n')].filter(Boolean));
+  for(const f of changes)assert.ok([...policy.allowedProductFiles,...policy.allowedSupportFiles].includes(f)||f.startsWith(policy.artifactDirectory+'/'),`Unapproved change: ${f}`);
+  const original=execFileSync('git',['show',`${BASE}:js/app.js`],{cwd:ROOT,encoding:'utf8'});
+  const before='if(isSel&&!u.keepEm)mat.emissive.copy(mat.color);else mat.emissive.setHex(u.baseEm);mat.emissiveIntensity=u.dynInt+(isSel?pulse:0);}}';
+  const after='if(isSel&&!u.keepEm)mat.emissive.copy(mat.color);else mat.emissive.setHex(u.baseEm);\n      mat.emissiveIntensity=u.dynInt+(isSel&&!(u.suppressSelectGlowWhenOff&&u.signalOff)?pulse:0);}}';
+  assert.ok(original.includes(before));
+  assert.equal(fs.readFileSync(path.join(ROOT,'js/app.js'),'utf8'),original.replace(before,after),'Only the approved opt-in selection glow patch is permitted in the engine');
+  pass('Phase 1 scope: two product files only; exact opt-in engine patch; all frozen Phase 0 artifacts immutable',{policy,changed:[...changes]});
 }
 function playwright() {
   const candidates = process.env.PLAYWRIGHT_MODULE ? [process.env.PLAYWRIGHT_MODULE] :
@@ -133,10 +155,12 @@ function rainState() {
 }
 async function run() {
   assert.ok(!(RECORD&&VISUAL),'Recording must run the full QA suite');
+  assert.ok(!(RECORD&&CANDIDATE),'Candidates cannot record or replace original baselines');
   assert.ok(!path.resolve(OUT).startsWith(path.resolve(BASEDIR)), 'QA output must not overwrite the frozen baseline');
   const scriptSHA256=sha256(fs.readFileSync(__filename));
   const pw=playwright();
   const originalFiles = protectedFiles();
+  if(CANDIDATE)candidateScope();
   if (RECORD) {
     assert.equal(git('rev-parse', 'HEAD'), BASE, 'Recording requires exact original HEAD');
     assert.ok(!fs.existsSync(BASEDIR), 'Baseline directory already exists; refusing to overwrite');
@@ -148,7 +172,8 @@ async function run() {
     for (const cap of existing.captures) assert.equal(sha256(fs.readFileSync(path.join(BASEDIR, cap.file))), cap.sha256, cap.file);
   }
   fs.mkdirSync(OUT, {recursive: true});
-  pass('All original tracked files are byte-identical to pinned main', {files: Object.keys(originalFiles).length, commit: BASE});
+  pass(CANDIDATE?'All unapproved original files are byte-identical to pinned main':'All original tracked files are byte-identical to pinned main',
+    {files:Object.keys(originalFiles).length,allowedChanges:CANDIDATE?policy.allowedProductFiles:[],commit:BASE});
   if(!VISUAL){
     const voiceCheck = execFileSync('python3', ['-B', 'tools/check_voice.py'], {cwd: ROOT, encoding: 'utf8'}).trim();
     const voiceFiles = Object.keys(originalFiles).filter(f => /^voice\/[^/]+\/.*\.mp3$/.test(f));
@@ -309,7 +334,7 @@ async function run() {
       assert.equal(doors.filter(Boolean).length,0);
       await fresh();await tapPart(page,'wiper');const resting=await page.evaluate(rainState);
       await step(page,2400);const early=await page.evaluate(rainState);
-      assert.equal(early.count,520);assert.equal(early.visible,true);assert.ok(early.gloom>.95);assert.deepEqual(early.wipers,resting.wipers,JSON.stringify({resting,early}));
+      assert.equal(early.count,CANDIDATE?360:520);assert.equal(early.visible,true);assert.ok(early.gloom>.95);assert.deepEqual(early.wipers,resting.wipers,JSON.stringify({resting,early}));
       await step(page,1100);const wiping=await page.evaluate(rainState);assert.ok(wiping.wipers.some(v=>Math.abs(v-1)>.1));
       // Original stop keeps wiping for 1.5s, then eases to rest. Allow that real
       // legacy transition rather than expecting an instantaneous parked blade.
@@ -357,6 +382,7 @@ async function run() {
       audio.push({voice,events:evidence});await context.close();
     }
     pass('G,I: Native lamp clicks play and finish original MP3 in both voices',audio);
+    if(CANDIDATE)await require('./qa_car_simple_plus_phase1.cjs')({open,load,step,tapPart,tap,pass,OUT,ROOT,captures,existing});
     const otherScenes=['washer','elevator','excavator','jet','dozer','crane','mixer','roller','loader','dump','firetruck','garbage','towercrane','pumptruck','grader','piler','forklift','sweeper','towtruck'];
     for(const scene of otherScenes) {
       const {page,context}=await open({width:360,height:800});await load(page,scene);
@@ -366,8 +392,8 @@ async function run() {
     }
     pass('K: All other 19 scenes load and render without context loss',otherScenes);
     assert.deepEqual(errors,[],JSON.stringify(errors));pass('No new browser JS, console, HTTP or WebGL context errors',{errors:0,knownOriginalIssues,warnings:[...new Set(warnings)]});
-    protectedFiles();pass('Original files remain byte-identical after QA');
-    const report={status:'PASS',mode:'full',baselineCommit:BASE,qaScriptSHA256:scriptSHA256,environment,checks,inputs,audio,errors,knownOriginalIssues,warnings:[...new Set(warnings)],
+    protectedFiles();if(CANDIDATE)candidateScope();pass(CANDIDATE?'Protected original files and frozen artifacts unchanged after QA':'Original files remain byte-identical after QA');
+    const report={status:'PASS',mode:CANDIDATE?'candidate-phase1':'full',baselineCommit:BASE,qaScriptSHA256:scriptSHA256,environment,checks,inputs,audio,errors,knownOriginalIssues,warnings:[...new Set(warnings)],
       boundaries:['No HarmonyOS physical-device test','Software-rendered Chromium, not mobile GPU performance proof','Native MP3 playback/decoding observed; no human speaker/ear listening test','Other 19 scenes: loading smoke only'],
       screenshotComparison:'Structure, layout, camera, scene state and mesh ownership must match; PNG hashes identify artifacts, not a pixel-only correctness decision'};
     fs.writeFileSync(path.join(OUT,'qa-report.json'),JSON.stringify(report,null,2)+'\n');
