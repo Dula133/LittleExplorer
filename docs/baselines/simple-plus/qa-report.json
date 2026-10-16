@@ -1,0 +1,818 @@
+{
+  "status": "PASS",
+  "mode": "full",
+  "baselineCommit": "70091609b45fd2b2cf98a5853bfee2d8cbe28991",
+  "qaScriptSHA256": "47d528365710949fae7c031a3fb132f77b7ec92bd2e2a536c7a0b2f36c6471d1",
+  "environment": {
+    "browser": "151.0.7922.173",
+    "playwright": "1.58.2",
+    "platform": "linux x64",
+    "timezone": "UTC",
+    "locale": "zh-CN",
+    "colorScheme": "light",
+    "dpr": 1,
+    "seed": 20261016,
+    "fixedDate": "2026-10-16T12:00:01.000Z",
+    "stepMs": 50,
+    "viewportPolicy": "Mobile below 800px; desktop at 1280px; native touch input enabled",
+    "animation": "Original rAF via Playwright clock; performance.now starts at 0; CSS screenshot animations disabled",
+    "renderer": "ANGLE SwiftShader",
+    "fonts": "OpenAISans-Regular.woff2: \"OpenAI Sans\" \"Regular\""
+  },
+  "checks": [
+    {
+      "name": "All original tracked files are byte-identical to pinned main",
+      "evidence": {
+        "files": 671,
+        "commit": "70091609b45fd2b2cf98a5853bfee2d8cbe28991"
+      }
+    },
+    {
+      "name": "Voice mapping, both voice sets, and all existing MP3 decode",
+      "evidence": {
+        "voiceCheck": "场景里会念的句子 295 条，lines.json 295 条\n✓ yunxia: 299 个文件，缺 0，空/截断 0，多余 3\n✓ xiaoyi: 299 个文件，缺 0，空/截断 0，多余 3\n全部通过",
+        "decoded": 598
+      }
+    },
+    {
+      "name": "J: Homepage has 20 cards, rendered car thumbnail and working car link",
+      "evidence": {
+        "width": 149,
+        "height": 149,
+        "painted": 13821
+      }
+    },
+    {
+      "name": "A–H,L: native touch, default camera, lights, doors, rain/wiper, start/stop, narration text, xray and reassembly 390×844",
+      "evidence": {
+        "parts": 16,
+        "rain": {
+          "early": {
+            "logicalMs": 2600,
+            "visible": true,
+            "count": 520,
+            "opacity": 0.7949098516470913,
+            "gloom": 0.9936373145588641,
+            "wipers": [
+              1,
+              1
+            ]
+          },
+          "wiping": {
+            "logicalMs": 3700,
+            "visible": true,
+            "count": 520,
+            "opacity": 0.7994987370014258,
+            "gloom": 0.9993734212517822,
+            "wipers": [
+              0.576215618256409,
+              0.576215618256409
+            ]
+          },
+          "ended": {
+            "logicalMs": 7200,
+            "visible": false,
+            "count": 520,
+            "opacity": 0.000500948917832063,
+            "gloom": 0.0006261861472900787,
+            "wipers": [
+              0.998488111720492,
+              0.998488111720492
+            ]
+          }
+        },
+        "door": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "A–H,L: native touch, default camera, lights, doors, rain/wiper, start/stop, narration text, xray and reassembly 360×800",
+      "evidence": {
+        "parts": 16,
+        "rain": {
+          "early": {
+            "logicalMs": 2600,
+            "visible": true,
+            "count": 520,
+            "opacity": 0.7949098516470913,
+            "gloom": 0.9936373145588641,
+            "wipers": [
+              1,
+              1
+            ]
+          },
+          "wiping": {
+            "logicalMs": 3700,
+            "visible": true,
+            "count": 520,
+            "opacity": 0.7994987370014258,
+            "gloom": 0.9993734212517822,
+            "wipers": [
+              0.576215618256409,
+              0.576215618256409
+            ]
+          },
+          "ended": {
+            "logicalMs": 7200,
+            "visible": false,
+            "count": 520,
+            "opacity": 0.000500948917832063,
+            "gloom": 0.0006261861472900787,
+            "wipers": [
+              0.998488111720492,
+              0.998488111720492
+            ]
+          }
+        },
+        "door": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "G,I: Native lamp clicks play and finish original MP3 in both voices",
+      "evidence": [
+        {
+          "voice": "yunxia",
+          "events": [
+            {
+              "type": "playing",
+              "trusted": true,
+              "src": "http://127.0.0.1:33411/voice/yunxia/fc7c9c95.mp3",
+              "duration": 6.576,
+              "time": 0,
+              "error": null
+            },
+            {
+              "type": "ended",
+              "trusted": true,
+              "src": "http://127.0.0.1:33411/voice/yunxia/fc7c9c95.mp3",
+              "duration": 6.576,
+              "time": 6.576,
+              "error": null
+            }
+          ]
+        },
+        {
+          "voice": "xiaoyi",
+          "events": [
+            {
+              "type": "playing",
+              "trusted": true,
+              "src": "http://127.0.0.1:33411/voice/xiaoyi/fc7c9c95.mp3",
+              "duration": 6.096,
+              "time": 0,
+              "error": null
+            },
+            {
+              "type": "ended",
+              "trusted": true,
+              "src": "http://127.0.0.1:33411/voice/xiaoyi/fc7c9c95.mp3",
+              "duration": 6.096,
+              "time": 6.096,
+              "error": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K: All other 19 scenes load and render without context loss",
+      "evidence": [
+        "washer",
+        "elevator",
+        "excavator",
+        "jet",
+        "dozer",
+        "crane",
+        "mixer",
+        "roller",
+        "loader",
+        "dump",
+        "firetruck",
+        "garbage",
+        "towercrane",
+        "pumptruck",
+        "grader",
+        "piler",
+        "forklift",
+        "sweeper",
+        "towtruck"
+      ]
+    },
+    {
+      "name": "No new browser JS, console, HTTP or WebGL context errors",
+      "evidence": {
+        "errors": 0,
+        "knownOriginalIssues": [
+          {
+            "path": "/favicon.ico",
+            "status": 404,
+            "reason": "The pinned original has no favicon; automatic browser request, not a new product failure"
+          }
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "Original files remain byte-identical after QA"
+    }
+  ],
+  "inputs": [
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 264,
+        "y": 434
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 264,
+          "y": 434,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 264,
+        "y": 434
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 264,
+          "y": 434,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 149,
+        "y": 387
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 149,
+          "y": 387,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 119,
+        "y": 410
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 119,
+          "y": 410,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 208,
+        "y": 370
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208,
+          "y": 370,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 209,
+        "y": 367
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 209,
+          "y": 367,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 208,
+        "y": 370
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208,
+          "y": 370,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 149,
+        "y": 387
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 149,
+          "y": 387,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "selector": "#go",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 78.52999877929688,
+          "y": 799,
+          "target": "gotxt"
+        }
+      ]
+    },
+    {
+      "selector": "#go",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 78.52999877929688,
+          "y": 799,
+          "target": "gotxt"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "mirror",
+      "selected": "mirror",
+      "point": {
+        "x": 176,
+        "y": 372
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 176,
+          "y": 372,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "selector": "#xr",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208.2899932861328,
+          "y": 799,
+          "target": "xrtxt"
+        }
+      ]
+    },
+    {
+      "selector": ".tile:has-text(\"发动机\")",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 45,
+          "y": 609,
+          "target": "IMG"
+        }
+      ]
+    },
+    {
+      "selector": "#xr",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 208.2899932861328,
+          "y": 799,
+          "target": "xrtxt"
+        }
+      ]
+    },
+    {
+      "selector": "#ex",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 324.760009765625,
+          "y": 799,
+          "target": "extxt"
+        }
+      ]
+    },
+    {
+      "selector": "#ex",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 324.760009765625,
+          "y": 799,
+          "target": "extxt"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 236,
+        "y": 408
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 236,
+          "y": 408,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 236,
+        "y": 418
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 236,
+          "y": 418,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 137,
+        "y": 362
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 137,
+          "y": 362,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 110,
+        "y": 393
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 110,
+          "y": 393,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 192,
+        "y": 346
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 192,
+          "y": 346,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 193,
+        "y": 354
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 193,
+          "y": 354,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "wiper",
+      "selected": "wiper",
+      "point": {
+        "x": 192,
+        "y": 346
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 192,
+          "y": 346,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "door",
+      "selected": "door",
+      "point": {
+        "x": 137,
+        "y": 362
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 137,
+          "y": 362,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "selector": "#go",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 72.76000213623047,
+          "y": 758,
+          "target": "gotxt"
+        }
+      ]
+    },
+    {
+      "selector": "#go",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 72.76000213623047,
+          "y": 758,
+          "target": "gotxt"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "mirror",
+      "selected": "mirror",
+      "point": {
+        "x": 162,
+        "y": 348
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 162,
+          "y": 348,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "selector": "#xr",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 192.13999938964844,
+          "y": 758,
+          "target": "xrtxt"
+        }
+      ]
+    },
+    {
+      "selector": ".tile:has-text(\"发动机\")",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 45,
+          "y": 576.2100219726562,
+          "target": "IMG"
+        }
+      ]
+    },
+    {
+      "selector": "#xr",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 192.13999938964844,
+          "y": 758,
+          "target": "xrtxt"
+        }
+      ]
+    },
+    {
+      "selector": "#ex",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 299.3699951171875,
+          "y": 758,
+          "target": "extxt"
+        }
+      ]
+    },
+    {
+      "selector": "#ex",
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 299.3699951171875,
+          "y": 758,
+          "target": "extxt"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 264,
+        "y": 434
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 264,
+          "y": 434,
+          "target": "c"
+        }
+      ]
+    },
+    {
+      "scene": "car",
+      "id": "lights",
+      "selected": "lights",
+      "point": {
+        "x": 264,
+        "y": 434
+      },
+      "events": [
+        {
+          "trusted": true,
+          "type": "touch",
+          "x": 264,
+          "y": 434,
+          "target": "c"
+        }
+      ]
+    }
+  ],
+  "audio": [
+    {
+      "voice": "yunxia",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:33411/voice/yunxia/fc7c9c95.mp3",
+          "duration": 6.576,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:33411/voice/yunxia/fc7c9c95.mp3",
+          "duration": 6.576,
+          "time": 6.576,
+          "error": null
+        }
+      ]
+    },
+    {
+      "voice": "xiaoyi",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:33411/voice/xiaoyi/fc7c9c95.mp3",
+          "duration": 6.096,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:33411/voice/xiaoyi/fc7c9c95.mp3",
+          "duration": 6.096,
+          "time": 6.096,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "knownOriginalIssues": [
+    {
+      "path": "/favicon.ico",
+      "status": 404,
+      "reason": "The pinned original has no favicon; automatic browser request, not a new product failure"
+    }
+  ],
+  "warnings": [],
+  "boundaries": [
+    "No HarmonyOS physical-device test",
+    "Software-rendered Chromium, not mobile GPU performance proof",
+    "Native MP3 playback/decoding observed; no human speaker/ear listening test",
+    "Other 19 scenes: loading smoke only"
+  ],
+  "screenshotComparison": "Structure, layout, camera, scene state and mesh ownership must match; PNG hashes identify artifacts, not a pixel-only correctness decision"
+}
