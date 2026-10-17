@@ -16,8 +16,11 @@ const BASE = '70091609b45fd2b2cf98a5853bfee2d8cbe28991';
 const BASEDIR = path.join(ROOT, 'docs/baselines/simple-plus');
 const RECORD = process.argv.includes('--record-baseline');
 const VISUAL = process.argv.includes('--visual-only');
-const CANDIDATE = process.argv.includes('--candidate-phase1');
-const policy = CANDIDATE ? require('./qa_car_simple_plus.phase1.json') : null;
+const PHASE2 = process.argv.includes('--candidate-phase2');
+const UI_ONLY = process.argv.includes('--phase2-ui-only');
+const CANDIDATE = process.argv.includes('--candidate-phase1') || PHASE2;
+const policy = CANDIDATE ? require(PHASE2?'./qa_car_simple_plus.phase2.json':'./qa_car_simple_plus.phase1.json') : null;
+const phase2 = PHASE2 ? require('./qa_car_simple_plus_phase2.cjs') : null;
 const OUT = process.env.LE_QA_OUT || fs.mkdtempSync(path.join(os.tmpdir(), RECORD ? 'le-simple-plus-record-' : 'le-simple-plus-'));
 const sha256 = data => crypto.createHash('sha256').update(data).digest('hex');
 const git = (...args) => execFileSync('git', args, {cwd: ROOT, encoding: 'utf8'}).trim();
@@ -39,6 +42,7 @@ function protectedFiles() {
   }));
 }
 function candidateScope(){
+  if(PHASE2){phase2.scope({ROOT,BASE,policy,git,sha256,pass});return;}
   assert.equal(git('branch','--show-current'),'feature/car-simple-plus');
   assert.equal(git('rev-parse','origin/main'),BASE);
   execFileSync('git',['merge-base','--is-ancestor',policy.checkpoint,'HEAD'],{cwd:ROOT});
@@ -121,12 +125,14 @@ function sceneSnapshot() {
     layout: rects, parts};
 }
 function pickPoint(id) {
+  const end=typeof id==='object'?id.end:null;id=typeof id==='object'?id.id:id;
   const d = window.__dbg, T = d.THREE, W = innerWidth, H = innerHeight;
   d.root.updateWorldMatrix(true, true); d.camera.updateWorldMatrix(true, false);
   const visible = m => { for (let o = m; o; o = o.parent) if (!o.visible) return false; return true; };
   const targets = Object.values(d.PARTS).flatMap(p => p.meshes).filter(m => !m.userData.noHit && !m.userData.glass);
   const ray = new T.Raycaster(), point = new T.Vector3(), candidates = [];
   for (const m of d.PARTS[id].meshes) {
+    if(end&&m.userData.turnEnd!==end)continue;
     if (!visible(m) || m.userData.noHit || m.userData.glass) continue;
     m.geometry.computeBoundingBox(); const box = m.geometry.boundingBox;
     for (const x of [.25, .5, .75]) for (const y of [.25, .5, .75]) for (const z of [0, .5, 1]) {
@@ -156,6 +162,7 @@ function rainState() {
 async function run() {
   assert.ok(!(RECORD&&VISUAL),'Recording must run the full QA suite');
   assert.ok(!(RECORD&&CANDIDATE),'Candidates cannot record or replace original baselines');
+  assert.ok(!UI_ONLY||(PHASE2&&!RECORD&&!VISUAL),'UI-only is an explicitly partial Phase 2 mode');
   assert.ok(!path.resolve(OUT).startsWith(path.resolve(BASEDIR)), 'QA output must not overwrite the frozen baseline');
   const scriptSHA256=sha256(fs.readFileSync(__filename));
   const pw=playwright();
@@ -174,8 +181,8 @@ async function run() {
   fs.mkdirSync(OUT, {recursive: true});
   pass(CANDIDATE?'All unapproved original files are byte-identical to pinned main':'All original tracked files are byte-identical to pinned main',
     {files:Object.keys(originalFiles).length,allowedChanges:CANDIDATE?policy.allowedProductFiles:[],commit:BASE});
-  if(!VISUAL){
-    const voiceCheck = execFileSync('python3', ['-B', 'tools/check_voice.py'], {cwd: ROOT, encoding: 'utf8'}).trim();
+  if(!VISUAL&&!UI_ONLY){
+    const voiceCheck = PHASE2 ? phase2.voiceCheck({ROOT,policy}) : execFileSync('python3', ['-B', 'tools/check_voice.py'], {cwd: ROOT, encoding: 'utf8'}).trim();
     const voiceFiles = Object.keys(originalFiles).filter(f => /^voice\/[^/]+\/.*\.mp3$/.test(f));
     // Decode every existing MP3, including sample clips. No generated media.
     for (const f of voiceFiles) execFileSync(process.env.FFMPEG_BIN || 'ffmpeg', ['-v','error','-xerror','-i',path.join(ROOT,f),'-f','null','-'], {stdio: ['ignore','pipe','pipe']});
@@ -243,9 +250,9 @@ async function run() {
     // Fixed 50ms steps execute the original rAF/update and respect its dt cap.
     // Avoid depending on the host GPU's wall-clock speed or rendering 60 frames/s.
     async function step(page, ms) {for(let left=ms;left>0;left-=50)await page.clock.fastForward(Math.min(left,50));}
-    async function tapPart(page, id) {
+    async function tapPart(page, id, end) {
       const before = await page.evaluate(() => __qaEvidence.pointers.length);
-      const point = await page.evaluate(pickPoint,id);
+      const point = await page.evaluate(pickPoint,end?{id,end}:id);
       assert.ok(point, `No unobstructed canvas ray hit for ${id}`);
       await page.touchscreen.tap(point.x,point.y);
       const evidence = await page.evaluate(n => __qaEvidence.pointers.slice(n),before);
@@ -266,10 +273,16 @@ async function run() {
       // sides (JSON represents -0 as 0). Keep exact comparison of all fields.
       const snapshot=JSON.parse(JSON.stringify(rawSnapshot));
       const bytes=await page.screenshot({type:'png',animations:'disabled'}); fs.writeFileSync(path.join(OUT,file),bytes);
-      const result={file,sha256:sha256(bytes),bytes:bytes.length,snapshot};captures.push(result);
-      if(existing){const baseline=existing.captures.find(c=>c.file===file);assert.ok(baseline,file);assert.deepEqual(snapshot,baseline.snapshot,`Structural/camera/state/layout mismatch: ${file}`);}
+      const result={file,sha256:sha256(bytes),bytes:bytes.length,snapshot};
+      if(PHASE2)result.masks=await page.evaluate(phase2.masks);
+      captures.push(result);
+      if(existing){const baseline=existing.captures.find(c=>c.file===file);assert.ok(baseline,file);
+        assert.deepEqual(PHASE2?phase2.normalize(snapshot,baseline.snapshot):snapshot,baseline.snapshot,`Structural/camera/state/layout mismatch: ${file}`);}
       console.log('CAPTURE:',file);
     }
+    if(UI_ONLY){await phase2.ui({open,load,step,tapPart,tap,pass,OUT,ROOT});assert.deepEqual(errors,[]);candidateScope();
+      fs.writeFileSync(path.join(OUT,'ui-partial-report.json'),JSON.stringify({status:'UI_PARTIAL_PASS',checks,inputs,errors,environment,boundaries:['Excludes full original suite, original narration playback, MP3 decode and nineteen scene regression']},null,2)+'\n');
+      console.log('UI PARTIAL PASS:',OUT);return;}
     // Homepage uses the original card renderer; verify actual canvas pixels and link.
     {
       const {page,context}=await open(); await page.goto(baseURL+'/',{waitUntil:'load'}); await page.evaluate(()=>document.fonts.ready);await step(page,400);
@@ -382,7 +395,8 @@ async function run() {
       audio.push({voice,events:evidence});await context.close();
     }
     pass('G,I: Native lamp clicks play and finish original MP3 in both voices',audio);
-    if(CANDIDATE)await require('./qa_car_simple_plus_phase1.cjs')({open,load,step,tapPart,tap,pass,OUT,ROOT,captures,existing});
+    if(CANDIDATE)await require('./qa_car_simple_plus_phase1.cjs')({open,load,step,tapPart,tap,pass,OUT,ROOT,captures,existing,phase2:PHASE2,visualCompare:PHASE2?phase2.compare:null});
+    if(PHASE2)await phase2.ui({open,load,step,tapPart,tap,pass,OUT,ROOT});
     const otherScenes=['washer','elevator','excavator','jet','dozer','crane','mixer','roller','loader','dump','firetruck','garbage','towercrane','pumptruck','grader','piler','forklift','sweeper','towtruck'];
     for(const scene of otherScenes) {
       const {page,context}=await open({width:360,height:800});await load(page,scene);
@@ -393,7 +407,7 @@ async function run() {
     pass('K: All other 19 scenes load and render without context loss',otherScenes);
     assert.deepEqual(errors,[],JSON.stringify(errors));pass('No new browser JS, console, HTTP or WebGL context errors',{errors:0,knownOriginalIssues,warnings:[...new Set(warnings)]});
     protectedFiles();if(CANDIDATE)candidateScope();pass(CANDIDATE?'Protected original files and frozen artifacts unchanged after QA':'Original files remain byte-identical after QA');
-    const report={status:'PASS',mode:CANDIDATE?'candidate-phase1':'full',baselineCommit:BASE,qaScriptSHA256:scriptSHA256,environment,checks,inputs,audio,errors,knownOriginalIssues,warnings:[...new Set(warnings)],
+    const report={status:'PASS',mode:PHASE2?'candidate-phase2':CANDIDATE?'candidate-phase1':'full',baselineCommit:BASE,qaScriptSHA256:scriptSHA256,environment,checks,inputs,audio,errors,knownOriginalIssues,warnings:[...new Set(warnings)],
       boundaries:['No HarmonyOS physical-device test','Software-rendered Chromium, not mobile GPU performance proof','Native MP3 playback/decoding observed; no human speaker/ear listening test','Other 19 scenes: loading smoke only'],
       screenshotComparison:'Structure, layout, camera, scene state and mesh ownership must match; PNG hashes identify artifacts, not a pixel-only correctness decision'};
     fs.writeFileSync(path.join(OUT,'qa-report.json'),JSON.stringify(report,null,2)+'\n');

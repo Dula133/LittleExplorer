@@ -5,7 +5,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const {execFileSync}=require('node:child_process');
-module.exports=async function({open,load,step,tapPart,tap,pass,OUT,ROOT,captures,existing}){
+module.exports=async function({open,load,step,tapPart,tap,pass,OUT,ROOT,captures,existing,phase2=false,visualCompare=null}){
   const evidence={kind:'Direct API / isolated build-contract tests; not child touch acceptance',turn:[],lamps:[],rain:[]};
   const fresh=async()=>{const c=await open();await load(c.page);return c;};
   const state=p=>p.evaluate(()=>({lighting:SCENES.car.lighting.getState(),weather:SCENES.car.weather.getState()}));
@@ -61,7 +61,7 @@ module.exports=async function({open,load,step,tapPart,tap,pass,OUT,ROOT,captures
     evidence.geometry={nodes:result.current.shape.length,partIDs:result.current.parts,geometryAttributes:'SHA256',materials:'exact JSON excluding UUID',previewIsolation:true,rainCapacity:360};
     const defaults=await state(page);assert.equal(defaults.lighting.requestedLampMode,null);assert.equal(defaults.lighting.lampMode,'OFF');
     assert.equal(defaults.lighting.turnMode,'OFF');assert.equal(defaults.lighting.blinkOn,false);assert.equal(defaults.lighting.turnSource,'ORIGINAL_LENS');
-    assert.equal(defaults.lighting.positionVisualAvailable,false);assert.equal(defaults.lighting.fogVisualAvailable,false);
+    assert.equal(defaults.lighting.positionVisualAvailable,phase2);assert.equal(defaults.lighting.fogVisualAvailable,phase2);
     assert.equal(defaults.weather.rainLevel,'NONE');assert.equal(defaults.weather.wiperEnabled,false);
     await page.evaluate(()=>{
       for(const f of [()=>SCENES.car.lighting.setLampMode('AUTO'),()=>SCENES.car.lighting.setTurnMode('BOTH'),()=>SCENES.car.lighting.triggerBrake(-1),
@@ -81,7 +81,7 @@ module.exports=async function({open,load,step,tapPart,tap,pass,OUT,ROOT,captures
       for(let i=0;i<9;i++){
         await step(page,100);const s=(await state(page)).lighting,lamps=await signals(page);
         assert.equal(lamps.length,4);assert.equal(new Set(lamps.map(l=>l.side+'/'+l.end)).size,4);
-        for(const l of lamps){assert.equal(l.side,l.z<0?'LEFT':'RIGHT');assert.equal(l.owner,l.end==='FRONT'?'lights':'tail');
+        for(const l of lamps){assert.equal(l.side,l.z<0?'LEFT':'RIGHT');assert.equal(l.owner,phase2?(l.side==='LEFT'?'turnLeft':'turnRight'):(l.end==='FRONT'?'lights':'tail'));
           const on=s.blinkOn&&(mode==='HAZARD'||mode===l.side);assert.equal(l.dynamic,on?2.8:0);
           if(!on){assert.equal(l.emission,0,'Selected part must not re-light a signal in its off-phase');assert.equal(l.signalOff,true);}else assert.ok(l.emission>=2.8);}
         samples.push({at:await page.evaluate(()=>performance.now()),blinkOn:s.blinkOn,lamps});
@@ -104,8 +104,8 @@ module.exports=async function({open,load,step,tapPart,tap,pass,OUT,ROOT,captures
     assert.equal((await state(page)).lighting.brakeActive,true);await step(page,4500);
     assert.ok((await state(page)).lighting.brakeIntensity<.001);
     await page.evaluate(()=>SCENES.car.lighting.setFogLight(true));assert.equal((await state(page)).lighting.fogLight,true);
-    assert.equal((await state(page)).lighting.fogVisualAvailable,false);await page.evaluate(()=>SCENES.car.lighting.setFogLight(false));
-    pass('Phase 1: API brake and original native tail tile restore; fog state explicitly has no fixture',{red,restored:true,fogVisualAvailable:false});
+    assert.equal((await state(page)).lighting.fogVisualAvailable,phase2);await page.evaluate(()=>SCENES.car.lighting.setFogLight(false));
+    pass('Foundation: API brake and original native tail tile restore; fog availability matches phase',{red,restored:true,fogVisualAvailable:phase2});
     await context.close();
   }
   {
@@ -114,7 +114,7 @@ module.exports=async function({open,load,step,tapPart,tap,pass,OUT,ROOT,captures
       await page.evaluate(m=>SCENES.car.lighting.setLampMode(m),mode);await step(page,1500);
       const s=(await state(page)).lighting,actual=await headlights(page);
       assert.equal(s.lampMode,mode);assert.equal(s.source,'EXPLICIT');assert.equal(s.headlightTarget,mode==='HEADLIGHT');
-      assert.equal(s.positionRequested,mode!=='OFF');assert.equal(s.positionVisualAvailable,false);
+      assert.equal(s.positionRequested,mode!=='OFF');assert.equal(s.positionVisualAvailable,phase2);
       assert.ok(actual.every(v=>mode==='HEADLIGHT'?v>1.59:v<.001));evidence.lamps.push({mode,state:s,actual});
     }
     await page.evaluate(()=>SCENES.car.lighting.setLampMode('OFF'));await tapPart(page,'lights');await step(page,1500);
@@ -179,7 +179,7 @@ module.exports=async function({open,load,step,tapPart,tap,pass,OUT,ROOT,captures
   pass('Phase 1 API: four bounded rain profiles, measured fall speed, independent wipers and superseded legacy deadlines',evidence.rain);
   // Compare decoded pixels AND the exact structural/layout/camera captures that
   // the parent harness has already checked against the immutable manifest.
-  const compare=JSON.parse(execFileSync('python3',['-c',`
+  const compare=visualCompare?await visualCompare({ROOT,OUT,captures,existing}):JSON.parse(execFileSync('python3',['-c',`
 import json,sys,hashlib
 from PIL import Image,ImageChops
 from pathlib import Path
@@ -198,7 +198,7 @@ pair=Image.new('RGB',(a.width*2,a.height));pair.paste(a,(0,0));pair.paste(b,(a.w
 print(json.dumps(results))
 `,path.join(ROOT,'docs/baselines/simple-plus'),OUT],{encoding:'utf8'}));
   assert.equal(compare.length,existing.captures.length);assert.equal(captures.length,existing.captures.length);
-  fs.writeFileSync(path.join(OUT,'visual-comparison.json'),JSON.stringify({status:'PASS',method:'Exact camera/layout/state/hierarchy checks plus decoded pixels; same pinned browser/clock/DPR/seed',
+  fs.writeFileSync(path.join(OUT,'visual-comparison.json'),JSON.stringify({status:'PASS',method:phase2?'Exact original camera/layout/state and all original mesh descriptors; only four amber owners reassigned; projected new fixtures and temporary controls bounded separately':'Exact camera/layout/state/hierarchy checks plus decoded pixels; same pinned browser/clock/DPR/seed',
     roundingLimit:2,captures:compare},null,2)+'\n');
   fs.writeFileSync(path.join(OUT,'foundation-api-evidence.json'),JSON.stringify(evidence,null,2)+'\n');
   pass('Phase 1: immutable original vs candidate screenshots (structure + decoded pixels)',compare);

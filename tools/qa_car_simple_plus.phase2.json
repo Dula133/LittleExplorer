@@ -1,0 +1,48 @@
+{
+  "checkpoint": "f27f592b29eb0a77ba74739278391dc52170a2da",
+  "allowedProductFiles": [
+    "scenes/car.js",
+    "js/app.js"
+  ],
+  "allowedSupportFiles": [
+    "tools/qa_car_simple_plus.cjs",
+    "tools/qa_car_simple_plus_phase1.cjs",
+    "tools/qa_car_simple_plus_phase2.cjs",
+    "tools/qa_car_simple_plus.phase2.json",
+    "docs/SIMPLE_PLUS_PHASE2.md"
+  ],
+  "artifactDirectory": "docs/qa/simple-plus-phase2",
+  "actionBlockSHA256": "aa3247a6f8ebca002e69f5f0f089ab4fb2fe613fd8e7fdf11609a47a99a60196",
+  "localExceptions": [
+    "Two position lamps and two low fog lamps; each fixture bounded in projected screenshot space",
+    "Only the original four amber meshes reassigned to turnLeft/turnRight; original geometry/material/position exact",
+    "At most two detached opt-in temporary DOM buttons; no camera/primary-button/page/template changes",
+    "Homepage builds original preview geometry; sixteen permanent icons remain"
+  ],
+  "staticVoiceGaps": [
+    "小灯（前位置灯）。这是小灯，也叫位置灯。它让别人更容易看见汽车在哪里。",
+    "前雾灯。雾很大的时候，前雾灯帮助我们看清汽车附近的路。"
+  ],
+  "voiceGaps": [
+    "小灯（前位置灯）。这是小灯，也叫位置灯。它让别人更容易看见汽车在哪里。",
+    "前雾灯。雾很大的时候，前雾灯帮助我们看清汽车附近的路。",
+    "左转向灯。左边的灯在闪，告诉别人：我准备往左走。",
+    "右转向灯。右边的灯在闪，告诉别人：我准备往右走。",
+    "危险报警闪光灯。左右两边一起闪，提醒别人注意。",
+    "危险报警闪光灯。双闪关掉了。",
+    "左转向灯。转向灯关掉了。",
+    "右转向灯。转向灯关掉了。",
+    "前雾灯。前雾灯关掉了。",
+    "车灯。现在只打开小灯。",
+    "车灯。前照灯亮了，小灯也亮着。",
+    "车灯。灯关掉了。",
+    "车灯。车灯跟着白天、夜晚和启动状态变化。",
+    "雨量。雨停了。",
+    "雨量。现在下小雨。",
+    "雨量。雨变大了。",
+    "雨量。现在是大雨。",
+    "雨刮器。雨刮器开始刮雨。",
+    "雨刮器。雨刮器停下了。",
+    "车灯。档位已记住，电池演示结束后恢复。"
+  ]
+}

@@ -85,7 +85,7 @@ const ORDER=SC.order||Object.keys(PARTS);
 const outlineMat=new THREE.ShaderMaterial({uniforms:{width:{value:.022},color:{value:new THREE.Color(0xffffff)}},
   vertexShader:'uniform float width;void main(){vec3 p=position+normal*width;gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.0);}',
   fragmentShader:'uniform vec3 color;void main(){gl_FragColor=vec4(color,1.0);}',side:THREE.BackSide});
-for(const id in PARTS){const p=PARTS[id];for(const m of p.meshes){if(m.userData.noHit||m.userData.glass)continue;const ol=new THREE.Mesh(m.geometry,outlineMat);ol.visible=false;ol.castShadow=false;ol.userData.noHit=true;m.add(ol);p.outlines.push(ol);}}
+for(const id in PARTS){const p=PARTS[id];for(const m of p.meshes){if(m.userData.noHit||m.userData.glass||m.userData.pickProxy)continue;const ol=new THREE.Mesh(m.geometry,outlineMat);ol.visible=false;ol.castShadow=false;ol.userData.noHit=true;m.add(ol);p.outlines.push(ol);}}
 for(const id in PARTS)for(const m of PARTS[id].meshes){const u=m.userData,mt=m.material;
   if(u.opBase==null)u.opBase=mt.transparent?mt.opacity:1;
   if(u.trBase==null)u.trBase=!!mt.transparent;
@@ -254,7 +254,7 @@ function frame(){
       const w=_occW.copy(o.position);w.y+=o.userData.cy||0;w.sub(cp);const tt=w.dot(u),dist=w.length();let block=hideNow||dist<(o.userData.r||1)*2.6;
       if(!block&&tt>0&&tt<L*.97){const d=w.addScaledVector(u,-tt).length();block=d<(o.userData.r||1)+.8;}
       const kT=block?0:1;if(Math.abs(o.userData.k-kT)>.001){o.userData.k+=(kT-o.userData.k)*Math.min(1,dt*6);o.scale.setScalar(o.userData.s0*Math.max(o.userData.k,.001));}}}
-  updateCamera(dt);renderer.render(scene,camera);updateTray();
+  updateCamera(dt);renderer.render(scene,camera);updateTray();if(partActionUI)partActionUI.update();
 }
 
 /* ================= 交互 ================= */
@@ -279,9 +279,43 @@ function caption(icon,n,d){const ce=$('#ce');if(icon&&ICONS[icon]){ce.innerHTML=
 function hop(p){const tg=p.hopTargets||p.groups.filter(g=>g.userData.home);for(const g of tg)g.userData.hopT0=now();}
 function select(id,force){const p=PARTS[id];if(!p)return Promise.resolve();
   if(busy()&&!force&&!p.isStart)return Promise.resolve();
-  hideHint();sfx.ac();cam.last=now();S.sel=id;hop(p);sfx.click();
+  hideHint();sfx.ac();cam.last=now();S.sel=id;hop(p);sfx.click();if(partActionUI)partActionUI.selected();
   if(p.isStart){toggleDrive();return Promise.resolve();}
   const txt=p.pickText?p.pickText():p.text;caption(id,p.name,txt);const pr=speak(p.name+'。'+txt);const hit=S.hit;S.hit=null;p.action&&p.action(hit);return pr;}// 把点中的那块网格交给零件，零件可以只动被点的那一个（比如四扇车门）
+
+// Opt-in scene actions live outside .bottom: they cannot change its height,
+// the original buttons or the camera's ResizeObserver input. No new timer.
+const partActionUI=OBJ.partActions?makePartActions():null;
+function makePartActions(){
+  const style=document.createElement('style');style.textContent=`
+    #car-part-actions{position:fixed;z-index:4;display:flex;gap:6px;padding:6px;border-radius:17px;background:rgba(255,255,255,.96);box-shadow:0 3px 12px rgba(43,58,85,.16);box-sizing:border-box;touch-action:manipulation}
+    #car-part-actions[hidden]{display:none}#car-part-actions button{flex:1;min-width:0;min-height:48px;border-radius:12px;padding:4px 6px;background:#e9f5ff;color:#2177b8;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:inherit;font-size:14px;font-weight:800;line-height:1.25;touch-action:manipulation}
+    #car-part-actions button:first-child{flex:1.65}#car-part-actions button[data-action="hazard"]{background:#fff0d5;color:#ac6500}#car-part-actions button[data-action="wiper"]{background:#e1f7eb;color:#248453}
+    #car-part-actions small{font-size:10px;line-height:1.3;font-weight:600;white-space:nowrap;margin-top:2px}#car-part-actions button:active{transform:scale(.97)}#car-part-actions button:disabled{opacity:.55}
+  `;document.head.appendChild(style);
+  const box=document.createElement('div');box.id='car-part-actions';box.hidden=true;box.setAttribute('role','group');box.setAttribute('aria-label','选中零件的操作');document.body.appendChild(box);
+  let key='',nodes=[],compact=false,dismissed=false,capMin=null;
+  function restoreCaption(){if(capMin!==null){$('#cap').style.minHeight=capMin;capMin=null;}}
+  function restoreTray(){if(compact){trayEl.style.maxWidth='';compact=false;}}
+  function hide(){box.hidden=true;restoreTray();}
+  function update(){const actions=OBJ.partActions(S.sel).slice(0,2);
+    if(dismissed||!actions.length||$('#poster').classList.contains('show')){hide();return;}
+    const next=S.sel+':'+actions.map(a=>a.id).join(',');
+    if(next!==key){key=next;box.replaceChildren();nodes=actions.map(a=>{const b=document.createElement('button');b.type='button';b.dataset.action=a.id;
+      const label=document.createElement('span'),detail=document.createElement('small');b.append(label,detail);
+      b.onclick=()=>{if(busy())return;const action=OBJ.partActions(S.sel).find(x=>x.id===b.dataset.action);if(!action)return;
+        if(capMin===null){const cap=$('#cap');capMin=cap.style.minHeight;cap.style.minHeight=cap.getBoundingClientRect().height+'px';}
+        const feedback=action.run();if(feedback){caption(S.sel,feedback.name,feedback.text);speak(feedback.name+'。'+feedback.text);}update();};box.appendChild(b);return {b,label,detail};});}
+    actions.forEach((a,i)=>{const n=nodes[i];if(n.label.textContent!==a.label)n.label.textContent=a.label;if(n.detail.textContent!==a.detail)n.detail.textContent=a.detail;
+      n.b.disabled=busy();n.b.setAttribute('aria-label',a.label+'，'+a.detail);});box.hidden=false;
+    const top=$('.top').getBoundingClientRect().bottom+4,bottom=$('.bottom').getBoundingClientRect().top;
+    const useTray=trayShown&&bottom-top<64&&innerWidth>innerHeight;
+    if(useTray){const width=Math.min(286,innerWidth*.43);trayEl.style.maxWidth=`calc(100% - ${width+10}px)`;compact=true;
+      const tr=trayEl.getBoundingClientRect(),br=$('.bottom').getBoundingClientRect();box.style.width=width+'px';box.style.left=(br.right-12-width)+'px';box.style.top=(tr.top+6)+'px';}
+    else{restoreTray();const width=Math.min(360,innerWidth-24);box.style.width=width+'px';box.style.left=((innerWidth-width)/2)+'px';box.style.top=Math.max(top,bottom-box.offsetHeight-8)+'px';}
+  }
+  return {update,selected(){restoreCaption();dismissed=false;},dismiss(){restoreCaption();dismissed=true;hide();}};
+}
 
 /* ---- 「开起来」：一步一步讲 ---- */
 let chainId=0;
@@ -301,6 +335,7 @@ function paintGo(){const go=$('#go'),ic=go.querySelector('svg');
   if(S.explode){go.classList.toggle('on',touring);$('#gotxt').textContent=touring?'停下':'全部讲一遍';}
   else{go.classList.toggle('on',S.drive);$('#gotxt').textContent=S.drive?SC.go.off:SC.go.on;}}
 function setMode(m){ // 'whole' | 'xray' | 'explode'，一次只在一个模式里
+  if(partActionUI)partActionUI.dismiss();
   cancelTour();if(S.drive&&m==='explode')toggleDrive();
   const wasX=S.xray,wasE=S.explode;S.xray=(m==='xray');S.explode=(m==='explode');unfocus();cam.last=now();hideHint();
   $('#xr').classList.toggle('on',S.xray);$('#xrtxt').textContent=S.xray?'合上':'看里面';

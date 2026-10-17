@@ -1,0 +1,167 @@
+{
+  "status": "PASS",
+  "kind": "Supplemental native-touch screenshot and rendered near-road illumination test",
+  "off": {
+    "lighting": {
+      "lampMode": "OFF",
+      "requestedLampMode": "OFF",
+      "source": "EXPLICIT",
+      "headlightTarget": false,
+      "headlightIntensity": 3.043546958723508e-36,
+      "positionRequested": false,
+      "positionVisualAvailable": true,
+      "positionIntensity": 4.246141918625545e-36,
+      "fogIntensity": 0.00009770642800408869,
+      "turnMode": "OFF",
+      "turnSource": "ORIGINAL_LENS",
+      "blinkOn": false,
+      "brakeUntil": 0,
+      "brakeActive": false,
+      "brakeIntensity": 0,
+      "fogLight": false,
+      "fogVisualAvailable": true
+    },
+    "camera": {
+      "theta": 1.6399998730704806,
+      "phi": 1.12,
+      "r": 16.040158006866722,
+      "projection": [
+        4.860653941474764,
+        0,
+        0,
+        0,
+        0,
+        2.2460367739042155,
+        0,
+        0,
+        0,
+        -0.14691943127962082,
+        -1.0016680567139282,
+        -1,
+        0,
+        0,
+        -0.2001668056713928,
+        0
+      ]
+    },
+    "night": 0.9999998521174454,
+    "roadPoint": [
+      178,
+      530
+    ],
+    "spots": [
+      {
+        "visible": false,
+        "intensity": 0.00007816514240327096,
+        "distance": 3,
+        "target": [
+          3.45,
+          0.03,
+          -0.7480000000000001
+        ]
+      },
+      {
+        "visible": false,
+        "intensity": 0.00007816514240327096,
+        "distance": 3,
+        "target": [
+          3.45,
+          0.03,
+          0.7480000000000001
+        ]
+      }
+    ],
+    "trusted": true,
+    "contextLost": 0
+  },
+  "on": {
+    "lighting": {
+      "lampMode": "OFF",
+      "requestedLampMode": "OFF",
+      "source": "EXPLICIT",
+      "headlightTarget": false,
+      "headlightIntensity": 5.830864741168266e-40,
+      "positionRequested": false,
+      "positionVisualAvailable": true,
+      "positionIntensity": 8.134810973869218e-40,
+      "fogIntensity": 0.9998084374873372,
+      "turnMode": "OFF",
+      "turnSource": "ORIGINAL_LENS",
+      "blinkOn": false,
+      "brakeUntil": 0,
+      "brakeActive": false,
+      "brakeIntensity": 0,
+      "fogLight": true,
+      "fogVisualAvailable": true
+    },
+    "camera": {
+      "theta": 1.6399999999958799,
+      "phi": 1.12,
+      "r": 16.040158006866722,
+      "projection": [
+        4.860653941474764,
+        0,
+        0,
+        0,
+        0,
+        2.2460367739042155,
+        0,
+        0,
+        0,
+        -0.14691943127962082,
+        -1.0016680567139282,
+        -1,
+        0,
+        0,
+        -0.2001668056713928,
+        0
+      ]
+    },
+    "night": 0.9999999705289502,
+    "roadPoint": [
+      178,
+      530
+    ],
+    "spots": [
+      {
+        "visible": true,
+        "intensity": 0.7998467499898698,
+        "distance": 3,
+        "target": [
+          3.45,
+          0.03,
+          -0.7480000000000001
+        ]
+      },
+      {
+        "visible": true,
+        "intensity": 0.7998467499898698,
+        "distance": 3,
+        "target": [
+          3.45,
+          0.03,
+          0.7480000000000001
+        ]
+      }
+    ],
+    "trusted": true,
+    "contextLost": 0
+  },
+  "pixels": {
+    "roadROI": [
+      166,
+      522,
+      191,
+      539
+    ],
+    "beforeMeanRGB": 71.11999999999999,
+    "afterMeanRGB": 89.24627450980392,
+    "increase": 18.126274509803935
+  },
+  "errors": [],
+  "boundaries": [
+    "Software Chromium only",
+    "No physical HarmonyOS or human audio test",
+    "New formal MP3 not supplied"
+  ]
+}
