@@ -1,0 +1,630 @@
+[
+  {
+    "file": "home-390x844.png",
+    "masks": []
+  },
+  {
+    "file": "car-default-390x844.png",
+    "masks": [
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          319,
+          414,
+          332,
+          427
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          318,
+          412,
+          333,
+          429
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          251,
+          440,
+          263,
+          454
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          250,
+          438,
+          265,
+          456
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          317,
+          422,
+          333,
+          440
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          316,
+          420,
+          334,
+          441
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          249,
+          448,
+          265,
+          467
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          248,
+          446,
+          266,
+          469
+        ]
+      }
+    ]
+  },
+  {
+    "file": "car-night-390x844.png",
+    "masks": [
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          319,
+          414,
+          332,
+          427
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          318,
+          412,
+          333,
+          429
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          251,
+          440,
+          263,
+          454
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          250,
+          438,
+          265,
+          456
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          317,
+          422,
+          333,
+          440
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          316,
+          420,
+          334,
+          441
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          249,
+          448,
+          265,
+          467
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          248,
+          446,
+          266,
+          469
+        ]
+      },
+      {
+        "kind": "amber-selection",
+        "id": "turnLeft",
+        "rect": [
+          315,
+          371,
+          326,
+          382
+        ]
+      },
+      {
+        "kind": "amber-selection",
+        "id": "turnRight",
+        "rect": [
+          228,
+          401,
+          239,
+          412
+        ]
+      },
+      {
+        "kind": "temporary-actions",
+        "rect": [
+          -1,
+          579,
+          391,
+          671
+        ]
+      }
+    ]
+  },
+  {
+    "file": "car-door-390x844.png",
+    "masks": [
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          319,
+          414,
+          332,
+          427
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          318,
+          412,
+          333,
+          429
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          251,
+          440,
+          263,
+          454
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          250,
+          438,
+          265,
+          456
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          317,
+          422,
+          333,
+          440
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          316,
+          420,
+          334,
+          441
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          249,
+          448,
+          265,
+          467
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          248,
+          446,
+          266,
+          469
+        ]
+      }
+    ]
+  },
+  {
+    "file": "car-xray-390x844.png",
+    "masks": [
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          319,
+          365,
+          332,
+          378
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          318,
+          363,
+          333,
+          380
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          251,
+          391,
+          263,
+          405
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          250,
+          389,
+          265,
+          407
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          317,
+          373,
+          333,
+          391
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          316,
+          371,
+          334,
+          392
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          249,
+          399,
+          265,
+          418
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          248,
+          397,
+          266,
+          420
+        ]
+      }
+    ]
+  },
+  {
+    "file": "car-exploded-390x844.png",
+    "masks": [
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          363,
+          404,
+          374,
+          417
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          362,
+          403,
+          375,
+          418
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          308,
+          428,
+          320,
+          441
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          307,
+          426,
+          321,
+          442
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          361,
+          411,
+          375,
+          427
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          360,
+          409,
+          376,
+          428
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          306,
+          434,
+          321,
+          451
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          305,
+          433,
+          322,
+          452
+        ]
+      }
+    ]
+  },
+  {
+    "file": "car-default-360x800.png",
+    "masks": [
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          294,
+          386,
+          306,
+          399
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          293,
+          385,
+          307,
+          401
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          231,
+          410,
+          243,
+          424
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          230,
+          409,
+          244,
+          426
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          292,
+          393,
+          307,
+          411
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          291,
+          392,
+          308,
+          412
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          229,
+          418,
+          244,
+          436
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          228,
+          416,
+          245,
+          437
+        ]
+      }
+    ]
+  },
+  {
+    "file": "car-default-1280x900.png",
+    "masks": [
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          921,
+          519,
+          940,
+          541
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          919,
+          515,
+          943,
+          545
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          776,
+          589,
+          796,
+          613
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "position",
+        "rect": [
+          774,
+          584,
+          799,
+          617
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          915,
+          536,
+          941,
+          568
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          913,
+          532,
+          943,
+          571
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          771,
+          606,
+          798,
+          641
+        ]
+      },
+      {
+        "kind": "fixture",
+        "id": "fog",
+        "rect": [
+          768,
+          602,
+          801,
+          646
+        ]
+      }
+    ]
+  }
+]

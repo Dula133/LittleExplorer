@@ -1,0 +1,718 @@
+{
+  "status": "PASS",
+  "method": "Exact original camera/layout/state and all original mesh descriptors; only four amber owners reassigned; projected new fixtures and temporary controls bounded separately",
+  "roundingLimit": 2,
+  "captures": [
+    {
+      "file": "home-390x844.png",
+      "changedPixels": 0,
+      "outsideLocalChangedPixels": 0,
+      "outsideMaxChannelDelta": 0,
+      "boundingBox": null,
+      "approvedRegions": [],
+      "baselineSHA256": "6d4004c0d11320db97de6aae2e383a2684877a480734e2d1c0a5106f174de470",
+      "candidateSHA256": "6d4004c0d11320db97de6aae2e383a2684877a480734e2d1c0a5106f174de470"
+    },
+    {
+      "file": "car-default-390x844.png",
+      "changedPixels": 270,
+      "outsideLocalChangedPixels": 0,
+      "outsideMaxChannelDelta": 0,
+      "boundingBox": [
+        252,
+        416,
+        330,
+        464
+      ],
+      "approvedRegions": [
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            319,
+            414,
+            332,
+            427
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            318,
+            412,
+            333,
+            429
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            251,
+            440,
+            263,
+            454
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            250,
+            438,
+            265,
+            456
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            317,
+            422,
+            333,
+            440
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            316,
+            420,
+            334,
+            441
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            249,
+            448,
+            265,
+            467
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            248,
+            446,
+            266,
+            469
+          ]
+        }
+      ],
+      "baselineSHA256": "cd6f20ab609aa567b50426fcc75acfe253cf673910a8a7dcfd477ef030f98066",
+      "candidateSHA256": "342ebbf2a74982c7ccff5c83cc6227783d5aa120eab6fd775ad7e4ebf472ed0a"
+    },
+    {
+      "file": "car-night-390x844.png",
+      "changedPixels": 31593,
+      "outsideLocalChangedPixels": 0,
+      "outsideMaxChannelDelta": 0,
+      "boundingBox": [
+        4,
+        371,
+        387,
+        671
+      ],
+      "approvedRegions": [
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            319,
+            414,
+            332,
+            427
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            318,
+            412,
+            333,
+            429
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            251,
+            440,
+            263,
+            454
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            250,
+            438,
+            265,
+            456
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            317,
+            422,
+            333,
+            440
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            316,
+            420,
+            334,
+            441
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            249,
+            448,
+            265,
+            467
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            248,
+            446,
+            266,
+            469
+          ]
+        },
+        {
+          "kind": "amber-selection",
+          "id": "turnLeft",
+          "rect": [
+            315,
+            371,
+            326,
+            382
+          ]
+        },
+        {
+          "kind": "amber-selection",
+          "id": "turnRight",
+          "rect": [
+            228,
+            401,
+            239,
+            412
+          ]
+        },
+        {
+          "kind": "temporary-actions",
+          "rect": [
+            -1,
+            579,
+            391,
+            671
+          ]
+        }
+      ],
+      "baselineSHA256": "02e41aac0285a58e42d9cc0bd8e4e26478eb403981350e872b3244c00b912832",
+      "candidateSHA256": "c3dc87ece8ac0f3cc172b92993a549675127145475084c4180e2e40a3823abb0"
+    },
+    {
+      "file": "car-door-390x844.png",
+      "changedPixels": 270,
+      "outsideLocalChangedPixels": 0,
+      "outsideMaxChannelDelta": 0,
+      "boundingBox": [
+        252,
+        416,
+        330,
+        464
+      ],
+      "approvedRegions": [
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            319,
+            414,
+            332,
+            427
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            318,
+            412,
+            333,
+            429
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            251,
+            440,
+            263,
+            454
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            250,
+            438,
+            265,
+            456
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            317,
+            422,
+            333,
+            440
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            316,
+            420,
+            334,
+            441
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            249,
+            448,
+            265,
+            467
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            248,
+            446,
+            266,
+            469
+          ]
+        }
+      ],
+      "baselineSHA256": "d8316ebb9d57540db067e112fbaf9c130178c4740727c2fcac072d4a6c9f1d8c",
+      "candidateSHA256": "a75d6375a11567f8671ce350980c94265527ecc3a08ef2091cddd4f8dc78bf60"
+    },
+    {
+      "file": "car-xray-390x844.png",
+      "changedPixels": 281,
+      "outsideLocalChangedPixels": 0,
+      "outsideMaxChannelDelta": 0,
+      "boundingBox": [
+        251,
+        367,
+        330,
+        415
+      ],
+      "approvedRegions": [
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            319,
+            365,
+            332,
+            378
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            318,
+            363,
+            333,
+            380
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            251,
+            391,
+            263,
+            405
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            250,
+            389,
+            265,
+            407
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            317,
+            373,
+            333,
+            391
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            316,
+            371,
+            334,
+            392
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            249,
+            399,
+            265,
+            418
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            248,
+            397,
+            266,
+            420
+          ]
+        }
+      ],
+      "baselineSHA256": "ad1c449eb5b1ef0232a50dea7847ed1c5d2fce211ada0c69d9952f94f941e4ee",
+      "candidateSHA256": "22130a95ea6cbc1d3e5eb6bd49ea6d5b60e19ba96c5055e1a4e9bf9eb6ad3f70"
+    },
+    {
+      "file": "car-exploded-390x844.png",
+      "changedPixels": 650,
+      "outsideLocalChangedPixels": 458,
+      "outsideMaxChannelDelta": 2,
+      "boundingBox": [
+        241,
+        407,
+        390,
+        844
+      ],
+      "approvedRegions": [
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            363,
+            404,
+            374,
+            417
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            362,
+            403,
+            375,
+            418
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            308,
+            428,
+            320,
+            441
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            307,
+            426,
+            321,
+            442
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            361,
+            411,
+            375,
+            427
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            360,
+            409,
+            376,
+            428
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            306,
+            434,
+            321,
+            451
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            305,
+            433,
+            322,
+            452
+          ]
+        }
+      ],
+      "baselineSHA256": "830328f993ef0f45e6c0cba55297782722b393a9d93061ec32317f0f7fcbe376",
+      "candidateSHA256": "83de4de96f557d84677c75478951ad84ee4b9665f85e14d67b88a4b24858ebd8"
+    },
+    {
+      "file": "car-default-360x800.png",
+      "changedPixels": 231,
+      "outsideLocalChangedPixels": 0,
+      "outsideMaxChannelDelta": 0,
+      "boundingBox": [
+        232,
+        389,
+        304,
+        432
+      ],
+      "approvedRegions": [
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            294,
+            386,
+            306,
+            399
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            293,
+            385,
+            307,
+            401
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            231,
+            410,
+            243,
+            424
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            230,
+            409,
+            244,
+            426
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            292,
+            393,
+            307,
+            411
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            291,
+            392,
+            308,
+            412
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            229,
+            418,
+            244,
+            436
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            228,
+            416,
+            245,
+            437
+          ]
+        }
+      ],
+      "baselineSHA256": "49a3e9b2dacc17db26f29b521f0471bd53e17d614467f457445dda2035fe8a88",
+      "candidateSHA256": "148d8f43309b5b355f865c8a9d0485aee7ac8542953021fe597078a7d8f7983e"
+    },
+    {
+      "file": "car-default-1280x900.png",
+      "changedPixels": 1156,
+      "outsideLocalChangedPixels": 0,
+      "outsideMaxChannelDelta": 0,
+      "boundingBox": [
+        773,
+        521,
+        938,
+        637
+      ],
+      "approvedRegions": [
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            921,
+            519,
+            940,
+            541
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            919,
+            515,
+            943,
+            545
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            776,
+            589,
+            796,
+            613
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "position",
+          "rect": [
+            774,
+            584,
+            799,
+            617
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            915,
+            536,
+            941,
+            568
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            913,
+            532,
+            943,
+            571
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            771,
+            606,
+            798,
+            641
+          ]
+        },
+        {
+          "kind": "fixture",
+          "id": "fog",
+          "rect": [
+            768,
+            602,
+            801,
+            646
+          ]
+        }
+      ],
+      "baselineSHA256": "affe821eb9e6cdfe1d2418372f387d1a8a5723dfef0669b77be21b79bf7ea925",
+      "candidateSHA256": "24460d140a194feab3f059d7bed91b2fda5db58afa0734f2f2f12b291ff7d96e"
+    }
+  ]
+}

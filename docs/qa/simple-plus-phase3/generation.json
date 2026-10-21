@@ -1,0 +1,1082 @@
+[
+  {
+    "voice": "yunxia",
+    "text": "小灯（前位置灯）。这是小灯，也叫位置灯。它让别人更容易看见汽车在哪里。",
+    "id": "58850204",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 56736,
+    "duration": 9.456,
+    "status": "PASS",
+    "sha256": "f3d7c17eb39c6af9b399fff3575dc65e964920320048c63cc5bd4381d9cdb774",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "9.456000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "前雾灯。雾很大的时候，前雾灯帮助我们看清汽车附近的路。",
+    "id": "d84bb130",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 41904,
+    "duration": 6.984,
+    "status": "PASS",
+    "sha256": "a71b40444b3800b865ed9795b62c9929e5d052b4546d35d0bf752609417f532a",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.984000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "左转向灯。左边的灯在闪，告诉别人：我准备往左走。",
+    "id": "6d5c0244",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 39744,
+    "duration": 6.624,
+    "status": "PASS",
+    "sha256": "e0799f4632f2d0df65d5e7556715963e048d09a9a0d9640548bd27209ef5c28f",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.624000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "右转向灯。右边的灯在闪，告诉别人：我准备往右走。",
+    "id": "ffc36ee9",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 39312,
+    "duration": 6.552,
+    "status": "PASS",
+    "sha256": "848d026caf65df83a3ef348a410a46aa8ae73bdad66093d0756a167595819f87",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.552000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "危险报警闪光灯。左右两边一起闪，提醒别人注意。",
+    "id": "97de31f3",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 39312,
+    "duration": 6.552,
+    "status": "PASS",
+    "sha256": "e236f9f2a5eb734da824d57b612e0bf7ce8b2861753657df288728fe0ff80a6d",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.552000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "危险报警闪光灯。双闪关掉了。",
+    "id": "98f70715",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 28368,
+    "duration": 4.728,
+    "status": "PASS",
+    "sha256": "03360120419abf28c8a7ba8617420ecd1fddd9c23167f8cef4472b8fc5e400f9",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "4.728000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "左转向灯。转向灯关掉了。",
+    "id": "c1b87aa6",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 24336,
+    "duration": 4.056,
+    "status": "PASS",
+    "sha256": "ade45ca00049aeff60535ac83af3b65b5782edade953eeb225bdc61e6a38e09a",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "4.056000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "右转向灯。转向灯关掉了。",
+    "id": "84d37995",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 24480,
+    "duration": 4.08,
+    "status": "PASS",
+    "sha256": "2f120bac68ef6077a76fbf5cde0aa85fd9f21d8e9719ea869b328abece62d92a",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "4.080000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "前雾灯。前雾灯关掉了。",
+    "id": "f1a3e2db",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 22896,
+    "duration": 3.816,
+    "status": "PASS",
+    "sha256": "3fd127b3e64cd4653bbe0a0e382b4bfbcc85aff23a6b4f94c8c6d7a4526ac5bb",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.816000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "车灯。现在只打开小灯。",
+    "id": "8bea9f4e",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 23040,
+    "duration": 3.84,
+    "status": "PASS",
+    "sha256": "f50bb07627f21394240bde29347887b55e94622fdee6202767a0fae57c6373f9",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.840000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "车灯。前照灯亮了，小灯也亮着。",
+    "id": "75a117dc",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 29376,
+    "duration": 4.896,
+    "status": "PASS",
+    "sha256": "789140d6ebceafb3703575bf82cea27ddb70a691d08a770243c6631e3eb3d469",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "4.896000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "车灯。灯关掉了。",
+    "id": "bcabae56",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 18864,
+    "duration": 3.144,
+    "status": "PASS",
+    "sha256": "5fd5ed25ae4470fec75f5023670846491ed3955313b8d700ee423c56ecfe934e",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.144000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "车灯。车灯跟着白天、夜晚和启动状态变化。",
+    "id": "5490a9e2",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 37440,
+    "duration": 6.24,
+    "status": "PASS",
+    "sha256": "a9c3dba78e4bbf9fb2d96373bece14d79e5e8c2f44fbb423b298dbbebf3672e4",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.240000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "雨量。雨停了。",
+    "id": "555dd055",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 17856,
+    "duration": 2.976,
+    "status": "PASS",
+    "sha256": "29a23c0b4855e760c49db661ad11f4e258e05a0403d33daaec4822d42927ecef",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "2.976000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "雨量。现在下小雨。",
+    "id": "dbd42344",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 20304,
+    "duration": 3.384,
+    "status": "PASS",
+    "sha256": "9a5d9e2260f54b82df07c3c241cba5ba96362353e63ada9068816e8684fa8231",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.384000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "雨量。雨变大了。",
+    "id": "56e7818a",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 19008,
+    "duration": 3.168,
+    "status": "PASS",
+    "sha256": "f62562fdd3736c322c5cfdd7e9a2bf0271946bdeb11778db9097865620544a35",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.168000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "雨量。现在是大雨。",
+    "id": "bd110506",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 20160,
+    "duration": 3.36,
+    "status": "PASS",
+    "sha256": "36741e4bd1e78590aba67ff14759619a3518b581e0c98bb2caa5178a10670f89",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.360000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "雨刮器。雨刮器开始刮雨。",
+    "id": "777c8424",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 23760,
+    "duration": 3.96,
+    "status": "PASS",
+    "sha256": "1f74c682065e16407c9e1801a0f2511a454e57300c0732cd8882367a53b97925",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.960000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "雨刮器。雨刮器停下了。",
+    "id": "fb48b648",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 23040,
+    "duration": 3.84,
+    "status": "PASS",
+    "sha256": "8b8b1563ab050ac894fda5cb33477a3bb769ecde8b483f061ec01d42276576c9",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.840000"
+      }
+    }
+  },
+  {
+    "voice": "yunxia",
+    "text": "车灯。档位已记住，电池演示结束后恢复。",
+    "id": "7d63fb77",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 33264,
+    "duration": 5.544,
+    "status": "PASS",
+    "sha256": "cc35e58fb945891d75118b4d2e5729f302a9d5aba481e80dfb61bce2f62d37be",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "5.544000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "小灯（前位置灯）。这是小灯，也叫位置灯。它让别人更容易看见汽车在哪里。",
+    "id": "58850204",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 53280,
+    "duration": 8.88,
+    "status": "PASS",
+    "sha256": "08bb8d6833fe84696a1c68a0d1d80d3f45f4472bd80f035059867d7631eb8788",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "8.880000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "前雾灯。雾很大的时候，前雾灯帮助我们看清汽车附近的路。",
+    "id": "d84bb130",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 40032,
+    "duration": 6.672,
+    "status": "PASS",
+    "sha256": "0488961fd1d8d91fd446df333f9be4c70ef91443d746328dcdf912ea6a7c1dda",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.672000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "左转向灯。左边的灯在闪，告诉别人：我准备往左走。",
+    "id": "6d5c0244",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 37872,
+    "duration": 6.312,
+    "status": "PASS",
+    "sha256": "a48e7c33fa3137b88ebd2e193fcc9acb803692a2466d64eb0e9ee7801c95907b",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.312000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "右转向灯。右边的灯在闪，告诉别人：我准备往右走。",
+    "id": "ffc36ee9",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 36864,
+    "duration": 6.144,
+    "status": "PASS",
+    "sha256": "1eae13083b8c0088635da92a924669a9dc9e430f1c083df393fef54de690b3a8",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.144000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "危险报警闪光灯。左右两边一起闪，提醒别人注意。",
+    "id": "97de31f3",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 37872,
+    "duration": 6.312,
+    "status": "PASS",
+    "sha256": "adba62bab1f71637a5008eea0bc7b08ed204c96333dd32133dc77bf3c32a21d6",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.312000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "危险报警闪光灯。双闪关掉了。",
+    "id": "98f70715",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 27072,
+    "duration": 4.512,
+    "status": "PASS",
+    "sha256": "9ff52045d91d82d2a0a6a1ae6708033ed02d7887536bdaf4af16b4c7a3323ba3",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "4.512000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "左转向灯。转向灯关掉了。",
+    "id": "c1b87aa6",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 23040,
+    "duration": 3.84,
+    "status": "PASS",
+    "sha256": "b2b270d58773a68c9792da346c6154731af2025858c31683eb48250d244e8cf2",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.840000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "右转向灯。转向灯关掉了。",
+    "id": "84d37995",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 22752,
+    "duration": 3.792,
+    "status": "PASS",
+    "sha256": "d13450e59ff079d82cdeab83f76293cfc88ff6fe0d46019576a4c87612fd4bb8",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.792000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "前雾灯。前雾灯关掉了。",
+    "id": "f1a3e2db",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 22320,
+    "duration": 3.72,
+    "status": "PASS",
+    "sha256": "4e1c0490e2295f47a91cc2ebc59200048052250296b04bed54db446c6afa65c7",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.720000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "车灯。现在只打开小灯。",
+    "id": "8bea9f4e",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 21600,
+    "duration": 3.6,
+    "status": "PASS",
+    "sha256": "7e751dd7c1644d302224b4dd33510cfdbdc290b312b1c565af3546ca16c740fc",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.600000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "车灯。前照灯亮了，小灯也亮着。",
+    "id": "75a117dc",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 27360,
+    "duration": 4.56,
+    "status": "PASS",
+    "sha256": "02f6147c76dd9f4a3bcd5655dfbccccab133e50abb3822c061352a24ae950c8d",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "4.560000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "车灯。灯关掉了。",
+    "id": "bcabae56",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 18000,
+    "duration": 3.0,
+    "status": "PASS",
+    "sha256": "90fbdba8becf8e9b874635527ad00084df3058e6ede1061f0b39e66f68b296cb",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.000000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "车灯。车灯跟着白天、夜晚和启动状态变化。",
+    "id": "5490a9e2",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 35568,
+    "duration": 5.928,
+    "status": "PASS",
+    "sha256": "0ad2fad998434bcf1f452c68d9503802f6ed5d88e902e399b4d07104ba6cd95a",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "5.928000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "雨量。雨停了。",
+    "id": "555dd055",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 16128,
+    "duration": 2.688,
+    "status": "PASS",
+    "sha256": "27b1c698c08bb1856f11c4419df0891c1046af06f96e64670d7c833806727b60",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "2.688000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "雨量。现在下小雨。",
+    "id": "dbd42344",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 19872,
+    "duration": 3.312,
+    "status": "PASS",
+    "sha256": "810c16f5d0019055f35fa788472d088a11f158c93faea6fad4bff980fc2c39e2",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.312000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "雨量。雨变大了。",
+    "id": "56e7818a",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 17712,
+    "duration": 2.952,
+    "status": "PASS",
+    "sha256": "3e4d9ee2d670b42171946f4ecbb5f392e0c5e29d6934fca5a67a012aefdf7515",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "2.952000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "雨量。现在是大雨。",
+    "id": "bd110506",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 19440,
+    "duration": 3.24,
+    "status": "PASS",
+    "sha256": "ba93f869e6dff35675c0120f4bce318d0bd66dd21ae0d909708f2aba92c4c9f2",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.240000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "雨刮器。雨刮器开始刮雨。",
+    "id": "777c8424",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 24192,
+    "duration": 4.032,
+    "status": "PASS",
+    "sha256": "1ba710c4eeff6e02222459762293f94640d782f735a4689223724861d3bb8b8b",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "4.032000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "雨刮器。雨刮器停下了。",
+    "id": "fb48b648",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 22032,
+    "duration": 3.672,
+    "status": "PASS",
+    "sha256": "56be707eb5a148d086d2dd3e6fb84653cbd98cf7353a34e7e647ea07e80eec2f",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "3.672000"
+      }
+    }
+  },
+  {
+    "voice": "xiaoyi",
+    "text": "车灯。档位已记住，电池演示结束后恢复。",
+    "id": "7d63fb77",
+    "requests": 1,
+    "http_status": 101,
+    "TLS_verified": true,
+    "bytes": 31536,
+    "duration": 5.256,
+    "status": "PASS",
+    "sha256": "883bcadef963efa95f712b62b7774f447d5bbc5800bacb227ba123185ea29ef5",
+    "ffmpeg_exit": 0,
+    "audio_info": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "5.256000"
+      }
+    }
+  }
+]

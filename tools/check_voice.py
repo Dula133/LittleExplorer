@@ -57,6 +57,10 @@ def collect_lines(root=ROOT):
     for m in re.finditer(r"stopSaid:'([^']+)'", src):
         lines.add(m.group(1))
     lines.update(['看里面', '合上', '拆开看', '装回去'])
+    # Dynamic Simple+ feedback contract; the browser suite verifies runtime text.
+    contract = root / 'tools/qa_car_simple_plus.phase2.json'
+    if contract.exists() and 'function partActions(id)' in src:
+        lines.update(json.loads(contract.read_text(encoding='utf-8'))['voiceGaps'])
     return lines
 
 

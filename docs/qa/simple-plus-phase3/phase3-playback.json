@@ -1,0 +1,1385 @@
+{
+  "status": "PASS",
+  "newKeys": 20,
+  "voices": 2,
+  "evidence": [
+    {
+      "voice": "yunxia",
+      "key": "小灯（前位置灯）。这是小灯，也叫位置灯。它让别人更容易看见汽车在哪里。",
+      "id": "58850204",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/58850204.mp3",
+          "duration": 9.456,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/58850204.mp3",
+          "duration": 9.456,
+          "time": 9.456,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "车灯。前照灯亮了，小灯也亮着。",
+      "id": "75a117dc",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/75a117dc.mp3",
+          "duration": 4.896,
+          "time": 0.000427,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/75a117dc.mp3",
+          "duration": 4.896,
+          "time": 3.649144,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/75a117dc.mp3",
+          "duration": 4.896,
+          "time": 4.896,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "车灯。灯关掉了。",
+      "id": "bcabae56",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/bcabae56.mp3",
+          "duration": 3.144,
+          "time": 0.002476,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/bcabae56.mp3",
+          "duration": 3.144,
+          "time": 3.144,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "车灯。车灯跟着白天、夜晚和启动状态变化。",
+      "id": "5490a9e2",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/5490a9e2.mp3",
+          "duration": 6.24,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/5490a9e2.mp3",
+          "duration": 6.24,
+          "time": 6.24,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "车灯。现在只打开小灯。",
+      "id": "8bea9f4e",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/8bea9f4e.mp3",
+          "duration": 3.84,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/8bea9f4e.mp3",
+          "duration": 3.84,
+          "time": 3.815978,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/8bea9f4e.mp3",
+          "duration": 3.84,
+          "time": 3.84,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "前雾灯。雾很大的时候，前雾灯帮助我们看清汽车附近的路。",
+      "id": "d84bb130",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/d84bb130.mp3",
+          "duration": 6.984,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/d84bb130.mp3",
+          "duration": 6.984,
+          "time": 6.984,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "前雾灯。前雾灯关掉了。",
+      "id": "f1a3e2db",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/f1a3e2db.mp3",
+          "duration": 3.816,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/f1a3e2db.mp3",
+          "duration": 3.816,
+          "time": 3.816,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "前雾灯。雾很大的时候，前雾灯帮助我们看清汽车附近的路。",
+      "id": "d84bb130",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/d84bb130.mp3",
+          "duration": 6.984,
+          "time": 0.004348,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/d84bb130.mp3",
+          "duration": 6.984,
+          "time": 6.984,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "左转向灯。左边的灯在闪，告诉别人：我准备往左走。",
+      "id": "6d5c0244",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/6d5c0244.mp3",
+          "duration": 6.624,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/6d5c0244.mp3",
+          "duration": 6.624,
+          "time": 6.624,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "左转向灯。转向灯关掉了。",
+      "id": "c1b87aa6",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/c1b87aa6.mp3",
+          "duration": 4.056,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/c1b87aa6.mp3",
+          "duration": 4.056,
+          "time": 4.056,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "左转向灯。左边的灯在闪，告诉别人：我准备往左走。",
+      "id": "6d5c0244",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/6d5c0244.mp3",
+          "duration": 6.624,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/6d5c0244.mp3",
+          "duration": 6.624,
+          "time": 6.624,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "危险报警闪光灯。左右两边一起闪，提醒别人注意。",
+      "id": "97de31f3",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/97de31f3.mp3",
+          "duration": 6.552,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/97de31f3.mp3",
+          "duration": 6.552,
+          "time": 6.552,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "危险报警闪光灯。双闪关掉了。",
+      "id": "98f70715",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/98f70715.mp3",
+          "duration": 4.728,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/98f70715.mp3",
+          "duration": 4.728,
+          "time": 4.728,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "右转向灯。右边的灯在闪，告诉别人：我准备往右走。",
+      "id": "ffc36ee9",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/ffc36ee9.mp3",
+          "duration": 6.552,
+          "time": 0.003946,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/ffc36ee9.mp3",
+          "duration": 6.552,
+          "time": 6.552,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "右转向灯。转向灯关掉了。",
+      "id": "84d37995",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/84d37995.mp3",
+          "duration": 4.08,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/84d37995.mp3",
+          "duration": 4.08,
+          "time": 4.08,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "右转向灯。右边的灯在闪，告诉别人：我准备往右走。",
+      "id": "ffc36ee9",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/ffc36ee9.mp3",
+          "duration": 6.552,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/ffc36ee9.mp3",
+          "duration": 6.552,
+          "time": 6.552,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "危险报警闪光灯。左右两边一起闪，提醒别人注意。",
+      "id": "97de31f3",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/97de31f3.mp3",
+          "duration": 6.552,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/97de31f3.mp3",
+          "duration": 6.552,
+          "time": 6.552,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "危险报警闪光灯。双闪关掉了。",
+      "id": "98f70715",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/98f70715.mp3",
+          "duration": 4.728,
+          "time": 0.000037,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/98f70715.mp3",
+          "duration": 4.728,
+          "time": 4.728,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "雨刮器。下雨啦！雨刮器左右摆，把玻璃上的雨水刮掉，才能看清路。",
+      "id": "3ccbbfc9",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/3ccbbfc9.mp3",
+          "duration": 8.4,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/3ccbbfc9.mp3",
+          "duration": 8.4,
+          "time": 8.4,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "雨量。现在下小雨。",
+      "id": "dbd42344",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/dbd42344.mp3",
+          "duration": 3.384,
+          "time": 0.000827,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/dbd42344.mp3",
+          "duration": 3.384,
+          "time": 3.384,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "雨量。雨变大了。",
+      "id": "56e7818a",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/56e7818a.mp3",
+          "duration": 3.168,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/56e7818a.mp3",
+          "duration": 3.168,
+          "time": 3.168,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "雨量。现在是大雨。",
+      "id": "bd110506",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/bd110506.mp3",
+          "duration": 3.36,
+          "time": 0.325095,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/bd110506.mp3",
+          "duration": 3.36,
+          "time": 3.36,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "雨量。雨停了。",
+      "id": "555dd055",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/555dd055.mp3",
+          "duration": 2.976,
+          "time": 0.000083,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/555dd055.mp3",
+          "duration": 2.976,
+          "time": 2.976,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "雨刮器。雨刮器开始刮雨。",
+      "id": "777c8424",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/777c8424.mp3",
+          "duration": 3.96,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/777c8424.mp3",
+          "duration": 3.96,
+          "time": 3.96,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "雨刮器。雨刮器停下了。",
+      "id": "fb48b648",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/fb48b648.mp3",
+          "duration": 3.84,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/fb48b648.mp3",
+          "duration": 3.84,
+          "time": 3.84,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "yunxia",
+      "key": "车灯。档位已记住，电池演示结束后恢复。",
+      "id": "7d63fb77",
+      "input": "native touch",
+      "timing": "Controlled battery setup; real-time native audio",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/7d63fb77.mp3",
+          "duration": 5.544,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/7d63fb77.mp3",
+          "duration": 5.544,
+          "time": 5.544,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "小灯（前位置灯）。这是小灯，也叫位置灯。它让别人更容易看见汽车在哪里。",
+      "id": "58850204",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/58850204.mp3",
+          "duration": 8.88,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/58850204.mp3",
+          "duration": 8.88,
+          "time": 8.88,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/58850204.mp3",
+          "duration": 8.88,
+          "time": 8.88,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "车灯。前照灯亮了，小灯也亮着。",
+      "id": "75a117dc",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/75a117dc.mp3",
+          "duration": 4.56,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/75a117dc.mp3",
+          "duration": 4.56,
+          "time": 4.56,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "车灯。灯关掉了。",
+      "id": "bcabae56",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/bcabae56.mp3",
+          "duration": 3,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/bcabae56.mp3",
+          "duration": 3,
+          "time": 3,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "车灯。车灯跟着白天、夜晚和启动状态变化。",
+      "id": "5490a9e2",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/5490a9e2.mp3",
+          "duration": 5.928,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/5490a9e2.mp3",
+          "duration": 5.928,
+          "time": 5.928,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "车灯。现在只打开小灯。",
+      "id": "8bea9f4e",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/8bea9f4e.mp3",
+          "duration": 3.6,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/8bea9f4e.mp3",
+          "duration": 3.6,
+          "time": 3.6,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "前雾灯。雾很大的时候，前雾灯帮助我们看清汽车附近的路。",
+      "id": "d84bb130",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/d84bb130.mp3",
+          "duration": 6.672,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/d84bb130.mp3",
+          "duration": 6.672,
+          "time": 6.672,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "前雾灯。前雾灯关掉了。",
+      "id": "f1a3e2db",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/f1a3e2db.mp3",
+          "duration": 3.72,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/f1a3e2db.mp3",
+          "duration": 3.72,
+          "time": 3.72,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "前雾灯。雾很大的时候，前雾灯帮助我们看清汽车附近的路。",
+      "id": "d84bb130",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/d84bb130.mp3",
+          "duration": 6.672,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/d84bb130.mp3",
+          "duration": 6.672,
+          "time": 6.672,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "左转向灯。左边的灯在闪，告诉别人：我准备往左走。",
+      "id": "6d5c0244",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/6d5c0244.mp3",
+          "duration": 6.312,
+          "time": 0.415525,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/6d5c0244.mp3",
+          "duration": 6.312,
+          "time": 6.312,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "左转向灯。转向灯关掉了。",
+      "id": "c1b87aa6",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/c1b87aa6.mp3",
+          "duration": 3.84,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/c1b87aa6.mp3",
+          "duration": 3.84,
+          "time": 3.84,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "左转向灯。左边的灯在闪，告诉别人：我准备往左走。",
+      "id": "6d5c0244",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/6d5c0244.mp3",
+          "duration": 6.312,
+          "time": 0.012795,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/6d5c0244.mp3",
+          "duration": 6.312,
+          "time": 6.312,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "危险报警闪光灯。左右两边一起闪，提醒别人注意。",
+      "id": "97de31f3",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/97de31f3.mp3",
+          "duration": 6.312,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/97de31f3.mp3",
+          "duration": 6.312,
+          "time": 6.312,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "危险报警闪光灯。双闪关掉了。",
+      "id": "98f70715",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/98f70715.mp3",
+          "duration": 4.512,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/98f70715.mp3",
+          "duration": 4.512,
+          "time": 4.512,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "右转向灯。右边的灯在闪，告诉别人：我准备往右走。",
+      "id": "ffc36ee9",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/ffc36ee9.mp3",
+          "duration": 6.144,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/ffc36ee9.mp3",
+          "duration": 6.144,
+          "time": 6.144,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "右转向灯。转向灯关掉了。",
+      "id": "84d37995",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/84d37995.mp3",
+          "duration": 3.792,
+          "time": 0.000103,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/84d37995.mp3",
+          "duration": 3.792,
+          "time": 3.792,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "右转向灯。右边的灯在闪，告诉别人：我准备往右走。",
+      "id": "ffc36ee9",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/ffc36ee9.mp3",
+          "duration": 6.144,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/ffc36ee9.mp3",
+          "duration": 6.144,
+          "time": 6.144,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "危险报警闪光灯。左右两边一起闪，提醒别人注意。",
+      "id": "97de31f3",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/97de31f3.mp3",
+          "duration": 6.312,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/97de31f3.mp3",
+          "duration": 6.312,
+          "time": 6.312,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "危险报警闪光灯。双闪关掉了。",
+      "id": "98f70715",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/98f70715.mp3",
+          "duration": 4.512,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/98f70715.mp3",
+          "duration": 4.512,
+          "time": 4.512,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "雨刮器。下雨啦！雨刮器左右摆，把玻璃上的雨水刮掉，才能看清路。",
+      "id": "3ccbbfc9",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/3ccbbfc9.mp3",
+          "duration": 8.16,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/3ccbbfc9.mp3",
+          "duration": 8.16,
+          "time": 8.16,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "雨量。现在下小雨。",
+      "id": "dbd42344",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/dbd42344.mp3",
+          "duration": 3.312,
+          "time": 3.061957,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/dbd42344.mp3",
+          "duration": 3.312,
+          "time": 3.312,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "雨量。雨变大了。",
+      "id": "56e7818a",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/56e7818a.mp3",
+          "duration": 2.952,
+          "time": 0.008469,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/56e7818a.mp3",
+          "duration": 2.952,
+          "time": 2.952,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "雨量。现在是大雨。",
+      "id": "bd110506",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/bd110506.mp3",
+          "duration": 3.24,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/bd110506.mp3",
+          "duration": 3.24,
+          "time": 3.24,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "雨量。雨停了。",
+      "id": "555dd055",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/555dd055.mp3",
+          "duration": 2.688,
+          "time": 2.371661,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/555dd055.mp3",
+          "duration": 2.688,
+          "time": 2.688,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "雨刮器。雨刮器开始刮雨。",
+      "id": "777c8424",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/777c8424.mp3",
+          "duration": 4.032,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/777c8424.mp3",
+          "duration": 4.032,
+          "time": 4.032,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "雨刮器。雨刮器停下了。",
+      "id": "fb48b648",
+      "input": "native touch",
+      "timing": "Real-time",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/fb48b648.mp3",
+          "duration": 3.672,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/fb48b648.mp3",
+          "duration": 3.672,
+          "time": 3.672,
+          "error": null
+        }
+      ],
+      "fallback": []
+    },
+    {
+      "voice": "xiaoyi",
+      "key": "车灯。档位已记住，电池演示结束后恢复。",
+      "id": "7d63fb77",
+      "input": "native touch",
+      "timing": "Controlled battery setup; real-time native audio",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/7d63fb77.mp3",
+          "duration": 5.256,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/xiaoyi/7d63fb77.mp3",
+          "duration": 5.256,
+          "time": 5.256,
+          "error": null
+        }
+      ],
+      "fallback": []
+    }
+  ],
+  "humanListening": "NOT_TESTED",
+  "HarmonyOS": "NOT_TESTED"
+}

@@ -1,0 +1,417 @@
+{
+  "kind": "Trusted native DOM touch and physical Three.js ray tests, separate from foundation API tests",
+  "viewports": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "rainLevels": [
+        "NONE",
+        "LIGHT",
+        "MEDIUM",
+        "HEAVY"
+      ],
+      "uniqueOwnership": true,
+      "lowFogLights": [
+        {
+          "distance": 3,
+          "intensity": 0.7981389558881024,
+          "down": true
+        },
+        {
+          "distance": 3,
+          "intensity": 0.7981389558881024,
+          "down": true
+        }
+      ],
+      "ui": {
+        "hidden": false,
+        "buttons": [
+          {
+            "id": "rain",
+            "disabled": false,
+            "width": 210,
+            "height": 48,
+            "x": 21,
+            "y": 503,
+            "hit": true
+          },
+          {
+            "id": "wiper",
+            "disabled": false,
+            "width": 132,
+            "height": 48,
+            "x": 237,
+            "y": 503,
+            "hit": true
+          }
+        ],
+        "permanent": [
+          "发动机",
+          "油箱",
+          "电池",
+          "传动轴",
+          "轮子",
+          "排气管",
+          "车门",
+          "方向盘",
+          "雨刮器",
+          "后视镜",
+          "启动按钮",
+          "安全带",
+          "安全座椅",
+          "车身",
+          "车灯",
+          "尾灯"
+        ],
+        "rBase": 16.040158006866722,
+        "projection": [
+          4.860653941474764,
+          0,
+          0,
+          0,
+          0,
+          2.2460367739042155,
+          0,
+          0,
+          0,
+          -0.26303317535545023,
+          -1.0016680567139282,
+          -1,
+          0,
+          0,
+          -0.2001668056713928,
+          0
+        ]
+      },
+      "gl": {
+        "lost": false,
+        "error": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "rainLevels": [
+        "NONE",
+        "LIGHT",
+        "MEDIUM",
+        "HEAVY"
+      ],
+      "uniqueOwnership": true,
+      "lowFogLights": [
+        {
+          "distance": 3,
+          "intensity": 0.7981389558881024,
+          "down": true
+        },
+        {
+          "distance": 3,
+          "intensity": 0.7981389558881024,
+          "down": true
+        }
+      ],
+      "ui": {
+        "hidden": false,
+        "buttons": [
+          {
+            "id": "rain",
+            "disabled": false,
+            "width": 195.0625,
+            "height": 48,
+            "x": 18,
+            "y": 470.21875,
+            "hit": true
+          },
+          {
+            "id": "wiper",
+            "disabled": false,
+            "width": 122.9375,
+            "height": 48,
+            "x": 219.0625,
+            "y": 470.21875,
+            "hit": true
+          }
+        ],
+        "permanent": [
+          "发动机",
+          "油箱",
+          "电池",
+          "传动轴",
+          "轮子",
+          "排气管",
+          "车门",
+          "方向盘",
+          "雨刮器",
+          "后视镜",
+          "启动按钮",
+          "安全带",
+          "安全座椅",
+          "车身",
+          "车灯",
+          "尾灯"
+        ],
+        "rBase": 16.47093634196425,
+        "projection": [
+          4.991192830898257,
+          0,
+          0,
+          0,
+          0,
+          2.2460367739042155,
+          0,
+          0,
+          0,
+          -0.25500000000000006,
+          -1.0016680567139282,
+          -1,
+          0,
+          0,
+          -0.2001668056713928,
+          0
+        ]
+      },
+      "gl": {
+        "lost": false,
+        "error": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "rainLevels": [
+        "NONE",
+        "LIGHT",
+        "MEDIUM",
+        "HEAVY"
+      ],
+      "uniqueOwnership": true,
+      "lowFogLights": [
+        {
+          "distance": 3,
+          "intensity": 0.7981389558881024,
+          "down": true
+        },
+        {
+          "distance": 3,
+          "intensity": 0.7981389558881024,
+          "down": true
+        }
+      ],
+      "ui": {
+        "hidden": false,
+        "buttons": [
+          {
+            "id": "rain",
+            "disabled": false,
+            "width": 163.921875,
+            "height": 48,
+            "x": 490,
+            "y": 136,
+            "hit": true
+          },
+          {
+            "id": "wiper",
+            "disabled": false,
+            "width": 104.078125,
+            "height": 48,
+            "x": 659.921875,
+            "y": 136,
+            "hit": true
+          }
+        ],
+        "permanent": [
+          "发动机",
+          "油箱",
+          "电池",
+          "传动轴",
+          "轮子",
+          "排气管",
+          "车门",
+          "方向盘",
+          "雨刮器",
+          "后视镜",
+          "启动按钮",
+          "安全带",
+          "安全座椅",
+          "车身",
+          "车灯",
+          "尾灯"
+        ],
+        "rBase": 15.72225741732951,
+        "projection": [
+          1.0378605945765926,
+          0,
+          0,
+          0,
+          0,
+          2.2460367739042155,
+          0,
+          0,
+          0,
+          -0.5333333333333333,
+          -1.0016680567139282,
+          -1,
+          0,
+          0,
+          -0.2001668056713928,
+          0
+        ]
+      },
+      "gl": {
+        "lost": false,
+        "error": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 800,
+        "height": 360
+      },
+      "rainLevels": [
+        "NONE",
+        "LIGHT",
+        "MEDIUM",
+        "HEAVY"
+      ],
+      "uniqueOwnership": true,
+      "lowFogLights": [
+        {
+          "distance": 3,
+          "intensity": 0.7981389558881024,
+          "down": true
+        },
+        {
+          "distance": 3,
+          "intensity": 0.7981389558881024,
+          "down": true
+        }
+      ],
+      "ui": {
+        "hidden": false,
+        "buttons": [
+          {
+            "id": "rain",
+            "disabled": false,
+            "width": 163.921875,
+            "height": 48,
+            "x": 468,
+            "y": 106,
+            "hit": true
+          },
+          {
+            "id": "wiper",
+            "disabled": false,
+            "width": 104.078125,
+            "height": 48,
+            "x": 637.921875,
+            "y": 106,
+            "hit": true
+          }
+        ],
+        "permanent": [
+          "发动机",
+          "油箱",
+          "电池",
+          "传动轴",
+          "轮子",
+          "排气管",
+          "车门",
+          "方向盘",
+          "雨刮器",
+          "后视镜",
+          "启动按钮",
+          "安全带",
+          "安全座椅",
+          "车身",
+          "车灯",
+          "尾灯"
+        ],
+        "rBase": 15.72225741732951,
+        "projection": [
+          1.0107165482568972,
+          0,
+          0,
+          0,
+          0,
+          2.2460367739042155,
+          0,
+          0,
+          0,
+          -0.5777777777777776,
+          -1.0016680567139282,
+          -1,
+          0,
+          0,
+          -0.2001668056713928,
+          0
+        ]
+      },
+      "gl": {
+        "lost": false,
+        "error": 0
+      }
+    }
+  ],
+  "audioLock": [
+    {
+      "part": "lights",
+      "locked": [
+        true,
+        true
+      ],
+      "ended": true,
+      "usableAfterNarration": true,
+      "media": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/fc7c9c95.mp3",
+          "duration": 6.576,
+          "time": 0.005457,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/fc7c9c95.mp3",
+          "duration": 6.576,
+          "time": 6.576,
+          "error": null
+        }
+      ]
+    },
+    {
+      "part": "wiper",
+      "locked": [
+        true,
+        true
+      ],
+      "ended": true,
+      "usableAfterNarration": true,
+      "media": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/3ccbbfc9.mp3",
+          "duration": 8.4,
+          "time": 0.003361,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:32793/voice/yunxia/3ccbbfc9.mp3",
+          "duration": 8.4,
+          "time": 8.4,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

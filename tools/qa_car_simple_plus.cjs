@@ -16,7 +16,9 @@ const BASE = '70091609b45fd2b2cf98a5853bfee2d8cbe28991';
 const BASEDIR = path.join(ROOT, 'docs/baselines/simple-plus');
 const RECORD = process.argv.includes('--record-baseline');
 const VISUAL = process.argv.includes('--visual-only');
-const PHASE2 = process.argv.includes('--candidate-phase2');
+const PHASE3 = process.argv.includes('--candidate-phase3');
+const PHASE2 = process.argv.includes('--candidate-phase2') || PHASE3;
+const phase3 = PHASE3 ? require('./qa_car_simple_plus_phase3.cjs') : null;
 const UI_ONLY = process.argv.includes('--phase2-ui-only');
 const CANDIDATE = process.argv.includes('--candidate-phase1') || PHASE2;
 const policy = CANDIDATE ? require(PHASE2?'./qa_car_simple_plus.phase2.json':'./qa_car_simple_plus.phase1.json') : null;
@@ -33,7 +35,7 @@ function protectedFiles() {
     assert.equal(type, 'blob', file); assert.equal(mode, '100644', file);
     const bytes = fs.readFileSync(path.join(ROOT, file));
     const actual = crypto.createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex');
-    if(CANDIDATE&&policy.allowedProductFiles.includes(file)){
+    if(CANDIDATE&&(policy.allowedProductFiles.includes(file)||(PHASE3&&['voice/lines.json','voice/lines.js','pages/car.html','tools/check_voice.py'].includes(file)))){
       const original=execFileSync('git',['show',`${BASE}:${file}`],{cwd:ROOT});
       return [file,{gitBlob:oid,bytes:original.length,sha256:sha256(original)}];
     }
@@ -42,6 +44,7 @@ function protectedFiles() {
   }));
 }
 function candidateScope(){
+  if(PHASE3){phase3.scope({ROOT,git,sha256,pass});return;}
   if(PHASE2){phase2.scope({ROOT,BASE,policy,git,sha256,pass});return;}
   assert.equal(git('branch','--show-current'),'feature/car-simple-plus');
   assert.equal(git('rev-parse','origin/main'),BASE);
@@ -182,7 +185,7 @@ async function run() {
   pass(CANDIDATE?'All unapproved original files are byte-identical to pinned main':'All original tracked files are byte-identical to pinned main',
     {files:Object.keys(originalFiles).length,allowedChanges:CANDIDATE?policy.allowedProductFiles:[],commit:BASE});
   if(!VISUAL&&!UI_ONLY){
-    const voiceCheck = PHASE2 ? phase2.voiceCheck({ROOT,policy}) : execFileSync('python3', ['-B', 'tools/check_voice.py'], {cwd: ROOT, encoding: 'utf8'}).trim();
+    const voiceCheck = PHASE3 ? phase3.voiceCheck({ROOT}) : PHASE2 ? phase2.voiceCheck({ROOT,policy}) : execFileSync('python3', ['-B', 'tools/check_voice.py'], {cwd: ROOT, encoding: 'utf8'}).trim();
     const voiceFiles = Object.keys(originalFiles).filter(f => /^voice\/[^/]+\/.*\.mp3$/.test(f));
     // Decode every existing MP3, including sample clips. No generated media.
     for (const f of voiceFiles) execFileSync(process.env.FFMPEG_BIN || 'ffmpeg', ['-v','error','-xerror','-i',path.join(ROOT,f),'-f','null','-'], {stdio: ['ignore','pipe','pipe']});
@@ -397,6 +400,7 @@ async function run() {
     pass('G,I: Native lamp clicks play and finish original MP3 in both voices',audio);
     if(CANDIDATE)await require('./qa_car_simple_plus_phase1.cjs')({open,load,step,tapPart,tap,pass,OUT,ROOT,captures,existing,phase2:PHASE2,visualCompare:PHASE2?phase2.compare:null});
     if(PHASE2)await phase2.ui({open,load,step,tapPart,tap,pass,OUT,ROOT});
+    if(PHASE3)await phase3.playback({open,load,tapPart,tap,pass,OUT,ROOT,pickPoint});
     const otherScenes=['washer','elevator','excavator','jet','dozer','crane','mixer','roller','loader','dump','firetruck','garbage','towercrane','pumptruck','grader','piler','forklift','sweeper','towtruck'];
     for(const scene of otherScenes) {
       const {page,context}=await open({width:360,height:800});await load(page,scene);
@@ -407,7 +411,7 @@ async function run() {
     pass('K: All other 19 scenes load and render without context loss',otherScenes);
     assert.deepEqual(errors,[],JSON.stringify(errors));pass('No new browser JS, console, HTTP or WebGL context errors',{errors:0,knownOriginalIssues,warnings:[...new Set(warnings)]});
     protectedFiles();if(CANDIDATE)candidateScope();pass(CANDIDATE?'Protected original files and frozen artifacts unchanged after QA':'Original files remain byte-identical after QA');
-    const report={status:'PASS',mode:PHASE2?'candidate-phase2':CANDIDATE?'candidate-phase1':'full',baselineCommit:BASE,qaScriptSHA256:scriptSHA256,environment,checks,inputs,audio,errors,knownOriginalIssues,warnings:[...new Set(warnings)],
+    const report={status:'PASS',mode:PHASE3?'candidate-phase3':PHASE2?'candidate-phase2':CANDIDATE?'candidate-phase1':'full',baselineCommit:BASE,qaScriptSHA256:scriptSHA256,environment,checks,inputs,audio,errors,knownOriginalIssues,warnings:[...new Set(warnings)],
       boundaries:['No HarmonyOS physical-device test','Software-rendered Chromium, not mobile GPU performance proof','Native MP3 playback/decoding observed; no human speaker/ear listening test','Other 19 scenes: loading smoke only'],
       screenshotComparison:'Structure, layout, camera, scene state and mesh ownership must match; PNG hashes identify artifacts, not a pixel-only correctness decision'};
     fs.writeFileSync(path.join(OUT,'qa-report.json'),JSON.stringify(report,null,2)+'\n');
