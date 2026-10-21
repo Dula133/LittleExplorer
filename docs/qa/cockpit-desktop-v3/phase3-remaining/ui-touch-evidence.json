@@ -1,0 +1,60 @@
+{
+  "kind": "Trusted native DOM touch and physical Three.js ray tests, separate from foundation API tests",
+  "viewports": [],
+  "audioLock": [
+    {
+      "part": "lights",
+      "locked": [
+        true,
+        true
+      ],
+      "ended": true,
+      "usableAfterNarration": true,
+      "media": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:37893/voice/yunxia/fc7c9c95.mp3",
+          "duration": 6.576,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:37893/voice/yunxia/fc7c9c95.mp3",
+          "duration": 6.576,
+          "time": 6.576,
+          "error": null
+        }
+      ]
+    },
+    {
+      "part": "wiper",
+      "locked": [
+        true,
+        true
+      ],
+      "ended": true,
+      "usableAfterNarration": true,
+      "media": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:37893/voice/yunxia/3ccbbfc9.mp3",
+          "duration": 8.4,
+          "time": 0,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:37893/voice/yunxia/3ccbbfc9.mp3",
+          "duration": 8.4,
+          "time": 8.4,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

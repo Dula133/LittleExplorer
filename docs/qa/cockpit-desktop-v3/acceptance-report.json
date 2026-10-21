@@ -1,0 +1,47 @@
+{
+  "status": "PASS_REQUESTED_V31_ACCEPTANCE",
+  "base": "cfbe268081a094050152054d26f70297b58da385",
+  "branch": "feature/car-cockpit-desktop-v3",
+  "productSHA256": "21233978316a1228b86406fe72bb18f6f430ca7c24e7a98624d955b4d60d5b27",
+  "requestedChecks": {
+    "dualIndependentWipersAndParking": "PASS",
+    "threeMeasuredRealSpeeds": "PASS",
+    "fiveRainLevelsAndStormDifference": "PASS",
+    "stormDefaultsHigh": "PASS",
+    "manualSpeedPreserved": "PASS",
+    "snowRegression": "PASS",
+    "desktopNoPageScrolling": "PASS",
+    "startDriveSportGaugesPark": "PASS",
+    "originalCarAndSimplePlusPreserved": "PASS"
+  },
+  "dedicatedChecks": "v31/qa-report.json",
+  "layoutCases": 14,
+  "layoutReport": "layout-v31.json",
+  "voiceProtection": {
+    "keys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true,
+    "proof": "protected-phase3-sha256.json"
+  },
+  "simplePlus": {
+    "firstCompletedCases": "phase3-first-attempt.log",
+    "firstAttemptStatus": "PARTIAL_COMPLETED_THEN_NATIVE_INPUT_TIMING_FAILURE",
+    "remaining": "phase3-remaining/qa-report.json",
+    "remainingStatus": "PASS",
+    "freshOtherSceneLoads": 19,
+    "originalAudioLock": "phase3-remaining/ui-touch-evidence.json",
+    "native40ClipEvidence": "REUSED_IMMUTABLE_BASELINE_PASS",
+    "native40ClipEvidenceProof": "phase3-remaining/reused-phase3-audio.json",
+    "native40ReplayedInThisResume": false
+  },
+  "browserTTS": {
+    "status": "CLOUD_ENGINE_FAILED",
+    "observedError": "synthesis-failed",
+    "voicesAvailable": 0,
+    "scope": "API requests/on-off/text verified in V3; no claim of successful new speech output; no replacement service installed"
+  },
+  "humanAdultChildListening": "NOT_TESTED",
+  "HarmonyOS": "NOT_TESTED",
+  "physicalDeviceAudioAndGPU": "NOT_TESTED",
+  "deployment": "NOT_AUTHORIZED_NOT_PERFORMED"
+}

@@ -1,0 +1,397 @@
+{
+  "base": "cfbe268081a094050152054d26f70297b58da385",
+  "branch": "feature/car-cockpit-desktop-v3",
+  "selfExcluded": true,
+  "files": [
+    {
+      "path": "docs/COCKPIT_DESKTOP_V3_INTEGRATION.md",
+      "bytes": 10476,
+      "sha256": "01ad21bd51d70ebf11e324498db6751d79a97f46260b9bb25f4f8c28bb33e61a"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/acceptance-report.json",
+      "bytes": 1812,
+      "sha256": "0458529387dc16a8e652be0202a344cf8b2e6ff0457c78d35ca0777e93c1a3b1"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/car-cockpit-entry-1280x720.png",
+      "bytes": 374446,
+      "sha256": "0ef8a6a475dd73f56d08987a338e9abdc46f9cb0197a3f02ca3cc04fd205ec3c"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/car-returned-1280x720.png",
+      "bytes": 310584,
+      "sha256": "50ec779977d53015ce6bc706997d2e4d97dd6a8621cc954d8d5fc5caf23d9702"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/cockpit-125percent-1280x720.png",
+      "bytes": 139497,
+      "sha256": "762c1b23fdd142e8e14f91065fcfff295a0d68f15dedf1b64d99129b49bf0f7e"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/cockpit-125percent-1440x900.png",
+      "bytes": 460899,
+      "sha256": "83594a44f5a9e696f69395a8d82d7bc2bc7dc0e544e5e60eb289ca8cbb6432f8"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/cockpit-default-1280x720.png",
+      "bytes": 362899,
+      "sha256": "7fd0b3a735e17e09435fa43ae485666a1d42373355a1213ca4a22f845a26f447"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/cockpit-mobile-390x844.png",
+      "bytes": 186417,
+      "sha256": "9e7f01cd67514efa7220b64010791f57b856fe276c31ae7dadd9b0085c3c56c7"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/cockpit-report.json",
+      "bytes": 78858,
+      "sha256": "84106b7132b0c61f0dd746cf43d4c8b56809f29b99f8439041317e3a7df9689a"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/cockpit-s-driving-1366x768.png",
+      "bytes": 410168,
+      "sha256": "42519af953929db7ba05a341bb655f4f8c594bad4f9b2b7ad3451bd6ebd3da59"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/cockpit-snow-1366x768.png",
+      "bytes": 421435,
+      "sha256": "469866f791084354cf76d940bf94d089e9f807e7f0e05c74e490aa40a6471feb"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/layout-v31.cjs",
+      "bytes": 4089,
+      "sha256": "1c678605da3b8f913baec603e237fe84f4c3d23c032475ac7513eaf37a18b41a"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/layout-v31.json",
+      "bytes": 3138,
+      "sha256": "aa2428a65e941fb60cf8e4353c6d3d1832865e0dd2c702e9bfcd2557c73a5167"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-first-attempt.log",
+      "bytes": 2365,
+      "sha256": "3892e41b9d0459856fe687173ce28fb8d135e584b97586d116c48ea1af02a651"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/approved-visual-regions.json",
+      "bytes": 10859,
+      "sha256": "31b8fd131f79341a67946b54c7adc22ff66cd81743a2a926fcce08dd552eaa74"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-1280x900.png",
+      "bytes": 428057,
+      "sha256": "6e4ff52105f09d90f9a708a7e37cfb311585c0f669cc4167417d386cd88411b2"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-360x800.png",
+      "bytes": 147709,
+      "sha256": "8a7d8dc8adb64e8b619772db90c2c31ea6d5def66d5a89655153a759bcb4391e"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-390x844.png",
+      "bytes": 161604,
+      "sha256": "19ba84bd9d841db065bf17a986474761bae6c2408cfab0bf869fd5a4cc4b876c"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/car-door-390x844.png",
+      "bytes": 155210,
+      "sha256": "953961a854f535072a1e197bb3997da55b8bcd98ce95b826b1618675cb8d1fa0"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/car-exploded-390x844.png",
+      "bytes": 159151,
+      "sha256": "af26d98df697775b50e60d9e5a728fb73801cd845c3105f3435728ebfc355327"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/car-night-390x844.png",
+      "bytes": 161776,
+      "sha256": "57b698a696e39dd6fe2c2ddcfa11ca67aa8e3fa7285bcb8ada16730645089cd5"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/car-xray-390x844.png",
+      "bytes": 147800,
+      "sha256": "41e9cea1c5bc5455de740f3cbff19fa59d0e9b6c67078f6a7edcd6c2f1462746"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/default-original-vs-candidate.png",
+      "bytes": 177958,
+      "sha256": "b95dc0f274274a188cd8be715f0ccd30b57ea04e095037bf2feedf7bf6281404"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/foundation-api-evidence.json",
+      "bytes": 75274,
+      "sha256": "166845ff2b7476245a74c9aed2c418762fe337115dd85d4c8c5b4eba0988bb3e"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/home-390x844.png",
+      "bytes": 122803,
+      "sha256": "6d4004c0d11320db97de6aae2e383a2684877a480734e2d1c0a5106f174de470"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/rain-heavy-390x844.png",
+      "bytes": 179884,
+      "sha256": "8280a481e11fc5536ec6e59c9db8f1cdc550c764d930b05dac6a8b65d6c42ed3"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/rain-light-390x844.png",
+      "bytes": 166689,
+      "sha256": "82ecf5150e526c5bf03b1d9188e6bf02ff6173b46e361f701a9690c37f9272ff"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/rain-medium-390x844.png",
+      "bytes": 174443,
+      "sha256": "76a00eb14c3312137e333e52ba22b2e6a56eac65babdf173b4df20a0540d3de7"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/rain-none-390x844.png",
+      "bytes": 161604,
+      "sha256": "19ba84bd9d841db065bf17a986474761bae6c2408cfab0bf869fd5a4cc4b876c"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-360x800.png",
+      "bytes": 150024,
+      "sha256": "fa68e75d0390e68693140e03b1e8c73757f443de1c4172ed22f38909b86d5384"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-390x844.png",
+      "bytes": 163370,
+      "sha256": "a521bc868a5ed3f2a5a34fe5fab2518de6af11b6135f1dee922f72118507d2b3"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-800x360.png",
+      "bytes": 151013,
+      "sha256": "e1f9af39a018bb8a414c53e85ddca79aed32f426e763d6acc5830fdb86cc7e41"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-844x390.png",
+      "bytes": 174348,
+      "sha256": "2b1eb7c7ae5af07145f32f3ee265ecd4f70658a3c0a308952c0eb21853ad0197"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-360x800.png",
+      "bytes": 143206,
+      "sha256": "5190f87a250adbea4f5fe60ed71910239972b36c39770e00bf1cd6161a3d2118"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-390x844.png",
+      "bytes": 155590,
+      "sha256": "2f734471a6bacb70bc0dedcbd582cf101a3e87c5d8944d5e88e37a40dfd9ddde"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-800x360.png",
+      "bytes": 147773,
+      "sha256": "1bd6889c28e51d9587c73bbfa66be36c3f45f0186b8b535c4545af769a1dec45"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-844x390.png",
+      "bytes": 170353,
+      "sha256": "2fd5c08609ca013a6ace8d9687c94ac271f7b5805b697b24622b72b484db17e2"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-360x800.png",
+      "bytes": 158412,
+      "sha256": "d0df40c2f22690e2381b9dc5c0a88e4807e3a93ccdc19af73dd19e1eda152578"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-390x844.png",
+      "bytes": 172680,
+      "sha256": "3c74a46f62dee858bebdd655c6b2ba538e30eafb9eed5987f78d9fd14c766231"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-800x360.png",
+      "bytes": 158662,
+      "sha256": "f5d906ffb670538f68936ccf61068abc7e9d6879a4e26dccd3ceeabf15cae806"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-844x390.png",
+      "bytes": 183711,
+      "sha256": "92f38dc19980078a227f847767fde57089dc659c3309e12d53e519dcf8a7d266"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-360x800.png",
+      "bytes": 127859,
+      "sha256": "740dc9068f1a81f3c24e81b3832d095ea5e8e8ac1378148421734213314c5441"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-390x844.png",
+      "bytes": 138952,
+      "sha256": "3f123dca21a4d8c74447fc83c7ee0ea2e29a4746d0079580c1dd863da2ca3150"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-800x360.png",
+      "bytes": 147302,
+      "sha256": "40b2aae187f37e0996f9cd8f87b93b0c17e78ec292e35ae4e736eb1c5607887a"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-844x390.png",
+      "bytes": 163307,
+      "sha256": "178a36533fb8f59f40ece151e8bbcdde72e8b7185455e77b7cc4c30fc60a9e47"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-360x800.png",
+      "bytes": 185345,
+      "sha256": "8e92b70e3dca2abf8935f4066b1d40855a672feee5d99ad7346519cd5d489400"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-390x844.png",
+      "bytes": 201240,
+      "sha256": "e039f48f78050e03e750f1bd754a4eb4e5b95ef251b1886866b67b46474ab623"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-800x360.png",
+      "bytes": 135840,
+      "sha256": "152b905327f44e0688fbe807dcfc9415ee954a1d3d245c12867f67fd16a66b20"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-844x390.png",
+      "bytes": 149318,
+      "sha256": "d359038d97bb36f69bca1dd194eae70ff0fd07008e8117bd13288598cb5d4629"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-regression/visual-comparison.json",
+      "bytes": 15494,
+      "sha256": "4fc2c92767e7da7ba8ce508d755648286fa6a155b225b9d4acba25b81b95b7b9"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-remaining/compiled-runner.cjs.txt",
+      "bytes": 24389,
+      "sha256": "b08dcec89f1f1bbe197b62283f22bdceebd20c4cbcfd30ba54cd5eaedfc0cf75"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-remaining/qa-report.json",
+      "bytes": 15485,
+      "sha256": "c49cb0e3ad0cbe9fceca1827e12ca4c77ecb618b6117626aca5bf6b34a2d15c1"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-remaining/resume-provenance.json",
+      "bytes": 1338,
+      "sha256": "653befaad89d3d0ae61c2f9245e1e54d20881cd9e34391be1519d6d87ba1b6c4"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-remaining/reused-phase3-audio.json",
+      "bytes": 827,
+      "sha256": "5728614ea2dd8f1f292226a278b866d0450c33609fe3f3f8f88d9e69e25904ea"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/phase3-remaining/ui-touch-evidence.json",
+      "bytes": 1370,
+      "sha256": "0c26d42f80ff1af2ec10140c57742050e9c9b06ccbf602441abde9fbe544740f"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/protected-phase3-sha256.json",
+      "bytes": 152430,
+      "sha256": "bbdf854fd49ea40ff36142a1757c95478c27ca851a3560730e4561e14ffc1897"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/prototype-integration.diff",
+      "bytes": 25406,
+      "sha256": "b4dca825917276d0bba6616d9512d0b7eae1c0fbbb8983462ebc8b3a3ed33572"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/prototype-provenance.json",
+      "bytes": 698,
+      "sha256": "7b9ff43380188008641ce16cd2aaf5dc228dad7656a4cd7b001656d92084325e"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31-125percent-1440x900.png",
+      "bytes": 527240,
+      "sha256": "d659f6590df1e2a31e15dc8f8b8953d6b8a351f22678ce3ff02ceedab42c0326"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31-mobile-390x844.png",
+      "bytes": 215092,
+      "sha256": "555c6279b9a97e5dbaa2fd8d8b5425fbb0e3a85cefb14d3582224afc04f3f592"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/default-1366x768.png",
+      "bytes": 449579,
+      "sha256": "489412a258d71ebcfc24e616041a27a9878bd2de57139686264ccaf401c5a112"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/default-1920x1080.png",
+      "bytes": 705244,
+      "sha256": "5a44f54b971948ea1274c0825c0930a30df08c2a207d533fe4a55cfb94d26329"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/qa-report.json",
+      "bytes": 423344,
+      "sha256": "4a84b3091bf1391b3ab2ae9dd82cb5ff076a664c50358e76962e763ec5a90cd0"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/s-driving-1366x768.png",
+      "bytes": 416637,
+      "sha256": "2cc41521c7acffacaff8f6edf70afa88c60da9dbe9fcc957a63da222ac858a3e"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/snow-1366x768.png",
+      "bytes": 474478,
+      "sha256": "49f623dc3374b930d71b9e5645ebcea8990d0aba593194de76e83ff1efccf301"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/snow-1920x1080.png",
+      "bytes": 758283,
+      "sha256": "8891a434564ff7801f4f832a07785d4c86ff96518d78f18ab49729e1e385827d"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/storm-high-1366x768.png",
+      "bytes": 431462,
+      "sha256": "e0dd2541bba7299426a3e1a7e0dd396c88cab01b1099cc881aa07369f1c6e798"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/storm-high-1920x1080.png",
+      "bytes": 654495,
+      "sha256": "d98fe581aa53980e15e6bb450be8347b12aee4dac14ecf652a74976421803705"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/wipers-high-1366x768.png",
+      "bytes": 411867,
+      "sha256": "bd3835cec3e65fead88a7febffd84ab41c189d0aadd3d5f14e8aee9dd7ea62ad"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/wipers-high-1920x1080.png",
+      "bytes": 629024,
+      "sha256": "d0ec0331d57b2af214b94f4f29cd66ad46b6b3ffdee56e72486378bfba52103c"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/wipers-low-1366x768.png",
+      "bytes": 409158,
+      "sha256": "999c22f1237637abe52c8528f3dd63d745c553c7b00db3a2fef26c234e79fc06"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/wipers-low-1920x1080.png",
+      "bytes": 621254,
+      "sha256": "022c3492d2660024d1103351e520f0482bbc23dca0fd7bbb4006e7b3db986a0c"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/wipers-medium-1366x768.png",
+      "bytes": 413177,
+      "sha256": "619a0a187eded52ca5f6a0a3110f39194f5aca744284b9f0c8cb79e96d7fd208"
+    },
+    {
+      "path": "docs/qa/cockpit-desktop-v3/v31/wipers-medium-1920x1080.png",
+      "bytes": 617660,
+      "sha256": "d9a64c436da105f3f0decdbc73c74ec52b6d0a344743cd846342e8a002a09fb0"
+    },
+    {
+      "path": "pages/car.html",
+      "bytes": 15065,
+      "sha256": "652694b61d2aba19e7acf3a01388c0fdf1afe94f44dfa81b25564b3d41680e90"
+    },
+    {
+      "path": "pages/cockpit.html",
+      "bytes": 76249,
+      "sha256": "21233978316a1228b86406fe72bb18f6f430ca7c24e7a98624d955b4d60d5b27"
+    },
+    {
+      "path": "tools/qa_cockpit_desktop_v3.cjs",
+      "bytes": 37704,
+      "sha256": "9e67197bc59086861dadd343b353e985b845dbedfebfa0baa67ee626e8576d0f"
+    },
+    {
+      "path": "tools/qa_cockpit_phase3_regression.cjs",
+      "bytes": 8714,
+      "sha256": "a140022ca1bca638c3049f1bde996ddff79b3d64b4e98d340ee7bef67fc10a1b"
+    }
+  ]
+}

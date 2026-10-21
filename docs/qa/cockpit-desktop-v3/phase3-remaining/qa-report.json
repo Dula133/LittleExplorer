@@ -1,0 +1,295 @@
+{
+  "status": "PASS",
+  "mode": "candidate-phase3-resume-media-scenes",
+  "baselineCommit": "70091609b45fd2b2cf98a5853bfee2d8cbe28991",
+  "qaScriptSHA256": "35bb67745d7b41180737d4b3d2b7b9164a35a05295813aad5aa99381857a39e6",
+  "environment": {
+    "browser": "151.0.7922.173",
+    "playwright": "1.58.2",
+    "platform": "linux x64",
+    "timezone": "UTC",
+    "locale": "zh-CN",
+    "colorScheme": "light",
+    "dpr": 1,
+    "seed": 20261016,
+    "fixedDate": "2026-10-16T12:00:01.000Z",
+    "stepMs": 50,
+    "viewportPolicy": "Mobile below 800px; desktop at 1280px; native touch input enabled",
+    "animation": "Original rAF via Playwright clock; performance.now starts at 0; CSS screenshot animations disabled",
+    "renderer": "ANGLE SwiftShader",
+    "fonts": "OpenAISans-Regular.woff2: \"OpenAI Sans\" \"Regular\""
+  },
+  "checks": [
+    {
+      "name": "Exact integration scope; every Phase 3 base file unchanged except the two car-navigation insertions",
+      "evidence": {
+        "base": "cfbe268081a094050152054d26f70297b58da385",
+        "changes": [
+          "pages/car.html",
+          "docs/COCKPIT_DESKTOP_V3_INTEGRATION.md",
+          "docs/qa/cockpit-desktop-v3/car-cockpit-entry-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/car-returned-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-125percent-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-125percent-1440x900.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-default-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-mobile-390x844.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-report.json",
+          "docs/qa/cockpit-desktop-v3/cockpit-s-driving-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-snow-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/layout-v31.cjs",
+          "docs/qa/cockpit-desktop-v3/layout-v31.json",
+          "docs/qa/cockpit-desktop-v3/phase3-first-attempt.log",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/approved-visual-regions.json",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-1280x900.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-door-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-exploded-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-night-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-xray-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/default-original-vs-candidate.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/foundation-api-evidence.json",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/home-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/rain-heavy-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/rain-light-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/rain-medium-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/rain-none-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-800x360.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-844x390.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-800x360.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-844x390.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-800x360.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-844x390.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-800x360.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-844x390.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-800x360.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-844x390.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/visual-comparison.json",
+          "docs/qa/cockpit-desktop-v3/phase3-remaining/compiled-runner.cjs.txt",
+          "docs/qa/cockpit-desktop-v3/phase3-remaining/phase3-in-progress.json",
+          "docs/qa/cockpit-desktop-v3/phase3-remaining/resume-provenance.json",
+          "docs/qa/cockpit-desktop-v3/phase3-remaining/ui-touch-evidence.json",
+          "docs/qa/cockpit-desktop-v3/protected-phase3-sha256.json",
+          "docs/qa/cockpit-desktop-v3/prototype-integration.diff",
+          "docs/qa/cockpit-desktop-v3/prototype-provenance.json",
+          "docs/qa/cockpit-desktop-v3/v31-125percent-1440x900.png",
+          "docs/qa/cockpit-desktop-v3/v31-mobile-390x844.png",
+          "docs/qa/cockpit-desktop-v3/v31/qa-report.json",
+          "docs/qa/cockpit-desktop-v3/v31/s-driving-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/snow-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/snow-1920x1080.png",
+          "docs/qa/cockpit-desktop-v3/v31/storm-high-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/storm-high-1920x1080.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-high-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-high-1920x1080.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-low-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-low-1920x1080.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-medium-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-medium-1920x1080.png",
+          "pages/cockpit.html",
+          "tools/qa_cockpit_desktop_v3.cjs",
+          "tools/qa_cockpit_phase3_regression.cjs"
+        ],
+        "protectedFiles": 830,
+        "voiceKeys": 315,
+        "mp3": 638
+      }
+    },
+    {
+      "name": "All unapproved original files are byte-identical to pinned main",
+      "evidence": {
+        "files": 671,
+        "allowedChanges": [
+          "scenes/car.js",
+          "js/app.js"
+        ],
+        "commit": "70091609b45fd2b2cf98a5853bfee2d8cbe28991"
+      }
+    },
+    {
+      "name": "Reused completed native MP3 lock evidence",
+      "evidence": {
+        "file": "ui-touch-evidence.json",
+        "sha256": "0c26d42f80ff1af2ec10140c57742050e9c9b06ccbf602441abde9fbe544740f"
+      }
+    },
+    {
+      "name": "Reused unchanged Phase 3 native two-voice / 20-key playback evidence",
+      "evidence": {
+        "status": "REUSED_IMMUTABLE_BASELINE_PASS",
+        "base": "cfbe268081a094050152054d26f70297b58da385",
+        "coverage": [
+          {
+            "voice": "yunxia",
+            "keys": 20,
+            "nativeSamples": 26
+          },
+          {
+            "voice": "xiaoyi",
+            "keys": 20,
+            "nativeSamples": 26
+          }
+        ],
+        "priorPlaybackSHA256": "0a0006f9132b8327a2af6e180c64a4c50e0ab629f69555aeee6ec1be99aaffa3",
+        "priorFullQASHA256": "0f8f2bf75872a9f444fac85d8c5d1e4d95eeff40e7b76f5d34ee991e296ecefb",
+        "freshIntegrationSHA256": "84106b7132b0c61f0dd746cf43d4c8b56809f29b99f8439041317e3a7df9689a",
+        "reason": "All original runtime code, mappings and 638 MP3s match the pinned base. The car HTML only adds the verified navigation link. Fresh round-trip and original native audio-lock checks passed. No claim that all 40 clips were replayed in this resume."
+      }
+    },
+    {
+      "name": "K: All other 19 scenes load and render without context loss",
+      "evidence": [
+        "washer",
+        "elevator",
+        "excavator",
+        "jet",
+        "dozer",
+        "crane",
+        "mixer",
+        "roller",
+        "loader",
+        "dump",
+        "firetruck",
+        "garbage",
+        "towercrane",
+        "pumptruck",
+        "grader",
+        "piler",
+        "forklift",
+        "sweeper",
+        "towtruck"
+      ]
+    },
+    {
+      "name": "No new browser JS, console, HTTP or WebGL context errors",
+      "evidence": {
+        "errors": 0,
+        "knownOriginalIssues": [
+          {
+            "path": "/favicon.ico",
+            "status": 404,
+            "reason": "The pinned original has no favicon; automatic browser request, not a new product failure"
+          }
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "name": "Exact integration scope; every Phase 3 base file unchanged except the two car-navigation insertions",
+      "evidence": {
+        "base": "cfbe268081a094050152054d26f70297b58da385",
+        "changes": [
+          "pages/car.html",
+          "docs/COCKPIT_DESKTOP_V3_INTEGRATION.md",
+          "docs/qa/cockpit-desktop-v3/car-cockpit-entry-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/car-returned-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-125percent-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-125percent-1440x900.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-default-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-mobile-390x844.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-report.json",
+          "docs/qa/cockpit-desktop-v3/cockpit-s-driving-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-snow-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/layout-v31.cjs",
+          "docs/qa/cockpit-desktop-v3/layout-v31.json",
+          "docs/qa/cockpit-desktop-v3/phase3-first-attempt.log",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/approved-visual-regions.json",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-1280x900.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-door-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-exploded-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-night-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-xray-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/default-original-vs-candidate.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/foundation-api-evidence.json",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/home-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/rain-heavy-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/rain-light-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/rain-medium-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/rain-none-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-800x360.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-fog-844x390.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-800x360.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-lamps-844x390.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-800x360.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-rain-844x390.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-800x360.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-turn-844x390.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-800x360.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/ui-xray-844x390.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/visual-comparison.json",
+          "docs/qa/cockpit-desktop-v3/phase3-remaining/compiled-runner.cjs.txt",
+          "docs/qa/cockpit-desktop-v3/phase3-remaining/phase3-in-progress.json",
+          "docs/qa/cockpit-desktop-v3/phase3-remaining/resume-provenance.json",
+          "docs/qa/cockpit-desktop-v3/phase3-remaining/reused-phase3-audio.json",
+          "docs/qa/cockpit-desktop-v3/phase3-remaining/ui-touch-evidence.json",
+          "docs/qa/cockpit-desktop-v3/protected-phase3-sha256.json",
+          "docs/qa/cockpit-desktop-v3/prototype-integration.diff",
+          "docs/qa/cockpit-desktop-v3/prototype-provenance.json",
+          "docs/qa/cockpit-desktop-v3/v31-125percent-1440x900.png",
+          "docs/qa/cockpit-desktop-v3/v31-mobile-390x844.png",
+          "docs/qa/cockpit-desktop-v3/v31/qa-report.json",
+          "docs/qa/cockpit-desktop-v3/v31/s-driving-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/snow-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/snow-1920x1080.png",
+          "docs/qa/cockpit-desktop-v3/v31/storm-high-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/storm-high-1920x1080.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-high-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-high-1920x1080.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-low-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-low-1920x1080.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-medium-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/v31/wipers-medium-1920x1080.png",
+          "pages/cockpit.html",
+          "tools/qa_cockpit_desktop_v3.cjs",
+          "tools/qa_cockpit_phase3_regression.cjs"
+        ],
+        "protectedFiles": 830,
+        "voiceKeys": 315,
+        "mp3": 638
+      }
+    },
+    {
+      "name": "Protected original files and frozen artifacts unchanged after QA"
+    }
+  ],
+  "inputs": [],
+  "audio": [],
+  "errors": [],
+  "knownOriginalIssues": [
+    {
+      "path": "/favicon.ico",
+      "status": 404,
+      "reason": "The pinned original has no favicon; automatic browser request, not a new product failure"
+    }
+  ],
+  "warnings": [],
+  "boundaries": [
+    "No HarmonyOS physical-device test",
+    "Software-rendered Chromium, not mobile GPU performance proof",
+    "Native MP3 playback/decoding observed; no human speaker/ear listening test",
+    "Other 19 scenes: loading smoke only"
+  ],
+  "screenshotComparison": "Structure, layout, camera, scene state and mesh ownership must match; PNG hashes identify artifacts, not a pixel-only correctness decision"
+}

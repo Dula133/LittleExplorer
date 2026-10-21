@@ -1,0 +1,3258 @@
+{
+  "status": "PASS",
+  "browserTTS": {
+    "calls": 65,
+    "events": [
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      },
+      {
+        "type": "error",
+        "error": "synthesis-failed"
+      }
+    ],
+    "voices": [],
+    "audibility": "NOT_VERIFIED",
+    "scope": "Browser API calls/on-off/zh-CN only. Native engine errors are environment limitations, not successful speech playback."
+  },
+  "testedSHA256": {
+    "pages/car.html": "652694b61d2aba19e7acf3a01388c0fdf1afe94f44dfa81b25564b3d41680e90",
+    "pages/cockpit.html": "2a61e8a3734c84857f05bcdaecd2ebc418307d88cac8dc0d3795290e0b4f0b99",
+    "tools/qa_cockpit_desktop_v3.cjs": "62ea08379d305bd13bf0dd7ffa32ce01c136a850b4090fb7d9dac41ad5859ebb"
+  },
+  "base": "cfbe268081a094050152054d26f70297b58da385",
+  "branch": "feature/car-cockpit-desktop-v3",
+  "browser": "151.0.7922.173",
+  "playwright": "1.58.2",
+  "checks": [
+    {
+      "name": "Exact integration scope; every Phase 3 base file unchanged except the two car-navigation insertions",
+      "evidence": {
+        "base": "cfbe268081a094050152054d26f70297b58da385",
+        "changes": [
+          "pages/car.html",
+          "docs/COCKPIT_DESKTOP_V3_INTEGRATION.md",
+          "docs/qa/cockpit-desktop-v3/car-cockpit-entry-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/car-returned-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-125percent-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-125percent-1440x900.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-default-1280x720.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-mobile-390x844.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-report.json",
+          "docs/qa/cockpit-desktop-v3/cockpit-s-driving-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/cockpit-snow-1366x768.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-1280x900.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-360x800.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-default-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-door-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-exploded-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-night-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/car-xray-390x844.png",
+          "docs/qa/cockpit-desktop-v3/phase3-regression/home-390x844.png",
+          "docs/qa/cockpit-desktop-v3/protected-phase3-sha256.json",
+          "docs/qa/cockpit-desktop-v3/prototype-integration.diff",
+          "docs/qa/cockpit-desktop-v3/prototype-provenance.json",
+          "pages/cockpit.html",
+          "tools/qa_cockpit_desktop_v3.cjs",
+          "tools/qa_cockpit_phase3_regression.cjs"
+        ],
+        "protectedFiles": 830,
+        "voiceKeys": 315,
+        "mp3": 638
+      }
+    },
+    {
+      "name": "All four desktop sizes, toolbar-reduced heights, narrow landscape and 390×844: four tabs, no horizontal overflow, every control reachable",
+      "evidence": [
+        {
+          "width": 1280,
+          "height": 720,
+          "zoom": 1,
+          "viewport": [
+            1280,
+            720
+          ],
+          "scroll": [
+            1280,
+            720
+          ],
+          "back": {
+            "x": 1164.921875,
+            "y": 7,
+            "width": 97.171875,
+            "height": 46,
+            "top": 7,
+            "right": 1262.09375,
+            "bottom": 53,
+            "left": 1164.921875
+          },
+          "footer": {
+            "x": 17.90625,
+            "y": 625.875,
+            "width": 1244.1875,
+            "height": 87.125,
+            "top": 625.875,
+            "right": 1262.09375,
+            "bottom": 713,
+            "left": 17.90625
+          },
+          "allTabsAndControlsReachable": true
+        },
+        {
+          "width": 1366,
+          "height": 768,
+          "zoom": 1,
+          "viewport": [
+            1366,
+            768
+          ],
+          "scroll": [
+            1366,
+            768
+          ],
+          "back": {
+            "x": 1249.71875,
+            "y": 7,
+            "width": 97.171875,
+            "height": 46,
+            "top": 7,
+            "right": 1346.890625,
+            "bottom": 53,
+            "left": 1249.71875
+          },
+          "footer": {
+            "x": 19.109375,
+            "y": 671.59375,
+            "width": 1327.78125,
+            "height": 89.40625,
+            "top": 671.59375,
+            "right": 1346.890625,
+            "bottom": 761,
+            "left": 19.109375
+          },
+          "allTabsAndControlsReachable": true
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "zoom": 1,
+          "viewport": [
+            1440,
+            900
+          ],
+          "scroll": [
+            1440,
+            900
+          ],
+          "back": {
+            "x": 1322.671875,
+            "y": 9,
+            "width": 97.171875,
+            "height": 46,
+            "top": 9,
+            "right": 1419.84375,
+            "bottom": 55,
+            "left": 1322.671875
+          },
+          "footer": {
+            "x": 20.15625,
+            "y": 800.375,
+            "width": 1399.6875,
+            "height": 90.625,
+            "top": 800.375,
+            "right": 1419.84375,
+            "bottom": 891,
+            "left": 20.15625
+          },
+          "allTabsAndControlsReachable": true
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "zoom": 1,
+          "viewport": [
+            1920,
+            1080
+          ],
+          "scroll": [
+            1920,
+            1080
+          ],
+          "back": {
+            "x": 1798.828125,
+            "y": 12.796875,
+            "width": 97.171875,
+            "height": 46,
+            "top": 12.796875,
+            "right": 1896,
+            "bottom": 58.796875,
+            "left": 1798.828125
+          },
+          "footer": {
+            "x": 24,
+            "y": 978.578125,
+            "width": 1872,
+            "height": 90.625,
+            "top": 978.578125,
+            "right": 1896,
+            "bottom": 1069.203125,
+            "left": 24
+          },
+          "allTabsAndControlsReachable": true
+        },
+        {
+          "width": 1280,
+          "height": 640,
+          "zoom": 1,
+          "viewport": [
+            1280,
+            640
+          ],
+          "scroll": [
+            1280,
+            640
+          ],
+          "back": {
+            "x": 1164.921875,
+            "y": 7,
+            "width": 97.171875,
+            "height": 46,
+            "top": 7,
+            "right": 1262.09375,
+            "bottom": 53,
+            "left": 1164.921875
+          },
+          "footer": {
+            "x": 17.90625,
+            "y": 545.875,
+            "width": 1244.1875,
+            "height": 87.125,
+            "top": 545.875,
+            "right": 1262.09375,
+            "bottom": 633,
+            "left": 17.90625
+          },
+          "allTabsAndControlsReachable": true
+        },
+        {
+          "width": 1366,
+          "height": 680,
+          "zoom": 1,
+          "viewport": [
+            1366,
+            680
+          ],
+          "scroll": [
+            1366,
+            680
+          ],
+          "back": {
+            "x": 1249.71875,
+            "y": 7,
+            "width": 97.171875,
+            "height": 46,
+            "top": 7,
+            "right": 1346.890625,
+            "bottom": 53,
+            "left": 1249.71875
+          },
+          "footer": {
+            "x": 19.109375,
+            "y": 583.59375,
+            "width": 1327.78125,
+            "height": 89.40625,
+            "top": 583.59375,
+            "right": 1346.890625,
+            "bottom": 673,
+            "left": 19.109375
+          },
+          "allTabsAndControlsReachable": true
+        },
+        {
+          "width": 1024,
+          "height": 576,
+          "zoom": 1,
+          "viewport": [
+            1024,
+            576
+          ],
+          "scroll": [
+            1024,
+            1349
+          ],
+          "back": {
+            "x": 880.390625,
+            "y": 20,
+            "width": 121.609375,
+            "height": 65,
+            "top": 20,
+            "right": 1002,
+            "bottom": 85,
+            "left": 880.390625
+          },
+          "footer": {
+            "x": 22,
+            "y": 1170.84375,
+            "width": 980,
+            "height": 119.71875,
+            "top": 1170.84375,
+            "right": 1002,
+            "bottom": 1290.5625,
+            "left": 22
+          },
+          "allTabsAndControlsReachable": true
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "zoom": 1,
+          "viewport": [
+            390,
+            844
+          ],
+          "scroll": [
+            390,
+            1943
+          ],
+          "back": {
+            "x": 294.296875,
+            "y": 8,
+            "width": 87.703125,
+            "height": 54,
+            "top": 8,
+            "right": 382,
+            "bottom": 62,
+            "left": 294.296875
+          },
+          "footer": {
+            "x": 8,
+            "y": 1778.484375,
+            "width": 374,
+            "height": 110.625,
+            "top": 1778.484375,
+            "right": 382,
+            "bottom": 1889.109375,
+            "left": 8
+          },
+          "allTabsAndControlsReachable": true
+        },
+        {
+          "width": 844,
+          "height": 390,
+          "zoom": 1,
+          "viewport": [
+            844,
+            390
+          ],
+          "scroll": [
+            844,
+            2186
+          ],
+          "back": {
+            "x": 710.390625,
+            "y": 12,
+            "width": 121.609375,
+            "height": 65,
+            "top": 12,
+            "right": 832,
+            "bottom": 77,
+            "left": 710.390625
+          },
+          "footer": {
+            "x": 12,
+            "y": 2024.28125,
+            "width": 820,
+            "height": 119.71875,
+            "top": 2024.28125,
+            "right": 832,
+            "bottom": 2144,
+            "left": 12
+          },
+          "allTabsAndControlsReachable": true
+        },
+        {
+          "physicalViewport": [
+            1280,
+            720
+          ],
+          "browserZoom": 1.25,
+          "viewport": [
+            1024,
+            576
+          ],
+          "scroll": [
+            1024,
+            1345
+          ],
+          "back": {
+            "x": 880.7999877929688,
+            "y": 20,
+            "width": 121.20000457763672,
+            "height": 64,
+            "top": 20,
+            "right": 1001.9999923706055,
+            "bottom": 84,
+            "left": 880.7999877929688
+          },
+          "footer": {
+            "x": 22,
+            "y": 1166.875,
+            "width": 980,
+            "height": 119.75,
+            "top": 1166.875,
+            "right": 1002,
+            "bottom": 1286.625,
+            "left": 22
+          },
+          "allControlsReachable": true
+        },
+        {
+          "physicalViewport": [
+            1366,
+            768
+          ],
+          "browserZoom": 1.25,
+          "viewport": [
+            1093,
+            614
+          ],
+          "scroll": [
+            1093,
+            1330
+          ],
+          "back": {
+            "x": 949.6000366210938,
+            "y": 20,
+            "width": 121.20000457763672,
+            "height": 64,
+            "top": 20,
+            "right": 1070.8000411987305,
+            "bottom": 84,
+            "left": 949.6000366210938
+          },
+          "footer": {
+            "x": 22,
+            "y": 1152.862548828125,
+            "width": 1048.800048828125,
+            "height": 119.75,
+            "top": 1152.862548828125,
+            "right": 1070.800048828125,
+            "bottom": 1272.612548828125,
+            "left": 22
+          },
+          "allControlsReachable": true
+        },
+        {
+          "physicalViewport": [
+            1440,
+            900
+          ],
+          "browserZoom": 1.25,
+          "viewport": [
+            1152,
+            720
+          ],
+          "scroll": [
+            1152,
+            720
+          ],
+          "back": {
+            "x": 1039.0999755859375,
+            "y": 7,
+            "width": 96.7750015258789,
+            "height": 46,
+            "top": 7,
+            "right": 1135.8749771118164,
+            "bottom": 53,
+            "left": 1039.0999755859375
+          },
+          "footer": {
+            "x": 16.125,
+            "y": 628.5499877929688,
+            "width": 1119.75,
+            "height": 84.45000457763672,
+            "top": 628.5499877929688,
+            "right": 1135.875,
+            "bottom": 712.9999923706055,
+            "left": 16.125
+          },
+          "allControlsReachable": true
+        },
+        {
+          "physicalViewport": [
+            1920,
+            1080
+          ],
+          "browserZoom": 1.25,
+          "viewport": [
+            1536,
+            864
+          ],
+          "scroll": [
+            1536,
+            864
+          ],
+          "back": {
+            "x": 1417.7249755859375,
+            "y": 8.637499809265137,
+            "width": 96.7750015258789,
+            "height": 46,
+            "top": 8.637499809265137,
+            "right": 1514.4999771118164,
+            "bottom": 54.63749980926514,
+            "left": 1417.7249755859375
+          },
+          "footer": {
+            "x": 21.5,
+            "y": 764.7125244140625,
+            "width": 1493,
+            "height": 90.6500015258789,
+            "top": 764.7125244140625,
+            "right": 1514.5,
+            "bottom": 855.3625259399414,
+            "left": 21.5
+          },
+          "allControlsReachable": true
+        },
+        {
+          "physicalViewport": [
+            1280,
+            640
+          ],
+          "browserZoom": 1.25,
+          "viewport": [
+            1024,
+            512
+          ],
+          "scroll": [
+            1024,
+            1345
+          ],
+          "back": {
+            "x": 880.7999877929688,
+            "y": 20,
+            "width": 121.20000457763672,
+            "height": 64,
+            "top": 20,
+            "right": 1001.9999923706055,
+            "bottom": 84,
+            "left": 880.7999877929688
+          },
+          "footer": {
+            "x": 22,
+            "y": 1166.875,
+            "width": 980,
+            "height": 119.75,
+            "top": 1166.875,
+            "right": 1002,
+            "bottom": 1286.625,
+            "left": 22
+          },
+          "allControlsReachable": true
+        }
+      ]
+    },
+    {
+      "name": "Native-click start/stop sequence, held pedals, D/S acceleration and both moving needles, P/R/N/off/handbrake/belt guards",
+      "evidence": {
+        "dSpeed": 30,
+        "sSpeed": 74
+      }
+    },
+    {
+      "name": "Seatbelt, reverse, neutral and acceleration guards"
+    },
+    {
+      "name": "Sunny/three rain levels/snow mutually exclusive, real snow elements, wipers, day/night, headlights, signals/hazard and fog visual state",
+      "evidence": [
+        {
+          "rain": "LIGHT",
+          "raining": true,
+          "snowy": false,
+          "rainOpacity": "0.892691",
+          "snowOpacity": "0",
+          "snowflakes": 75
+        },
+        {
+          "rain": "MEDIUM",
+          "raining": true,
+          "snowy": false,
+          "rainOpacity": "1",
+          "snowOpacity": "0",
+          "snowflakes": 75
+        },
+        {
+          "rain": "HEAVY",
+          "raining": true,
+          "snowy": false,
+          "rainOpacity": "1",
+          "snowOpacity": "0",
+          "snowflakes": 75
+        },
+        {
+          "rain": "SNOW",
+          "raining": false,
+          "snowy": true,
+          "rainOpacity": "0",
+          "snowOpacity": "1",
+          "snowflakes": 75
+        },
+        {
+          "rain": "NONE",
+          "raining": false,
+          "snowy": false,
+          "rainOpacity": "0",
+          "snowOpacity": "0.0750731",
+          "snowflakes": 75
+        },
+        {
+          "rain": "SNOW",
+          "raining": false,
+          "snowy": true,
+          "rainOpacity": "0",
+          "snowOpacity": "1",
+          "snowflakes": 75
+        },
+        {
+          "rain": "HEAVY",
+          "raining": true,
+          "snowy": false,
+          "rainOpacity": "0",
+          "snowOpacity": "1",
+          "snowflakes": 75
+        },
+        {
+          "rain": "NONE",
+          "raining": false,
+          "snowy": false,
+          "rainOpacity": "0",
+          "snowOpacity": "0",
+          "snowflakes": 75
+        }
+      ]
+    },
+    {
+      "name": "Air temperature display, all fan levels, window, simulated music state, lock, horn, steering and browser-TTS on/off",
+      "evidence": {
+        "utterances": 65,
+        "humanListening": "NOT_TESTED"
+      }
+    },
+    {
+      "name": "Real Chromium 125% page zoom: five viewport/toolbar cases, CDP zoom=1.25 scale=1, footer/pedals/all controls reachable",
+      "evidence": [
+        {
+          "physicalViewport": [
+            1280,
+            720
+          ],
+          "browserZoom": 1.25,
+          "viewport": [
+            1024,
+            576
+          ],
+          "scroll": [
+            1024,
+            1345
+          ],
+          "back": {
+            "x": 880.7999877929688,
+            "y": 20,
+            "width": 121.20000457763672,
+            "height": 64,
+            "top": 20,
+            "right": 1001.9999923706055,
+            "bottom": 84,
+            "left": 880.7999877929688
+          },
+          "footer": {
+            "x": 22,
+            "y": 1166.875,
+            "width": 980,
+            "height": 119.75,
+            "top": 1166.875,
+            "right": 1002,
+            "bottom": 1286.625,
+            "left": 22
+          },
+          "allControlsReachable": true
+        },
+        {
+          "physicalViewport": [
+            1366,
+            768
+          ],
+          "browserZoom": 1.25,
+          "viewport": [
+            1093,
+            614
+          ],
+          "scroll": [
+            1093,
+            1330
+          ],
+          "back": {
+            "x": 949.6000366210938,
+            "y": 20,
+            "width": 121.20000457763672,
+            "height": 64,
+            "top": 20,
+            "right": 1070.8000411987305,
+            "bottom": 84,
+            "left": 949.6000366210938
+          },
+          "footer": {
+            "x": 22,
+            "y": 1152.862548828125,
+            "width": 1048.800048828125,
+            "height": 119.75,
+            "top": 1152.862548828125,
+            "right": 1070.800048828125,
+            "bottom": 1272.612548828125,
+            "left": 22
+          },
+          "allControlsReachable": true
+        },
+        {
+          "physicalViewport": [
+            1440,
+            900
+          ],
+          "browserZoom": 1.25,
+          "viewport": [
+            1152,
+            720
+          ],
+          "scroll": [
+            1152,
+            720
+          ],
+          "back": {
+            "x": 1039.0999755859375,
+            "y": 7,
+            "width": 96.7750015258789,
+            "height": 46,
+            "top": 7,
+            "right": 1135.8749771118164,
+            "bottom": 53,
+            "left": 1039.0999755859375
+          },
+          "footer": {
+            "x": 16.125,
+            "y": 628.5499877929688,
+            "width": 1119.75,
+            "height": 84.45000457763672,
+            "top": 628.5499877929688,
+            "right": 1135.875,
+            "bottom": 712.9999923706055,
+            "left": 16.125
+          },
+          "allControlsReachable": true
+        },
+        {
+          "physicalViewport": [
+            1920,
+            1080
+          ],
+          "browserZoom": 1.25,
+          "viewport": [
+            1536,
+            864
+          ],
+          "scroll": [
+            1536,
+            864
+          ],
+          "back": {
+            "x": 1417.7249755859375,
+            "y": 8.637499809265137,
+            "width": 96.7750015258789,
+            "height": 46,
+            "top": 8.637499809265137,
+            "right": 1514.4999771118164,
+            "bottom": 54.63749980926514,
+            "left": 1417.7249755859375
+          },
+          "footer": {
+            "x": 21.5,
+            "y": 764.7125244140625,
+            "width": 1493,
+            "height": 90.6500015258789,
+            "top": 764.7125244140625,
+            "right": 1514.5,
+            "bottom": 855.3625259399414,
+            "left": 21.5
+          },
+          "allControlsReachable": true
+        },
+        {
+          "physicalViewport": [
+            1280,
+            640
+          ],
+          "browserZoom": 1.25,
+          "viewport": [
+            1024,
+            512
+          ],
+          "scroll": [
+            1024,
+            1345
+          ],
+          "back": {
+            "x": 880.7999877929688,
+            "y": 20,
+            "width": 121.20000457763672,
+            "height": 64,
+            "top": 20,
+            "right": 1001.9999923706055,
+            "bottom": 84,
+            "left": 880.7999877929688
+          },
+          "footer": {
+            "x": 22,
+            "y": 1166.875,
+            "width": 980,
+            "height": 119.75,
+            "top": 1166.875,
+            "right": 1002,
+            "bottom": 1286.625,
+            "left": 22
+          },
+          "allControlsReachable": true
+        }
+      ]
+    },
+    {
+      "name": "Desktop and 390×844 true 3D → cockpit → 3D navigation; original three actions/WebGL and Xiaoyi MP3 playing+ended; no fallback or shared snow"
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "zoom": 1,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scroll": [
+        1280,
+        720
+      ],
+      "back": {
+        "x": 1164.921875,
+        "y": 7,
+        "width": 97.171875,
+        "height": 46,
+        "top": 7,
+        "right": 1262.09375,
+        "bottom": 53,
+        "left": 1164.921875
+      },
+      "footer": {
+        "x": 17.90625,
+        "y": 625.875,
+        "width": 1244.1875,
+        "height": 87.125,
+        "top": 625.875,
+        "right": 1262.09375,
+        "bottom": 713,
+        "left": 17.90625
+      },
+      "allTabsAndControlsReachable": true
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "zoom": 1,
+      "viewport": [
+        1366,
+        768
+      ],
+      "scroll": [
+        1366,
+        768
+      ],
+      "back": {
+        "x": 1249.71875,
+        "y": 7,
+        "width": 97.171875,
+        "height": 46,
+        "top": 7,
+        "right": 1346.890625,
+        "bottom": 53,
+        "left": 1249.71875
+      },
+      "footer": {
+        "x": 19.109375,
+        "y": 671.59375,
+        "width": 1327.78125,
+        "height": 89.40625,
+        "top": 671.59375,
+        "right": 1346.890625,
+        "bottom": 761,
+        "left": 19.109375
+      },
+      "allTabsAndControlsReachable": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "zoom": 1,
+      "viewport": [
+        1440,
+        900
+      ],
+      "scroll": [
+        1440,
+        900
+      ],
+      "back": {
+        "x": 1322.671875,
+        "y": 9,
+        "width": 97.171875,
+        "height": 46,
+        "top": 9,
+        "right": 1419.84375,
+        "bottom": 55,
+        "left": 1322.671875
+      },
+      "footer": {
+        "x": 20.15625,
+        "y": 800.375,
+        "width": 1399.6875,
+        "height": 90.625,
+        "top": 800.375,
+        "right": 1419.84375,
+        "bottom": 891,
+        "left": 20.15625
+      },
+      "allTabsAndControlsReachable": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "zoom": 1,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "scroll": [
+        1920,
+        1080
+      ],
+      "back": {
+        "x": 1798.828125,
+        "y": 12.796875,
+        "width": 97.171875,
+        "height": 46,
+        "top": 12.796875,
+        "right": 1896,
+        "bottom": 58.796875,
+        "left": 1798.828125
+      },
+      "footer": {
+        "x": 24,
+        "y": 978.578125,
+        "width": 1872,
+        "height": 90.625,
+        "top": 978.578125,
+        "right": 1896,
+        "bottom": 1069.203125,
+        "left": 24
+      },
+      "allTabsAndControlsReachable": true
+    },
+    {
+      "width": 1280,
+      "height": 640,
+      "zoom": 1,
+      "viewport": [
+        1280,
+        640
+      ],
+      "scroll": [
+        1280,
+        640
+      ],
+      "back": {
+        "x": 1164.921875,
+        "y": 7,
+        "width": 97.171875,
+        "height": 46,
+        "top": 7,
+        "right": 1262.09375,
+        "bottom": 53,
+        "left": 1164.921875
+      },
+      "footer": {
+        "x": 17.90625,
+        "y": 545.875,
+        "width": 1244.1875,
+        "height": 87.125,
+        "top": 545.875,
+        "right": 1262.09375,
+        "bottom": 633,
+        "left": 17.90625
+      },
+      "allTabsAndControlsReachable": true
+    },
+    {
+      "width": 1366,
+      "height": 680,
+      "zoom": 1,
+      "viewport": [
+        1366,
+        680
+      ],
+      "scroll": [
+        1366,
+        680
+      ],
+      "back": {
+        "x": 1249.71875,
+        "y": 7,
+        "width": 97.171875,
+        "height": 46,
+        "top": 7,
+        "right": 1346.890625,
+        "bottom": 53,
+        "left": 1249.71875
+      },
+      "footer": {
+        "x": 19.109375,
+        "y": 583.59375,
+        "width": 1327.78125,
+        "height": 89.40625,
+        "top": 583.59375,
+        "right": 1346.890625,
+        "bottom": 673,
+        "left": 19.109375
+      },
+      "allTabsAndControlsReachable": true
+    },
+    {
+      "width": 1024,
+      "height": 576,
+      "zoom": 1,
+      "viewport": [
+        1024,
+        576
+      ],
+      "scroll": [
+        1024,
+        1349
+      ],
+      "back": {
+        "x": 880.390625,
+        "y": 20,
+        "width": 121.609375,
+        "height": 65,
+        "top": 20,
+        "right": 1002,
+        "bottom": 85,
+        "left": 880.390625
+      },
+      "footer": {
+        "x": 22,
+        "y": 1170.84375,
+        "width": 980,
+        "height": 119.71875,
+        "top": 1170.84375,
+        "right": 1002,
+        "bottom": 1290.5625,
+        "left": 22
+      },
+      "allTabsAndControlsReachable": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "zoom": 1,
+      "viewport": [
+        390,
+        844
+      ],
+      "scroll": [
+        390,
+        1943
+      ],
+      "back": {
+        "x": 294.296875,
+        "y": 8,
+        "width": 87.703125,
+        "height": 54,
+        "top": 8,
+        "right": 382,
+        "bottom": 62,
+        "left": 294.296875
+      },
+      "footer": {
+        "x": 8,
+        "y": 1778.484375,
+        "width": 374,
+        "height": 110.625,
+        "top": 1778.484375,
+        "right": 382,
+        "bottom": 1889.109375,
+        "left": 8
+      },
+      "allTabsAndControlsReachable": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "zoom": 1,
+      "viewport": [
+        844,
+        390
+      ],
+      "scroll": [
+        844,
+        2186
+      ],
+      "back": {
+        "x": 710.390625,
+        "y": 12,
+        "width": 121.609375,
+        "height": 65,
+        "top": 12,
+        "right": 832,
+        "bottom": 77,
+        "left": 710.390625
+      },
+      "footer": {
+        "x": 12,
+        "y": 2024.28125,
+        "width": 820,
+        "height": 119.71875,
+        "top": 2024.28125,
+        "right": 832,
+        "bottom": 2144,
+        "left": 12
+      },
+      "allTabsAndControlsReachable": true
+    },
+    {
+      "physicalViewport": [
+        1280,
+        720
+      ],
+      "browserZoom": 1.25,
+      "viewport": [
+        1024,
+        576
+      ],
+      "scroll": [
+        1024,
+        1345
+      ],
+      "back": {
+        "x": 880.7999877929688,
+        "y": 20,
+        "width": 121.20000457763672,
+        "height": 64,
+        "top": 20,
+        "right": 1001.9999923706055,
+        "bottom": 84,
+        "left": 880.7999877929688
+      },
+      "footer": {
+        "x": 22,
+        "y": 1166.875,
+        "width": 980,
+        "height": 119.75,
+        "top": 1166.875,
+        "right": 1002,
+        "bottom": 1286.625,
+        "left": 22
+      },
+      "allControlsReachable": true
+    },
+    {
+      "physicalViewport": [
+        1366,
+        768
+      ],
+      "browserZoom": 1.25,
+      "viewport": [
+        1093,
+        614
+      ],
+      "scroll": [
+        1093,
+        1330
+      ],
+      "back": {
+        "x": 949.6000366210938,
+        "y": 20,
+        "width": 121.20000457763672,
+        "height": 64,
+        "top": 20,
+        "right": 1070.8000411987305,
+        "bottom": 84,
+        "left": 949.6000366210938
+      },
+      "footer": {
+        "x": 22,
+        "y": 1152.862548828125,
+        "width": 1048.800048828125,
+        "height": 119.75,
+        "top": 1152.862548828125,
+        "right": 1070.800048828125,
+        "bottom": 1272.612548828125,
+        "left": 22
+      },
+      "allControlsReachable": true
+    },
+    {
+      "physicalViewport": [
+        1440,
+        900
+      ],
+      "browserZoom": 1.25,
+      "viewport": [
+        1152,
+        720
+      ],
+      "scroll": [
+        1152,
+        720
+      ],
+      "back": {
+        "x": 1039.0999755859375,
+        "y": 7,
+        "width": 96.7750015258789,
+        "height": 46,
+        "top": 7,
+        "right": 1135.8749771118164,
+        "bottom": 53,
+        "left": 1039.0999755859375
+      },
+      "footer": {
+        "x": 16.125,
+        "y": 628.5499877929688,
+        "width": 1119.75,
+        "height": 84.45000457763672,
+        "top": 628.5499877929688,
+        "right": 1135.875,
+        "bottom": 712.9999923706055,
+        "left": 16.125
+      },
+      "allControlsReachable": true
+    },
+    {
+      "physicalViewport": [
+        1920,
+        1080
+      ],
+      "browserZoom": 1.25,
+      "viewport": [
+        1536,
+        864
+      ],
+      "scroll": [
+        1536,
+        864
+      ],
+      "back": {
+        "x": 1417.7249755859375,
+        "y": 8.637499809265137,
+        "width": 96.7750015258789,
+        "height": 46,
+        "top": 8.637499809265137,
+        "right": 1514.4999771118164,
+        "bottom": 54.63749980926514,
+        "left": 1417.7249755859375
+      },
+      "footer": {
+        "x": 21.5,
+        "y": 764.7125244140625,
+        "width": 1493,
+        "height": 90.6500015258789,
+        "top": 764.7125244140625,
+        "right": 1514.5,
+        "bottom": 855.3625259399414,
+        "left": 21.5
+      },
+      "allControlsReachable": true
+    },
+    {
+      "physicalViewport": [
+        1280,
+        640
+      ],
+      "browserZoom": 1.25,
+      "viewport": [
+        1024,
+        512
+      ],
+      "scroll": [
+        1024,
+        1345
+      ],
+      "back": {
+        "x": 880.7999877929688,
+        "y": 20,
+        "width": 121.20000457763672,
+        "height": 64,
+        "top": 20,
+        "right": 1001.9999923706055,
+        "bottom": 84,
+        "left": 880.7999877929688
+      },
+      "footer": {
+        "x": 22,
+        "y": 1166.875,
+        "width": 980,
+        "height": 119.75,
+        "top": 1166.875,
+        "right": 1002,
+        "bottom": 1286.625,
+        "left": 22
+      },
+      "allControlsReachable": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "inputs": [
+    {
+      "label": "1280x720",
+      "events": [
+        {
+          "id": "drive",
+          "trusted": true
+        },
+        {
+          "id": "lights",
+          "trusted": true
+        },
+        {
+          "id": "weather",
+          "trusted": true
+        },
+        {
+          "id": "cabin",
+          "trusted": true
+        },
+        {
+          "id": "drive",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "1366x768",
+      "events": [
+        {
+          "id": "drive",
+          "trusted": true
+        },
+        {
+          "id": "lights",
+          "trusted": true
+        },
+        {
+          "id": "weather",
+          "trusted": true
+        },
+        {
+          "id": "cabin",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "1440x900",
+      "events": [
+        {
+          "id": "drive",
+          "trusted": true
+        },
+        {
+          "id": "lights",
+          "trusted": true
+        },
+        {
+          "id": "weather",
+          "trusted": true
+        },
+        {
+          "id": "cabin",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "1920x1080",
+      "events": [
+        {
+          "id": "drive",
+          "trusted": true
+        },
+        {
+          "id": "lights",
+          "trusted": true
+        },
+        {
+          "id": "weather",
+          "trusted": true
+        },
+        {
+          "id": "cabin",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "1280x640",
+      "events": [
+        {
+          "id": "drive",
+          "trusted": true
+        },
+        {
+          "id": "lights",
+          "trusted": true
+        },
+        {
+          "id": "weather",
+          "trusted": true
+        },
+        {
+          "id": "cabin",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "1366x680",
+      "events": [
+        {
+          "id": "drive",
+          "trusted": true
+        },
+        {
+          "id": "lights",
+          "trusted": true
+        },
+        {
+          "id": "weather",
+          "trusted": true
+        },
+        {
+          "id": "cabin",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "1024x576",
+      "events": [
+        {
+          "id": "drive",
+          "trusted": true
+        },
+        {
+          "id": "lights",
+          "trusted": true
+        },
+        {
+          "id": "weather",
+          "trusted": true
+        },
+        {
+          "id": "cabin",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "390x844",
+      "events": [
+        {
+          "id": "drive",
+          "trusted": true
+        },
+        {
+          "id": "lights",
+          "trusted": true
+        },
+        {
+          "id": "weather",
+          "trusted": true
+        },
+        {
+          "id": "cabin",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "844x390",
+      "events": [
+        {
+          "id": "drive",
+          "trusted": true
+        },
+        {
+          "id": "lights",
+          "trusted": true
+        },
+        {
+          "id": "weather",
+          "trusted": true
+        },
+        {
+          "id": "cabin",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "functional-sequence",
+      "events": [
+        {
+          "id": "start",
+          "trusted": true
+        },
+        {
+          "id": "accelerate",
+          "trusted": true
+        },
+        {
+          "id": "belt",
+          "trusted": true
+        },
+        {
+          "id": "brake",
+          "trusted": true
+        },
+        {
+          "id": "start",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"gearbtn\" data-gear=\"D\" aria-pressed=\"false\">D<span>前进 · Drive</span></button>",
+          "trusted": true
+        },
+        {
+          "id": "handbrake",
+          "trusted": true
+        },
+        {
+          "id": "accelerate",
+          "trusted": true
+        },
+        {
+          "id": "brake",
+          "trusted": true
+        },
+        {
+          "id": "accelerate",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"gearbtn\" data-gear=\"P\" aria-pressed=\"false\">P<span>停车 · Park</span></button>",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"gearbtn\" data-gear=\"N\" aria-pressed=\"false\">N<span>空挡 · Neutral</span></button>",
+          "trusted": true
+        },
+        {
+          "id": "start",
+          "trusted": true
+        },
+        {
+          "id": "handbrake",
+          "trusted": true
+        },
+        {
+          "id": "belt",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"gearbtn\" data-gear=\"S\" aria-pressed=\"false\">S<span>运动 · Sport</span></button>",
+          "trusted": true
+        },
+        {
+          "id": "accelerate",
+          "trusted": true
+        },
+        {
+          "id": "accelerate",
+          "trusted": true
+        },
+        {
+          "id": "brake",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"gearbtn\" data-gear=\"P\" aria-pressed=\"false\">P<span>停车 · Park</span></button>",
+          "trusted": true
+        },
+        {
+          "id": "handbrake",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"gearbtn\" data-gear=\"P\" aria-pressed=\"false\">P<span>停车 · Park</span></button>",
+          "trusted": true
+        },
+        {
+          "id": "start",
+          "trusted": true
+        },
+        {
+          "id": "brake",
+          "trusted": true
+        },
+        {
+          "id": "belt",
+          "trusted": true
+        },
+        {
+          "id": "brake",
+          "trusted": true
+        },
+        {
+          "id": "start",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"gearbtn\" data-gear=\"D\" aria-pressed=\"false\">D<span>前进 · Drive</span></button>",
+          "trusted": true
+        },
+        {
+          "id": "belt",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>",
+          "trusted": true
+        },
+        {
+          "id": "handbrake",
+          "trusted": true
+        },
+        {
+          "id": "brake",
+          "trusted": true
+        },
+        {
+          "id": "accelerate",
+          "trusted": true
+        },
+        {
+          "id": "brake",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"gearbtn\" data-gear=\"N\" aria-pressed=\"false\">N<span>空挡 · Neutral</span></button>",
+          "trusted": true
+        },
+        {
+          "id": "accelerate",
+          "trusted": true
+        },
+        {
+          "id": "handbrake",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"gearbtn\" data-gear=\"P\" aria-pressed=\"false\">P<span>停车 · Park</span></button>",
+          "trusted": true
+        },
+        {
+          "id": "start",
+          "trusted": true
+        },
+        {
+          "id": "brake",
+          "trusted": true
+        },
+        {
+          "id": "weather",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-rain=\"LIGHT\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌦️</span><span class=\"zh\">小雨</span><span class",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-rain=\"MEDIUM\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌧️</span><span class=\"zh\">中雨</span><span clas",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-rain=\"HEAVY\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⛈️</span><span class=\"zh\">大雨</span><span class=",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-rain=\"SNOW\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">❄️</span><span class=\"zh\">下雪</span><span class=\"",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-rain=\"NONE\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">☀️</span><span class=\"zh\">晴天</span><span class=\"",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-rain=\"SNOW\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">❄️</span><span class=\"zh\">下雪</span><span class=\"",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-rain=\"HEAVY\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⛈️</span><span class=\"zh\">大雨</span><span class=",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-rain=\"NONE\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">☀️</span><span class=\"zh\">晴天</span><span class=\"",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-wiper=\"SLOW\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌬</span><span class=\"zh\">慢速</span><span class=",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-wiper=\"FAST\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💨</span><span class=\"zh\">快速</span><span class=",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-wiper=\"OFF\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⏹</span><span class=\"zh\">关闭</span><span class=\"e",
+          "trusted": true
+        },
+        {
+          "id": "night",
+          "trusted": true
+        },
+        {
+          "id": "day",
+          "trusted": true
+        },
+        {
+          "id": "lights",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-lamp=\"POSITION\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💡</span><span class=\"zh\">小灯</span><span cla",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-lamp=\"HEADLIGHT\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🔦</span><span class=\"zh\">前照灯</span><span c",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-lamp=\"OFF\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⚫</span><span class=\"zh\">关闭</span><span class=\"en",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-lamp=\"AUTO\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🅰️</span><span class=\"zh\">自动</span><span class=",
+          "trusted": true
+        },
+        {
+          "id": "turnLeft",
+          "trusted": true
+        },
+        {
+          "id": "turnRight",
+          "trusted": true
+        },
+        {
+          "id": "hazard",
+          "trusted": true
+        },
+        {
+          "id": "hazard",
+          "trusted": true
+        },
+        {
+          "id": "fog",
+          "trusted": true
+        },
+        {
+          "id": "fog",
+          "trusted": true
+        },
+        {
+          "id": "cabin",
+          "trusted": true
+        },
+        {
+          "id": "tempUp",
+          "trusted": true
+        },
+        {
+          "id": "tempDown",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-fan=\"1\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🍃</span><span class=\"zh\">微风</span><span class=\"en\">",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-fan=\"2\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌀</span><span class=\"zh\">中风</span><span class=\"en\">",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-fan=\"3\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💨</span><span class=\"zh\">大风</span><span class=\"en\">",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"key\" data-fan=\"0\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">✖️</span><span class=\"zh\">关闭</span><span class=\"en\">",
+          "trusted": true
+        },
+        {
+          "id": "window",
+          "trusted": true
+        },
+        {
+          "id": "window",
+          "trusted": true
+        },
+        {
+          "id": "music",
+          "trusted": true
+        },
+        {
+          "id": "music",
+          "trusted": true
+        },
+        {
+          "id": "drive",
+          "trusted": true
+        },
+        {
+          "id": "doorlock",
+          "trusted": true
+        },
+        {
+          "id": "doorlock",
+          "trusted": true
+        },
+        {
+          "id": "horn",
+          "trusted": true
+        },
+        {
+          "id": "leftSteer",
+          "trusted": true
+        },
+        {
+          "id": "rightSteer",
+          "trusted": true
+        },
+        {
+          "id": "centerSteer",
+          "trusted": true
+        },
+        {
+          "id": "voiceToggle",
+          "trusted": true
+        },
+        {
+          "id": "doorlock",
+          "trusted": true
+        },
+        {
+          "id": "voiceToggle",
+          "trusted": true
+        },
+        {
+          "id": "doorlock",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "125percent-real-browser-zoom",
+      "events": [
+        {
+          "id": "drive",
+          "trusted": true
+        },
+        {
+          "id": "lights",
+          "trusted": true
+        },
+        {
+          "id": "weather",
+          "trusted": true
+        },
+        {
+          "id": "cabin",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "roundtrip-1280",
+      "events": [
+        {
+          "id": "go",
+          "trusted": true
+        },
+        {
+          "id": "go",
+          "trusted": true
+        },
+        {
+          "id": "xr",
+          "trusted": true
+        },
+        {
+          "id": "xr",
+          "trusted": true
+        },
+        {
+          "id": "ex",
+          "trusted": true
+        },
+        {
+          "id": "ex",
+          "trusted": true
+        },
+        {
+          "id": "xr",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"tile\"><img alt=\"\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAYAAACLz2ctAAAQAElEQVR4Aeyde3BU133Hv+fuancFeoAAP2JsYyEJpa",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "label": "roundtrip-390",
+      "events": [
+        {
+          "id": "go",
+          "trusted": true
+        },
+        {
+          "id": "go",
+          "trusted": true
+        },
+        {
+          "id": "xr",
+          "trusted": true
+        },
+        {
+          "id": "xr",
+          "trusted": true
+        },
+        {
+          "id": "ex",
+          "trusted": true
+        },
+        {
+          "id": "ex",
+          "trusted": true
+        },
+        {
+          "id": "xr",
+          "trusted": true
+        },
+        {
+          "id": "<button class=\"tile\"><img alt=\"\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAYAAACLz2ctAAAQAElEQVR4Aeyde3BU133Hv+fuancFeoAAP2JsYyEJpa",
+          "trusted": true
+        }
+      ]
+    }
+  ],
+  "speech": [
+    {
+      "label": "1280x720",
+      "voices": [],
+      "utterances": []
+    },
+    {
+      "label": "1366x768",
+      "voices": [],
+      "utterances": []
+    },
+    {
+      "label": "1440x900",
+      "voices": [],
+      "utterances": []
+    },
+    {
+      "label": "1920x1080",
+      "voices": [],
+      "utterances": []
+    },
+    {
+      "label": "1280x640",
+      "voices": [],
+      "utterances": []
+    },
+    {
+      "label": "1366x680",
+      "voices": [],
+      "utterances": []
+    },
+    {
+      "label": "1024x576",
+      "voices": [],
+      "utterances": []
+    },
+    {
+      "label": "390x844",
+      "voices": [],
+      "utterances": []
+    },
+    {
+      "label": "844x390",
+      "voices": [],
+      "utterances": []
+    },
+    {
+      "label": "functional-sequence",
+      "voices": [],
+      "utterances": [
+        {
+          "text": "先踩住脚刹。点一下脚刹，再启动发动机。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "现在还不能加速。先踩脚刹并启动。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "安全带系好啦。出发前系好安全带。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "发动机启动啦。继续系安全带、挂 D 或 S 挡，再松手刹。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "换到 D 挡。前进模式。继续下一步。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "手刹松开啦。松开脚刹后，可以踩油门出发。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "现在还不能加速。先松开脚刹。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "行驶中不能这样换挡。先刹车停稳，再换到 P、R 或 N。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "行驶中不能这样换挡。先刹车停稳，再换到 P、R 或 N。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "行驶中不能这样换挡。先刹车停稳，再换到 P、R 或 N。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "还不能熄火。先踩刹车停稳、拉手刹、挂 P 挡，再熄火。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "先刹车停稳。汽车还在动，不能在行驶中拉驻车制动。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "行驶中不能解安全带。先安全停车，再解开安全带。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "换到 S 挡。运动模式。运动挡动力响应更快。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "先拉手刹。停稳、踩住脚刹、拉手刹，再挂 P。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "手刹已经拉起。停车时拉起驻车制动。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "换到 P 挡。停车模式。准备停车。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "发动机熄火啦。最后松开脚刹，就安全停车啦。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "安全带解开了。停车后才能解安全带。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "发动机启动啦。继续系安全带、挂 D 或 S 挡，再松手刹。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "先系安全带。驾驶前系好安全带。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "安全带系好啦。出发前系好安全带。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "换到 R 挡。倒车模式。继续下一步。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "手刹松开啦。松开脚刹后，可以踩油门出发。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "换到 N 挡。空挡模式。继续下一步。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "现在还不能加速。请挂 D、S 或 R 挡。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "手刹已经拉起。停车时拉起驻车制动。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "换到 P 挡。停车模式。准备停车。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "发动机熄火啦。最后松开脚刹，就安全停车啦。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "天气：小雨。下起小雨。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "天气：中雨。雨变大了。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "天气：大雨。大雨来了！",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "天气：下雪。下雪啦！看，雪花在玻璃前飘。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "天气：晴天。天气晴朗。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "天气：下雪。下雪啦！看，雪花在玻璃前飘。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "天气：大雨。大雨来了！",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "天气：晴天。天气晴朗。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "雨刮器慢速摆动。看看雨刮器怎么扫过玻璃。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "雨刮器快速摆动。看看雨刮器怎么扫过玻璃。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "雨刮停下了。雨刮器在玻璃下面。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "天黑了。注意看路，夜间需要合适的车灯。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "天亮了。现在是白天。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "灯光：小灯。小灯让别人更容易看见汽车。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "灯光：大灯。大灯照亮汽车前面的路。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "灯光：关闭。车灯关掉了。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "灯光：自动。天黑会自动开灯。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "左转向灯。我要向左走。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "右转向灯。我要向右走。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "双闪打开啦。左右一起闪，提醒其他车辆注意。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "转向灯关闭。灯不闪啦。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "雾灯打开。在雾天帮助看清附近道路。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "雾灯关闭。雾灯关掉啦。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "温度 25 度。调高一点。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "温度 24 度。降低一点。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "风速 微风。空调风速改变了。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "风速 中风。空调风速改变了。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "风速 大风。空调风速改变了。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "风速 关闭。空调风速改变了。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "车窗打开了。感受窗外的风。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "车窗关好了。玻璃升上来了。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "音乐打开了。这是模拟音乐模式。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "音乐关闭了。车里面安静啦。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "车门锁好了。现在车门锁已锁定。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "车门解锁啦。现在可以开门。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        },
+        {
+          "text": "车门解锁啦。现在可以开门。",
+          "lang": "zh-CN",
+          "rate": 0.9200000166893005,
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "125percent-real-browser-zoom",
+      "voices": [],
+      "utterances": []
+    },
+    {
+      "label": "roundtrip-1280",
+      "voices": [],
+      "utterances": []
+    },
+    {
+      "label": "roundtrip-390",
+      "voices": [],
+      "utterances": []
+    }
+  ],
+  "media": [
+    {
+      "label": "1280x720",
+      "events": []
+    },
+    {
+      "label": "1366x768",
+      "events": []
+    },
+    {
+      "label": "1440x900",
+      "events": []
+    },
+    {
+      "label": "1920x1080",
+      "events": []
+    },
+    {
+      "label": "1280x640",
+      "events": []
+    },
+    {
+      "label": "1366x680",
+      "events": []
+    },
+    {
+      "label": "1024x576",
+      "events": []
+    },
+    {
+      "label": "390x844",
+      "events": []
+    },
+    {
+      "label": "844x390",
+      "events": []
+    },
+    {
+      "label": "functional-sequence",
+      "events": []
+    },
+    {
+      "label": "125percent-real-browser-zoom",
+      "events": []
+    },
+    {
+      "label": "roundtrip-1280",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/281faadc.mp3",
+          "time": 0.00891,
+          "duration": 2.448,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/4918bbfa.mp3",
+          "time": 0,
+          "duration": 1.728,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/4918bbfa.mp3",
+          "time": 1.728,
+          "duration": 1.728,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/8f385aed.mp3",
+          "time": 0,
+          "duration": 1.68,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/8f385aed.mp3",
+          "time": 1.68,
+          "duration": 1.68,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/163bdf0e.mp3",
+          "time": 0,
+          "duration": 1.608,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/163bdf0e.mp3",
+          "time": 1.608,
+          "duration": 1.608,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/0f8431e6.mp3",
+          "time": 0,
+          "duration": 1.728,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/0f8431e6.mp3",
+          "time": 1.728,
+          "duration": 1.728,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/ac4fda5e.mp3",
+          "time": 0,
+          "duration": 1.776,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/ac4fda5e.mp3",
+          "time": 1.776,
+          "duration": 1.776,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/8f385aed.mp3",
+          "time": 0,
+          "duration": 1.68,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/8f385aed.mp3",
+          "time": 1.68,
+          "duration": 1.68,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/fc7c9c95.mp3",
+          "time": 0,
+          "duration": 6.096,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/fc7c9c95.mp3",
+          "time": 6.096,
+          "duration": 6.096,
+          "error": null
+        }
+      ]
+    },
+    {
+      "label": "roundtrip-390",
+      "events": [
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/281faadc.mp3",
+          "time": 0.013317,
+          "duration": 2.448,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/4918bbfa.mp3",
+          "time": 0.000332,
+          "duration": 1.728,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/8f385aed.mp3",
+          "time": 0,
+          "duration": 1.68,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/163bdf0e.mp3",
+          "time": 0,
+          "duration": 1.608,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/0f8431e6.mp3",
+          "time": 0,
+          "duration": 1.728,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/ac4fda5e.mp3",
+          "time": 0,
+          "duration": 1.776,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/8f385aed.mp3",
+          "time": 0,
+          "duration": 1.68,
+          "error": null
+        },
+        {
+          "type": "playing",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/fc7c9c95.mp3",
+          "time": 0,
+          "duration": 6.096,
+          "error": null
+        },
+        {
+          "type": "ended",
+          "trusted": true,
+          "src": "http://127.0.0.1:39027/voice/xiaoyi/fc7c9c95.mp3",
+          "time": 6.096,
+          "duration": 6.096,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "browserTTS": "Native speechSynthesis calls and on/off verified; cloud voice availability and human audibility are not guaranteed",
+    "humanAdultChildListening": "NOT_TESTED",
+    "HarmonyOS": "NOT_TESTED",
+    "physicalDesktopDevices": "NOT_TESTED",
+    "deployment": "NOT_AUTHORIZED"
+  }
+}

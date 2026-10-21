@@ -1,0 +1,32 @@
+PASS: Exact integration scope; every Phase 3 base file unchanged except the two car-navigation insertions
+PASS: All unapproved original files are byte-identical to pinned main
+PASS: Voice mapping, both voice sets, and all existing MP3 decode
+CAPTURE: home-390x844.png
+PASS: J: Homepage has 20 cards, rendered car thumbnail and working car link
+CAPTURE: car-default-390x844.png
+CAPTURE: car-night-390x844.png
+CAPTURE: car-door-390x844.png
+CAPTURE: car-xray-390x844.png
+CAPTURE: car-exploded-390x844.png
+PASS: A–H,L: native touch, default camera, lights, doors, rain/wiper, start/stop, narration text, xray and reassembly 390×844
+CAPTURE: car-default-360x800.png
+PASS: A–H,L: native touch, default camera, lights, doors, rain/wiper, start/stop, narration text, xray and reassembly 360×800
+CAPTURE: car-default-1280x900.png
+PASS: G,I: Native lamp clicks play and finish original MP3 in both voices
+PASS: Phase 1: original model/material/config contract, default states, invalid inputs and preview isolation
+PASS: Phase 1 API: LEFT/RIGHT/OFF/HAZARD, four physical lamp owners, shared phases and selected-off suppression
+PASS: Foundation: API brake and original native tail tile restore; fog availability matches phase
+PASS: Phase 1 API + native legacy inputs: lamp modes, night/drive ownership, battery expiry and latest-request restore
+PASS: Phase 1 API: four bounded rain profiles, measured fall speed, independent wipers and superseded legacy deadlines
+PASS: Phase 1: immutable original vs candidate screenshots (structure + decoded pixels)
+PASS: Phase 2 native UI / physical ray / independent weather / explode: 390x844
+PASS: Phase 2 native UI / physical ray / independent weather / explode: 360x800
+PASS: Phase 2 native UI / physical ray / independent weather / explode: 844x390
+PASS: Phase 2 native UI / physical ray / independent weather / explode: 800x360
+QA FAILED: AssertionError [ERR_ASSERTION]: Native tap did not select lights: {"scene":"car","id":"lights","selected":"body","point":{"x":264,"y":434},"events":[{"trusted":true,"type":"touch","x":264,"y":434,"target":"c"}]}
+
+'body' !== 'lights'
+
+    at tapPart (/workspace/LittleExplorer/tools/qa_car_simple_plus.cjs:265:14)
+    at async exports.ui (/workspace/LittleExplorer/tools/qa_car_simple_plus_phase2.cjs:202:5)
+    at async run (/workspace/LittleExplorer/tools/qa_car_simple_plus.cjs:402:15)

@@ -1,0 +1,19 @@
+{
+  "archive": {
+    "name": "LittleExplorer_Cockpit_V3_Integration_Package.zip",
+    "sha256": "474a639975b45dc3ea2d1cae09dd1a7a08b2e736de8170ca0d669e5cbb7daa6b"
+  },
+  "implementation": {
+    "name": "LittleExplorer_驾驶舱交互原型_v3_电脑横屏.html",
+    "sha256": "74e8eb2f4adc8e4cae55c4b2888db8a8e6d508f04df8eb9cd6c478954c30ff2a"
+  },
+  "spec": {
+    "name": "LittleExplorer_驾驶舱V3_电脑横屏布局与集成规范.md",
+    "sha256": "39e9fc0beb92cc44d964adb819b3ca3d3b706db05502f1b7397db061452661b8"
+  },
+  "integrated": {
+    "path": "pages/cockpit.html",
+    "sha256": "21233978316a1228b86406fe72bb18f6f430ca7c24e7a98624d955b4d60d5b27"
+  },
+  "rejectedBranchesUsed": false
+}

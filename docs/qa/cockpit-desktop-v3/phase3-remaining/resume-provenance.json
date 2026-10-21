@@ -1,0 +1,15 @@
+{
+  "originalRunnerSHA256": "35bb67745d7b41180737d4b3d2b7b9164a35a05295813aad5aa99381857a39e6",
+  "originalPlaybackSHA256": "eef53660d6b817098cdda3395e1a3efd089dde6f19ef6c4f6afa23dae39cfc6f",
+  "adaptedPlaybackSHA256": "2b2b28b28654f312ea03a636aeab93e026da50c0378e647057bb4087f181506a",
+  "reuseUnchangedPhase3Audio": true,
+  "reusedCompleteLockEvidence": true,
+  "compiledRunnerSHA256": "b08dcec89f1f1bbe197b62283f22bdceebd20c4cbcfd30ba54cd5eaedfc0cf75",
+  "originalUI_SHA256": "12c9aa216521277872d8e4626fa43dade594e0d8eae517ed3b36eb5a5d49bb37",
+  "remainingUI_SHA256": "4cb09d2b06f31ef2da110bffce9f1ffa04cc2e72fa806a00443e19553e569915",
+  "wrapperSHA256": "160fa83ac42077bbf0e5e9a17333e647002da1d14b0ddaef59e843c811036822",
+  "scope": "Remaining Phase 2 native MP3 lock tests, Phase 3 two-voice/20-key native playback, all 19 scene smoke checks, browser errors and base protection. Prior completed assertions are not rerun.",
+  "timing": "Only ray-hit preparation and the disabled-control assertion pause rendering/JS time; native media continues in real time. Clock resumes before awaiting real ended.",
+  "finalWrapperSHA256": "a140022ca1bca638c3049f1bde996ddff79b3d64b4e98d340ee7bef67fc10a1b",
+  "postRunReportingOnlyChange": "Unused fresh-playback checkpoint newline corrected; executed reuse path and compiled runner unchanged."
+}

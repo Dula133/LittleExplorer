@@ -89,12 +89,17 @@ body.talking .tile.sel{border-color:var(--sun);background:#FFF7E6}
 .pm div{flex:1;min-width:0}.pm b{font-size:15px}.pm p{margin:3px 0 0;font-size:13px;color:var(--ink);line-height:1.5}
 .pm .sp{flex:none;width:34px;height:34px;border-radius:11px;background:var(--leaf);color:#fff;font-size:13px;font-weight:900;align-self:center}
 .pfoot{text-align:center;color:var(--ink-soft);font-size:12px;font-weight:700;margin-top:18px}
+/* Independent cockpit navigation; absolute positioning preserves the original header/canvas layout. */
+.cockpit-entry{position:absolute;right:14px;top:calc(100% + 8px);width:74px;height:62px;flex-direction:column;gap:1px;font-weight:900;font-size:13px;line-height:1.1}
+.cockpit-entry .cockpit-icon{font-size:23px;line-height:1.1}.cockpit-entry small{font-size:10px;color:var(--ink-soft)}
+.cockpit-entry:focus-visible{outline:3px solid var(--sky-deep);outline-offset:3px}
 </style>
 </head>
 <body>
 <div id="sky-day"></div><div id="sky-night"><div class="moon"></div></div><div id="sky-rain"></div>
 <canvas id="c"></canvas>
 <div class="top">
+  <a class="rbtn cockpit-entry" id="cockpit-entry" href="pages/cockpit.html" aria-label="驾驶舱 / Cockpit"><span class="cockpit-icon" aria-hidden="true">🚘</span><span>驾驶舱</span><small lang="en">Cockpit</small></a>
   <a class="rbtn" href="index.html" title="回首页"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M10 20v-5h4v5"/></svg></a>
   <div class="title"><span id="ttl">汽车</span><small id="subtitle"></small></div>
   <button class="rbtn txt" id="voice" title="换声音">云夏</button>

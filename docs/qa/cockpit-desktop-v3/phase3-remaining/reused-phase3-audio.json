@@ -1,0 +1,20 @@
+{
+  "status": "REUSED_IMMUTABLE_BASELINE_PASS",
+  "base": "cfbe268081a094050152054d26f70297b58da385",
+  "coverage": [
+    {
+      "voice": "yunxia",
+      "keys": 20,
+      "nativeSamples": 26
+    },
+    {
+      "voice": "xiaoyi",
+      "keys": 20,
+      "nativeSamples": 26
+    }
+  ],
+  "priorPlaybackSHA256": "0a0006f9132b8327a2af6e180c64a4c50e0ab629f69555aeee6ec1be99aaffa3",
+  "priorFullQASHA256": "0f8f2bf75872a9f444fac85d8c5d1e4d95eeff40e7b76f5d34ee991e296ecefb",
+  "freshIntegrationSHA256": "84106b7132b0c61f0dd746cf43d4c8b56809f29b99f8439041317e3a7df9689a",
+  "reason": "All original runtime code, mappings and 638 MP3s match the pinned base. The car HTML only adds the verified navigation link. Fresh round-trip and original native audio-lock checks passed. No claim that all 40 clips were replayed in this resume."
+}

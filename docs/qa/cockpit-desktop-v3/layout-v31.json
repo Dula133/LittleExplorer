@@ -1,0 +1,176 @@
+{
+  "status": "PASS",
+  "version": "V3.1",
+  "sourceSHA256": "21233978316a1228b86406fe72bb18f6f430ca7c24e7a98624d955b4d60d5b27",
+  "results": [
+    {
+      "physical": [
+        1280,
+        720
+      ],
+      "zoom": 1,
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "scrollHeight": 720,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        1366,
+        768
+      ],
+      "zoom": 1,
+      "width": 1366,
+      "height": 768,
+      "scrollWidth": 1366,
+      "scrollHeight": 768,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        1440,
+        900
+      ],
+      "zoom": 1,
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "scrollHeight": 900,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        1920,
+        1080
+      ],
+      "zoom": 1,
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        1280,
+        640
+      ],
+      "zoom": 1,
+      "width": 1280,
+      "height": 640,
+      "scrollWidth": 1280,
+      "scrollHeight": 640,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        1366,
+        680
+      ],
+      "zoom": 1,
+      "width": 1366,
+      "height": 680,
+      "scrollWidth": 1366,
+      "scrollHeight": 680,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        1024,
+        576
+      ],
+      "zoom": 1,
+      "width": 1024,
+      "height": 576,
+      "scrollWidth": 1024,
+      "scrollHeight": 1349,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        390,
+        844
+      ],
+      "zoom": 1,
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollHeight": 1943,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        844,
+        390
+      ],
+      "zoom": 1,
+      "width": 844,
+      "height": 390,
+      "scrollWidth": 844,
+      "scrollHeight": 2186,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        1280,
+        720
+      ],
+      "zoom": 1.25,
+      "width": 1024,
+      "height": 576,
+      "scrollWidth": 1024,
+      "scrollHeight": 1345,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        1366,
+        768
+      ],
+      "zoom": 1.25,
+      "width": 1093,
+      "height": 614,
+      "scrollWidth": 1093,
+      "scrollHeight": 1330,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        1440,
+        900
+      ],
+      "zoom": 1.25,
+      "width": 1152,
+      "height": 720,
+      "scrollWidth": 1152,
+      "scrollHeight": 720,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        1920,
+        1080
+      ],
+      "zoom": 1.25,
+      "width": 1536,
+      "height": 864,
+      "scrollWidth": 1536,
+      "scrollHeight": 864,
+      "controlsReachable": 42
+    },
+    {
+      "physical": [
+        1280,
+        640
+      ],
+      "zoom": 1.25,
+      "width": 1024,
+      "height": 512,
+      "scrollWidth": 1024,
+      "scrollHeight": 1345,
+      "controlsReachable": 42
+    }
+  ],
+  "errors": []
+}
