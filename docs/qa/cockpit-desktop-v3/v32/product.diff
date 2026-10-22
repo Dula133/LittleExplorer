@@ -1,0 +1,36 @@
+diff --git a/pages/cockpit.html b/pages/cockpit.html
+index 14bfa73..85de1ff 100644
+--- a/pages/cockpit.html
++++ b/pages/cockpit.html
+@@ -5 +5 @@
+-<title>LittleExplorer · 驾驶舱 V3.1 · PC 横屏 | Driver’s Cockpit</title>
++<title>LittleExplorer · 驾驶舱 V3.2 · PC 横屏 | Driver’s Cockpit</title>
+@@ -118,0 +119,10 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
++/* V3.2: passive tail-lamp observation inside the unchanged rear-view mirror. */
++.rear-lights{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:0;min-height:0;gap:4px;padding:0 3px;border-radius:6px;background:#16394be8;pointer-events:none}
++.rear-lights svg{width:44%;height:100%;max-height:40px;flex-shrink:0}.rear-light-legend{display:flex;flex-direction:column;gap:1px;min-width:0;font-size:clamp(8px,.67vw,11px);line-height:1.2;font-weight:800;white-space:nowrap;color:#a7bec8}
++.rear-light-legend span::before{content:'●';font-size:.8em;margin-right:3px;color:#496273}
++.rear-brake-light{fill:#542b39;stroke:#b66a74;stroke-width:1}.rear-reverse-light{fill:#3c5362;stroke:#879da7;stroke-width:1}
++.rear-lights.braking .rear-brake-light{fill:#ff3b42;stroke:#ffc4c6;filter:drop-shadow(0 0 3px #ff313b)}
++.rear-lights.reversing .rear-reverse-light{fill:#fffef3;stroke:#fff;filter:drop-shadow(0 0 3px #fff)}
++.rear-lights.braking .rear-brake-label,.rear-lights.braking .rear-brake-label::before{color:#ff9196}
++.rear-lights.reversing .rear-reverse-label,.rear-lights.reversing .rear-reverse-label::before{color:#fffef3}
++@media(max-width:560px){.rear-lights{gap:1px;padding:0 1px}.rear-lights svg{width:40%}.rear-light-legend{font-size:7px}}
+@@ -123 +133 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+-<header class="topbar"><div class="brand"><div class="brandmark">✦</div><div><div class="eyebrow">LittleExplorer · 儿童模拟</div><h1>我的探索驾驶舱 <span style="font-size:11px;font-weight:650;color:#a4c5cd">电脑横屏版 V3.1</span></h1></div></div><div class="pillrow"><div class="pill"><span class="dot"></span> 🚙 儿童模拟 · Child simulation</div><a id="outsideBtn" class="outline" href="car.html" title="返回 3D 汽车场景">↩ 返回汽车 <small style="display:block;font-size:10px;font-weight:500">Back to Car</small></a></div></header>
++<header class="topbar"><div class="brand"><div class="brandmark">✦</div><div><div class="eyebrow">LittleExplorer · 儿童模拟</div><h1>我的探索驾驶舱 <span style="font-size:11px;font-weight:650;color:#a4c5cd">电脑横屏版 V3.2</span></h1></div></div><div class="pillrow"><div class="pill"><span class="dot"></span> 🚙 儿童模拟 · Child simulation</div><a id="outsideBtn" class="outline" href="car.html" title="返回 3D 汽车场景">↩ 返回汽车 <small style="display:block;font-size:10px;font-weight:500">Back to Car</small></a></div></header>
+@@ -132 +142,5 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+-</svg><div class="rear-mirror"><span class="mirror-car">🚙</span></div><div class="mini-mirror left"></div><div class="mini-mirror right"></div><div class="location-chip">🚘 司机视角 · Driver view</div><div id="driveSceneChip" class="scene-chip">☀️ 晴天 · Sunny</div><div class="signal-flag left" id="flagLeft"><span class="arrow">◀</span> 左转</div><div class="signal-flag right" id="flagRight">右转 <span class="arrow">▶</span></div>
++</svg><div class="rear-mirror"><div class="rear-lights" id="rearLights" role="img" aria-label="车尾灯光 Rear lights：刹车灯关闭，倒车灯关闭">
++<svg viewBox="0 0 100 46" aria-hidden="true"><rect x="14" y="35" width="13" height="10" rx="3" fill="#142b37"/><rect x="73" y="35" width="13" height="10" rx="3" fill="#142b37"/><path d="M20 13 26 3h48l6 10 9 4v23H11V17Z" fill="#30556a" stroke="#bad4de" stroke-width="2"/><path d="m29 7-4 9h50l-4-9Z" fill="#a3dce4"/><path d="M15 35h70" stroke="#a5bcc7" stroke-width="3"/>
++<rect class="rear-brake-light" x="14" y="23" width="13" height="9" rx="2"/><rect class="rear-brake-light" x="73" y="23" width="13" height="9" rx="2"/>
++<rect class="rear-reverse-light" x="31" y="25" width="10" height="6" rx="1"/><rect class="rear-reverse-light" x="59" y="25" width="10" height="6" rx="1"/></svg>
++<div class="rear-light-legend" aria-hidden="true"><span class="rear-brake-label">刹车 Brake</span><span class="rear-reverse-label">倒车 Reverse</span></div></div></div><div class="mini-mirror left"></div><div class="mini-mirror right"></div><div class="location-chip">🚘 司机视角 · Driver view</div><div id="driveSceneChip" class="scene-chip">☀️ 晴天 · Sunny</div><div class="signal-flag left" id="flagLeft"><span class="arrow">◀</span> 左转</div><div class="signal-flag right" id="flagRight">右转 <span class="arrow">▶</span></div>
+@@ -168 +182 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+-<p class="legal">LittleExplorer 驾驶舱 V3.1 · 儿童认知模拟，不控制真实车辆，不代表实际驾驶规程 · 语音提示由浏览器朗读</p>
++<p class="legal">LittleExplorer 驾驶舱 V3.2 · 儿童认知模拟，不控制真实车辆，不代表实际驾驶规程 · 语音提示由浏览器朗读</p>
+@@ -206,0 +221,4 @@ function update(){const w=$('windshield');
++ const rear=$('rearLights'),reversing=state.gear==='R';
++ rear.classList.toggle('braking',state.brake);rear.classList.toggle('reversing',reversing);
++ const rearLabel='车尾灯光 Rear lights：刹车灯 Brake '+(state.brake?'on':'off')+'，倒车灯 Reverse '+(reversing?'on':'off');
++ if(rear.getAttribute('aria-label')!==rearLabel)rear.setAttribute('aria-label',rearLabel);

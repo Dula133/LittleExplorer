@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>LittleExplorer · 驾驶舱 V3.1 · PC 横屏 | Driver’s Cockpit</title>
+<title>LittleExplorer · 驾驶舱 V3.2 · PC 横屏 | Driver’s Cockpit</title>
 <style>
 :root{color-scheme:dark;--bg:#071521;--surface:#102634;--surface2:#173444;--panel:#122938;--edge:#2c4c5a;--text:#ecf6f7;--muted:#99b4c1;--teal:#62e4d2;--gold:#ffc76b;--blue:#8ebcff;--good:#69dc9d;--warn:#ffbe73;--radius:22px;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
 *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -200px,#28536a 0,#0d2130 44%,#06121e 100%);color:var(--text)}button{font:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}button:disabled{opacity:.4;cursor:not-allowed}button svg{display:block}button:active{transform:scale(.98)}.shell{max-width:1430px;margin:0 auto;padding:20px 22px 28px}.topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:15px}.brand{display:flex;gap:13px;align-items:center}.brandmark{height:46px;width:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(140deg,#54e9d1,#5d90e7);color:#0c2635;font-size:24px;font-weight:900;box-shadow:0 7px 22px #2fd9be22}.eyebrow{font-size:12px;color:#9bc4ce;font-weight:650;letter-spacing:.07em}.brand h1{font-size:23px;letter-spacing:.01em;margin:1px 0 0}.pillrow{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.pill{display:flex;align-items:center;gap:7px;border:1px solid #335566;border-radius:99px;padding:8px 12px;color:#bdcfd7;background:#142c3a;font-size:12px;font-weight:700}.pill strong{font-size:12px;color:#f3ffff}.dot{width:8px;height:8px;border-radius:100%;background:var(--good);box-shadow:0 0 10px #69dc9d8a}.outline{background:#203a4a;border:1px solid #456476;color:#eaf6f8;padding:12px 16px;border-radius:14px;font-weight:800;min-height:47px}.outline:hover{background:#2a4a5c}.hint{font-size:12px;color:var(--muted)}
@@ -116,11 +116,21 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
  .wheel{width:clamp(72px,10vh,132px);height:clamp(72px,10vh,132px)}
 }
 @media(max-width:999px){#rainButtons{grid-template-columns:repeat(3,minmax(0,1fr))}#rainButtons .key,#wiperButtons .key{min-width:0}}
+/* V3.2: passive tail-lamp observation inside the unchanged rear-view mirror. */
+.rear-lights{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:0;min-height:0;gap:4px;padding:0 3px;border-radius:6px;background:#16394be8;pointer-events:none}
+.rear-lights svg{width:44%;height:100%;max-height:40px;flex-shrink:0}.rear-light-legend{display:flex;flex-direction:column;gap:1px;min-width:0;font-size:clamp(8px,.67vw,11px);line-height:1.2;font-weight:800;white-space:nowrap;color:#a7bec8}
+.rear-light-legend span::before{content:'●';font-size:.8em;margin-right:3px;color:#496273}
+.rear-brake-light{fill:#542b39;stroke:#b66a74;stroke-width:1}.rear-reverse-light{fill:#3c5362;stroke:#879da7;stroke-width:1}
+.rear-lights.braking .rear-brake-light{fill:#ff3b42;stroke:#ffc4c6;filter:drop-shadow(0 0 3px #ff313b)}
+.rear-lights.reversing .rear-reverse-light{fill:#fffef3;stroke:#fff;filter:drop-shadow(0 0 3px #fff)}
+.rear-lights.braking .rear-brake-label,.rear-lights.braking .rear-brake-label::before{color:#ff9196}
+.rear-lights.reversing .rear-reverse-label,.rear-lights.reversing .rear-reverse-label::before{color:#fffef3}
+@media(max-width:560px){.rear-lights{gap:1px;padding:0 1px}.rear-lights svg{width:40%}.rear-light-legend{font-size:7px}}
 </style>
 </head>
 <body>
 <div class="shell">
-<header class="topbar"><div class="brand"><div class="brandmark">✦</div><div><div class="eyebrow">LittleExplorer · 儿童模拟</div><h1>我的探索驾驶舱 <span style="font-size:11px;font-weight:650;color:#a4c5cd">电脑横屏版 V3.1</span></h1></div></div><div class="pillrow"><div class="pill"><span class="dot"></span> 🚙 儿童模拟 · Child simulation</div><a id="outsideBtn" class="outline" href="car.html" title="返回 3D 汽车场景">↩ 返回汽车 <small style="display:block;font-size:10px;font-weight:500">Back to Car</small></a></div></header>
+<header class="topbar"><div class="brand"><div class="brandmark">✦</div><div><div class="eyebrow">LittleExplorer · 儿童模拟</div><h1>我的探索驾驶舱 <span style="font-size:11px;font-weight:650;color:#a4c5cd">电脑横屏版 V3.2</span></h1></div></div><div class="pillrow"><div class="pill"><span class="dot"></span> 🚙 儿童模拟 · Child simulation</div><a id="outsideBtn" class="outline" href="car.html" title="返回 3D 汽车场景">↩ 返回汽车 <small style="display:block;font-size:10px;font-weight:500">Back to Car</small></a></div></header>
 <main id="cockpit" class="cockpit">
 <div class="desktop-stage"><div class="left-stack">
 <div class="windshield" id="windshield" aria-label="模拟司机视角的道路场景">
@@ -129,7 +139,11 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 <div class="sky-overlay"></div><div class="fog-screen"></div><div class="rain-screen" id="rainScreen"></div><div class="snow-screen" id="snowScreen" aria-hidden="true"></div><div class="snowground" aria-hidden="true"></div><svg class="wiper-system" id="wiperSystem" viewBox="0 0 1200 440" preserveAspectRatio="none" aria-hidden="true">
 <g id="wiperLeft" transform="translate(330 426) rotate(0)"><path class="wiper-arm" d="M0 0 L210 -18"/><path class="wiper-blade" d="M85 -10 L400 -27"/><circle class="wiper-pivot" r="9"/></g>
 <g id="wiperRight" transform="translate(770 426) rotate(0)"><path class="wiper-arm" d="M0 0 L210 -18"/><path class="wiper-blade" d="M85 -10 L400 -27"/><circle class="wiper-pivot" r="9"/></g>
-</svg><div class="rear-mirror"><span class="mirror-car">🚙</span></div><div class="mini-mirror left"></div><div class="mini-mirror right"></div><div class="location-chip">🚘 司机视角 · Driver view</div><div id="driveSceneChip" class="scene-chip">☀️ 晴天 · Sunny</div><div class="signal-flag left" id="flagLeft"><span class="arrow">◀</span> 左转</div><div class="signal-flag right" id="flagRight">右转 <span class="arrow">▶</span></div>
+</svg><div class="rear-mirror"><div class="rear-lights" id="rearLights" role="img" aria-label="车尾灯光 Rear lights：刹车灯关闭，倒车灯关闭">
+<svg viewBox="0 0 100 46" aria-hidden="true"><rect x="14" y="35" width="13" height="10" rx="3" fill="#142b37"/><rect x="73" y="35" width="13" height="10" rx="3" fill="#142b37"/><path d="M20 13 26 3h48l6 10 9 4v23H11V17Z" fill="#30556a" stroke="#bad4de" stroke-width="2"/><path d="m29 7-4 9h50l-4-9Z" fill="#a3dce4"/><path d="M15 35h70" stroke="#a5bcc7" stroke-width="3"/>
+<rect class="rear-brake-light" x="14" y="23" width="13" height="9" rx="2"/><rect class="rear-brake-light" x="73" y="23" width="13" height="9" rx="2"/>
+<rect class="rear-reverse-light" x="31" y="25" width="10" height="6" rx="1"/><rect class="rear-reverse-light" x="59" y="25" width="10" height="6" rx="1"/></svg>
+<div class="rear-light-legend" aria-hidden="true"><span class="rear-brake-label">刹车 Brake</span><span class="rear-reverse-label">倒车 Reverse</span></div></div></div><div class="mini-mirror left"></div><div class="mini-mirror right"></div><div class="location-chip">🚘 司机视角 · Driver view</div><div id="driveSceneChip" class="scene-chip">☀️ 晴天 · Sunny</div><div class="signal-flag left" id="flagLeft"><span class="arrow">◀</span> 左转</div><div class="signal-flag right" id="flagRight">右转 <span class="arrow">▶</span></div>
 </div>
 <div class="meter-strip"><div><strong id="headlineState">安全停车中</strong><div class="subline">真实顺序简化模拟 · Tap icons and follow the steps</div></div><div class="meter-badges"><span class="meter-badge" id="lightsBadge">灯光：自动</span><span class="meter-badge" id="weatherBadge">天气：晴</span><span class="meter-badge" id="gearBadge">挡位：P</span></div></div>
 <section class="panel instruments"><div class="panel-top"><h2 class="sect-title">驾驶信息 <span class="sub"> · Live simulation</span></h2><span class="status-line" id="motorState">● 发动机休息中</span></div><div class="cluster"><div class="gauge speed" role="img" aria-label="速度 · Speed">
@@ -165,7 +179,7 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 </section>
 </div><!-- desktop stage -->
 <div class="footer"><div class="glow">✦</div><div class="fmain"><strong id="feedbackTitle">坐进驾驶舱啦</strong><div><span id="feedbackBody">先试试右边的「灯光」和「天气」，看看窗外发生了什么。</span></div></div><button id="voiceToggle" class="active" title="语音讲解"><span class="btn-symbol">🔊</span><span class="zh">讲解开</span><span class="en">Voice on</span></button></div>
-<p class="legal">LittleExplorer 驾驶舱 V3.1 · 儿童认知模拟，不控制真实车辆，不代表实际驾驶规程 · 语音提示由浏览器朗读</p>
+<p class="legal">LittleExplorer 驾驶舱 V3.2 · 儿童认知模拟，不控制真实车辆，不代表实际驾驶规程 · 语音提示由浏览器朗读</p>
 </main></div>
 <script>
 
@@ -204,6 +218,10 @@ function procedure(){
 }
 let lastRenderedSpeed=-1,lastRpm=-1;
 function update(){const w=$('windshield');
+ const rear=$('rearLights'),reversing=state.gear==='R';
+ rear.classList.toggle('braking',state.brake);rear.classList.toggle('reversing',reversing);
+ const rearLabel='车尾灯光 Rear lights：刹车灯 Brake '+(state.brake?'on':'off')+'，倒车灯 Reverse '+(reversing?'on':'off');
+ if(rear.getAttribute('aria-label')!==rearLabel)rear.setAttribute('aria-label',rearLabel);
  w.classList.toggle('night',state.night);w.classList.toggle('raining',['LIGHT','MEDIUM','HEAVY','STORM'].includes(state.rain));w.classList.toggle('snowy',state.rain==='SNOW');
  w.classList.toggle('rain-level-1',state.rain==='LIGHT');w.classList.toggle('rain-level-2',state.rain==='MEDIUM');w.classList.toggle('rain-level-3',state.rain==='HEAVY');
  w.classList.toggle('rain-level-4',state.rain==='STORM');w.classList.toggle('storm',state.rain==='STORM');w.classList.toggle('moving',state.speed>.5);w.classList.toggle('reverse',state.gear==='R');w.classList.toggle('lights-on',state.lamp==='HEADLIGHT'||(state.lamp==='AUTO'&&state.night));

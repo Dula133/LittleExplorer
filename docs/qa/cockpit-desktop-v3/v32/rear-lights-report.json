@@ -1,0 +1,1518 @@
+{
+  "status": "PASS",
+  "base": "fcffdc29f0761f3d066efd07d815fe818a43b019",
+  "version": "V3.2",
+  "sourceSHA256": "5133d8c4b705c1889fe9f0ec90817bfe96a4ac2051dae8c3306a72fa9cecd908",
+  "qaSHA256": "15224cb61d72d3ddc9b7ce4f6b4165aa3117a2fc2e664eef2712b96b4f034321",
+  "browser": "151.0.7922.173",
+  "playwright": "1.58.2",
+  "checks": [
+    {
+      "name": "Baseline geometry and no-scroll layout 1366×768",
+      "geometry": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "scroll": [
+          1366,
+          768
+        ],
+        "rects": {
+          ".topbar": {
+            "x": 19.109375,
+            "y": 7,
+            "width": 1327.78125,
+            "height": 46,
+            "top": 7,
+            "right": 1346.890625,
+            "bottom": 53,
+            "left": 19.109375
+          },
+          "#windshield": {
+            "x": 19.109375,
+            "y": 59,
+            "width": 700.859375,
+            "height": 263.546875,
+            "top": 59,
+            "right": 719.96875,
+            "bottom": 322.546875,
+            "left": 19.109375
+          },
+          ".rear-mirror": {
+            "x": 280.7421875,
+            "y": 74,
+            "width": 177.578125,
+            "height": 38.390625,
+            "top": 74,
+            "right": 458.3203125,
+            "bottom": 112.390625,
+            "left": 280.7421875
+          },
+          "#wiperSystem": {
+            "x": 23.109375,
+            "y": 63,
+            "width": 692.859375,
+            "height": 253.546875,
+            "top": 63,
+            "right": 715.96875,
+            "bottom": 316.546875,
+            "left": 23.109375
+          },
+          ".instruments": {
+            "x": 19.109375,
+            "y": 357.546875,
+            "width": 700.859375,
+            "height": 335.453125,
+            "top": 357.546875,
+            "right": 719.96875,
+            "bottom": 693,
+            "left": 19.109375
+          },
+          ".gauge.speed": {
+            "x": 30.109375,
+            "y": 390.546875,
+            "width": 351.921875,
+            "height": 151.40625,
+            "top": 390.546875,
+            "right": 382.03125,
+            "bottom": 541.953125,
+            "left": 30.109375
+          },
+          ".gauge.rpm": {
+            "x": 389.03125,
+            "y": 390.546875,
+            "width": 319.9375,
+            "height": 151.40625,
+            "top": 390.546875,
+            "right": 708.96875,
+            "bottom": 541.953125,
+            "left": 389.03125
+          },
+          ".wheel": {
+            "x": 105.578125,
+            "y": 570.0625,
+            "width": 76.796875,
+            "height": 76.796875,
+            "top": 570.0625,
+            "right": 182.375,
+            "bottom": 646.859375,
+            "left": 105.578125
+          },
+          ".controls": {
+            "x": 733.625,
+            "y": 59,
+            "width": 613.265625,
+            "height": 634,
+            "top": 59,
+            "right": 1346.890625,
+            "bottom": 693,
+            "left": 733.625
+          },
+          ".footer": {
+            "x": 19.109375,
+            "y": 701,
+            "width": 1327.78125,
+            "height": 60,
+            "top": 701,
+            "right": 1346.890625,
+            "bottom": 761,
+            "left": 19.109375
+          },
+          "#outsideBtn": {
+            "x": 1249.71875,
+            "y": 7,
+            "width": 97.171875,
+            "height": 46,
+            "top": 7,
+            "right": 1346.890625,
+            "bottom": 53,
+            "left": 1249.71875
+          }
+        },
+        "buttons": [
+          "<button class=\"steerbtn\" id=\"leftSteer\" aria-label=\"方向盘左转 Turn left\" title=\"左转 · Left\">↶</button>",
+          "<button class=\"steerbtn\" id=\"centerSteer\" aria-label=\"方向盘回正 Center\" title=\"回正 · Center\">⟷</button>",
+          "<button class=\"steerbtn\" id=\"rightSteer\" aria-label=\"方向盘右转 Turn right\" title=\"右转 · Right\">↷</button>",
+          "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span></button>",
+          "<button class=\"pedal accel\" id=\"accelerate\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🟢</span><span class=\"zh\">油门 · 点按加速</span><span class=\"en\">Gas · Tap</span></button>",
+          "<button class=\"tab\" role=\"tab\" data-tab=\"drive\" aria-selected=\"true\"><span class=\"ico\">🚙</span><span class=\"zh\">驾驶</span><span class=\"en\">Drive</span></button>",
+          "<button class=\"tab\" role=\"tab\" data-tab=\"lights\" aria-selected=\"false\"><span class=\"ico\">💡</span><span class=\"zh\">车灯</span><span class=\"en\">Lights</span></button>",
+          "<button class=\"tab\" role=\"tab\" data-tab=\"weather\" aria-selected=\"false\"><span class=\"ico\">🌦️</span><span class=\"zh\">天气</span><span class=\"en\">Weather</span></button>",
+          "<button class=\"tab\" role=\"tab\" data-tab=\"cabin\" aria-selected=\"false\"><span class=\"ico\">❄️</span><span class=\"zh\">车内</span><span class=\"en\">Cabin</span></button>",
+          "<button class=\"gearbtn active\" data-gear=\"P\" aria-pressed=\"true\">P<span>停车 · Park</span></button>",
+          "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>",
+          "<button class=\"gearbtn\" data-gear=\"N\" aria-pressed=\"false\">N<span>空挡 · Neutral</span></button>",
+          "<button class=\"gearbtn\" data-gear=\"D\" aria-pressed=\"false\">D<span>前进 · Drive</span></button>",
+          "<button class=\"gearbtn\" data-gear=\"S\" aria-pressed=\"false\">S<span>运动 · Sport</span></button>",
+          "<button class=\"big-action\" id=\"start\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⏻</span><span class=\"zh\">启动 / 熄火</span><span class=\"en\">Start / Stop</span></button>",
+          "<button class=\"big-action\" id=\"belt\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💺</span><span class=\"zh\">安全带</span><span class=\"en\">Seat belt</span></button>",
+          "<button class=\"big-action active\" id=\"handbrake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">Ⓟ</span><span class=\"zh\">驻车制动</span><span class=\"en\">Parking brake</span></button>",
+          "<button class=\"tile\" id=\"horn\"><span class=\"btn-symbol\" aria-hidden=\"true\">📣</span><span class=\"zh\">喇叭</span><span class=\"en\">Horn</span></button>",
+          "<button class=\"tile\" id=\"doorlock\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🔒</span><span class=\"zh\">车门锁</span><span class=\"en\">Door lock</span></button>",
+          "<button class=\"key active\" data-lamp=\"AUTO\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🅰️</span><span class=\"zh\">自动</span><span class=\"en\">Auto</span></button>",
+          "<button class=\"key\" data-lamp=\"POSITION\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💡</span><span class=\"zh\">小灯</span><span class=\"en\">Position</span></button>",
+          "<button class=\"key\" data-lamp=\"HEADLIGHT\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🔦</span><span class=\"zh\">前照灯</span><span class=\"en\">Headlights</span></button>",
+          "<button class=\"key\" data-lamp=\"OFF\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⚫</span><span class=\"zh\">关闭</span><span class=\"en\">Off</span></button>",
+          "<button class=\"tile amber\" id=\"turnLeft\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⬅️</span><span class=\"zh\">左转向灯</span><span class=\"en\">Left signal</span></button>",
+          "<button class=\"tile amber\" id=\"turnRight\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">➡️</span><span class=\"zh\">右转向灯</span><span class=\"en\">Right signal</span></button>",
+          "<button class=\"tile amber\" id=\"hazard\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⚠️</span><span class=\"zh\">双闪 · 四角灯</span><span class=\"en\">Hazard lights</span></button>",
+          "<button class=\"tile\" id=\"fog\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌫️</span><span class=\"zh\">前雾灯</span><span class=\"en\">Fog lights</span></button>",
+          "<button class=\"key active\" data-rain=\"NONE\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">☀️</span><span class=\"zh\">晴天</span><span class=\"en\">Sunny</span></button>",
+          "<button class=\"key\" data-rain=\"LIGHT\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌦️</span><span class=\"zh\">小雨</span><span class=\"en\">Light rain</span></button>",
+          "<button class=\"key\" data-rain=\"MEDIUM\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌧️</span><span class=\"zh\">中雨</span><span class=\"en\">Rain</span></button>",
+          "<button class=\"key\" data-rain=\"HEAVY\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⛈️</span><span class=\"zh\">大雨</span><span class=\"en\">Heavy rain</span></button>",
+          "<button class=\"key\" data-rain=\"STORM\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌩️</span><span class=\"zh\">大暴雨</span><span class=\"en\">Storm</span></button>",
+          "<button class=\"key\" data-rain=\"SNOW\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">❄️</span><span class=\"zh\">下雪</span><span class=\"en\">Snow</span></button>",
+          "<button class=\"key active\" data-wiper=\"OFF\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">⏹</span><span class=\"zh\">关闭</span><span class=\"en\">Off</span></button>",
+          "<button class=\"key\" data-wiper=\"LOW\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌬️</span><span class=\"zh\">低速</span><span class=\"en\">Slow</span></button>",
+          "<button class=\"key\" data-wiper=\"MEDIUM\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💨</span><span class=\"zh\">中速</span><span class=\"en\">Medium</span></button>",
+          "<button class=\"key\" data-wiper=\"HIGH\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⚡</span><span class=\"zh\">高速</span><span class=\"en\">Fast</span></button>",
+          "<button class=\"tile active\" id=\"day\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">☀️</span><span class=\"zh\">白天</span><span class=\"en\">Day</span></button>",
+          "<button class=\"tile\" id=\"night\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌙</span><span class=\"zh\">夜晚</span><span class=\"en\">Night</span></button>",
+          "<button id=\"tempDown\" aria-label=\"降低温度\">−</button>",
+          "<button id=\"tempUp\" aria-label=\"升高温度\">+</button>",
+          "<button class=\"key active\" data-fan=\"0\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">✖️</span><span class=\"zh\">关闭</span><span class=\"en\">Off</span></button>",
+          "<button class=\"key\" data-fan=\"1\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🍃</span><span class=\"zh\">微风</span><span class=\"en\">Low</span></button>",
+          "<button class=\"key\" data-fan=\"2\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌀</span><span class=\"zh\">中风</span><span class=\"en\">Medium</span></button>",
+          "<button class=\"key\" data-fan=\"3\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💨</span><span class=\"zh\">大风</span><span class=\"en\">High</span></button>",
+          "<button class=\"tile\" id=\"window\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🪟</span><span class=\"zh\">车窗 · 关</span><span class=\"en\">Window · Closed</span></button>",
+          "<button class=\"tile\" id=\"music\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🎵</span><span class=\"zh\">音乐 · 关</span><span class=\"en\">Music · Off</span></button>",
+          "<button id=\"voiceToggle\" class=\"active\" title=\"语音讲解\" aria-pressed=\"true\"><span class=\"btn-symbol\">🔊</span><span class=\"zh\">讲解开</span><span class=\"en\">Voice on</span></button>"
+        ]
+      },
+      "fit": {
+        "parent": {
+          "x": 280.7421875,
+          "y": 74,
+          "width": 177.578125,
+          "height": 38.390625,
+          "top": 74,
+          "right": 458.3203125,
+          "bottom": 112.390625,
+          "left": 280.7421875
+        },
+        "zone": {
+          "x": 285.7421875,
+          "y": 79,
+          "width": 167.578125,
+          "height": 28.390625,
+          "top": 79,
+          "right": 453.3203125,
+          "bottom": 107.390625,
+          "left": 285.7421875
+        },
+        "legendFits": true
+      }
+    },
+    {
+      "name": "Brake/reverse/both/all five gears/illegal-shift guards/start and park 1366×768",
+      "status": "PASS"
+    },
+    {
+      "name": "Baseline geometry and no-scroll layout 1920×1080",
+      "geometry": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "scroll": [
+          1920,
+          1080
+        ],
+        "rects": {
+          ".topbar": {
+            "x": 24,
+            "y": 10.796875,
+            "width": 1872,
+            "height": 50,
+            "top": 10.796875,
+            "right": 1896,
+            "bottom": 60.796875,
+            "left": 24
+          },
+          "#windshield": {
+            "x": 24,
+            "y": 68.796875,
+            "width": 988.796875,
+            "height": 389.125,
+            "top": 68.796875,
+            "right": 1012.796875,
+            "bottom": 457.921875,
+            "left": 24
+          },
+          ".rear-mirror": {
+            "x": 415.390625,
+            "y": 83.796875,
+            "width": 206,
+            "height": 54,
+            "top": 83.796875,
+            "right": 621.390625,
+            "bottom": 137.796875,
+            "left": 415.390625
+          },
+          "#wiperSystem": {
+            "x": 28,
+            "y": 72.796875,
+            "width": 980.796875,
+            "height": 379.125,
+            "top": 72.796875,
+            "right": 1008.796875,
+            "bottom": 451.921875,
+            "left": 28
+          },
+          ".instruments": {
+            "x": 24,
+            "y": 505.921875,
+            "width": 988.796875,
+            "height": 495.28125,
+            "top": 505.921875,
+            "right": 1012.796875,
+            "bottom": 1001.203125,
+            "left": 24
+          },
+          ".gauge.speed": {
+            "x": 37.40625,
+            "y": 543.328125,
+            "width": 500.21875,
+            "height": 237.046875,
+            "top": 543.328125,
+            "right": 537.625,
+            "bottom": 780.375,
+            "left": 37.40625
+          },
+          ".gauge.rpm": {
+            "x": 544.625,
+            "y": 543.328125,
+            "width": 454.765625,
+            "height": 237.046875,
+            "top": 543.328125,
+            "right": 999.390625,
+            "bottom": 780.375,
+            "left": 544.625
+          },
+          ".wheel": {
+            "x": 145.40625,
+            "y": 828.578125,
+            "width": 108,
+            "height": 108,
+            "top": 828.578125,
+            "right": 253.40625,
+            "bottom": 936.578125,
+            "left": 145.40625
+          },
+          ".controls": {
+            "x": 1030.796875,
+            "y": 68.796875,
+            "width": 865.203125,
+            "height": 932.40625,
+            "top": 68.796875,
+            "right": 1896,
+            "bottom": 1001.203125,
+            "left": 1030.796875
+          },
+          ".footer": {
+            "x": 24,
+            "y": 1009.203125,
+            "width": 1872,
+            "height": 60,
+            "top": 1009.203125,
+            "right": 1896,
+            "bottom": 1069.203125,
+            "left": 24
+          },
+          "#outsideBtn": {
+            "x": 1798.828125,
+            "y": 12.796875,
+            "width": 97.171875,
+            "height": 46,
+            "top": 12.796875,
+            "right": 1896,
+            "bottom": 58.796875,
+            "left": 1798.828125
+          }
+        },
+        "buttons": [
+          "<button class=\"steerbtn\" id=\"leftSteer\" aria-label=\"方向盘左转 Turn left\" title=\"左转 · Left\">↶</button>",
+          "<button class=\"steerbtn\" id=\"centerSteer\" aria-label=\"方向盘回正 Center\" title=\"回正 · Center\">⟷</button>",
+          "<button class=\"steerbtn\" id=\"rightSteer\" aria-label=\"方向盘右转 Turn right\" title=\"右转 · Right\">↷</button>",
+          "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span></button>",
+          "<button class=\"pedal accel\" id=\"accelerate\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🟢</span><span class=\"zh\">油门 · 点按加速</span><span class=\"en\">Gas · Tap</span></button>",
+          "<button class=\"tab\" role=\"tab\" data-tab=\"drive\" aria-selected=\"true\"><span class=\"ico\">🚙</span><span class=\"zh\">驾驶</span><span class=\"en\">Drive</span></button>",
+          "<button class=\"tab\" role=\"tab\" data-tab=\"lights\" aria-selected=\"false\"><span class=\"ico\">💡</span><span class=\"zh\">车灯</span><span class=\"en\">Lights</span></button>",
+          "<button class=\"tab\" role=\"tab\" data-tab=\"weather\" aria-selected=\"false\"><span class=\"ico\">🌦️</span><span class=\"zh\">天气</span><span class=\"en\">Weather</span></button>",
+          "<button class=\"tab\" role=\"tab\" data-tab=\"cabin\" aria-selected=\"false\"><span class=\"ico\">❄️</span><span class=\"zh\">车内</span><span class=\"en\">Cabin</span></button>",
+          "<button class=\"gearbtn active\" data-gear=\"P\" aria-pressed=\"true\">P<span>停车 · Park</span></button>",
+          "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>",
+          "<button class=\"gearbtn\" data-gear=\"N\" aria-pressed=\"false\">N<span>空挡 · Neutral</span></button>",
+          "<button class=\"gearbtn\" data-gear=\"D\" aria-pressed=\"false\">D<span>前进 · Drive</span></button>",
+          "<button class=\"gearbtn\" data-gear=\"S\" aria-pressed=\"false\">S<span>运动 · Sport</span></button>",
+          "<button class=\"big-action\" id=\"start\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⏻</span><span class=\"zh\">启动 / 熄火</span><span class=\"en\">Start / Stop</span></button>",
+          "<button class=\"big-action\" id=\"belt\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💺</span><span class=\"zh\">安全带</span><span class=\"en\">Seat belt</span></button>",
+          "<button class=\"big-action active\" id=\"handbrake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">Ⓟ</span><span class=\"zh\">驻车制动</span><span class=\"en\">Parking brake</span></button>",
+          "<button class=\"tile\" id=\"horn\"><span class=\"btn-symbol\" aria-hidden=\"true\">📣</span><span class=\"zh\">喇叭</span><span class=\"en\">Horn</span></button>",
+          "<button class=\"tile\" id=\"doorlock\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🔒</span><span class=\"zh\">车门锁</span><span class=\"en\">Door lock</span></button>",
+          "<button class=\"key active\" data-lamp=\"AUTO\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🅰️</span><span class=\"zh\">自动</span><span class=\"en\">Auto</span></button>",
+          "<button class=\"key\" data-lamp=\"POSITION\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💡</span><span class=\"zh\">小灯</span><span class=\"en\">Position</span></button>",
+          "<button class=\"key\" data-lamp=\"HEADLIGHT\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🔦</span><span class=\"zh\">前照灯</span><span class=\"en\">Headlights</span></button>",
+          "<button class=\"key\" data-lamp=\"OFF\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⚫</span><span class=\"zh\">关闭</span><span class=\"en\">Off</span></button>",
+          "<button class=\"tile amber\" id=\"turnLeft\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⬅️</span><span class=\"zh\">左转向灯</span><span class=\"en\">Left signal</span></button>",
+          "<button class=\"tile amber\" id=\"turnRight\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">➡️</span><span class=\"zh\">右转向灯</span><span class=\"en\">Right signal</span></button>",
+          "<button class=\"tile amber\" id=\"hazard\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⚠️</span><span class=\"zh\">双闪 · 四角灯</span><span class=\"en\">Hazard lights</span></button>",
+          "<button class=\"tile\" id=\"fog\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌫️</span><span class=\"zh\">前雾灯</span><span class=\"en\">Fog lights</span></button>",
+          "<button class=\"key active\" data-rain=\"NONE\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">☀️</span><span class=\"zh\">晴天</span><span class=\"en\">Sunny</span></button>",
+          "<button class=\"key\" data-rain=\"LIGHT\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌦️</span><span class=\"zh\">小雨</span><span class=\"en\">Light rain</span></button>",
+          "<button class=\"key\" data-rain=\"MEDIUM\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌧️</span><span class=\"zh\">中雨</span><span class=\"en\">Rain</span></button>",
+          "<button class=\"key\" data-rain=\"HEAVY\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⛈️</span><span class=\"zh\">大雨</span><span class=\"en\">Heavy rain</span></button>",
+          "<button class=\"key\" data-rain=\"STORM\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌩️</span><span class=\"zh\">大暴雨</span><span class=\"en\">Storm</span></button>",
+          "<button class=\"key\" data-rain=\"SNOW\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">❄️</span><span class=\"zh\">下雪</span><span class=\"en\">Snow</span></button>",
+          "<button class=\"key active\" data-wiper=\"OFF\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">⏹</span><span class=\"zh\">关闭</span><span class=\"en\">Off</span></button>",
+          "<button class=\"key\" data-wiper=\"LOW\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌬️</span><span class=\"zh\">低速</span><span class=\"en\">Slow</span></button>",
+          "<button class=\"key\" data-wiper=\"MEDIUM\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💨</span><span class=\"zh\">中速</span><span class=\"en\">Medium</span></button>",
+          "<button class=\"key\" data-wiper=\"HIGH\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⚡</span><span class=\"zh\">高速</span><span class=\"en\">Fast</span></button>",
+          "<button class=\"tile active\" id=\"day\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">☀️</span><span class=\"zh\">白天</span><span class=\"en\">Day</span></button>",
+          "<button class=\"tile\" id=\"night\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌙</span><span class=\"zh\">夜晚</span><span class=\"en\">Night</span></button>",
+          "<button id=\"tempDown\" aria-label=\"降低温度\">−</button>",
+          "<button id=\"tempUp\" aria-label=\"升高温度\">+</button>",
+          "<button class=\"key active\" data-fan=\"0\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">✖️</span><span class=\"zh\">关闭</span><span class=\"en\">Off</span></button>",
+          "<button class=\"key\" data-fan=\"1\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🍃</span><span class=\"zh\">微风</span><span class=\"en\">Low</span></button>",
+          "<button class=\"key\" data-fan=\"2\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🌀</span><span class=\"zh\">中风</span><span class=\"en\">Medium</span></button>",
+          "<button class=\"key\" data-fan=\"3\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💨</span><span class=\"zh\">大风</span><span class=\"en\">High</span></button>",
+          "<button class=\"tile\" id=\"window\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🪟</span><span class=\"zh\">车窗 · 关</span><span class=\"en\">Window · Closed</span></button>",
+          "<button class=\"tile\" id=\"music\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🎵</span><span class=\"zh\">音乐 · 关</span><span class=\"en\">Music · Off</span></button>",
+          "<button id=\"voiceToggle\" class=\"active\" title=\"语音讲解\" aria-pressed=\"true\"><span class=\"btn-symbol\">🔊</span><span class=\"zh\">讲解开</span><span class=\"en\">Voice on</span></button>"
+        ]
+      },
+      "fit": {
+        "parent": {
+          "x": 415.390625,
+          "y": 83.796875,
+          "width": 206,
+          "height": 54,
+          "top": 83.796875,
+          "right": 621.390625,
+          "bottom": 137.796875,
+          "left": 415.390625
+        },
+        "zone": {
+          "x": 420.390625,
+          "y": 88.796875,
+          "width": 196,
+          "height": 44,
+          "top": 88.796875,
+          "right": 616.390625,
+          "bottom": 132.796875,
+          "left": 420.390625
+        },
+        "legendFits": true
+      }
+    },
+    {
+      "name": "Brake/reverse/both/all five gears/illegal-shift guards/start and park 1920×1080",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844 horizontal containment and accessible return",
+      "status": "PASS"
+    }
+  ],
+  "records": [
+    {
+      "label": "1366 initial P",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 P brake on engine off",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1366 R denied before engine",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1366 P brake released",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 N held brake",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "N",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1366 N released brake",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "N",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 D held brake",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "D",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1366 D released brake",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "D",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 rejected R without brake",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "D",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 S held brake",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "S",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1366 S released brake",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "S",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 R held brake",
+      "braking": true,
+      "reversing": true,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1366 R released brake",
+      "braking": false,
+      "reversing": true,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 P held brake",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1366 P released brake",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 moving R rejects D",
+      "braking": false,
+      "reversing": true,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 moving R rejects N",
+      "braking": false,
+      "reversing": true,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 moving R rejects P",
+      "braking": false,
+      "reversing": true,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 moving reverse braking",
+      "braking": true,
+      "reversing": true,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1366 exit R to N",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "N",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1366 moving D rejects R",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "D",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1366 forward braking",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "D",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1366 safely parked engine off",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 initial P",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 P brake on engine off",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1920 R denied before engine",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1920 P brake released",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 N held brake",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "N",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1920 N released brake",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "N",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 D held brake",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "D",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1920 D released brake",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "D",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 rejected R without brake",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "D",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 S held brake",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "S",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1920 S released brake",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "S",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 R held brake",
+      "braking": true,
+      "reversing": true,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1920 R released brake",
+      "braking": false,
+      "reversing": true,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 P held brake",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1920 P released brake",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 moving R rejects D",
+      "braking": false,
+      "reversing": true,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 moving R rejects N",
+      "braking": false,
+      "reversing": true,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 moving R rejects P",
+      "braking": false,
+      "reversing": true,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 moving reverse braking",
+      "braking": true,
+      "reversing": true,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(255, 254, 243)",
+        "rgb(255, 254, 243)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse on",
+      "selectedGear": "R",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1920 exit R to N",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "N",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1920 moving D rejects R",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "D",
+      "brakePressed": "false"
+    },
+    {
+      "label": "1920 forward braking",
+      "braking": true,
+      "reversing": false,
+      "red": [
+        "rgb(255, 59, 66)",
+        "rgb(255, 59, 66)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake on，倒车灯 Reverse off",
+      "selectedGear": "D",
+      "brakePressed": "true"
+    },
+    {
+      "label": "1920 safely parked engine off",
+      "braking": false,
+      "reversing": false,
+      "red": [
+        "rgb(84, 43, 57)",
+        "rgb(84, 43, 57)"
+      ],
+      "white": [
+        "rgb(60, 83, 98)",
+        "rgb(60, 83, 98)"
+      ],
+      "aria": "车尾灯光 Rear lights：刹车灯 Brake off，倒车灯 Reverse off",
+      "selectedGear": "P",
+      "brakePressed": "false"
+    }
+  ],
+  "inputs": [
+    {
+      "width": 1366,
+      "height": 768,
+      "events": [
+        {
+          "trusted": true,
+          "target": "<button id=\"voiceToggle\" class=\"active\" title=\"语音讲解\" aria-pressed=\"true\"><span class=\"btn-symbol\">🔊</span><span class=\"zh\">讲解开</span><span class=\"en\">Voice on</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action\" id=\"start\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⏻</span><span class=\"zh\">启动 / 熄火</span><span class=\"en\">Start / Stop</span></"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action\" id=\"belt\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💺</span><span class=\"zh\">安全带</span><span class=\"en\">Seat belt</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action\" id=\"start\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⏻</span><span class=\"zh\">启动 / 熄火</span><span class=\"en\">Start / Stop</span></"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"N\" aria-pressed=\"false\">N<span>空挡 · Neutral</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"D\" aria-pressed=\"false\">D<span>前进 · Drive</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"S\" aria-pressed=\"false\">S<span>运动 · Sport</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"P\" aria-pressed=\"false\">P<span>停车 · Park</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action active\" id=\"handbrake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">Ⓟ</span><span class=\"zh\">驻车制动</span><span class=\"en\">Parking brake<"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal accel\" id=\"accelerate\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🟢</span><span class=\"zh\">油门 · 点按加速</span><span class=\"en\">Gas · Tap</s"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"D\" aria-pressed=\"false\">D<span>前进 · Drive</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"N\" aria-pressed=\"false\">N<span>空挡 · Neutral</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"P\" aria-pressed=\"false\">P<span>停车 · Park</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"N\" aria-pressed=\"false\">N<span>空挡 · Neutral</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"D\" aria-pressed=\"false\">D<span>前进 · Drive</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal accel\" id=\"accelerate\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🟢</span><span class=\"zh\">油门 · 点按加速</span><span class=\"en\">Gas · Tap</s"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action\" id=\"handbrake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">Ⓟ</span><span class=\"zh\">驻车制动</span><span class=\"en\">Parking brake</span>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"P\" aria-pressed=\"false\">P<span>停车 · Park</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action active\" id=\"start\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">⏻</span><span class=\"zh\">启动 / 熄火</span><span class=\"en\">Start / Stop</s"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "events": [
+        {
+          "trusted": true,
+          "target": "<button id=\"voiceToggle\" class=\"active\" title=\"语音讲解\" aria-pressed=\"true\"><span class=\"btn-symbol\">🔊</span><span class=\"zh\">讲解开</span><span class=\"en\">Voice on</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action\" id=\"start\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⏻</span><span class=\"zh\">启动 / 熄火</span><span class=\"en\">Start / Stop</span></"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action\" id=\"belt\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">💺</span><span class=\"zh\">安全带</span><span class=\"en\">Seat belt</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action\" id=\"start\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">⏻</span><span class=\"zh\">启动 / 熄火</span><span class=\"en\">Start / Stop</span></"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"N\" aria-pressed=\"false\">N<span>空挡 · Neutral</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"D\" aria-pressed=\"false\">D<span>前进 · Drive</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"S\" aria-pressed=\"false\">S<span>运动 · Sport</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"P\" aria-pressed=\"false\">P<span>停车 · Park</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action active\" id=\"handbrake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">Ⓟ</span><span class=\"zh\">驻车制动</span><span class=\"en\">Parking brake<"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal accel\" id=\"accelerate\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🟢</span><span class=\"zh\">油门 · 点按加速</span><span class=\"en\">Gas · Tap</s"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"D\" aria-pressed=\"false\">D<span>前进 · Drive</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"N\" aria-pressed=\"false\">N<span>空挡 · Neutral</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"P\" aria-pressed=\"false\">P<span>停车 · Park</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"N\" aria-pressed=\"false\">N<span>空挡 · Neutral</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"D\" aria-pressed=\"false\">D<span>前进 · Drive</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal accel\" id=\"accelerate\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🟢</span><span class=\"zh\">油门 · 点按加速</span><span class=\"en\">Gas · Tap</s"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"R\" aria-pressed=\"false\">R<span>倒车 · Reverse</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake\" id=\"brake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 点按保持</span><span class=\"en\">Brake · Tap</span"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action\" id=\"handbrake\" aria-pressed=\"false\"><span class=\"btn-symbol\" aria-hidden=\"true\">Ⓟ</span><span class=\"zh\">驻车制动</span><span class=\"en\">Parking brake</span>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"gearbtn\" data-gear=\"P\" aria-pressed=\"false\">P<span>停车 · Park</span></button>"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"big-action active\" id=\"start\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">⏻</span><span class=\"zh\">启动 / 熄火</span><span class=\"en\">Start / Stop</s"
+        },
+        {
+          "trusted": true,
+          "target": "<button class=\"pedal brake active\" id=\"brake\" aria-pressed=\"true\"><span class=\"btn-symbol\" aria-hidden=\"true\">🛑</span><span class=\"zh\">脚刹 · 已踩住</span><span class=\"en\">Brake held</"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "originalJSOutsidePassiveInsertionUnchanged": true,
+  "voices": {
+    "keys": 315,
+    "mp3": 638,
+    "SHA256Unchanged": true
+  },
+  "humanVisualListening": "NOT_TESTED",
+  "HarmonyOS": "NOT_TESTED",
+  "browserTTSAudibility": "Not retested; previously reported cloud synthesis-failed"
+}
