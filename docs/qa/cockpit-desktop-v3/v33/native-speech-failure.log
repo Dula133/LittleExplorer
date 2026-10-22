@@ -1,0 +1,10 @@
+AssertionError [ERR_ASSERTION]: Actual native speech plus engine mix must keep headroom
+    at nativeSpeechQA (/workspace/LittleExplorer/tools/qa_cockpit_v33.cjs:164:414)
+    at async /workspace/LittleExplorer/tools/qa_cockpit_v33.cjs:185:46 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

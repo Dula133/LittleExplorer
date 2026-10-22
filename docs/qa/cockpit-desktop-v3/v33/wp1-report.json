@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "WP1 D/S/R direction, speed, coast, brake and stop 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "forwardDelta": 0.022499999999999964,
+        "sportDelta": 0.06417399999999995,
+        "coastDelta": [
+          0.0674999999999999,
+          0.0655429999999999
+        ],
+        "stationary": true
+      }
+    },
+    {
+      "name": "WP1 D/S/R direction, speed, coast, brake and stop 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "forwardDelta": 0.022499999999999964,
+        "sportDelta": 0.06417399999999995,
+        "coastDelta": [
+          0.0674999999999999,
+          0.0655429999999999
+        ],
+        "stationary": true
+      }
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "bba3f5651eafbe82cd0c62b0a98d3b6c87f9485cc466bf5608a059c276352356",
+    "pages/cockpit-v33.css": "e01e7b4b2489c28578f8121d13e6cbccd4b8ea320ee0ccad64905ae2865c593e",
+    "js/cockpit-v33.js": "a9436063008b8ef94cf6245b72d4e7a6307bf5ad48be60ffd503abfcbb29fbab"
+  }
+}

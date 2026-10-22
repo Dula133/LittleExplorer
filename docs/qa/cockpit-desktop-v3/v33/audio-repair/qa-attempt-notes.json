@@ -1,0 +1,21 @@
+{
+  "historicalProductFailure": "Native speech full-scale peak remains preserved in prior failure report/WAV; actual fix reroutes prerecorded speech through the controlled output graph",
+  "harnessCorrections": [
+    {
+      "observed": "ffmpeg spawnSync ENOBUFS for a complete multi-second PCM capture",
+      "correction": "Raised memory buffer capacity to 32 MiB; same PCM peak/clipping limits retained"
+    },
+    {
+      "observed": "ReferenceError from quoting in read-only lifecycle observer expression",
+      "correction": "Fixed observer expression; actual native lifecycle rerun passed"
+    },
+    {
+      "observed": "Coverage setup toggled foot brake twice, so acceleration was correctly refused",
+      "correction": "Corrected real-click sequence; no product-state writes or guard changes"
+    },
+    {
+      "observed": "Seek read 0:03 after fixed 180 ms; another unchanged-product run passed",
+      "correction": "Wait for actual trusted seeked and media currentTime <1 with !seeking; final transport run passed; no product/audio limit changes"
+    }
+  ]
+}

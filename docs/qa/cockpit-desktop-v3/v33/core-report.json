@@ -1,0 +1,170 @@
+{
+  "status": "PASS",
+  "automatedChecks": "PASS",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "V3.2 all gears, red/white rear lights, moving guard, light/turn/hazard/day/night/cabin controls 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "gears": [
+          {
+            "gear": "D",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "S",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "R",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(255, 254, 243)",
+                "rgb(255, 254, 243)"
+              ]
+            }
+          },
+          {
+            "gear": "N",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "P",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          }
+        ],
+        "returnHref": "car.html"
+      }
+    },
+    {
+      "name": "V3.2 all gears, red/white rear lights, moving guard, light/turn/hazard/day/night/cabin controls 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "gears": [
+          {
+            "gear": "D",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "S",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "R",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(255, 254, 243)",
+                "rgb(255, 254, 243)"
+              ]
+            }
+          },
+          {
+            "gear": "N",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "P",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          }
+        ],
+        "returnHref": "car.html"
+      }
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "af7bead4df0ce910bbeefbcb7f601e7e100af564cef91fa14e665fac72bfbc0f",
+    "pages/cockpit-v33.css": "3de05f6694b536d54d0127ef18f16c9a1bafd3b790ac53f1e8bd7e34ef45d1ed",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799",
+    "js/cockpit-audio.js": "d27a2d702b979e16beaf38560f7896256fd696db317abb93f734083163a09416",
+    "assets/music/manifest.json": "9289441a081a45ea72fcdb17544f7c96864b843f07bbfa56e39390dc39f1f094"
+  }
+}

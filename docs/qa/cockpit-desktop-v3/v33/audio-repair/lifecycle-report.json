@@ -1,0 +1,218 @@
+{
+  "status": "PASS",
+  "automatedChecks": "PASS",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "Actual native browser background suspension, navigation release and paused return",
+      "status": "PASS",
+      "evidence": {
+        "status": "PASS",
+        "method": "Native CDP browser; real window/tab visibility changes; no focus emulation or synthetic lifecycle events",
+        "background": {
+          "hidden": true,
+          "playing": "false",
+          "media": [
+            {
+              "paused": true,
+              "src": "http://127.0.0.1:44415/voice/yunxia/0102faff.mp3",
+              "time": 0.096
+            },
+            {
+              "paused": true,
+              "src": "http://127.0.0.1:44415/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+              "time": 0
+            }
+          ],
+          "audio": [
+            {
+              "state": "suspended",
+              "states": [
+                {
+                  "state": "running",
+                  "hidden": false
+                },
+                {
+                  "state": "suspended",
+                  "hidden": true
+                }
+              ]
+            }
+          ],
+          "life": [
+            {
+              "event": "pageshow",
+              "hidden": false,
+              "trusted": true,
+              "persisted": false
+            },
+            {
+              "event": "visibilitychange",
+              "hidden": true,
+              "trusted": true
+            }
+          ],
+          "inputs": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "released": true,
+        "observedOldContextAfterNavigation": "closed",
+        "oldVoiceAfterNavigation": {
+          "paused": true,
+          "source": null
+        },
+        "leavingEvents": [],
+        "returned": {
+          "playing": "false",
+          "contexts": 0,
+          "inputs": []
+        },
+        "returnMethod": "Real browser history back",
+        "events": [
+          {
+            "method": "WebAudio.contextCreated",
+            "params": {
+              "context": {
+                "contextId": "bf2859be-2c6d-4539-89ff-7405856f57ff",
+                "contextType": "realtime",
+                "contextState": "suspended",
+                "callbackBufferSize": 512,
+                "maxOutputChannelCount": 2,
+                "sampleRate": 44100
+              }
+            }
+          },
+          {
+            "method": "WebAudio.contextChanged",
+            "params": {
+              "context": {
+                "contextId": "bf2859be-2c6d-4539-89ff-7405856f57ff",
+                "contextType": "realtime",
+                "contextState": "running",
+                "callbackBufferSize": 512,
+                "maxOutputChannelCount": 2,
+                "sampleRate": 44100
+              }
+            }
+          },
+          {
+            "method": "audio-lifecycle-audit",
+            "op": "statechange",
+            "state": "running",
+            "hidden": false
+          },
+          {
+            "method": "WebAudio.contextChanged",
+            "params": {
+              "context": {
+                "contextId": "bf2859be-2c6d-4539-89ff-7405856f57ff",
+                "contextType": "realtime",
+                "contextState": "suspended",
+                "callbackBufferSize": 512,
+                "maxOutputChannelCount": 2,
+                "sampleRate": 44100
+              }
+            }
+          },
+          {
+            "method": "audio-lifecycle-audit",
+            "op": "suspend",
+            "state": "suspended",
+            "hidden": true
+          },
+          {
+            "method": "audio-lifecycle-audit",
+            "op": "suspend-resolved",
+            "state": "suspended",
+            "hidden": true
+          },
+          {
+            "method": "audio-lifecycle-audit",
+            "op": "statechange",
+            "state": "suspended",
+            "hidden": true
+          },
+          {
+            "method": "WebAudio.contextChanged",
+            "params": {
+              "context": {
+                "contextId": "bf2859be-2c6d-4539-89ff-7405856f57ff",
+                "contextType": "realtime",
+                "contextState": "running",
+                "callbackBufferSize": 512,
+                "maxOutputChannelCount": 2,
+                "sampleRate": 44100
+              }
+            }
+          },
+          {
+            "method": "audio-lifecycle-audit",
+            "op": "statechange",
+            "state": "running",
+            "hidden": false
+          },
+          {
+            "method": "WebAudio.contextCreated",
+            "params": {
+              "context": {
+                "contextId": "d5266d6c-ce38-4e73-b725-b321d52800a2",
+                "contextType": "realtime",
+                "contextState": "suspended",
+                "callbackBufferSize": 512,
+                "maxOutputChannelCount": 2,
+                "sampleRate": 44100
+              }
+            }
+          },
+          {
+            "method": "WebAudio.contextChanged",
+            "params": {
+              "context": {
+                "contextId": "d5266d6c-ce38-4e73-b725-b321d52800a2",
+                "contextType": "realtime",
+                "contextState": "running",
+                "callbackBufferSize": 512,
+                "maxOutputChannelCount": 2,
+                "sampleRate": 44100
+              }
+            }
+          },
+          {
+            "method": "audio-lifecycle-audit",
+            "op": "statechange",
+            "state": "running",
+            "hidden": false
+          }
+        ],
+        "errors": [],
+        "formalMusic": "ASSET_BLOCKED; speech fixture only"
+      }
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "67a47e83034fcc1ea971c4c48031eeac4fb453b733ed3a35165d48594083cabc",
+    "pages/cockpit-v33.css": "3de05f6694b536d54d0127ef18f16c9a1bafd3b790ac53f1e8bd7e34ef45d1ed",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799",
+    "js/cockpit-audio.js": "5af4f4e7ae200d062838be72caf12aebc0d9eb1666919ec4da1ab535849d8147",
+    "assets/music/manifest.json": "9289441a081a45ea72fcdb17544f7c96864b843f07bbfa56e39390dc39f1f094",
+    "assets/cockpit-voice/manifest.json": "3ea2c8bbbd1fbbc00314f67166117ef3cdacf3e187e11f77717230c12c6c4f8d"
+  }
+}

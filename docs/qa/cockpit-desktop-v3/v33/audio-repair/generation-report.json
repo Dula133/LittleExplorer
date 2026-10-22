@@ -1,0 +1,2037 @@
+{
+  "status": "PASS",
+  "edgeTTS": "7.3.1",
+  "python": "3.12.14",
+  "voice": "zh-CN-YunxiaNeural",
+  "rate": "-8%",
+  "clips": [
+    {
+      "id": "72ab4b07e6e978f5",
+      "text": "灯光：自动。天黑会自动开灯。",
+      "file": "72ab4b07e6e978f5.mp3",
+      "bytes": 27936,
+      "duration": 4.656,
+      "sha256": "633694872710264cd6cd936543b565b996c2e678b1d2c3054371d3d233c3b5d5",
+      "decode": "PASS"
+    },
+    {
+      "id": "9ab0ca4e9dbd4de8",
+      "text": "灯光：小灯。小灯让别人更容易看见汽车。",
+      "file": "9ab0ca4e9dbd4de8.mp3",
+      "bytes": 34128,
+      "duration": 5.688,
+      "sha256": "3cdeff95cbd1624047bae24c7499bbb3017692e1cb6499598bccdc49b9491257",
+      "decode": "PASS"
+    },
+    {
+      "id": "7520065e11dc235f",
+      "text": "灯光：大灯。大灯照亮汽车前面的路。",
+      "file": "7520065e11dc235f.mp3",
+      "bytes": 30384,
+      "duration": 5.064,
+      "sha256": "b5013c98d16029f1dcaf97db84a76d9397947ca16c5270c2641142cbe39157b5",
+      "decode": "PASS"
+    },
+    {
+      "id": "2e4a17bb217c1821",
+      "text": "灯光：关闭。车灯关掉了。",
+      "file": "2e4a17bb217c1821.mp3",
+      "bytes": 25632,
+      "duration": 4.272,
+      "sha256": "46edba31ff967ce6e06bce87d1dd061c87a2d52e907fb92180811a946c1144c8",
+      "decode": "PASS"
+    },
+    {
+      "id": "ea7b02c63c41353e",
+      "text": "转向灯关闭。灯不闪啦。",
+      "file": "ea7b02c63c41353e.mp3",
+      "bytes": 23616,
+      "duration": 3.936,
+      "sha256": "95f31e592e8dd90453cc6c27b16210d1da967fec6a90c8788ba69a9d14ed863e",
+      "decode": "PASS"
+    },
+    {
+      "id": "00483fef066855d0",
+      "text": "左转向灯。我要向左走。",
+      "file": "00483fef066855d0.mp3",
+      "bytes": 22320,
+      "duration": 3.72,
+      "sha256": "f54895431693d0636ae594c6b3a03599adecb1c14f24e4a598b30fc059747962",
+      "decode": "PASS"
+    },
+    {
+      "id": "56a566177d0224d0",
+      "text": "右转向灯。我要向右走。",
+      "file": "56a566177d0224d0.mp3",
+      "bytes": 22176,
+      "duration": 3.696,
+      "sha256": "61664eb80568a1c5d935f5b40d9b1d6b49a6e4204e4ecf259b1cb069d8a8f1f4",
+      "decode": "PASS"
+    },
+    {
+      "id": "c53048048ea3ee57",
+      "text": "双闪打开啦。左右一起闪，提醒其他车辆注意。",
+      "file": "c53048048ea3ee57.mp3",
+      "bytes": 36288,
+      "duration": 6.048,
+      "sha256": "83fd61d5ec74287b71dcb2701b9141007b9c0e49b47a7ebd66622fda2af5cec2",
+      "decode": "PASS"
+    },
+    {
+      "id": "4af4dae27e0ac22b",
+      "text": "雾灯打开。在雾天帮助看清附近道路。",
+      "file": "4af4dae27e0ac22b.mp3",
+      "bytes": 31680,
+      "duration": 5.28,
+      "sha256": "4cb6df184ff8f5d15ed027c81ccf68867fceb75fd1761a2c9aef2e8bfc5100df",
+      "decode": "PASS"
+    },
+    {
+      "id": "476371813c825573",
+      "text": "雾灯关闭。雾灯关掉啦。",
+      "file": "476371813c825573.mp3",
+      "bytes": 22320,
+      "duration": 3.72,
+      "sha256": "e2dc026618bfda9bda9d18f11ecfb5fec7cf944cf12c748c0aa8ad5871f77c43",
+      "decode": "PASS"
+    },
+    {
+      "id": "3193c6a5e397c8cd",
+      "text": "天气：晴天。天气晴朗，雨刮档位可以独立选择。",
+      "file": "3193c6a5e397c8cd.mp3",
+      "bytes": 40752,
+      "duration": 6.792,
+      "sha256": "a02d3823b476d4559472e6cc711e6daff48fb0e53226f753033a78c39d3e751a",
+      "decode": "PASS"
+    },
+    {
+      "id": "edeadae74cd7f4fb",
+      "text": "天气：小雨。下起小雨。",
+      "file": "edeadae74cd7f4fb.mp3",
+      "bytes": 25344,
+      "duration": 4.224,
+      "sha256": "a21d18ad5072c933b26019fa0e93d7849148cf3bcadbc5a426ddb04d5bd74ecf",
+      "decode": "PASS"
+    },
+    {
+      "id": "c25e8bb2e2fa1dc8",
+      "text": "天气：中雨。雨变大了。",
+      "file": "c25e8bb2e2fa1dc8.mp3",
+      "bytes": 24768,
+      "duration": 4.128,
+      "sha256": "1996b6ad898f1e9a6a7916a07dd32003b179658bbc0df22fc951b1cc2271a476",
+      "decode": "PASS"
+    },
+    {
+      "id": "852734929e9b31b8",
+      "text": "天气：大雨。大雨来了！",
+      "file": "852734929e9b31b8.mp3",
+      "bytes": 23904,
+      "duration": 3.984,
+      "sha256": "6850ce408f755cdda055bb1bc5575f6e006a63974c235fb455e411d4ffdfde7e",
+      "decode": "PASS"
+    },
+    {
+      "id": "72071af262a1d589",
+      "text": "天气：大暴雨。雨更密、更快了，已开启高速雨刮，也可以手动调速。",
+      "file": "72071af262a1d589.mp3",
+      "bytes": 50832,
+      "duration": 8.472,
+      "sha256": "f7440d7809a5df51cf33e7bd5afff8f40fa882e0f18776a9f696a53a3a661d07",
+      "decode": "PASS"
+    },
+    {
+      "id": "3b9d4c8f8b73fce1",
+      "text": "天气：大暴雨。保持你选择的雨刮速度。",
+      "file": "3b9d4c8f8b73fce1.mp3",
+      "bytes": 31680,
+      "duration": 5.28,
+      "sha256": "ef78338f6238b68c22354fc44a8a05f5f2a2db61e664deda70554989e1e3b419",
+      "decode": "PASS"
+    },
+    {
+      "id": "859e7515b70f8ad8",
+      "text": "天气：下雪。下雪啦！看，雪花在玻璃前飘。",
+      "file": "859e7515b70f8ad8.mp3",
+      "bytes": 41904,
+      "duration": 6.984,
+      "sha256": "8284927bd69939921abc1dfaea6105023352403e85ec67e6bfcd1dea8b0fb675",
+      "decode": "PASS"
+    },
+    {
+      "id": "ccd9740b78e468f8",
+      "text": "天气：雾天。远处有雾，附近道路仍然看得见。雾灯可单独打开，不能消除室外雾。",
+      "file": "ccd9740b78e468f8.mp3",
+      "bytes": 61920,
+      "duration": 10.32,
+      "sha256": "88fa3aaa5acb15be15b1b36c2fd37e2c101f1e76f24c213dce71ba4b62432516",
+      "decode": "PASS"
+    },
+    {
+      "id": "80c237b84f3eaadb",
+      "text": "雨刮正在归位。两个雨刮会回到玻璃下缘。",
+      "file": "80c237b84f3eaadb.mp3",
+      "bytes": 31392,
+      "duration": 5.232,
+      "sha256": "914733ff3d49e100e38e27bb0c3ee879fe1a2eed4cdac94bce92f55461ac9296",
+      "decode": "PASS"
+    },
+    {
+      "id": "22e30eeccd93e575",
+      "text": "雨刮器低速摆动。两个雨刮一起扫过玻璃。天气不会改变你手动选择的档位。",
+      "file": "22e30eeccd93e575.mp3",
+      "bytes": 56160,
+      "duration": 9.36,
+      "sha256": "3efea7c31c26d0f3841aff09e2ceb39ffed14e7327e5a05e06da41b0524cc27e",
+      "decode": "PASS"
+    },
+    {
+      "id": "95547def54daa061",
+      "text": "雨刮器中速摆动。两个雨刮一起扫过玻璃。天气不会改变你手动选择的档位。",
+      "file": "95547def54daa061.mp3",
+      "bytes": 56304,
+      "duration": 9.384,
+      "sha256": "69e2bdfbaf1477d44e6c4a704b451e66a0fbcb1e25b28db293b7f89af26e2807",
+      "decode": "PASS"
+    },
+    {
+      "id": "9941a017305d7065",
+      "text": "雨刮器高速摆动。两个雨刮一起扫过玻璃。天气不会改变你手动选择的档位。",
+      "file": "9941a017305d7065.mp3",
+      "bytes": 56016,
+      "duration": 9.336,
+      "sha256": "46b8de069515320db45878d7bf942647b4de9c73fbc58ee10e32d6c729d3c7df",
+      "decode": "PASS"
+    },
+    {
+      "id": "ec8db53118bb3f07",
+      "text": "天黑了。注意看路，夜间需要合适的车灯。",
+      "file": "ec8db53118bb3f07.mp3",
+      "bytes": 33264,
+      "duration": 5.544,
+      "sha256": "42563e4578f55141d953e916583019c447fd5743ef73695f46fa6e2faee378e6",
+      "decode": "PASS"
+    },
+    {
+      "id": "bc177ef8844d6b6b",
+      "text": "天亮了。现在是白天。",
+      "file": "bc177ef8844d6b6b.mp3",
+      "bytes": 22608,
+      "duration": 3.768,
+      "sha256": "9b7e8d01259906edd78972a2757bc35415bf92f379aa925ec9309b8c50da0c50",
+      "decode": "PASS"
+    },
+    {
+      "id": "35a01351154afb79",
+      "text": "行驶中不能解安全带。先安全停车，再解开安全带。",
+      "file": "35a01351154afb79.mp3",
+      "bytes": 40032,
+      "duration": 6.672,
+      "sha256": "f8c56754c0d39a08e6a0a32e3e5894cd4a08dc5d96afb4541c35152ea9077923",
+      "decode": "PASS"
+    },
+    {
+      "id": "98dbf9645d530d52",
+      "text": "请先安全停车。熄火后再解开安全带。",
+      "file": "98dbf9645d530d52.mp3",
+      "bytes": 32112,
+      "duration": 5.352,
+      "sha256": "380ee5045e63ece7face96cd7f6006964d014415f05278b3176840945d796271",
+      "decode": "PASS"
+    },
+    {
+      "id": "fbe990a21bb4103e",
+      "text": "安全带系好啦。出发前系好安全带。",
+      "file": "fbe990a21bb4103e.mp3",
+      "bytes": 27936,
+      "duration": 4.656,
+      "sha256": "5513da057548583c0ec33beaabed556d1d336134625bbb52d1bbd2135bfa47d1",
+      "decode": "PASS"
+    },
+    {
+      "id": "3e4832ff1c873102",
+      "text": "安全带解开了。停车后才能解安全带。",
+      "file": "3e4832ff1c873102.mp3",
+      "bytes": 31104,
+      "duration": 5.184,
+      "sha256": "5151be3355642c7f47ec50cc80004139ae35e4183adb323dd06a5d3af5d4538c",
+      "decode": "PASS"
+    },
+    {
+      "id": "7c59e6ca63feaf98",
+      "text": "先挂 P 挡。发动机启动前请先挂停车挡。",
+      "file": "7c59e6ca63feaf98.mp3",
+      "bytes": 35280,
+      "duration": 5.88,
+      "sha256": "39bc433df678ed69e447bdfa267d0c2925fb5860cfd00cdec094aeb1ec4c587d",
+      "decode": "PASS"
+    },
+    {
+      "id": "595d38d64985be1d",
+      "text": "先踩住脚刹。点一下脚刹，再启动发动机。",
+      "file": "595d38d64985be1d.mp3",
+      "bytes": 33120,
+      "duration": 5.52,
+      "sha256": "1437b20aee4576e23afea3128f84362fe10c0cd44d8661aecaf9e7d5e24a684f",
+      "decode": "PASS"
+    },
+    {
+      "id": "417fe169ef8a9040",
+      "text": "发动机启动啦。继续系安全带、挂 D 或 S 挡，再松手刹。",
+      "file": "417fe169ef8a9040.mp3",
+      "bytes": 42480,
+      "duration": 7.08,
+      "sha256": "e2d193bd284278e869a0970d336963d7de6106a30e516c8cd397a92821a38eec",
+      "decode": "PASS"
+    },
+    {
+      "id": "48b06c8d649b4d84",
+      "text": "还不能熄火。先踩刹车停稳、拉手刹、挂 P 挡，再熄火。",
+      "file": "48b06c8d649b4d84.mp3",
+      "bytes": 44352,
+      "duration": 7.392,
+      "sha256": "1b6e33178f4c641a22bf44ccc3d6f956300c216f6b12b123bb6cbfcbec3260d8",
+      "decode": "PASS"
+    },
+    {
+      "id": "20c446a565a8d664",
+      "text": "发动机熄火啦。最后松开脚刹，就安全停车啦。",
+      "file": "20c446a565a8d664.mp3",
+      "bytes": 35136,
+      "duration": 5.856,
+      "sha256": "9732e69d7bcd896d9e0a09beb5d35cb228d60ddaf7eb5f96dcc2f306021fc879",
+      "decode": "PASS"
+    },
+    {
+      "id": "94f5f1825c74d394",
+      "text": "行驶中不能这样换挡。先刹车停稳，再换到 P、R 或 N。",
+      "file": "94f5f1825c74d394.mp3",
+      "bytes": 44640,
+      "duration": 7.44,
+      "sha256": "7773d98bd32436185faa5b500b2cc11b490a76ec3a82fd4d66d2688f40a9573d",
+      "decode": "PASS"
+    },
+    {
+      "id": "cafd3b676145e125",
+      "text": "换挡前踩脚刹。先点击脚刹，模拟踩住制动踏板。",
+      "file": "cafd3b676145e125.mp3",
+      "bytes": 39312,
+      "duration": 6.552,
+      "sha256": "7f2124fa0ff8fdb3f24b4b891437927f97c2fa8103b7f7702c0989e444e4ec98",
+      "decode": "PASS"
+    },
+    {
+      "id": "ed46cd175a6ff22a",
+      "text": "先启动发动机。请保持 P 挡，踩脚刹后启动。",
+      "file": "ed46cd175a6ff22a.mp3",
+      "bytes": 35280,
+      "duration": 5.88,
+      "sha256": "f7e0e3325bcddc6371f1001988cb7fe0bffba42ddbf155d000f59b0b1d0ffb8f",
+      "decode": "PASS"
+    },
+    {
+      "id": "8e21797950bca7dc",
+      "text": "先系安全带。驾驶前系好安全带。",
+      "file": "8e21797950bca7dc.mp3",
+      "bytes": 27792,
+      "duration": 4.632,
+      "sha256": "9fda4a8195944e238919dfba18b5104ade00b8314e48e219786c36eb82a26014",
+      "decode": "PASS"
+    },
+    {
+      "id": "f60274ef8983923d",
+      "text": "先拉手刹。停稳、踩住脚刹、拉手刹，再挂 P。",
+      "file": "f60274ef8983923d.mp3",
+      "bytes": 40896,
+      "duration": 6.816,
+      "sha256": "21fe40bde4b34068a8821ceb00c0a0b5d6497a37464b8628b224b1daaae8e931",
+      "decode": "PASS"
+    },
+    {
+      "id": "5b2ffea950dac020",
+      "text": "先刹车停稳。汽车还在动，不能在行驶中拉驻车制动。",
+      "file": "5b2ffea950dac020.mp3",
+      "bytes": 41760,
+      "duration": 6.96,
+      "sha256": "ee5a400a97724e1498285e687915a2e35414f4af431d3da0cb24c1145fdd6514",
+      "decode": "PASS"
+    },
+    {
+      "id": "480320a15a917c3c",
+      "text": "先踩住脚刹。按住脚刹后再操作驻车制动。",
+      "file": "480320a15a917c3c.mp3",
+      "bytes": 33840,
+      "duration": 5.64,
+      "sha256": "15d2b5d36d2ee819dfddaec1bbf5d78cf4153783436818bcdb173bb67a9b1f96",
+      "decode": "PASS"
+    },
+    {
+      "id": "c4f2051086aa5ed1",
+      "text": "还不能松手刹。先启动车辆、系安全带，选择前进挡或倒挡。",
+      "file": "c4f2051086aa5ed1.mp3",
+      "bytes": 45216,
+      "duration": 7.536,
+      "sha256": "6fd086f8e31050fcfc9ac3e76e032a80b76f4646242bf39adb9cb1ca94a28dd5",
+      "decode": "PASS"
+    },
+    {
+      "id": "04ae0f529cfc1e27",
+      "text": "手刹已经拉起。停车时拉起驻车制动。",
+      "file": "04ae0f529cfc1e27.mp3",
+      "bytes": 32544,
+      "duration": 5.424,
+      "sha256": "c2726b4b2d7655fdbde8bb222d9310be1ec9d8a96e43e73ca60382e9e7a0ce15",
+      "decode": "PASS"
+    },
+    {
+      "id": "fb1307dd53bd2cc9",
+      "text": "手刹松开啦。松开脚刹后，可以踩油门出发。",
+      "file": "fb1307dd53bd2cc9.mp3",
+      "bytes": 34128,
+      "duration": 5.688,
+      "sha256": "15f60a6abaed5921a5c4b5f44e8dfb0318d019cee0f74a0ffded48928c6b65d1",
+      "decode": "PASS"
+    },
+    {
+      "id": "7b8f30983ca70c38",
+      "text": "车门锁好了。现在车门锁已锁定。",
+      "file": "7b8f30983ca70c38.mp3",
+      "bytes": 28512,
+      "duration": 4.752,
+      "sha256": "8927750312573e822b44ae7895b6191a0bca9723a564e4c2cf906dfeddddee15",
+      "decode": "PASS"
+    },
+    {
+      "id": "7658eeacc1153f42",
+      "text": "车门解锁啦。现在可以开门。",
+      "file": "7658eeacc1153f42.mp3",
+      "bytes": 24768,
+      "duration": 4.128,
+      "sha256": "fdf7a0a827e1230e435e648d0f76aee2e532b79d75c82789e680213c16c2446a",
+      "decode": "PASS"
+    },
+    {
+      "id": "ab116082e88c27c3",
+      "text": "车窗打开了。感受窗外的风。",
+      "file": "ab116082e88c27c3.mp3",
+      "bytes": 24768,
+      "duration": 4.128,
+      "sha256": "a23f742483b9e0f0476dd3ceebed1ce26e96a7579dc74293c3ee2dee6fe777d8",
+      "decode": "PASS"
+    },
+    {
+      "id": "49daad375af7a13b",
+      "text": "车窗关好了。玻璃升上来了。",
+      "file": "49daad375af7a13b.mp3",
+      "bytes": 24048,
+      "duration": 4.008,
+      "sha256": "428eb70ce057e17343e14039d55515f4a2e78c51c91285cc9bd852435bfd772f",
+      "decode": "PASS"
+    },
+    {
+      "id": "07151d52d0cd5100",
+      "text": "换到 P 挡。停车模式。准备停车。",
+      "file": "07151d52d0cd5100.mp3",
+      "bytes": 32112,
+      "duration": 5.352,
+      "sha256": "5209ce6afdbd929e0f5234ea689ed0a6adef115b677acbceff07498ab9b75277",
+      "decode": "PASS"
+    },
+    {
+      "id": "b7c62e77723c716f",
+      "text": "换到 R 挡。倒车模式。继续下一步。",
+      "file": "b7c62e77723c716f.mp3",
+      "bytes": 32400,
+      "duration": 5.4,
+      "sha256": "070c670782badf3e1543afcfeb7b8487d67ebcdf7d965bb2f12693be6d36818a",
+      "decode": "PASS"
+    },
+    {
+      "id": "9d46234a454d2477",
+      "text": "换到 N 挡。空挡模式。继续下一步。",
+      "file": "9d46234a454d2477.mp3",
+      "bytes": 32400,
+      "duration": 5.4,
+      "sha256": "0e7982ce3ee3956bb46538bac864a8ef44486025d7dabdae6ffd0f76e76e13cb",
+      "decode": "PASS"
+    },
+    {
+      "id": "ae75c8fba3a3c6c2",
+      "text": "换到 D 挡。前进模式。继续下一步。",
+      "file": "ae75c8fba3a3c6c2.mp3",
+      "bytes": 32544,
+      "duration": 5.424,
+      "sha256": "ff4cdf230e127f1fef1f71165a0df91079c72adb379b20bcf40a43a53a31f56c",
+      "decode": "PASS"
+    },
+    {
+      "id": "e9df7e273f9a2ed1",
+      "text": "换到 S 挡。运动模式。运动挡动力响应更快。",
+      "file": "e9df7e273f9a2ed1.mp3",
+      "bytes": 40608,
+      "duration": 6.768,
+      "sha256": "173b153492b13ae435c13624996dac8c05f5cd141bed806a953cfbafe42fc0ca",
+      "decode": "PASS"
+    },
+    {
+      "id": "bfa133b8fb65aa8a",
+      "text": "现在还不能加速。先踩脚刹并启动。",
+      "file": "bfa133b8fb65aa8a.mp3",
+      "bytes": 30672,
+      "duration": 5.112,
+      "sha256": "ad42d70e708ae6ad18748066f469f77d0b7b206b03e6ecec4118a79c244fce2f",
+      "decode": "PASS"
+    },
+    {
+      "id": "0a73b580dd74ab8b",
+      "text": "现在还不能加速。先系安全带。",
+      "file": "0a73b580dd74ab8b.mp3",
+      "bytes": 27072,
+      "duration": 4.512,
+      "sha256": "e2b9264bed0d4924c8b550884dc1cacf40f07949dda0f5639d88a3331e09130d",
+      "decode": "PASS"
+    },
+    {
+      "id": "e606e5b360a696a9",
+      "text": "现在还不能加速。请挂 D、S 或 R 挡。",
+      "file": "e606e5b360a696a9.mp3",
+      "bytes": 33984,
+      "duration": 5.664,
+      "sha256": "7b0cd382d9de374950c9da4355c33bc6d5b3b27b12c9f43b5ee6e914c863bd99",
+      "decode": "PASS"
+    },
+    {
+      "id": "ffa141e464ac64a3",
+      "text": "现在还不能加速。先踩住脚刹，松开手刹。",
+      "file": "ffa141e464ac64a3.mp3",
+      "bytes": 35568,
+      "duration": 5.928,
+      "sha256": "3c0ec24aa4552ac1661f7d99e36cdcaa4a6b51a5f9def7b2e34091cf147f8ff4",
+      "decode": "PASS"
+    },
+    {
+      "id": "2d9f523707649598",
+      "text": "现在还不能加速。先松开脚刹。",
+      "file": "2d9f523707649598.mp3",
+      "bytes": 27648,
+      "duration": 4.608,
+      "sha256": "362b6dc6ab8d86bc08466d09cafadb5239f1c1aba5bd3f38fc1831a9e92186f0",
+      "decode": "PASS"
+    },
+    {
+      "id": "33ce2158e5bd2c8a",
+      "text": "温度 16 度。降低一点。",
+      "file": "33ce2158e5bd2c8a.mp3",
+      "bytes": 22320,
+      "duration": 3.72,
+      "sha256": "fb58e8cc4e31b7c7cf15a61f00298ef602442ada02826426a57a2a55c3f6cc6b",
+      "decode": "PASS"
+    },
+    {
+      "id": "615ba10393976218",
+      "text": "温度 16 度。调高一点。",
+      "file": "615ba10393976218.mp3",
+      "bytes": 22752,
+      "duration": 3.792,
+      "sha256": "fa15429240744e391b29994a82265395cd730866d1310dc6eead69c36d3c0ca2",
+      "decode": "PASS"
+    },
+    {
+      "id": "8763f08b1d991f04",
+      "text": "温度 17 度。降低一点。",
+      "file": "8763f08b1d991f04.mp3",
+      "bytes": 22464,
+      "duration": 3.744,
+      "sha256": "3516faa00845ce7a445218c49381936c2802848e23ea32728177bd2da3d44710",
+      "decode": "PASS"
+    },
+    {
+      "id": "8625bc63a47b8306",
+      "text": "温度 17 度。调高一点。",
+      "file": "8625bc63a47b8306.mp3",
+      "bytes": 22896,
+      "duration": 3.816,
+      "sha256": "f25182b835dd5220fb1189315a48a55bffac325c812456eff992316575997f8a",
+      "decode": "PASS"
+    },
+    {
+      "id": "2b63948e28f6cb2c",
+      "text": "温度 18 度。降低一点。",
+      "file": "2b63948e28f6cb2c.mp3",
+      "bytes": 22320,
+      "duration": 3.72,
+      "sha256": "e6566da00787d0f98ba6589b325420a902f86c004eba2fee47448b8f819b8340",
+      "decode": "PASS"
+    },
+    {
+      "id": "02aa37b3e1e42d50",
+      "text": "温度 18 度。调高一点。",
+      "file": "02aa37b3e1e42d50.mp3",
+      "bytes": 22608,
+      "duration": 3.768,
+      "sha256": "2f93ec0f164d62dba9d624a1866a657f988419f781907d3e36f9e4b54fbd4b83",
+      "decode": "PASS"
+    },
+    {
+      "id": "54c20379e266ab5f",
+      "text": "温度 19 度。降低一点。",
+      "file": "54c20379e266ab5f.mp3",
+      "bytes": 22176,
+      "duration": 3.696,
+      "sha256": "c99c46a9416634049787c55770c25ff5efdc04dacd27a351390c77e4524e7acc",
+      "decode": "PASS"
+    },
+    {
+      "id": "a3f202d85fc8fe2c",
+      "text": "温度 19 度。调高一点。",
+      "file": "a3f202d85fc8fe2c.mp3",
+      "bytes": 22464,
+      "duration": 3.744,
+      "sha256": "d8ccf5962c82be655270a176cbeb915bcbdbc32c435c7290acd6020233589542",
+      "decode": "PASS"
+    },
+    {
+      "id": "9ce8d280ee954bc4",
+      "text": "温度 20 度。降低一点。",
+      "file": "9ce8d280ee954bc4.mp3",
+      "bytes": 21888,
+      "duration": 3.648,
+      "sha256": "c08c96d71a75c053a5c30508d5716378cfaddd2152dd4c65b19b39bb24638b8f",
+      "decode": "PASS"
+    },
+    {
+      "id": "572fa043defef7ae",
+      "text": "温度 20 度。调高一点。",
+      "file": "572fa043defef7ae.mp3",
+      "bytes": 22176,
+      "duration": 3.696,
+      "sha256": "830bb6d3a6480c8ade49ae3a1acea1428fbd83451733115ca9337b2a74b9b53c",
+      "decode": "PASS"
+    },
+    {
+      "id": "c1053076e944eeb0",
+      "text": "温度 21 度。降低一点。",
+      "file": "c1053076e944eeb0.mp3",
+      "bytes": 23472,
+      "duration": 3.912,
+      "sha256": "61bbb0519e214b23766c6b5404a031a59b030aecfd85e315b4431d012ad33441",
+      "decode": "PASS"
+    },
+    {
+      "id": "06cb300130ed14de",
+      "text": "温度 21 度。调高一点。",
+      "file": "06cb300130ed14de.mp3",
+      "bytes": 23904,
+      "duration": 3.984,
+      "sha256": "2d4f103aaf5a60a460298049db518b63deb085b9a92839f80820fede1bc866b1",
+      "decode": "PASS"
+    },
+    {
+      "id": "0621b1a2a3308a5c",
+      "text": "温度 22 度。降低一点。",
+      "file": "0621b1a2a3308a5c.mp3",
+      "bytes": 23904,
+      "duration": 3.984,
+      "sha256": "f244f51521809d6d5569abc04cb4219d79f0302988b914469f3a649645478289",
+      "decode": "PASS"
+    },
+    {
+      "id": "41a1cdfbcb0bddc7",
+      "text": "温度 22 度。调高一点。",
+      "file": "41a1cdfbcb0bddc7.mp3",
+      "bytes": 24192,
+      "duration": 4.032,
+      "sha256": "d83989e7c926ff1f25c578451609cb18ee188f45dd8d66fc0d708484c7c33e44",
+      "decode": "PASS"
+    },
+    {
+      "id": "1f23a65320030839",
+      "text": "温度 23 度。降低一点。",
+      "file": "1f23a65320030839.mp3",
+      "bytes": 24192,
+      "duration": 4.032,
+      "sha256": "4fc47665a045e717f5cadd50ba0e3a745418cfd632954ead80d642aa6c90cced",
+      "decode": "PASS"
+    },
+    {
+      "id": "494cb899376ca2ea",
+      "text": "温度 23 度。调高一点。",
+      "file": "494cb899376ca2ea.mp3",
+      "bytes": 24624,
+      "duration": 4.104,
+      "sha256": "6e6fddf073c1f816fb78759a68e94a0856b8babd89c995531aa86640e95b364f",
+      "decode": "PASS"
+    },
+    {
+      "id": "2d7d2330171840dd",
+      "text": "温度 24 度。降低一点。",
+      "file": "2d7d2330171840dd.mp3",
+      "bytes": 24336,
+      "duration": 4.056,
+      "sha256": "26f0ece42e7a01cf8175eae65640587e64a71162beb1de206a63335f98a908b2",
+      "decode": "PASS"
+    },
+    {
+      "id": "612de7e3fe78ccf0",
+      "text": "温度 24 度。调高一点。",
+      "file": "612de7e3fe78ccf0.mp3",
+      "bytes": 24624,
+      "duration": 4.104,
+      "sha256": "7918430a84529ee0ac1d817daab05156521093a6eb40b5267d2b8513a6cc1805",
+      "decode": "PASS"
+    },
+    {
+      "id": "966809372b622879",
+      "text": "温度 25 度。降低一点。",
+      "file": "966809372b622879.mp3",
+      "bytes": 23904,
+      "duration": 3.984,
+      "sha256": "a4b597973b453c03d09687721cf5910cbd5415076ce5a732b13333267ab6ce9c",
+      "decode": "PASS"
+    },
+    {
+      "id": "756b0c69f5387f2e",
+      "text": "温度 25 度。调高一点。",
+      "file": "756b0c69f5387f2e.mp3",
+      "bytes": 24192,
+      "duration": 4.032,
+      "sha256": "16da0e7a3e38965d4472d3ea4861e0d7d98b02d9418f4f7578ed00a748ed72c0",
+      "decode": "PASS"
+    },
+    {
+      "id": "b2e140a8a46fd3af",
+      "text": "温度 26 度。降低一点。",
+      "file": "b2e140a8a46fd3af.mp3",
+      "bytes": 23616,
+      "duration": 3.936,
+      "sha256": "36f1e840dee32db25cdbc6f2ffad6566ac9c86ec37b3309f86d84f09c414beeb",
+      "decode": "PASS"
+    },
+    {
+      "id": "6fa5871bbdf98f85",
+      "text": "温度 26 度。调高一点。",
+      "file": "6fa5871bbdf98f85.mp3",
+      "bytes": 24048,
+      "duration": 4.008,
+      "sha256": "9959b4ca39435b2c58454dbdb932dbabe3cfac679e65c0b0dd3fa3008497c89f",
+      "decode": "PASS"
+    },
+    {
+      "id": "66ff037db32359f2",
+      "text": "温度 27 度。降低一点。",
+      "file": "66ff037db32359f2.mp3",
+      "bytes": 23904,
+      "duration": 3.984,
+      "sha256": "29d6a1e6a33581999c1335f6bebd048382df2209531e80b9d9c4e732c961d04e",
+      "decode": "PASS"
+    },
+    {
+      "id": "8f86ab5dd03ad684",
+      "text": "温度 27 度。调高一点。",
+      "file": "8f86ab5dd03ad684.mp3",
+      "bytes": 24192,
+      "duration": 4.032,
+      "sha256": "172e07c4cfdd3875206ba4ef386b7bba57d0b976e520e60f53aaac8366f712b4",
+      "decode": "PASS"
+    },
+    {
+      "id": "547cdbeb5b4b9bf3",
+      "text": "温度 28 度。降低一点。",
+      "file": "547cdbeb5b4b9bf3.mp3",
+      "bytes": 23904,
+      "duration": 3.984,
+      "sha256": "46a5b0652cd6ac9df9105d888c544d7ca50ddea91918a1cfd80fa5aef34c36e1",
+      "decode": "PASS"
+    },
+    {
+      "id": "f5691e787330cb43",
+      "text": "温度 28 度。调高一点。",
+      "file": "f5691e787330cb43.mp3",
+      "bytes": 24192,
+      "duration": 4.032,
+      "sha256": "563cea40ba7214f623c4c56d781652e76696e63efb5cdcea05a8d63846d93c55",
+      "decode": "PASS"
+    },
+    {
+      "id": "08e3db7503d5eca8",
+      "text": "温度 29 度。降低一点。",
+      "file": "08e3db7503d5eca8.mp3",
+      "bytes": 23472,
+      "duration": 3.912,
+      "sha256": "d4fdff8ed6cdcdc3f818e9313bfa80361bdcf69773baa540799e41254f631baa",
+      "decode": "PASS"
+    },
+    {
+      "id": "ecc980a6f05afc5f",
+      "text": "温度 29 度。调高一点。",
+      "file": "ecc980a6f05afc5f.mp3",
+      "bytes": 23904,
+      "duration": 3.984,
+      "sha256": "d79546cdd857853b39b49559517723480c33222c6666564744a564258ea695ea",
+      "decode": "PASS"
+    },
+    {
+      "id": "e4e8f0b77fe62da8",
+      "text": "温度 30 度。降低一点。",
+      "file": "e4e8f0b77fe62da8.mp3",
+      "bytes": 22176,
+      "duration": 3.696,
+      "sha256": "af96d1613cd5b87e92ec4e15e57135b03bfa3373ad13026d42a8fd31406cbca5",
+      "decode": "PASS"
+    },
+    {
+      "id": "52aac506a023538a",
+      "text": "温度 30 度。调高一点。",
+      "file": "52aac506a023538a.mp3",
+      "bytes": 22464,
+      "duration": 3.744,
+      "sha256": "542c09fd078687246fa893090303096265a547479ab131113e073c83bc020ec3",
+      "decode": "PASS"
+    },
+    {
+      "id": "665ec10725461f39",
+      "text": "风速 关闭。空调风速改变了。",
+      "file": "665ec10725461f39.mp3",
+      "bytes": 28368,
+      "duration": 4.728,
+      "sha256": "d857f9e94ce7f1213a484da74daff83806577126f215376da7fb0658369a95a0",
+      "decode": "PASS"
+    },
+    {
+      "id": "7b7e9e0b31249311",
+      "text": "风速 微风。空调风速改变了。",
+      "file": "7b7e9e0b31249311.mp3",
+      "bytes": 28800,
+      "duration": 4.8,
+      "sha256": "4287a87a3c16902a479d1b2df04d49b209718ac810f606465fc989d594d81acb",
+      "decode": "PASS"
+    },
+    {
+      "id": "cdf70e155dd82b9d",
+      "text": "风速 中风。空调风速改变了。",
+      "file": "cdf70e155dd82b9d.mp3",
+      "bytes": 29232,
+      "duration": 4.872,
+      "sha256": "5b45557e5a3b3a31ec4f2a6530e1653de4413e80264a44523583eee60ef0a90f",
+      "decode": "PASS"
+    },
+    {
+      "id": "ac6053d426de7287",
+      "text": "风速 大风。空调风速改变了。",
+      "file": "ac6053d426de7287.mp3",
+      "bytes": 28512,
+      "duration": 4.752,
+      "sha256": "abe9e4ab61b01c71b2563df8dc77730c8df7b68bc17eb8cfd330f2aceaec939a",
+      "decode": "PASS"
+    },
+    {
+      "id": "9c82a8653f40f188",
+      "text": "出风方向：前挡风玻璃。气流跟随风速。吹前窗只模拟减少玻璃内侧水汽，不改变室外雾天。",
+      "file": "9c82a8653f40f188.mp3",
+      "bytes": 68832,
+      "duration": 11.472,
+      "sha256": "06c2723b14faf7c5fc2291014b1947e292d74efcb0c504373bd4f0578f0f48af",
+      "decode": "PASS"
+    },
+    {
+      "id": "5bad43fb68769452",
+      "text": "出风方向：吹脸。气流跟随风速。吹前窗只模拟减少玻璃内侧水汽，不改变室外雾天。",
+      "file": "5bad43fb68769452.mp3",
+      "bytes": 64944,
+      "duration": 10.824,
+      "sha256": "57e174498c06f69ddb0e2e537fd82206730cfdf18bc46b9b64d8a812479750a1",
+      "decode": "PASS"
+    },
+    {
+      "id": "a36bcdd75ee3f99c",
+      "text": "出风方向：吹脚。气流跟随风速。吹前窗只模拟减少玻璃内侧水汽，不改变室外雾天。",
+      "file": "a36bcdd75ee3f99c.mp3",
+      "bytes": 65232,
+      "duration": 10.872,
+      "sha256": "720743851de74bba0fe261e5718a3eba4b00a6e72121ebe9e8496398469f4c98",
+      "decode": "PASS"
+    },
+    {
+      "id": "871d94eb9c5f7d5f",
+      "text": "出风方向：吹脸和脚。气流跟随风速。吹前窗只模拟减少玻璃内侧水汽，不改变室外雾天。",
+      "file": "871d94eb9c5f7d5f.mp3",
+      "bytes": 67824,
+      "duration": 11.304,
+      "sha256": "b4bf148ba52e7598ed07a1e22b68c5bad0bd94b6aef94c8c91ffee6d9e7fed0d",
+      "decode": "PASS"
+    },
+    {
+      "id": "42d92263b57f91e5",
+      "text": "出风方向：吹脚和前挡风玻璃。气流跟随风速。吹前窗只模拟减少玻璃内侧水汽，不改变室外雾天。",
+      "file": "42d92263b57f91e5.mp3",
+      "bytes": 73008,
+      "duration": 12.168,
+      "sha256": "1712556484c7f7434247d0a646941d4d9d01f18eb9eb86d40489771a79aea366",
+      "decode": "PASS"
+    }
+  ],
+  "network": [
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    },
+    {
+      "host": "speech.platform.bing.com",
+      "status": 101,
+      "tls": "TLSv1.3",
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "serverHostname": "speech.platform.bing.com",
+      "proxy": {
+        "host": "proxy",
+        "port": 8080
+      }
+    }
+  ],
+  "ca": {
+    "source": "CODEX_PROXY_CERT; platform-managed file; identical certificate present in system trust",
+    "sha256": "c71b4d1e9d7775c538c688ab10cea9ce417d7312e89838f9d15ff73256cd7fc3",
+    "certifiRetained": true,
+    "loaded": true
+  },
+  "proxy": {
+    "host": "proxy",
+    "port": 8080
+  }
+}

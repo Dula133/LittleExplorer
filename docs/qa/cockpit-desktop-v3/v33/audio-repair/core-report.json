@@ -1,0 +1,581 @@
+{
+  "status": "PASS",
+  "automatedChecks": "PASS",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "WP1 D/S/R direction, speed, coast, brake and stop 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "forwardDelta": 0.022499999999999964,
+        "sportDelta": 0.06417399999999995,
+        "coastDelta": [
+          0.0674999999999999,
+          0.0655429999999999
+        ],
+        "stationary": true
+      }
+    },
+    {
+      "name": "WP1 D/S/R direction, speed, coast, brake and stop 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "forwardDelta": 0.022499999999999964,
+        "sportDelta": 0.06417399999999995,
+        "coastDelta": [
+          0.0674999999999999,
+          0.0655429999999999
+        ],
+        "stationary": true
+      }
+    },
+    {
+      "name": "WP3 fog, independent near-road lamps, clear weather and rain/snow isolation 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "before": {
+          "fog": true,
+          "rain": false,
+          "snow": false,
+          "screen": "0.85",
+          "background": "linear-gradient(rgba(219, 229, 231, 0.72) 0%, rgba(218, 229, 233, 0.81) 43%, rgba(215, 227, 231, 0.475) 64%, rgba(216, 229, 226, 0.063) 100%)",
+          "far": "blur(2.8px) saturate(0.45) contrast(0.5)",
+          "world": "1",
+          "nearLight": "0"
+        },
+        "lit": {
+          "fog": true,
+          "rain": false,
+          "snow": false,
+          "screen": "0.85",
+          "background": "linear-gradient(rgba(219, 229, 231, 0.72) 0%, rgba(218, 229, 233, 0.81) 43%, rgba(215, 227, 231, 0.475) 64%, rgba(216, 229, 226, 0.063) 100%)",
+          "far": "blur(2.8px) saturate(0.45) contrast(0.5)",
+          "world": "1",
+          "nearLight": "0.65"
+        }
+      }
+    },
+    {
+      "name": "WP3 fog, independent near-road lamps, clear weather and rain/snow isolation 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "before": {
+          "fog": true,
+          "rain": false,
+          "snow": false,
+          "screen": "0.85",
+          "background": "linear-gradient(rgba(219, 229, 231, 0.72) 0%, rgba(218, 229, 233, 0.81) 43%, rgba(215, 227, 231, 0.475) 64%, rgba(216, 229, 226, 0.063) 100%)",
+          "far": "blur(2.8px) saturate(0.45) contrast(0.5)",
+          "world": "1",
+          "nearLight": "0"
+        },
+        "lit": {
+          "fog": true,
+          "rain": false,
+          "snow": false,
+          "screen": "0.85",
+          "background": "linear-gradient(rgba(219, 229, 231, 0.72) 0%, rgba(218, 229, 233, 0.81) 43%, rgba(215, 227, 231, 0.475) 64%, rgba(216, 229, 226, 0.063) 100%)",
+          "far": "blur(2.8px) saturate(0.45) contrast(0.5)",
+          "world": "1",
+          "nearLight": "0.65"
+        }
+      }
+    },
+    {
+      "name": "WP4 five modes, measured airflow speeds, fan off and indoor-only demisting 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "rates": [
+          {
+            "speed": 1,
+            "offset": -2.44579,
+            "duration": 1.8,
+            "play": "running",
+            "delta": 2.445789999999999
+          },
+          {
+            "speed": 2,
+            "offset": -9.99922,
+            "duration": 1,
+            "play": "running",
+            "delta": 4.39762
+          },
+          {
+            "speed": 3,
+            "offset": -7.20163,
+            "duration": 0.5,
+            "play": "running",
+            "delta": 8.798430000000002
+          }
+        ],
+        "mistBefore": 0.216,
+        "mistAfter": 0.022,
+        "cabin": {
+          "height": 542,
+          "scroll": 542
+        }
+      }
+    },
+    {
+      "name": "WP4 five modes, measured airflow speeds, fan off and indoor-only demisting 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "rates": [
+          {
+            "speed": 1,
+            "offset": -2.44533,
+            "duration": 1.8,
+            "play": "running",
+            "delta": 2.4453299999999984
+          },
+          {
+            "speed": 2,
+            "offset": -10.0008,
+            "duration": 1,
+            "play": "running",
+            "delta": 4.402419999999999
+          },
+          {
+            "speed": 3,
+            "offset": -7.99997,
+            "duration": 0.5,
+            "play": "running",
+            "delta": 9.598370000000003
+          }
+        ],
+        "mistBefore": 0.216,
+        "mistAfter": 0.022,
+        "cabin": {
+          "height": 816,
+          "scroll": 816
+        }
+      }
+    },
+    {
+      "name": "All four tabs fit and return/centre horn remain reachable 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "tabs": [
+          {
+            "tab": "drive",
+            "viewport": [
+              1366,
+              768
+            ],
+            "scroll": [
+              1366,
+              768
+            ],
+            "active": [
+              "tab-drive"
+            ],
+            "panel": [
+              {
+                "height": 542,
+                "scroll": 542
+              }
+            ]
+          },
+          {
+            "tab": "lights",
+            "viewport": [
+              1366,
+              768
+            ],
+            "scroll": [
+              1366,
+              768
+            ],
+            "active": [
+              "tab-lights"
+            ],
+            "panel": [
+              {
+                "height": 542,
+                "scroll": 542
+              }
+            ]
+          },
+          {
+            "tab": "weather",
+            "viewport": [
+              1366,
+              768
+            ],
+            "scroll": [
+              1366,
+              768
+            ],
+            "active": [
+              "tab-weather"
+            ],
+            "panel": [
+              {
+                "height": 542,
+                "scroll": 542
+              }
+            ]
+          },
+          {
+            "tab": "cabin",
+            "viewport": [
+              1366,
+              768
+            ],
+            "scroll": [
+              1366,
+              768
+            ],
+            "active": [
+              "tab-cabin"
+            ],
+            "panel": [
+              {
+                "height": 542,
+                "scroll": 542
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "All four tabs fit and return/centre horn remain reachable 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "tabs": [
+          {
+            "tab": "drive",
+            "viewport": [
+              1920,
+              1080
+            ],
+            "scroll": [
+              1920,
+              1080
+            ],
+            "active": [
+              "tab-drive"
+            ],
+            "panel": [
+              {
+                "height": 816,
+                "scroll": 816
+              }
+            ]
+          },
+          {
+            "tab": "lights",
+            "viewport": [
+              1920,
+              1080
+            ],
+            "scroll": [
+              1920,
+              1080
+            ],
+            "active": [
+              "tab-lights"
+            ],
+            "panel": [
+              {
+                "height": 816,
+                "scroll": 816
+              }
+            ]
+          },
+          {
+            "tab": "weather",
+            "viewport": [
+              1920,
+              1080
+            ],
+            "scroll": [
+              1920,
+              1080
+            ],
+            "active": [
+              "tab-weather"
+            ],
+            "panel": [
+              {
+                "height": 816,
+                "scroll": 816
+              }
+            ]
+          },
+          {
+            "tab": "cabin",
+            "viewport": [
+              1920,
+              1080
+            ],
+            "scroll": [
+              1920,
+              1080
+            ],
+            "active": [
+              "tab-cabin"
+            ],
+            "panel": [
+              {
+                "height": 816,
+                "scroll": 816
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "390×844 horizontal containment and reachable return",
+      "status": "PASS",
+      "evidence": [
+        {
+          "tab": "drive",
+          "viewport": [
+            390,
+            844
+          ],
+          "scroll": [
+            390,
+            1943
+          ],
+          "active": [
+            "tab-drive"
+          ],
+          "panel": [
+            {
+              "height": 656,
+              "scroll": 656
+            }
+          ]
+        },
+        {
+          "tab": "lights",
+          "viewport": [
+            390,
+            844
+          ],
+          "scroll": [
+            390,
+            1738
+          ],
+          "active": [
+            "tab-lights"
+          ],
+          "panel": [
+            {
+              "height": 451,
+              "scroll": 451
+            }
+          ]
+        },
+        {
+          "tab": "weather",
+          "viewport": [
+            390,
+            844
+          ],
+          "scroll": [
+            390,
+            1936
+          ],
+          "active": [
+            "tab-weather"
+          ],
+          "panel": [
+            {
+              "height": 649,
+              "scroll": 649
+            }
+          ]
+        },
+        {
+          "tab": "cabin",
+          "viewport": [
+            390,
+            844
+          ],
+          "scroll": [
+            390,
+            1950
+          ],
+          "active": [
+            "tab-cabin"
+          ],
+          "panel": [
+            {
+              "height": 663,
+              "scroll": 663
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "V3.2 all gears, red/white rear lights, moving guard, light/turn/hazard/day/night/cabin controls 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "gears": [
+          {
+            "gear": "D",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "S",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "R",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(255, 254, 243)",
+                "rgb(255, 254, 243)"
+              ]
+            }
+          },
+          {
+            "gear": "N",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "P",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          }
+        ],
+        "returnHref": "car.html"
+      }
+    },
+    {
+      "name": "V3.2 all gears, red/white rear lights, moving guard, light/turn/hazard/day/night/cabin controls 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "gears": [
+          {
+            "gear": "D",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "S",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "R",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(255, 254, 243)",
+                "rgb(255, 254, 243)"
+              ]
+            }
+          },
+          {
+            "gear": "N",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          },
+          {
+            "gear": "P",
+            "on": {
+              "red": [
+                "rgb(255, 59, 66)",
+                "rgb(255, 59, 66)"
+              ],
+              "white": [
+                "rgb(60, 83, 98)",
+                "rgb(60, 83, 98)"
+              ]
+            }
+          }
+        ],
+        "returnHref": "car.html"
+      }
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "67a47e83034fcc1ea971c4c48031eeac4fb453b733ed3a35165d48594083cabc",
+    "pages/cockpit-v33.css": "3de05f6694b536d54d0127ef18f16c9a1bafd3b790ac53f1e8bd7e34ef45d1ed",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799",
+    "js/cockpit-audio.js": "5af4f4e7ae200d062838be72caf12aebc0d9eb1666919ec4da1ab535849d8147",
+    "assets/music/manifest.json": "9289441a081a45ea72fcdb17544f7c96864b843f07bbfa56e39390dc39f1f094",
+    "assets/cockpit-voice/manifest.json": "3ea2c8bbbd1fbbc00314f67166117ef3cdacf3e187e11f77717230c12c6c4f8d"
+  }
+}

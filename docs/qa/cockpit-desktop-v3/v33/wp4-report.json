@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "WP4 five modes, measured airflow speeds, fan off and indoor-only demisting 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "rates": [
+          {
+            "speed": 1,
+            "offset": -2.444,
+            "duration": 1.8,
+            "play": "running",
+            "delta": 2.443999999999999
+          },
+          {
+            "speed": 2,
+            "offset": -9.996,
+            "duration": 1,
+            "play": "running",
+            "delta": 4.396799999999999
+          },
+          {
+            "speed": 3,
+            "offset": -6.3984,
+            "duration": 0.5,
+            "play": "running",
+            "delta": 8.8032
+          }
+        ],
+        "mistBefore": 0.216,
+        "mistAfter": 0.022,
+        "cabin": {
+          "height": 542,
+          "scroll": 542
+        }
+      }
+    },
+    {
+      "name": "WP4 five modes, measured airflow speeds, fan off and indoor-only demisting 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "rates": [
+          {
+            "speed": 1,
+            "offset": -2.22133,
+            "duration": 1.8,
+            "play": "running",
+            "delta": 2.221330000000002
+          },
+          {
+            "speed": 2,
+            "offset": -9.5976,
+            "duration": 1,
+            "play": "running",
+            "delta": 4.396799999999999
+          },
+          {
+            "speed": 3,
+            "offset": -6.3984,
+            "duration": 0.5,
+            "play": "running",
+            "delta": 8.8032
+          }
+        ],
+        "mistBefore": 0.216,
+        "mistAfter": 0.022,
+        "cabin": {
+          "height": 816,
+          "scroll": 816
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "7bf87b1ed35834bfa08b82dacf07beda037d1bf273d661ed900f170b96b15c75",
+    "pages/cockpit-v33.css": "073dc0c48c0d860f56be3bb821ab6f65d3b4050641b3721a08e8a9c1fd95b8fa",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799"
+  }
+}

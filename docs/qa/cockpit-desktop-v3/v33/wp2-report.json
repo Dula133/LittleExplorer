@@ -1,0 +1,93 @@
+{
+  "status": "BLOCKED",
+  "automatedChecks": "PASS",
+  "engineAudio": "PASS",
+  "nativeChineseSpeechMix": "BLOCKED",
+  "reason": "No native speech voices; synthesis-failed; actual Chinese/engine mix not verified",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "WP2 actual browser-rendered engine PCM, D/S response, coast and stop",
+      "status": "PASS",
+      "evidence": {
+        "pcm": {
+          "engine-accelerating-d.webm": {
+            "samples": 23040,
+            "rms": 0.0447630898111067,
+            "peak": 0.08041200786828995,
+            "zeroCrossHz": 90.625
+          },
+          "engine-accelerating-s.webm": {
+            "samples": 23040,
+            "rms": 0.06655407129092027,
+            "peak": 0.12047383189201355,
+            "zeroCrossHz": 153.125
+          },
+          "engine-braked-idle.webm": {
+            "samples": 23040,
+            "rms": 0.03185157478376979,
+            "peak": 0.05600416287779808,
+            "zeroCrossHz": 69.79166666666667
+          },
+          "engine-coast.webm": {
+            "samples": 23040,
+            "rms": 0.055936095799828264,
+            "peak": 0.09719142317771912,
+            "zeroCrossHz": 125
+          },
+          "engine-idle.webm": {
+            "samples": 23040,
+            "rms": 0.029795871820981003,
+            "peak": 0.05246582254767418,
+            "zeroCrossHz": 63.54166666666667
+          },
+          "engine-native-speech-mix.webm": {
+            "samples": 30240,
+            "rms": 0.03178046638462578,
+            "peak": 0.05634025111794472,
+            "zeroCrossHz": 61.904761904761905
+          },
+          "engine-off.webm": {
+            "samples": 23040,
+            "rms": 0,
+            "peak": 0,
+            "zeroCrossHz": 0
+          },
+          "engine-startup-tail.webm": {
+            "samples": 5760,
+            "rms": 0.02046706086665722,
+            "peak": 0.0529647096991539,
+            "zeroCrossHz": 104.16666666666667
+          }
+        },
+        "contextCount": 1,
+        "speech": {
+          "voices": [],
+          "events": [
+            {
+              "type": "error",
+              "error": "synthesis-failed",
+              "t": 14909.200000000186
+            }
+          ]
+        },
+        "nativeChineseSpeechMix": "BLOCKED: native speech unavailable in this cloud browser"
+      }
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "af7bead4df0ce910bbeefbcb7f601e7e100af564cef91fa14e665fac72bfbc0f",
+    "pages/cockpit-v33.css": "3de05f6694b536d54d0127ef18f16c9a1bafd3b790ac53f1e8bd7e34ef45d1ed",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799",
+    "js/cockpit-audio.js": "d27a2d702b979e16beaf38560f7896256fd696db317abb93f734083163a09416",
+    "assets/music/manifest.json": "9289441a081a45ea72fcdb17544f7c96864b843f07bbfa56e39390dc39f1f094"
+  }
+}

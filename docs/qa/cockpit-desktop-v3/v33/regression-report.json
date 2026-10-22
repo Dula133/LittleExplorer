@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "Dual wipers, three measured real speeds, five rain levels, storm auto/manual/parking, snow and no-scroll layout: 1366×768",
+      "status": "PASS"
+    },
+    {
+      "name": "Dual wipers, three measured real speeds, five rain levels, storm auto/manual/parking, snow and no-scroll layout: 1920×1080",
+      "status": "PASS"
+    },
+    {
+      "name": "V3.1 native-click D/S, dynamic speed/RPM needles, moving guards and complete start/park sequence",
+      "evidence": {
+        "dSpeed": 30,
+        "sSpeed": 74
+      },
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "6db1b55572ed519047f6dc3341607dad273b6e6082db037bdca8ced39926574d",
+    "pages/cockpit-v33.css": "3de05f6694b536d54d0127ef18f16c9a1bafd3b790ac53f1e8bd7e34ef45d1ed",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799",
+    "js/cockpit-audio.js": "d27a2d702b979e16beaf38560f7896256fd696db317abb93f734083163a09416",
+    "assets/music/manifest.json": "9289441a081a45ea72fcdb17544f7c96864b843f07bbfa56e39390dc39f1f094"
+  }
+}

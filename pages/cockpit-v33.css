@@ -1,0 +1,28 @@
+/* V3.3 additions stay inside the accepted cockpit regions. */
+#reverseNotice{position:absolute;z-index:8;bottom:8px;left:50%;transform:translateX(-50%);max-width:64%;padding:5px 9px;border-radius:8px;background:#173b4aee;color:#ffdf9e;font-size:clamp(8px,.8vw,11px);text-align:center;pointer-events:none}
+.world .road-dash{animation:none}.fog-lamp-cones{opacity:0;transition:opacity .35s;pointer-events:none}
+.audio-levels{display:grid;grid-template-columns:1fr 1fr;gap:10px}.audio-levels label{font-size:10px;color:#bdd7e0;display:flex;align-items:center;gap:4px}.audio-levels input{width:100%;min-width:0;accent-color:#62e4d2;min-height:28px}#engineAudioStatus{font-size:10px;color:#a9ccd7}
+/* Outdoor fog leaves the near road readable; fog lamps light only the foreground. */
+.foggy .fog-screen{opacity:.85;background:linear-gradient(to bottom,#dbe5e7b8 0%,#dae5e9cf 43%,#d7e3e779 64%,#d8e5e210 100%)}
+.foggy #mountainParallax{filter:blur(2.8px) saturate(.45) contrast(.5)}.foggy #nearParallax{filter:blur(.9px) contrast(.7)}
+.foggy #roadScenery{mask-image:linear-gradient(to bottom,#0000 26%,#0004 48%,#000 95%)}
+.fog-light-overlay{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;opacity:0;transition:opacity .35s}.fog-lamps-on .fog-light-overlay{opacity:.65}
+#rainButtons{grid-template-columns:repeat(7,minmax(0,1fr))}
+@media(max-width:999px){#rainButtons{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* Indoor moisture is separate from outdoor weather and is swept by neither wiper. */
+.inner-condensation{position:absolute;inset:0;z-index:6;pointer-events:none;background:radial-gradient(ellipse at 50% 70%,#deeff000 45%,#d8edf0b0 100%)}
+#tab-cabin{gap:6px;justify-content:flex-start}.cabin-climate{display:grid;grid-template-columns:.85fr 1.4fr;gap:10px;align-items:center}.cabin-climate .tempbar{margin:0;padding:5px}.cabin-climate .tempbar button{height:40px;width:40px}.cabin-climate .value{font-size:23px}.cabin-climate .value small{font-size:9px}.cabin-climate .key-row{margin:0;gap:4px}.cabin-climate .key{min-height:54px;padding:2px}.cabin-climate .btn-symbol{font-size:20px;margin:0}
+#ventButtons{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}#ventButtons .key{min-height:60px;padding:3px 1px;gap:1px}#ventButtons .btn-symbol{font-size:20px;margin:0}#ventButtons .en{font-size:8px}
+.hvac-feedback{display:flex;align-items:center;gap:8px;margin-top:3px;border:1px solid #315565;border-radius:10px;background:#0b2b38;padding:3px 8px}.hvac-feedback svg{width:40%;height:80px;flex-shrink:0}.hvac-feedback strong,.hvac-feedback span{display:block;font-size:11px;color:#c4f7ed}.hvac-feedback small{display:block;font-size:9px;color:#a6c5ce;margin-top:3px}
+.flow-arrow{opacity:.12;stroke-dasharray:6 6;animation:airFlow var(--flow-time,1s) linear infinite;animation-play-state:paused}.flow-arrow.flow-selected{opacity:.45}.fan-running .flow-selected{opacity:1;animation-play-state:running}@keyframes airFlow{to{stroke-dashoffset:-24}}
+.cabin-bottom{display:grid;grid-template-columns:85px 1fr;gap:8px;align-items:center}.cabin-bottom .tile{min-height:52px;padding:2px;gap:0}.cabin-bottom .btn-symbol{font-size:20px;margin:0}.cabin-bottom .zh{font-size:10px}.cabin-bottom .en{font-size:8px}
+#tab-cabin>.tile{min-height:52px}
+@media(max-width:999px){#tab-cabin.active{display:flex;flex-direction:column;gap:12px}.cabin-climate{grid-template-columns:1fr}.cabin-climate .key{flex-basis:0!important}#ventButtons .key{min-height:76px}#ventButtons .zh{font-size:10px}#ventButtons .en{font-size:8px}.audio-levels{grid-template-columns:1fr}}
+.music-player{border:1px solid #3b6372;background:#0c2b39;padding:7px 9px;border-radius:12px;min-width:0}.music-heading{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:11px}.music-heading span{font-size:10px;color:#bad1dc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.music-transport{display:flex;gap:6px;align-items:center;margin:4px 0}.music-transport button{min-width:44px;min-height:44px;border:1px solid #527686;border-radius:9px;background:#244c5d;color:#e0f8f5;font-size:21px}.music-transport #music{min-width:62px;min-height:44px;padding:2px;gap:0}.music-transport #music .btn-symbol{font-size:17px;margin:0}.music-transport #music .zh{font-size:10px}.music-transport #music .en{font-size:8px}.music-transport label{display:flex;flex-direction:column;font-size:9px;min-width:0;flex:1}.music-transport input{width:100%;min-width:0}.music-player input{accent-color:#62e4d2;min-height:24px}.music-progress{display:flex;gap:6px;align-items:center;font-size:10px;color:#bddce0}.music-progress input{min-width:0;width:100%}#musicStatus,#musicCredit{font-size:9px;color:#afcbd2}#musicCredit:empty{display:none}
+@media(min-width:1000px) and (min-height:620px){#tab-cabin{gap:6px}.hvac-feedback svg{height:72px}.music-player{margin-top:auto}}
+@media(max-width:560px){.music-heading{align-items:flex-start;flex-direction:column}.music-transport{gap:4px}.music-transport label{font-size:8px}.hvac-feedback small{font-size:8px}}
+/* A real centre-horn target, inside the existing wheel and clear of steering controls. */
+button.wheel-center{min-width:44px;min-height:44px;padding:0;color:#f3ffff;font-size:20px;touch-action:manipulation;cursor:pointer}
+button.wheel-center:active{transform:translate(-50%,-50%) scale(.96)}
+.footer #audioMute{min-width:44px;min-height:44px;font-size:20px;flex-shrink:0}
+.footer #audioMute[aria-pressed=true]{background:#f0d2b5}

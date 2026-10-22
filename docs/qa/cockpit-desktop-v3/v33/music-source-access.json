@@ -1,0 +1,5 @@
+{
+  "requestedURL": "https://freepd.com/",
+  "errorType": "URLError",
+  "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+}

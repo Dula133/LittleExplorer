@@ -1,0 +1,639 @@
+{
+  "status": "PASS",
+  "automatedChecks": "PASS",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "All 94 reachable spoken runtime keys start their exact prerecorded MP3 via real clicks, including dynamic text and every guard",
+      "status": "PASS",
+      "evidence": {
+        "uniqueReachable": 94,
+        "clicks": 117,
+        "observed": [
+          {
+            "selector": "#start",
+            "id": "595d38d64985be1d",
+            "text": "先踩住脚刹。点一下脚刹，再启动发动机。"
+          },
+          {
+            "selector": "#accelerate",
+            "id": "bfa133b8fb65aa8a",
+            "text": "现在还不能加速。先踩脚刹并启动。"
+          },
+          {
+            "selector": "[data-gear=\"R\"]",
+            "id": "cafd3b676145e125",
+            "text": "换挡前踩脚刹。先点击脚刹，模拟踩住制动踏板。"
+          },
+          {
+            "selector": "#handbrake",
+            "id": "480320a15a917c3c",
+            "text": "先踩住脚刹。按住脚刹后再操作驻车制动。"
+          },
+          {
+            "selector": "[data-gear=\"R\"]",
+            "id": "ed46cd175a6ff22a",
+            "text": "先启动发动机。请保持 P 挡，踩脚刹后启动。"
+          },
+          {
+            "selector": "[data-gear=\"N\"]",
+            "id": "9d46234a454d2477",
+            "text": "换到 N 挡。空挡模式。继续下一步。"
+          },
+          {
+            "selector": "#start",
+            "id": "7c59e6ca63feaf98",
+            "text": "先挂 P 挡。发动机启动前请先挂停车挡。"
+          },
+          {
+            "selector": "[data-gear=\"P\"]",
+            "id": "07151d52d0cd5100",
+            "text": "换到 P 挡。停车模式。准备停车。"
+          },
+          {
+            "selector": "#start",
+            "id": "417fe169ef8a9040",
+            "text": "发动机启动啦。继续系安全带、挂 D 或 S 挡，再松手刹。"
+          },
+          {
+            "selector": "[data-gear=\"D\"]",
+            "id": "8e21797950bca7dc",
+            "text": "先系安全带。驾驶前系好安全带。"
+          },
+          {
+            "selector": "#accelerate",
+            "id": "0a73b580dd74ab8b",
+            "text": "现在还不能加速。先系安全带。"
+          },
+          {
+            "selector": "#handbrake",
+            "id": "c4f2051086aa5ed1",
+            "text": "还不能松手刹。先启动车辆、系安全带，选择前进挡或倒挡。"
+          },
+          {
+            "selector": "#belt",
+            "id": "fbe990a21bb4103e",
+            "text": "安全带系好啦。出发前系好安全带。"
+          },
+          {
+            "selector": "#belt",
+            "id": "98dbf9645d530d52",
+            "text": "请先安全停车。熄火后再解开安全带。"
+          },
+          {
+            "selector": "[data-gear=\"N\"]",
+            "id": "9d46234a454d2477",
+            "text": "换到 N 挡。空挡模式。继续下一步。"
+          },
+          {
+            "selector": "#accelerate",
+            "id": "e606e5b360a696a9",
+            "text": "现在还不能加速。请挂 D、S 或 R 挡。"
+          },
+          {
+            "selector": "[data-gear=\"D\"]",
+            "id": "ae75c8fba3a3c6c2",
+            "text": "换到 D 挡。前进模式。继续下一步。"
+          },
+          {
+            "selector": "#accelerate",
+            "id": "ffa141e464ac64a3",
+            "text": "现在还不能加速。先踩住脚刹，松开手刹。"
+          },
+          {
+            "selector": "#handbrake",
+            "id": "fb1307dd53bd2cc9",
+            "text": "手刹松开啦。松开脚刹后，可以踩油门出发。"
+          },
+          {
+            "selector": "#accelerate",
+            "id": "2d9f523707649598",
+            "text": "现在还不能加速。先松开脚刹。"
+          },
+          {
+            "selector": "#handbrake",
+            "id": "480320a15a917c3c",
+            "text": "先踩住脚刹。按住脚刹后再操作驻车制动。"
+          },
+          {
+            "selector": "#belt",
+            "id": "35a01351154afb79",
+            "text": "行驶中不能解安全带。先安全停车，再解开安全带。"
+          },
+          {
+            "selector": "#start",
+            "id": "48b06c8d649b4d84",
+            "text": "还不能熄火。先踩刹车停稳、拉手刹、挂 P 挡，再熄火。"
+          },
+          {
+            "selector": "#handbrake",
+            "id": "5b2ffea950dac020",
+            "text": "先刹车停稳。汽车还在动，不能在行驶中拉驻车制动。"
+          },
+          {
+            "selector": "[data-gear=\"R\"]",
+            "id": "94f5f1825c74d394",
+            "text": "行驶中不能这样换挡。先刹车停稳，再换到 P、R 或 N。"
+          },
+          {
+            "selector": "[data-gear=\"S\"]",
+            "id": "e9df7e273f9a2ed1",
+            "text": "换到 S 挡。运动模式。运动挡动力响应更快。"
+          },
+          {
+            "selector": "[data-gear=\"D\"]",
+            "id": "ae75c8fba3a3c6c2",
+            "text": "换到 D 挡。前进模式。继续下一步。"
+          },
+          {
+            "selector": "[data-gear=\"P\"]",
+            "id": "f60274ef8983923d",
+            "text": "先拉手刹。停稳、踩住脚刹、拉手刹，再挂 P。"
+          },
+          {
+            "selector": "[data-gear=\"R\"]",
+            "id": "b7c62e77723c716f",
+            "text": "换到 R 挡。倒车模式。继续下一步。"
+          },
+          {
+            "selector": "[data-gear=\"N\"]",
+            "id": "9d46234a454d2477",
+            "text": "换到 N 挡。空挡模式。继续下一步。"
+          },
+          {
+            "selector": "[data-gear=\"D\"]",
+            "id": "ae75c8fba3a3c6c2",
+            "text": "换到 D 挡。前进模式。继续下一步。"
+          },
+          {
+            "selector": "[data-gear=\"S\"]",
+            "id": "e9df7e273f9a2ed1",
+            "text": "换到 S 挡。运动模式。运动挡动力响应更快。"
+          },
+          {
+            "selector": "#handbrake",
+            "id": "04ae0f529cfc1e27",
+            "text": "手刹已经拉起。停车时拉起驻车制动。"
+          },
+          {
+            "selector": "[data-gear=\"P\"]",
+            "id": "07151d52d0cd5100",
+            "text": "换到 P 挡。停车模式。准备停车。"
+          },
+          {
+            "selector": "#start",
+            "id": "20c446a565a8d664",
+            "text": "发动机熄火啦。最后松开脚刹，就安全停车啦。"
+          },
+          {
+            "selector": "#belt",
+            "id": "3e4832ff1c873102",
+            "text": "安全带解开了。停车后才能解安全带。"
+          },
+          {
+            "selector": "#doorlock",
+            "id": "7b8f30983ca70c38",
+            "text": "车门锁好了。现在车门锁已锁定。"
+          },
+          {
+            "selector": "#doorlock",
+            "id": "7658eeacc1153f42",
+            "text": "车门解锁啦。现在可以开门。"
+          },
+          {
+            "selector": "[data-lamp=\"AUTO\"]",
+            "id": "72ab4b07e6e978f5",
+            "text": "灯光：自动。天黑会自动开灯。"
+          },
+          {
+            "selector": "[data-lamp=\"POSITION\"]",
+            "id": "9ab0ca4e9dbd4de8",
+            "text": "灯光：小灯。小灯让别人更容易看见汽车。"
+          },
+          {
+            "selector": "[data-lamp=\"HEADLIGHT\"]",
+            "id": "7520065e11dc235f",
+            "text": "灯光：大灯。大灯照亮汽车前面的路。"
+          },
+          {
+            "selector": "[data-lamp=\"OFF\"]",
+            "id": "2e4a17bb217c1821",
+            "text": "灯光：关闭。车灯关掉了。"
+          },
+          {
+            "selector": "#turnLeft",
+            "id": "00483fef066855d0",
+            "text": "左转向灯。我要向左走。"
+          },
+          {
+            "selector": "#turnLeft",
+            "id": "ea7b02c63c41353e",
+            "text": "转向灯关闭。灯不闪啦。"
+          },
+          {
+            "selector": "#turnRight",
+            "id": "56a566177d0224d0",
+            "text": "右转向灯。我要向右走。"
+          },
+          {
+            "selector": "#turnRight",
+            "id": "ea7b02c63c41353e",
+            "text": "转向灯关闭。灯不闪啦。"
+          },
+          {
+            "selector": "#hazard",
+            "id": "c53048048ea3ee57",
+            "text": "双闪打开啦。左右一起闪，提醒其他车辆注意。"
+          },
+          {
+            "selector": "#hazard",
+            "id": "ea7b02c63c41353e",
+            "text": "转向灯关闭。灯不闪啦。"
+          },
+          {
+            "selector": "#fog",
+            "id": "4af4dae27e0ac22b",
+            "text": "雾灯打开。在雾天帮助看清附近道路。"
+          },
+          {
+            "selector": "#fog",
+            "id": "476371813c825573",
+            "text": "雾灯关闭。雾灯关掉啦。"
+          },
+          {
+            "selector": "[data-rain=\"NONE\"]",
+            "id": "3193c6a5e397c8cd",
+            "text": "天气：晴天。天气晴朗，雨刮档位可以独立选择。"
+          },
+          {
+            "selector": "[data-rain=\"LIGHT\"]",
+            "id": "edeadae74cd7f4fb",
+            "text": "天气：小雨。下起小雨。"
+          },
+          {
+            "selector": "[data-rain=\"MEDIUM\"]",
+            "id": "c25e8bb2e2fa1dc8",
+            "text": "天气：中雨。雨变大了。"
+          },
+          {
+            "selector": "[data-rain=\"HEAVY\"]",
+            "id": "852734929e9b31b8",
+            "text": "天气：大雨。大雨来了！"
+          },
+          {
+            "selector": "[data-rain=\"STORM\"]",
+            "id": "72071af262a1d589",
+            "text": "天气：大暴雨。雨更密、更快了，已开启高速雨刮，也可以手动调速。"
+          },
+          {
+            "selector": "[data-rain=\"STORM\"]",
+            "id": "3b9d4c8f8b73fce1",
+            "text": "天气：大暴雨。保持你选择的雨刮速度。"
+          },
+          {
+            "selector": "[data-rain=\"SNOW\"]",
+            "id": "859e7515b70f8ad8",
+            "text": "天气：下雪。下雪啦！看，雪花在玻璃前飘。"
+          },
+          {
+            "selector": "[data-rain=\"FOG\"]",
+            "id": "ccd9740b78e468f8",
+            "text": "天气：雾天。远处有雾，附近道路仍然看得见。雾灯可单独打开，不能消除室外雾。"
+          },
+          {
+            "selector": "[data-wiper=\"OFF\"]",
+            "id": "80c237b84f3eaadb",
+            "text": "雨刮正在归位。两个雨刮会回到玻璃下缘。"
+          },
+          {
+            "selector": "[data-wiper=\"LOW\"]",
+            "id": "22e30eeccd93e575",
+            "text": "雨刮器低速摆动。两个雨刮一起扫过玻璃。天气不会改变你手动选择的档位。"
+          },
+          {
+            "selector": "[data-wiper=\"MEDIUM\"]",
+            "id": "95547def54daa061",
+            "text": "雨刮器中速摆动。两个雨刮一起扫过玻璃。天气不会改变你手动选择的档位。"
+          },
+          {
+            "selector": "[data-wiper=\"HIGH\"]",
+            "id": "9941a017305d7065",
+            "text": "雨刮器高速摆动。两个雨刮一起扫过玻璃。天气不会改变你手动选择的档位。"
+          },
+          {
+            "selector": "#night",
+            "id": "ec8db53118bb3f07",
+            "text": "天黑了。注意看路，夜间需要合适的车灯。"
+          },
+          {
+            "selector": "#day",
+            "id": "bc177ef8844d6b6b",
+            "text": "天亮了。现在是白天。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "1f23a65320030839",
+            "text": "温度 23 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "0621b1a2a3308a5c",
+            "text": "温度 22 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "c1053076e944eeb0",
+            "text": "温度 21 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "9ce8d280ee954bc4",
+            "text": "温度 20 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "54c20379e266ab5f",
+            "text": "温度 19 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "2b63948e28f6cb2c",
+            "text": "温度 18 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "8763f08b1d991f04",
+            "text": "温度 17 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "33ce2158e5bd2c8a",
+            "text": "温度 16 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "33ce2158e5bd2c8a",
+            "text": "温度 16 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "33ce2158e5bd2c8a",
+            "text": "温度 16 度。降低一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "8625bc63a47b8306",
+            "text": "温度 17 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "02aa37b3e1e42d50",
+            "text": "温度 18 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "a3f202d85fc8fe2c",
+            "text": "温度 19 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "572fa043defef7ae",
+            "text": "温度 20 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "06cb300130ed14de",
+            "text": "温度 21 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "41a1cdfbcb0bddc7",
+            "text": "温度 22 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "494cb899376ca2ea",
+            "text": "温度 23 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "612de7e3fe78ccf0",
+            "text": "温度 24 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "756b0c69f5387f2e",
+            "text": "温度 25 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "6fa5871bbdf98f85",
+            "text": "温度 26 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "8f86ab5dd03ad684",
+            "text": "温度 27 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "f5691e787330cb43",
+            "text": "温度 28 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "ecc980a6f05afc5f",
+            "text": "温度 29 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "52aac506a023538a",
+            "text": "温度 30 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "52aac506a023538a",
+            "text": "温度 30 度。调高一点。"
+          },
+          {
+            "selector": "#tempUp",
+            "id": "52aac506a023538a",
+            "text": "温度 30 度。调高一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "08e3db7503d5eca8",
+            "text": "温度 29 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "547cdbeb5b4b9bf3",
+            "text": "温度 28 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "66ff037db32359f2",
+            "text": "温度 27 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "b2e140a8a46fd3af",
+            "text": "温度 26 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "966809372b622879",
+            "text": "温度 25 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "2d7d2330171840dd",
+            "text": "温度 24 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "1f23a65320030839",
+            "text": "温度 23 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "0621b1a2a3308a5c",
+            "text": "温度 22 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "c1053076e944eeb0",
+            "text": "温度 21 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "9ce8d280ee954bc4",
+            "text": "温度 20 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "54c20379e266ab5f",
+            "text": "温度 19 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "2b63948e28f6cb2c",
+            "text": "温度 18 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "8763f08b1d991f04",
+            "text": "温度 17 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "33ce2158e5bd2c8a",
+            "text": "温度 16 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "33ce2158e5bd2c8a",
+            "text": "温度 16 度。降低一点。"
+          },
+          {
+            "selector": "#tempDown",
+            "id": "33ce2158e5bd2c8a",
+            "text": "温度 16 度。降低一点。"
+          },
+          {
+            "selector": "[data-fan=\"0\"]",
+            "id": "665ec10725461f39",
+            "text": "风速 关闭。空调风速改变了。"
+          },
+          {
+            "selector": "[data-fan=\"1\"]",
+            "id": "7b7e9e0b31249311",
+            "text": "风速 微风。空调风速改变了。"
+          },
+          {
+            "selector": "[data-fan=\"2\"]",
+            "id": "cdf70e155dd82b9d",
+            "text": "风速 中风。空调风速改变了。"
+          },
+          {
+            "selector": "[data-fan=\"3\"]",
+            "id": "ac6053d426de7287",
+            "text": "风速 大风。空调风速改变了。"
+          },
+          {
+            "selector": "[data-vent=\"WINDSHIELD\"]",
+            "id": "9c82a8653f40f188",
+            "text": "出风方向：前挡风玻璃。气流跟随风速。吹前窗只模拟减少玻璃内侧水汽，不改变室外雾天。"
+          },
+          {
+            "selector": "[data-vent=\"FACE\"]",
+            "id": "5bad43fb68769452",
+            "text": "出风方向：吹脸。气流跟随风速。吹前窗只模拟减少玻璃内侧水汽，不改变室外雾天。"
+          },
+          {
+            "selector": "[data-vent=\"FEET\"]",
+            "id": "a36bcdd75ee3f99c",
+            "text": "出风方向：吹脚。气流跟随风速。吹前窗只模拟减少玻璃内侧水汽，不改变室外雾天。"
+          },
+          {
+            "selector": "[data-vent=\"FACE_FEET\"]",
+            "id": "871d94eb9c5f7d5f",
+            "text": "出风方向：吹脸和脚。气流跟随风速。吹前窗只模拟减少玻璃内侧水汽，不改变室外雾天。"
+          },
+          {
+            "selector": "[data-vent=\"FEET_WINDSHIELD\"]",
+            "id": "42d92263b57f91e5",
+            "text": "出风方向：吹脚和前挡风玻璃。气流跟随风速。吹前窗只模拟减少玻璃内侧水汽，不改变室外雾天。"
+          },
+          {
+            "selector": "#window",
+            "id": "ab116082e88c27c3",
+            "text": "车窗打开了。感受窗外的风。"
+          },
+          {
+            "selector": "#window",
+            "id": "49daad375af7a13b",
+            "text": "车窗关好了。玻璃升上来了。"
+          }
+        ],
+        "extraBoundaryPhrases": [
+          {
+            "id": "615ba10393976218",
+            "text": "温度 16 度。调高一点。",
+            "file": "../assets/cockpit-voice/615ba10393976218.mp3",
+            "bytes": 22752,
+            "duration": 3.792,
+            "sha256": "fa15429240744e391b29994a82265395cd730866d1310dc6eead69c36d3c0ca2",
+            "decode": "PASS"
+          },
+          {
+            "id": "e4e8f0b77fe62da8",
+            "text": "温度 30 度。降低一点。",
+            "file": "../assets/cockpit-voice/e4e8f0b77fe62da8.mp3",
+            "bytes": 22176,
+            "duration": 3.696,
+            "sha256": "af96d1613cd5b87e92ec4e15e57135b03bfa3373ad13026d42a8fd31406cbca5",
+            "decode": "PASS"
+          }
+        ],
+        "method": "Trusted UI clicks and actual HTMLMediaElement playing events; no product-state assignment"
+      }
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "67a47e83034fcc1ea971c4c48031eeac4fb453b733ed3a35165d48594083cabc",
+    "pages/cockpit-v33.css": "3de05f6694b536d54d0127ef18f16c9a1bafd3b790ac53f1e8bd7e34ef45d1ed",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799",
+    "js/cockpit-audio.js": "5af4f4e7ae200d062838be72caf12aebc0d9eb1666919ec4da1ab535849d8147",
+    "assets/music/manifest.json": "9289441a081a45ea72fcdb17544f7c96864b843f07bbfa56e39390dc39f1f094",
+    "assets/cockpit-voice/manifest.json": "3ea2c8bbbd1fbbc00314f67166117ef3cdacf3e187e11f77717230c12c6c4f8d"
+  }
+}

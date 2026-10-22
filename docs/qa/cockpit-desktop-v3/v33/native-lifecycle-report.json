@@ -1,0 +1,172 @@
+{
+  "status": "PASS",
+  "method": "Native CDP browser; real window/tab visibility changes; no focus emulation or synthetic lifecycle events",
+  "background": {
+    "hidden": true,
+    "playing": "false",
+    "audio": [
+      {
+        "state": "suspended",
+        "states": [
+          {
+            "state": "running",
+            "hidden": false
+          },
+          {
+            "state": "suspended",
+            "hidden": true
+          }
+        ]
+      }
+    ],
+    "life": [
+      {
+        "event": "pageshow",
+        "hidden": false,
+        "trusted": true,
+        "persisted": false
+      },
+      {
+        "event": "visibilitychange",
+        "hidden": true,
+        "trusted": true
+      }
+    ],
+    "inputs": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "released": true,
+  "observedOldContextAfterNavigation": "closed",
+  "leavingEvents": [],
+  "returned": {
+    "playing": "false",
+    "contexts": 0,
+    "inputs": []
+  },
+  "returnMethod": "Real browser history back",
+  "events": [
+    {
+      "method": "WebAudio.contextCreated",
+      "params": {
+        "context": {
+          "contextId": "a50d080c-0c18-4ace-968e-cf30a1b6968f",
+          "contextType": "realtime",
+          "contextState": "suspended",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      }
+    },
+    {
+      "method": "WebAudio.contextChanged",
+      "params": {
+        "context": {
+          "contextId": "a50d080c-0c18-4ace-968e-cf30a1b6968f",
+          "contextType": "realtime",
+          "contextState": "running",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      }
+    },
+    {
+      "method": "audio-lifecycle-audit",
+      "op": "statechange",
+      "state": "running",
+      "hidden": false
+    },
+    {
+      "method": "WebAudio.contextChanged",
+      "params": {
+        "context": {
+          "contextId": "a50d080c-0c18-4ace-968e-cf30a1b6968f",
+          "contextType": "realtime",
+          "contextState": "suspended",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      }
+    },
+    {
+      "method": "audio-lifecycle-audit",
+      "op": "suspend",
+      "state": "suspended",
+      "hidden": true
+    },
+    {
+      "method": "audio-lifecycle-audit",
+      "op": "suspend-resolved",
+      "state": "suspended",
+      "hidden": true
+    },
+    {
+      "method": "audio-lifecycle-audit",
+      "op": "statechange",
+      "state": "suspended",
+      "hidden": true
+    },
+    {
+      "method": "WebAudio.contextChanged",
+      "params": {
+        "context": {
+          "contextId": "a50d080c-0c18-4ace-968e-cf30a1b6968f",
+          "contextType": "realtime",
+          "contextState": "running",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      }
+    },
+    {
+      "method": "audio-lifecycle-audit",
+      "op": "statechange",
+      "state": "running",
+      "hidden": false
+    },
+    {
+      "method": "WebAudio.contextCreated",
+      "params": {
+        "context": {
+          "contextId": "91305177-002c-46fe-9f2a-ebe9ba8bce74",
+          "contextType": "realtime",
+          "contextState": "suspended",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      }
+    },
+    {
+      "method": "WebAudio.contextChanged",
+      "params": {
+        "context": {
+          "contextId": "91305177-002c-46fe-9f2a-ebe9ba8bce74",
+          "contextType": "realtime",
+          "contextState": "running",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      }
+    },
+    {
+      "method": "audio-lifecycle-audit",
+      "op": "statechange",
+      "state": "running",
+      "hidden": false
+    }
+  ],
+  "errors": [],
+  "formalMusic": "ASSET_BLOCKED; speech fixture only"
+}

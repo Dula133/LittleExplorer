@@ -1,0 +1,189 @@
+{
+  "status": "DELIVERABLE_WITH_WP5_ASSET_BLOCKED",
+  "task": "LE-V3.3-RESUME-AUDIO-REPAIR",
+  "branch": "feature/car-cockpit-desktop-v3",
+  "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+  "originalV33PendingFilesPreserved": 86,
+  "initialBackup": "/tmp/le-v33-before-audio-repair-kzahs3we",
+  "workPackages": {
+    "WP1": "PASS",
+    "WP2": "PASS",
+    "WP3": "PASS",
+    "WP4": "PASS",
+    "WP5": "ASSET_BLOCKED",
+    "horn": "PASS"
+  },
+  "chineseAudioRepair": "PASS",
+  "voiceChannel": "Independent prerecorded Yunxia -8%, routed through shared WebAudio compressor/ceiling/master; no native WebSpeech fallback",
+  "newChineseMP3": 96,
+  "runtimeReachableCues": 94,
+  "extraTemperatureBoundaryCues": 2,
+  "totalNewMP3Bytes": 3113424,
+  "newMP3DurationRangeSeconds": [
+    3.648,
+    12.168
+  ],
+  "oldVoiceProtection": {
+    "keys": 315,
+    "MP3": 638,
+    "paths": 641,
+    "SHA256Unchanged": true,
+    "proof": "audio-repair/workspace-preservation.json"
+  },
+  "audioPCM": [
+    {
+      "viewport": "1366×768",
+      "speechEnginePeak": 0.3908986747264862,
+      "maxVoiceEngineHornPeak": 0.5141162872314453,
+      "mutedPeak": 0,
+      "clippedSamples": 0
+    },
+    {
+      "viewport": "1920×1080",
+      "speechEnginePeak": 0.39004436135292053,
+      "maxVoiceEngineHornPeak": 0.4868641495704651,
+      "mutedPeak": 0,
+      "clippedSamples": 0
+    }
+  ],
+  "actualDeviceOutput": {
+    "method": "Unmodified host levels; isolated PulseAudio null-sink monitor of actual Chromium output; no stream normalization/calibration",
+    "idle": {
+      "file": "device-idle.wav",
+      "samples": 49590,
+      "rms": 0.018371583328492213,
+      "peak": 0.043487548828125,
+      "fullScaleSamples": 0,
+      "maxSampleJump": 0.000274658203125
+    },
+    "mix": {
+      "file": "device-chinese-engine-horn.wav",
+      "samples": 385639,
+      "rms": 0.05059296565458302,
+      "peak": 0.38885498046875,
+      "fullScaleSamples": 0,
+      "maxSampleJump": 0.110870361328125
+    },
+    "muted": {
+      "file": "device-all-muted.wav",
+      "samples": 73562,
+      "rms": 0,
+      "peak": 0,
+      "fullScaleSamples": 0,
+      "maxSampleJump": 0
+    },
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:44775/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+        "time": 0,
+        "trusted": true
+      },
+      {
+        "type": "ended",
+        "src": "http://127.0.0.1:44775/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+        "time": 5.688,
+        "trusted": true
+      }
+    ],
+    "physicalSpeakers": "NOT_TESTED"
+  },
+  "fourBusFixtureMix": {
+    "musicBefore": 0.30000001192092896,
+    "musicDuring": 0.07947239279747009,
+    "musicAfter": 0.29970914125442505,
+    "peak": 0.651286780834198,
+    "fullScaleSamples": 0,
+    "rms": 0.07754538885663312,
+    "formalMusic": "ASSET_BLOCKED; two unchanged existing speech clips are QA-only transport input"
+  },
+  "formalMusic": {
+    "tracks": 0,
+    "status": "ASSET_BLOCKED",
+    "reason": "No verified redistribution licences; prior source proxy 403; no bypass or new download",
+    "fixtureIsNotMusic": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "67a47e83034fcc1ea971c4c48031eeac4fb453b733ed3a35165d48594083cabc",
+    "pages/cockpit-v33.css": "3de05f6694b536d54d0127ef18f16c9a1bafd3b790ac53f1e8bd7e34ef45d1ed",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799",
+    "js/cockpit-audio.js": "cd1c4a36e8590a4cef7d9d0f60eb4649ca2804a695275c41a06c37ba209af159",
+    "assets/music/manifest.json": "9289441a081a45ea72fcdb17544f7c96864b843f07bbfa56e39390dc39f1f094",
+    "assets/cockpit-voice/manifest.json": "3ea2c8bbbd1fbbc00314f67166117ef3cdacf3e187e11f77717230c12c6c4f8d"
+  },
+  "reportSourceCompatibility": {
+    "voice-coverage-report.json": {
+      "pages/cockpit.html": "EXACT_CURRENT_SOURCE",
+      "pages/cockpit-v33.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "ONLY_STATUS_LABEL_CHANGED: Engine audio → Cockpit audio; same executable audio logic; final engine/horn and repair reports match current source",
+      "assets/music/manifest.json": "EXACT_CURRENT_SOURCE",
+      "assets/cockpit-voice/manifest.json": "EXACT_CURRENT_SOURCE"
+    },
+    "device-output-report.json": {
+      "pages/cockpit.html": "EXACT_CURRENT_SOURCE",
+      "pages/cockpit-v33.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "ONLY_STATUS_LABEL_CHANGED: Engine audio → Cockpit audio; same executable audio logic; final engine/horn and repair reports match current source",
+      "assets/music/manifest.json": "EXACT_CURRENT_SOURCE",
+      "assets/cockpit-voice/manifest.json": "EXACT_CURRENT_SOURCE"
+    },
+    "core-report.json": {
+      "pages/cockpit.html": "EXACT_CURRENT_SOURCE",
+      "pages/cockpit-v33.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "ONLY_STATUS_LABEL_CHANGED: Engine audio → Cockpit audio; same executable audio logic; final engine/horn and repair reports match current source",
+      "assets/music/manifest.json": "EXACT_CURRENT_SOURCE",
+      "assets/cockpit-voice/manifest.json": "EXACT_CURRENT_SOURCE"
+    },
+    "lifecycle-report.json": {
+      "pages/cockpit.html": "EXACT_CURRENT_SOURCE",
+      "pages/cockpit-v33.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "ONLY_STATUS_LABEL_CHANGED: Engine audio → Cockpit audio; same executable audio logic; final engine/horn and repair reports match current source",
+      "assets/music/manifest.json": "EXACT_CURRENT_SOURCE",
+      "assets/cockpit-voice/manifest.json": "EXACT_CURRENT_SOURCE"
+    },
+    "native-lifecycle-report.json": {},
+    "wp5-report.json": {
+      "pages/cockpit.html": "EXACT_CURRENT_SOURCE",
+      "pages/cockpit-v33.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "EXACT_CURRENT_SOURCE",
+      "assets/music/manifest.json": "EXACT_CURRENT_SOURCE",
+      "assets/cockpit-voice/manifest.json": "EXACT_CURRENT_SOURCE"
+    },
+    "audio-repair-report.json": {
+      "pages/cockpit.html": "EXACT_CURRENT_SOURCE",
+      "pages/cockpit-v33.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "EXACT_CURRENT_SOURCE",
+      "assets/music/manifest.json": "EXACT_CURRENT_SOURCE",
+      "assets/cockpit-voice/manifest.json": "EXACT_CURRENT_SOURCE"
+    },
+    "fixture-mix-report.json": {
+      "pages/cockpit.html": "EXACT_CURRENT_SOURCE",
+      "pages/cockpit-v33.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "ONLY_STATUS_LABEL_CHANGED: Engine audio → Cockpit audio; same executable audio logic; final engine/horn and repair reports match current source",
+      "assets/music/manifest.json": "EXACT_CURRENT_SOURCE",
+      "assets/cockpit-voice/manifest.json": "EXACT_CURRENT_SOURCE"
+    },
+    "generation-report.json": {},
+    "horn-report.json": {
+      "pages/cockpit.html": "EXACT_CURRENT_SOURCE",
+      "pages/cockpit-v33.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "EXACT_CURRENT_SOURCE",
+      "assets/music/manifest.json": "EXACT_CURRENT_SOURCE",
+      "assets/cockpit-voice/manifest.json": "EXACT_CURRENT_SOURCE"
+    }
+  },
+  "historicalNativeSpeechFailure": "RETAINED: native-speech-report.json and native-chinese-engine-mix.wav remain QA_FAILED/full scale; superseded for current delivery by independent prerecorded-channel proof in audio-repair/",
+  "humanListening": "NOT_TESTED",
+  "HarmonyOS": "NOT_TESTED",
+  "physicalSpeakerComfort": "NOT_TESTED",
+  "otherBrowsersAndRealGPU": "NOT_TESTED",
+  "deployment": "NOT_PERFORMED",
+  "commitAuthorization": "User allows independent non-music delivery after QA, only feature/car-cockpit-desktop-v3"
+}

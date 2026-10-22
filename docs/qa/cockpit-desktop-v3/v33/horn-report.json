@@ -1,0 +1,320 @@
+{
+  "status": "PASS",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "Horn centre, first-visit guidance, engine mix, bounded retriggers, global mute and persistence 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "boxes": {
+          "horn": {
+            "x": 121.96875,
+            "y": 586.453125,
+            "width": 44,
+            "height": 44,
+            "top": 586.453125,
+            "right": 165.96875,
+            "bottom": 630.453125,
+            "left": 121.96875
+          },
+          "wheel": {
+            "x": 105.578125,
+            "y": 570.0625,
+            "width": 76.796875,
+            "height": 76.796875,
+            "top": 570.0625,
+            "right": 182.375,
+            "bottom": 646.859375,
+            "left": 105.578125
+          },
+          "left": {
+            "x": 85.078125,
+            "y": 649.859375,
+            "width": 35,
+            "height": 32,
+            "top": 649.859375,
+            "right": 120.078125,
+            "bottom": 681.859375,
+            "left": 85.078125
+          },
+          "center": {
+            "x": 124.078125,
+            "y": 649.859375,
+            "width": 39.8125,
+            "height": 32,
+            "top": 649.859375,
+            "right": 163.890625,
+            "bottom": 681.859375,
+            "left": 124.078125
+          },
+          "right": {
+            "x": 167.890625,
+            "y": 649.859375,
+            "width": 35,
+            "height": 32,
+            "top": 649.859375,
+            "right": 202.890625,
+            "bottom": 681.859375,
+            "left": 167.890625
+          },
+          "footer": {
+            "x": 19.109375,
+            "y": 701,
+            "width": 1327.78125,
+            "height": 60,
+            "top": 701,
+            "right": 1346.890625,
+            "bottom": 761,
+            "left": 19.109375
+          },
+          "guide": {
+            "x": 72.109375,
+            "y": 710,
+            "width": 191.1875,
+            "height": 20,
+            "top": 710,
+            "right": 263.296875,
+            "bottom": 730,
+            "left": 72.109375
+          },
+          "road": {
+            "x": 19.109375,
+            "y": 59,
+            "width": 700.859375,
+            "height": 263.546875,
+            "top": 59,
+            "right": 719.96875,
+            "bottom": 322.546875,
+            "left": 19.109375
+          },
+          "instruments": {
+            "x": 19.109375,
+            "y": 357.546875,
+            "width": 700.859375,
+            "height": 335.453125,
+            "top": 357.546875,
+            "right": 719.96875,
+            "bottom": 693,
+            "left": 19.109375
+          }
+        },
+        "isolated": {
+          "samples": 18720,
+          "rms": 0.0968907131883193,
+          "peak": 0.3268413245677948,
+          "maxSampleJump": 0.03292081784456968,
+          "clipped": 0,
+          "horn340Amplitude": 0.0656403920373841
+        },
+        "idle": {
+          "samples": 17280,
+          "rms": 0.029691998354072865,
+          "peak": 0.058017797768116,
+          "maxSampleJump": 0.025979334488511086,
+          "clipped": 0,
+          "horn340Amplitude": 0.0000900826105088976
+        },
+        "overEngine": {
+          "samples": 18720,
+          "rms": 0.09916234055125868,
+          "peak": 0.3550930917263031,
+          "maxSampleJump": 0.03373187012039125,
+          "clipped": 0,
+          "horn340Amplitude": 0.0663658744922678
+        },
+        "repeated": {
+          "samples": 31680,
+          "rms": 0.1267781013292572,
+          "peak": 0.35312408208847046,
+          "maxSampleJump": 0.03340550418943167,
+          "clipped": 0,
+          "horn340Amplitude": 0.10196107919256614
+        },
+        "muted": {
+          "samples": 18720,
+          "rms": 0,
+          "peak": 0,
+          "maxSampleJump": 0,
+          "clipped": 0,
+          "horn340Amplitude": 0
+        },
+        "oscillators": 4
+      }
+    },
+    {
+      "name": "Horn centre, first-visit guidance, engine mix, bounded retriggers, global mute and persistence 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "boxes": {
+          "horn": {
+            "x": 177.40625,
+            "y": 860.578125,
+            "width": 44,
+            "height": 44,
+            "top": 860.578125,
+            "right": 221.40625,
+            "bottom": 904.578125,
+            "left": 177.40625
+          },
+          "wheel": {
+            "x": 145.40625,
+            "y": 828.578125,
+            "width": 108,
+            "height": 108,
+            "top": 828.578125,
+            "right": 253.40625,
+            "bottom": 936.578125,
+            "left": 145.40625
+          },
+          "left": {
+            "x": 140.5,
+            "y": 939.578125,
+            "width": 35,
+            "height": 32,
+            "top": 939.578125,
+            "right": 175.5,
+            "bottom": 971.578125,
+            "left": 140.5
+          },
+          "center": {
+            "x": 179.5,
+            "y": 939.578125,
+            "width": 39.8125,
+            "height": 32,
+            "top": 939.578125,
+            "right": 219.3125,
+            "bottom": 971.578125,
+            "left": 179.5
+          },
+          "right": {
+            "x": 223.3125,
+            "y": 939.578125,
+            "width": 35,
+            "height": 32,
+            "top": 939.578125,
+            "right": 258.3125,
+            "bottom": 971.578125,
+            "left": 223.3125
+          },
+          "footer": {
+            "x": 24,
+            "y": 1009.203125,
+            "width": 1872,
+            "height": 60,
+            "top": 1009.203125,
+            "right": 1896,
+            "bottom": 1069.203125,
+            "left": 24
+          },
+          "guide": {
+            "x": 77,
+            "y": 1017.203125,
+            "width": 210.015625,
+            "height": 21,
+            "top": 1017.203125,
+            "right": 287.015625,
+            "bottom": 1038.203125,
+            "left": 77
+          },
+          "road": {
+            "x": 24,
+            "y": 68.796875,
+            "width": 988.796875,
+            "height": 389.125,
+            "top": 68.796875,
+            "right": 1012.796875,
+            "bottom": 457.921875,
+            "left": 24
+          },
+          "instruments": {
+            "x": 24,
+            "y": 505.921875,
+            "width": 988.796875,
+            "height": 495.28125,
+            "top": 505.921875,
+            "right": 1012.796875,
+            "bottom": 1001.203125,
+            "left": 24
+          }
+        },
+        "isolated": {
+          "samples": 18720,
+          "rms": 0.09694477020872189,
+          "peak": 0.3265969753265381,
+          "maxSampleJump": 0.03289684373885393,
+          "clipped": 0,
+          "horn340Amplitude": 0.0656330994277094
+        },
+        "idle": {
+          "samples": 17280,
+          "rms": 0.029802394514465907,
+          "peak": 0.05814160779118538,
+          "maxSampleJump": 0.005359833128750324,
+          "clipped": 0,
+          "horn340Amplitude": 0.00012442147061186027
+        },
+        "overEngine": {
+          "samples": 18720,
+          "rms": 0.09827508895997095,
+          "peak": 0.34419628977775574,
+          "maxSampleJump": 0.0333696324378252,
+          "clipped": 0,
+          "horn340Amplitude": 0.06545124753279634
+        },
+        "repeated": {
+          "samples": 30240,
+          "rms": 0.12849267405603745,
+          "peak": 0.3505767285823822,
+          "maxSampleJump": 0.03343397285789251,
+          "clipped": 0,
+          "horn340Amplitude": 0.10483533466908035
+        },
+        "muted": {
+          "samples": 20160,
+          "rms": 0,
+          "peak": 0,
+          "maxSampleJump": 0,
+          "clipped": 0,
+          "horn340Amplitude": 0
+        },
+        "oscillators": 4
+      }
+    },
+    {
+      "name": "Horn identifiable over player fixture; master mute silences all buses",
+      "status": "PASS",
+      "evidence": {
+        "mix": {
+          "samples": 15840,
+          "rms": 0.1079068332432708,
+          "peak": 0.3609715700149536,
+          "maxSampleJump": 0.08161742985248566,
+          "clipped": 0,
+          "horn340Amplitude": 0.07931298110348384
+        },
+        "mutedMix": {
+          "samples": 14400,
+          "rms": 0,
+          "peak": 0,
+          "maxSampleJump": 0,
+          "clipped": 0,
+          "horn340Amplitude": 0
+        },
+        "formalMusic": "ASSET_BLOCKED; fixture is existing speech"
+      }
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "6db1b55572ed519047f6dc3341607dad273b6e6082db037bdca8ced39926574d",
+    "pages/cockpit-v33.css": "3de05f6694b536d54d0127ef18f16c9a1bafd3b790ac53f1e8bd7e34ef45d1ed",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799"
+  }
+}

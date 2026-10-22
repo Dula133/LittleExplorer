@@ -1,0 +1,323 @@
+{
+  "status": "ASSET_BLOCKED",
+  "automatedChecks": "PASS",
+  "formalTracks": 0,
+  "playerTransport": "PASS",
+  "reason": "No verified redistribution permission; source HTTPS CONNECT rejected with proxy 403",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "WP5 production manifest explicitly ASSET_BLOCKED 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "tracks": 0,
+        "box": [
+          542,
+          542
+        ],
+        "status": "ASSET_BLOCKED"
+      }
+    },
+    {
+      "name": "WP5 production manifest explicitly ASSET_BLOCKED 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "tracks": 0,
+        "box": [
+          816,
+          816
+        ],
+        "status": "ASSET_BLOCKED"
+      }
+    },
+    {
+      "name": "WP5 transport fixture: decoded playback/pause/prev/next/progress/volume/mute/ended autoplay",
+      "status": "PASS",
+      "evidence": {
+        "fixture": "Existing speech only, NOT MUSIC, no shipped music licence asserted",
+        "playingRMS": 0.020866668891972605,
+        "pausedRMS": 0,
+        "mutedRMS": 1.0069211258005869e-7,
+        "zeroVolumeRMS": 0.0000037399650768155404,
+        "formalMusic": "ASSET_BLOCKED"
+      }
+    },
+    {
+      "name": "All four tabs fit and return/centre horn remain reachable 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "tabs": [
+          {
+            "tab": "drive",
+            "viewport": [
+              1366,
+              768
+            ],
+            "scroll": [
+              1366,
+              768
+            ],
+            "active": [
+              "tab-drive"
+            ],
+            "panel": [
+              {
+                "height": 542,
+                "scroll": 542
+              }
+            ]
+          },
+          {
+            "tab": "lights",
+            "viewport": [
+              1366,
+              768
+            ],
+            "scroll": [
+              1366,
+              768
+            ],
+            "active": [
+              "tab-lights"
+            ],
+            "panel": [
+              {
+                "height": 542,
+                "scroll": 542
+              }
+            ]
+          },
+          {
+            "tab": "weather",
+            "viewport": [
+              1366,
+              768
+            ],
+            "scroll": [
+              1366,
+              768
+            ],
+            "active": [
+              "tab-weather"
+            ],
+            "panel": [
+              {
+                "height": 542,
+                "scroll": 542
+              }
+            ]
+          },
+          {
+            "tab": "cabin",
+            "viewport": [
+              1366,
+              768
+            ],
+            "scroll": [
+              1366,
+              768
+            ],
+            "active": [
+              "tab-cabin"
+            ],
+            "panel": [
+              {
+                "height": 542,
+                "scroll": 542
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "All four tabs fit and return/centre horn remain reachable 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "tabs": [
+          {
+            "tab": "drive",
+            "viewport": [
+              1920,
+              1080
+            ],
+            "scroll": [
+              1920,
+              1080
+            ],
+            "active": [
+              "tab-drive"
+            ],
+            "panel": [
+              {
+                "height": 816,
+                "scroll": 816
+              }
+            ]
+          },
+          {
+            "tab": "lights",
+            "viewport": [
+              1920,
+              1080
+            ],
+            "scroll": [
+              1920,
+              1080
+            ],
+            "active": [
+              "tab-lights"
+            ],
+            "panel": [
+              {
+                "height": 816,
+                "scroll": 816
+              }
+            ]
+          },
+          {
+            "tab": "weather",
+            "viewport": [
+              1920,
+              1080
+            ],
+            "scroll": [
+              1920,
+              1080
+            ],
+            "active": [
+              "tab-weather"
+            ],
+            "panel": [
+              {
+                "height": 816,
+                "scroll": 816
+              }
+            ]
+          },
+          {
+            "tab": "cabin",
+            "viewport": [
+              1920,
+              1080
+            ],
+            "scroll": [
+              1920,
+              1080
+            ],
+            "active": [
+              "tab-cabin"
+            ],
+            "panel": [
+              {
+                "height": 816,
+                "scroll": 816
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "390×844 horizontal containment and reachable return",
+      "status": "PASS",
+      "evidence": [
+        {
+          "tab": "drive",
+          "viewport": [
+            390,
+            844
+          ],
+          "scroll": [
+            390,
+            1943
+          ],
+          "active": [
+            "tab-drive"
+          ],
+          "panel": [
+            {
+              "height": 656,
+              "scroll": 656
+            }
+          ]
+        },
+        {
+          "tab": "lights",
+          "viewport": [
+            390,
+            844
+          ],
+          "scroll": [
+            390,
+            1738
+          ],
+          "active": [
+            "tab-lights"
+          ],
+          "panel": [
+            {
+              "height": 451,
+              "scroll": 451
+            }
+          ]
+        },
+        {
+          "tab": "weather",
+          "viewport": [
+            390,
+            844
+          ],
+          "scroll": [
+            390,
+            1936
+          ],
+          "active": [
+            "tab-weather"
+          ],
+          "panel": [
+            {
+              "height": 649,
+              "scroll": 649
+            }
+          ]
+        },
+        {
+          "tab": "cabin",
+          "viewport": [
+            390,
+            844
+          ],
+          "scroll": [
+            390,
+            1950
+          ],
+          "active": [
+            "tab-cabin"
+          ],
+          "panel": [
+            {
+              "height": 663,
+              "scroll": 663
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "af7bead4df0ce910bbeefbcb7f601e7e100af564cef91fa14e665fac72bfbc0f",
+    "pages/cockpit-v33.css": "3de05f6694b536d54d0127ef18f16c9a1bafd3b790ac53f1e8bd7e34ef45d1ed",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799",
+    "js/cockpit-audio.js": "d27a2d702b979e16beaf38560f7896256fd696db317abb93f734083163a09416",
+    "assets/music/manifest.json": "9289441a081a45ea72fcdb17544f7c96864b843f07bbfa56e39390dc39f1f094"
+  }
+}

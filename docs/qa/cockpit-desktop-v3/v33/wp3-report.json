@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "WP3 fog, independent near-road lamps, clear weather and rain/snow isolation 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "before": {
+          "fog": true,
+          "rain": false,
+          "snow": false,
+          "screen": "0.85",
+          "background": "linear-gradient(rgba(219, 229, 231, 0.72) 0%, rgba(218, 229, 233, 0.81) 43%, rgba(215, 227, 231, 0.475) 64%, rgba(216, 229, 226, 0.063) 100%)",
+          "far": "blur(2.8px) saturate(0.45) contrast(0.5)",
+          "world": "1",
+          "nearLight": "0"
+        },
+        "lit": {
+          "fog": true,
+          "rain": false,
+          "snow": false,
+          "screen": "0.85",
+          "background": "linear-gradient(rgba(219, 229, 231, 0.72) 0%, rgba(218, 229, 233, 0.81) 43%, rgba(215, 227, 231, 0.475) 64%, rgba(216, 229, 226, 0.063) 100%)",
+          "far": "blur(2.8px) saturate(0.45) contrast(0.5)",
+          "world": "1",
+          "nearLight": "0.65"
+        }
+      }
+    },
+    {
+      "name": "WP3 fog, independent near-road lamps, clear weather and rain/snow isolation 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "before": {
+          "fog": true,
+          "rain": false,
+          "snow": false,
+          "screen": "0.85",
+          "background": "linear-gradient(rgba(219, 229, 231, 0.72) 0%, rgba(218, 229, 233, 0.81) 43%, rgba(215, 227, 231, 0.475) 64%, rgba(216, 229, 226, 0.063) 100%)",
+          "far": "blur(2.8px) saturate(0.45) contrast(0.5)",
+          "world": "1",
+          "nearLight": "0"
+        },
+        "lit": {
+          "fog": true,
+          "rain": false,
+          "snow": false,
+          "screen": "0.85",
+          "background": "linear-gradient(rgba(219, 229, 231, 0.72) 0%, rgba(218, 229, 233, 0.81) 43%, rgba(215, 227, 231, 0.475) 64%, rgba(216, 229, 226, 0.063) 100%)",
+          "far": "blur(2.8px) saturate(0.45) contrast(0.5)",
+          "world": "1",
+          "nearLight": "0.65"
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "e44f694849317d0491256348e205c105232d8e04b1ca56ae9b7202933fb2d677",
+    "pages/cockpit-v33.css": "f9827df1341e181ecd2e3a831b9b0a4382cbf0b470ee4c3e7e9dceb882bcf8de",
+    "js/cockpit-v33.js": "f6da70b4a05e6c3cb24cee296da2be9274358ddd835c02bafc639ba6e9a04a94"
+  }
+}

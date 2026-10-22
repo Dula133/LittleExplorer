@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "automatedChecks": "PASS",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "Actual Chromium audio-device loopback: Chinese speech + engine + horn, real ended, safe peak and global silence",
+      "status": "PASS",
+      "evidence": {
+        "method": "Unmodified host levels; isolated PulseAudio null-sink monitor of actual Chromium output; no stream normalization/calibration",
+        "idle": {
+          "file": "device-idle.wav",
+          "samples": 49590,
+          "rms": 0.018371583328492213,
+          "peak": 0.043487548828125,
+          "fullScaleSamples": 0,
+          "maxSampleJump": 0.000274658203125
+        },
+        "mix": {
+          "file": "device-chinese-engine-horn.wav",
+          "samples": 385639,
+          "rms": 0.05059296565458302,
+          "peak": 0.38885498046875,
+          "fullScaleSamples": 0,
+          "maxSampleJump": 0.110870361328125
+        },
+        "muted": {
+          "file": "device-all-muted.wav",
+          "samples": 73562,
+          "rms": 0,
+          "peak": 0,
+          "fullScaleSamples": 0,
+          "maxSampleJump": 0
+        },
+        "events": [
+          {
+            "type": "playing",
+            "src": "http://127.0.0.1:44775/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "time": 0,
+            "trusted": true
+          },
+          {
+            "type": "ended",
+            "src": "http://127.0.0.1:44775/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "time": 5.688,
+            "trusted": true
+          }
+        ],
+        "physicalSpeakers": "NOT_TESTED"
+      }
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+    "preserved": 936,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "67a47e83034fcc1ea971c4c48031eeac4fb453b733ed3a35165d48594083cabc",
+    "pages/cockpit-v33.css": "3de05f6694b536d54d0127ef18f16c9a1bafd3b790ac53f1e8bd7e34ef45d1ed",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799",
+    "js/cockpit-audio.js": "5af4f4e7ae200d062838be72caf12aebc0d9eb1666919ec4da1ab535849d8147",
+    "assets/music/manifest.json": "9289441a081a45ea72fcdb17544f7c96864b843f07bbfa56e39390dc39f1f094",
+    "assets/cockpit-voice/manifest.json": "3ea2c8bbbd1fbbc00314f67166117ef3cdacf3e187e11f77717230c12c6c4f8d"
+  }
+}
