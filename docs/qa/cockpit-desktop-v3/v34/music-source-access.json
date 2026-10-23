@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-23",
+  "requestedURL": "https://opengameart.org/content/happy-moments",
+  "method": "GET through inherited cloud proxy; default certificate verification",
+  "attempts": 1,
+  "host": "opengameart.org",
+  "status": "BLOCKED",
+  "errorType": "URLError",
+  "error": "Tunnel connection failed: 403 Forbidden",
+  "phase": "HTTPS CONNECT proxy"
+}

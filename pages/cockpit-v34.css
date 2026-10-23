@@ -1,0 +1,13 @@
+/* One extra control in the existing bottom row; no new page section. */
+#driveExtras{grid-template-columns:repeat(3,minmax(0,1fr))}
+#cruise{min-width:0;padding:4px 2px;gap:2px}
+#cruise .btn-symbol{width:30px;height:30px;margin:0}
+#cruise .btn-symbol svg{width:100%;height:100%}
+#cruiseHint{font-size:10px;font-weight:600;color:#b8d9df;line-height:1.2}
+#cruise.active{border-color:#82f4ac;background:#1b5b46;color:#dcffe8;box-shadow:inset 0 0 0 2px #82f4ac35}
+#cruise.active #cruiseHint{color:#d4ffe2}
+#cruiseIndicator{color:#a7ffc2;border-color:#5cd48c;background:#124c36;display:flex;align-items:center;gap:5px}
+#cruiseIndicator[hidden]{display:none}
+#cruiseIndicator svg{width:18px;height:18px;flex-shrink:0}
+#cruiseIndicator b{color:#d8ffe3}
+@media(max-width:560px){#driveExtras .zh{font-size:11px}#cruiseHint{font-size:9px}#cruiseIndicator{font-size:10px;padding:4px}}

@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-23",
+  "base": "22b53b928dbcd23d7ca4ee6b597693bdd0b57e31",
+  "branch": "feature/car-cockpit-desktop-v3",
+  "initialWorkspaceClean": true,
+  "remoteHEADVerified": "22b53b928dbcd23d7ca4ee6b597693bdd0b57e31",
+  "initialStaleTrackingRef": "fea4cd36fc12a84fe8a3619b0552e8ac9eccf23d",
+  "trackingUpdatedByNormalFastForwardFetch": true,
+  "WP1": "PASS",
+  "WP2": "BLOCKED",
+  "cruisePolicy": "Cancel cruise before accelerating. D/S hold captured full-precision speed. Brake cancels immediately. Existing unsafe moving actions stay guarded. S target above 100 cancels on D without a speed snap.",
+  "cruise": [
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "primaryGear": "D",
+      "setSpeed": 35,
+      "elapsedMs": 10049.599999999999,
+      "speedRange": [
+        35,
+        35
+      ],
+      "scenerySpeed": 35.24850242795668,
+      "audio": {
+        "samples": 241920,
+        "rms": 0.037044738004023234,
+        "peak": 0.08308367431163788,
+        "clipped": 0,
+        "zeroCrossHz": 69.34523809523809
+      },
+      "manualCancel": {
+        "before": 35,
+        "after900ms": 31
+      },
+      "brakeCancel": {
+        "before": 30,
+        "afterClick": 28
+      }
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "primaryGear": "S",
+      "setSpeed": 36,
+      "elapsedMs": 10066.3,
+      "speedRange": [
+        36,
+        36
+      ],
+      "scenerySpeed": 35.56519773899029,
+      "audio": {
+        "samples": 241920,
+        "rms": 0.042636417788849,
+        "peak": 0.11198168992996216,
+        "clipped": 0,
+        "zeroCrossHz": 84.12698412698413
+      },
+      "manualCancel": {
+        "before": 36,
+        "after900ms": 31
+      },
+      "brakeCancel": {
+        "before": 31,
+        "afterClick": 29
+      }
+    }
+  ],
+  "currentMixedPeakMax": 0.5067528486251831,
+  "mutePeak": 0,
+  "formalMusicTracks": 0,
+  "musicBlock": "HTTPS CONNECT proxy 403 before contacting opengameart.org; no bypass, no source or licence/file verification",
+  "protectedBaselineFiles": 1203,
+  "protectedVoicePaths": 738,
+  "originalVoiceKeys": 315,
+  "originalVoiceMP3": 638,
+  "V33MP3": 96,
+  "voiceSHA256Unchanged": true,
+  "audioGraphAndMusicManifestUnchanged": true,
+  "reportSourceCompatibility": {
+    "cruise-report.json": {
+      "pages/cockpit.html": "ONLY_LEGAL_FOOTNOTE_DISCLOSURE_CHANGED; no executable/UI-control changes; final layout retested",
+      "js/cockpit-cruise.js": "EXACT_CURRENT_SOURCE",
+      "pages/cockpit-v34.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE"
+    },
+    "regression/core-report.json": {
+      "pages/cockpit.html": "ONLY_LEGAL_FOOTNOTE_DISCLOSURE_CHANGED; no executable/UI-control changes; final layout retested",
+      "pages/cockpit-v33.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "EXACT_CURRENT_SOURCE",
+      "assets/music/manifest.json": "EXACT_CURRENT_SOURCE",
+      "assets/cockpit-voice/manifest.json": "EXACT_CURRENT_SOURCE"
+    },
+    "regression/audio-repair-report.json": {
+      "pages/cockpit.html": "ONLY_LEGAL_FOOTNOTE_DISCLOSURE_CHANGED; no executable/UI-control changes; final layout retested",
+      "pages/cockpit-v33.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "EXACT_CURRENT_SOURCE",
+      "assets/music/manifest.json": "EXACT_CURRENT_SOURCE",
+      "assets/cockpit-voice/manifest.json": "EXACT_CURRENT_SOURCE"
+    },
+    "regression/layout-report.json": {
+      "pages/cockpit.html": "EXACT_CURRENT_SOURCE",
+      "pages/cockpit-v33.css": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-v33.js": "EXACT_CURRENT_SOURCE",
+      "js/cockpit-audio.js": "EXACT_CURRENT_SOURCE",
+      "assets/music/manifest.json": "EXACT_CURRENT_SOURCE",
+      "assets/cockpit-voice/manifest.json": "EXACT_CURRENT_SOURCE"
+    }
+  },
+  "cruiseNewSpeech": "Text/icons only; no newly generated MP3 or system TTS fallback",
+  "limits": [
+    "No formal music decoding/playback/mixing verified, because assets were not acquired",
+    "Human/child listening, speaker comfort, HarmonyOS and other real devices/browsers/GPU not tested",
+    "Audio background/navigation behaviour reused from immutable V3.3 proof; no claim of fresh native lifecycle run",
+    "No fresh 20-scene runtime sweep; source/resource byte protection verified"
+  ],
+  "mainAndSimplePlus": "Untouched",
+  "deployment": "Not performed"
+}

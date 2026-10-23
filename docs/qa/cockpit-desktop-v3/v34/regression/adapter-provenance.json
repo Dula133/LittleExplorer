@@ -1,0 +1,11 @@
+{
+  "source": "tools/qa_cockpit_v33.cjs",
+  "sourceSHA256": "fbbdeb82cb9c57728413fa997a754a7786199ba61f3096ccc35858b483f79982",
+  "compiledSHA256": "65cede3b643e9c6d7014b293f28abb906b1b51ce40c48d0046d144f7d4a12ad0",
+  "adaptations": [
+    "V3.4 base/scope",
+    "Exclude only the exact newly added cruise handler and accelerator gate when comparing original safety bodies",
+    "Allow licence documentation update; preserve every other baseline file"
+  ],
+  "productStateWrites": false
+}

@@ -1,0 +1,100 @@
+diff --git a/js/cockpit-cruise.js b/js/cockpit-cruise.js
+new file mode 100644
+index 0000000..eeebc67
+--- /dev/null
++++ b/js/cockpit-cruise.js
+@@ -0,0 +1,36 @@
++/* Cruise is a child simulation over the existing speed/gear/engine state. */
++'use strict';
++window.createCockpitCruise=function({state,$,announce}){
++ const driving=()=>state.engine&&state.belt&&!state.handbrake&&!state.brake&&['D','S'].includes(state.gear);
++ const limit=()=>state.gear==='S'?120:100;
++ function cancel(){state.cruise=false;state.cruiseSet=0;}
++ function validate(){
++  if(state.cruise&&(!driving()||!Number.isFinite(state.speed)||!Number.isFinite(state.cruiseSet)||state.cruiseSet<20||state.cruiseSet>limit()))cancel();
++  return state.cruise;
++ }
++ function render(){
++  $('cruise').classList.toggle('active',state.cruise);$('cruise').setAttribute('aria-pressed',String(state.cruise));
++  $('cruise').setAttribute('aria-label',state.cruise?'取消定速巡航 Cancel cruise':'定速巡航 Cruise');
++  $('cruiseIndicator').hidden=!state.cruise;
++  $('cruiseSet').textContent=state.cruise?Math.round(state.cruiseSet):'—';
++  $('cruiseHint').textContent=state.cruise?'点击取消 · Cancel':'≥20 km/h · D/S';
++ }
++ function toggle(){
++  if(state.cruise){cancel();announce('巡航已取消','汽车恢复滑行。需要加速时再踩油门。',false);return;}
++  if(!driving()||!Number.isFinite(state.speed)||state.speed<20||state.speed>limit()){
++   announce('现在不能开启巡航','系好安全带，启动后挂 D 或 S、松手刹和脚刹，达到每小时 20 公里。',false);return;
++  }
++  state.cruiseSet=state.speed;state.cruise=true;state.accel=false;
++  announce('定速巡航已开启','保持约 '+Math.round(state.cruiseSet)+' 公里每小时。踩刹车或再点巡航可取消；加速前请先取消。这是儿童模拟。',false);
++ }
++ function blockAcceleration(){
++  if(!state.cruise)return false;
++  announce('先取消巡航再加速','再次点击定速巡航，然后再踩油门。脚刹随时可以取消巡航。',false);return true;
++ }
++ return{validate,render,toggle,blockAcceleration,tick(dt){
++  if(!validate())return false;
++  // The set speed is captured without rounding. A bounded correction preserves
++  // continuity if a future simulation adds a small disturbance; never snap speed.
++  state.speed+=Math.max(-6*dt,Math.min(6*dt,state.cruiseSet-state.speed));return true;
++ }};
++};
+diff --git a/pages/cockpit-v34.css b/pages/cockpit-v34.css
+new file mode 100644
+index 0000000..1b415c7
+--- /dev/null
++++ b/pages/cockpit-v34.css
+@@ -0,0 +1,13 @@
++/* One extra control in the existing bottom row; no new page section. */
++#driveExtras{grid-template-columns:repeat(3,minmax(0,1fr))}
++#cruise{min-width:0;padding:4px 2px;gap:2px}
++#cruise .btn-symbol{width:30px;height:30px;margin:0}
++#cruise .btn-symbol svg{width:100%;height:100%}
++#cruiseHint{font-size:10px;font-weight:600;color:#b8d9df;line-height:1.2}
++#cruise.active{border-color:#82f4ac;background:#1b5b46;color:#dcffe8;box-shadow:inset 0 0 0 2px #82f4ac35}
++#cruise.active #cruiseHint{color:#d4ffe2}
++#cruiseIndicator{color:#a7ffc2;border-color:#5cd48c;background:#124c36;display:flex;align-items:center;gap:5px}
++#cruiseIndicator[hidden]{display:none}
++#cruiseIndicator svg{width:18px;height:18px;flex-shrink:0}
++#cruiseIndicator b{color:#d8ffe3}
++@media(max-width:560px){#driveExtras .zh{font-size:11px}#cruiseHint{font-size:9px}#cruiseIndicator{font-size:10px;padding:4px}}
+diff --git a/pages/cockpit.html b/pages/cockpit.html
+index 63f8bb0..7b23d0e 100644
+--- a/pages/cockpit.html
++++ b/pages/cockpit.html
+@@ -5 +5 @@
+-<title>LittleExplorer · 驾驶舱 V3.3 · PC 横屏 | Driver’s Cockpit</title>
++<title>LittleExplorer · 驾驶舱 V3.4 · PC 横屏 | Driver’s Cockpit</title>
+@@ -130,0 +131 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
++<link rel="stylesheet" href="cockpit-v34.css?v=3.4">
+@@ -134 +135 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+-<header class="topbar"><div class="brand"><div class="brandmark">✦</div><div><div class="eyebrow">LittleExplorer · 儿童模拟</div><h1>我的探索驾驶舱 <span style="font-size:11px;font-weight:650;color:#a4c5cd">电脑横屏版 V3.3</span></h1></div></div><div class="pillrow"><div class="pill"><span class="dot"></span> 🚙 儿童模拟 · Child simulation</div><a id="outsideBtn" class="outline" href="car.html" title="返回 3D 汽车场景">↩ 返回汽车 <small style="display:block;font-size:10px;font-weight:500">Back to Car</small></a></div></header>
++<header class="topbar"><div class="brand"><div class="brandmark">✦</div><div><div class="eyebrow">LittleExplorer · 儿童模拟</div><h1>我的探索驾驶舱 <span style="font-size:11px;font-weight:650;color:#a4c5cd">电脑横屏版 V3.4</span></h1></div></div><div class="pillrow"><div class="pill"><span class="dot"></span> 🚙 儿童模拟 · Child simulation</div><a id="outsideBtn" class="outline" href="car.html" title="返回 3D 汽车场景">↩ 返回汽车 <small style="display:block;font-size:10px;font-weight:500">Back to Car</small></a></div></header>
+@@ -184 +185 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+-<div class="gauge-row"><div class="chip">⛽ 油量 <b>▰▰▰▱</b></div><div class="chip">🌡 水温 <b id="waterTemp">20°C</b></div><div class="chip">🔋 电池 <b>12.6V</b></div></div>
++<div class="gauge-row"><span class="chip" id="cruiseIndicator" role="status" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 18a10 10 0 1 1 18 0M5 14l2 1M8 7l1 2M15 7l-1 2M19 14l-2 1M12 16l5-5"/><circle cx="12" cy="16" r="2"/></svg><span>巡航 Cruise <b id="cruiseSet">—</b> km/h</span></span><div class="chip">⛽ 油量 <b>▰▰▰▱</b></div><div class="chip">🌡 水温 <b id="waterTemp">20°C</b></div><div class="chip">🔋 电池 <b>12.6V</b></div></div>
+@@ -189 +190 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+-<div class="tiny-title">⚙️ 挡位 · Gears</div><div class="gear" id="gearButtons"><button class="gearbtn active" data-gear="P">P<span>停车 · Park</span></button><button class="gearbtn" data-gear="R">R<span>倒车 · Reverse</span></button><button class="gearbtn" data-gear="N">N<span>空挡 · Neutral</span></button><button class="gearbtn" data-gear="D">D<span>前进 · Drive</span></button><button class="gearbtn" data-gear="S">S<span>运动 · Sport</span></button></div><div class="tiny-title" style="margin-top:17px">② 启动前的小检查</div><div class="big-actions"><button class="big-action" id="start"><span class="btn-symbol" aria-hidden="true">⏻</span><span class="zh">启动 / 熄火</span><span class="en">Start / Stop</span></button><button class="big-action" id="belt"><span class="btn-symbol" aria-hidden="true">💺</span><span class="zh">安全带</span><span class="en">Seat belt</span></button><button class="big-action active" id="handbrake"><span class="btn-symbol" aria-hidden="true">Ⓟ</span><span class="zh">驻车制动</span><span class="en">Parking brake</span></button></div><div class="divider"></div><div class="two"><button class="tile" id="horn"><span class="btn-symbol" aria-hidden="true">📣</span><span class="zh">喇叭</span><span class="en">Horn</span></button><button class="tile" id="doorlock"><span class="btn-symbol" aria-hidden="true">🔒</span><span class="zh">车门锁</span><span class="en">Door lock</span></button></div></div>
++<div class="tiny-title">⚙️ 挡位 · Gears</div><div class="gear" id="gearButtons"><button class="gearbtn active" data-gear="P">P<span>停车 · Park</span></button><button class="gearbtn" data-gear="R">R<span>倒车 · Reverse</span></button><button class="gearbtn" data-gear="N">N<span>空挡 · Neutral</span></button><button class="gearbtn" data-gear="D">D<span>前进 · Drive</span></button><button class="gearbtn" data-gear="S">S<span>运动 · Sport</span></button></div><div class="tiny-title" style="margin-top:17px">② 启动前的小检查</div><div class="big-actions"><button class="big-action" id="start"><span class="btn-symbol" aria-hidden="true">⏻</span><span class="zh">启动 / 熄火</span><span class="en">Start / Stop</span></button><button class="big-action" id="belt"><span class="btn-symbol" aria-hidden="true">💺</span><span class="zh">安全带</span><span class="en">Seat belt</span></button><button class="big-action active" id="handbrake"><span class="btn-symbol" aria-hidden="true">Ⓟ</span><span class="zh">驻车制动</span><span class="en">Parking brake</span></button></div><div class="divider"></div><div class="two" id="driveExtras"><button class="tile" id="horn"><span class="btn-symbol" aria-hidden="true">📣</span><span class="zh">喇叭</span><span class="en">Horn</span></button><button class="tile" id="doorlock"><span class="btn-symbol" aria-hidden="true">🔒</span><span class="zh">车门锁</span><span class="en">Door lock</span></button><button class="tile" id="cruise" aria-pressed="false" aria-describedby="cruiseHint"><span class="btn-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 18a10 10 0 1 1 18 0M5 14l2 1M8 7l1 2M15 7l-1 2M19 14l-2 1M12 16l5-5"/><circle cx="12" cy="16" r="2"/></svg></span><span class="zh">定速巡航</span><span class="en">Cruise</span><small id="cruiseHint">≥20 km/h · D/S</small></button></div></div>
+@@ -201 +202 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+-<p class="legal">LittleExplorer 驾驶舱 V3.3 · 儿童认知模拟，不控制真实车辆，不代表实际驾驶规程 · 中文提示为独立预生成语音</p>
++<p class="legal">LittleExplorer 驾驶舱 V3.4 · 儿童认知模拟，不控制真实车辆，不代表实际驾驶规程 · 中文语音使用独立预录资源；巡航新增提示为图文</p>
+@@ -204,0 +206 @@ a.outline:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
++<script src="../js/cockpit-cruise.js?v=3.4"></script>
+@@ -210 +212 @@ const $=id=>document.getElementById(id);
+-const state={engine:false,belt:false,handbrake:true,gear:'P',speed:0,steer:0,lamp:'AUTO',turn:'OFF',fog:false,rain:'NONE',wiper:'OFF',night:false,temp:24,fan:0,vent:'FACE',window:false,music:false,locked:false,voice:true,accel:false,brake:false,hasDriven:false};
++const state={engine:false,belt:false,handbrake:true,gear:'P',speed:0,steer:0,lamp:'AUTO',turn:'OFF',fog:false,rain:'NONE',wiper:'OFF',night:false,temp:24,fan:0,vent:'FACE',window:false,music:false,locked:false,voice:true,accel:false,brake:false,hasDriven:false,cruise:false,cruiseSet:0};
+@@ -211,0 +214 @@ const enhanced=window.createCockpitV33({state,$,announce});
++const cruise=window.createCockpitCruise({state,$,announce});
+@@ -242 +245 @@ let lastRenderedSpeed=-1,lastRpm=-1;
+-function update(){const w=$('windshield');
++function update(){cruise.validate();cruise.render();const w=$('windshield');
+@@ -313,0 +317 @@ $('handbrake').onclick=()=>{
++$('cruise').onclick=()=>{cruise.toggle();update();};
+@@ -314,0 +319 @@ $('accelerate').onclick=()=>{
++ if(cruise.blockAcceleration())return;
+@@ -348 +353,2 @@ let last=performance.now();function tick(time){const elapsed=Math.max(0,(time-la
+- if(state.brake){state.speed=Math.max(0,state.speed-38*dt);}
++ if(cruise.tick(dt)){/* Existing motion and RPM consume this same held speed. */}
++ else if(state.brake){state.speed=Math.max(0,state.speed-38*dt);}

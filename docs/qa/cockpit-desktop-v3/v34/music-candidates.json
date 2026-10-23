@@ -1,0 +1,42 @@
+{
+  "status": "BLOCKED",
+  "formalTracks": 0,
+  "candidates": [
+    {
+      "title": "快乐时光 / Happy Moments",
+      "authorClaimed": "Centurion_of_war",
+      "source": "https://opengameart.org/content/happy-moments",
+      "originalFileNeeded": "piano1.4.ogg",
+      "licenseClaimedByUser": "CC0",
+      "licenseIndependentlyVerified": false,
+      "acquiredDate": null,
+      "originalSHA256": null,
+      "mp3SHA256": null,
+      "redistributionApproved": false
+    },
+    {
+      "title": "小镇漫游 / Loop Town",
+      "authorClaimed": "Fupi",
+      "source": "https://opengameart.org/content/loop-town",
+      "originalFileNeeded": "loopcity.ogg",
+      "licenseClaimedByUser": "CC0",
+      "licenseIndependentlyVerified": false,
+      "acquiredDate": null,
+      "originalSHA256": null,
+      "mp3SHA256": null,
+      "redistributionApproved": false
+    },
+    {
+      "title": "新的一天 / A New Day",
+      "authorClaimed": "SpiderDave",
+      "source": "https://opengameart.org/content/a-new-day",
+      "originalFileNeeded": "49.ogg",
+      "licenseClaimedByUser": "CC0",
+      "licenseIndependentlyVerified": false,
+      "acquiredDate": null,
+      "originalSHA256": null,
+      "mp3SHA256": null,
+      "redistributionApproved": false
+    }
+  ]
+}

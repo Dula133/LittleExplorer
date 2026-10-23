@@ -1,0 +1,1566 @@
+{
+  "status": "PASS",
+  "automatedChecks": "PASS",
+  "engineAudio": "PASS",
+  "prerecordedChineseSpeechMix": "PASS",
+  "voiceChannel": "Same WebAudio graph, compressor and output ceiling",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "WP2 actual browser-rendered engine PCM, D/S response, coast and stop",
+      "status": "PASS",
+      "evidence": {
+        "pcm": {
+          "engine-startup-tail.webm": {
+            "samples": 5760,
+            "rms": 0.01810939950202646,
+            "peak": 0.04798421263694763,
+            "zeroCrossHz": 108.33333333333334
+          },
+          "engine-idle.webm": {
+            "samples": 23040,
+            "rms": 0.029736503080531676,
+            "peak": 0.05146661028265953,
+            "zeroCrossHz": 55.208333333333336
+          },
+          "engine-accelerating-d.webm": {
+            "samples": 23040,
+            "rms": 0.04412217805287466,
+            "peak": 0.07834914326667786,
+            "zeroCrossHz": 117.70833333333334
+          },
+          "engine-accelerating-s.webm": {
+            "samples": 23040,
+            "rms": 0.06633951945180509,
+            "peak": 0.12122905254364014,
+            "zeroCrossHz": 156.25
+          },
+          "engine-coast.webm": {
+            "samples": 23040,
+            "rms": 0.05569449506237762,
+            "peak": 0.09717407077550888,
+            "zeroCrossHz": 129.16666666666669
+          },
+          "engine-braked-idle.webm": {
+            "samples": 23040,
+            "rms": 0.032016282807759346,
+            "peak": 0.05544634535908699,
+            "zeroCrossHz": 60.41666666666667
+          },
+          "engine-prerecorded-speech-mix.webm": {
+            "samples": 28800,
+            "rms": 0.11656518388953897,
+            "peak": 0.555286169052124,
+            "zeroCrossHz": 510.83333333333337
+          },
+          "engine-off.webm": {
+            "samples": 23040,
+            "rms": 0,
+            "peak": 0,
+            "zeroCrossHz": 0
+          }
+        },
+        "contextCount": 1,
+        "speech": [
+          {
+            "type": "playing",
+            "trusted": true,
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "time": 0
+          }
+        ],
+        "prerecordedChineseSpeechMix": "PASS; full PCM/mute/lifecycle in --audio-repair"
+      }
+    },
+    {
+      "name": "Dual wipers, three measured real speeds, five rain levels, storm auto/manual/parking, snow and no-scroll layout: 1366×768",
+      "status": "PASS"
+    },
+    {
+      "name": "Dual wipers, three measured real speeds, five rain levels, storm auto/manual/parking, snow and no-scroll layout: 1920×1080",
+      "status": "PASS"
+    },
+    {
+      "name": "V3.1 native-click D/S, dynamic speed/RPM needles, moving guards and complete start/park sequence",
+      "evidence": {
+        "dSpeed": 30,
+        "sSpeed": 74
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "Prerecorded Chinese + engine/horn actual PCM, duck/recovery, cancellation, peak, master mute, voice volume and browser decode 1366×768",
+      "status": "PASS",
+      "evidence": {
+        "idle": {
+          "raw": {
+            "samples": 31744,
+            "rms": 0.0211490542914873,
+            "peak": 0.035875093191862106,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.00030807778239250183
+          },
+          "decoded": {
+            "samples": 34560,
+            "rms": 0.029629626807027392,
+            "peak": 0.05257054790854454,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.004625899135135114
+          }
+        },
+        "speechMix": {
+          "raw": {
+            "samples": 288896,
+            "rms": 0.04995551565124091,
+            "peak": 0.39151737093925476,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.12136360630393028
+          },
+          "decoded": {
+            "samples": 313920,
+            "rms": 0.07058499992239467,
+            "peak": 0.5551546216011047,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.15827765315771103
+          }
+        },
+        "triple": {
+          "raw": {
+            "samples": 82432,
+            "rms": 0.11044485967853218,
+            "peak": 0.4972737431526184,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.10495074465870857
+          },
+          "decoded": {
+            "samples": 89280,
+            "rms": 0.15690152505209634,
+            "peak": 0.7285917401313782,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.13379799760878086
+          }
+        },
+        "muted": {
+          "raw": {
+            "samples": 35712,
+            "rms": 0,
+            "peak": 0,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0
+          },
+          "decoded": {
+            "samples": 37440,
+            "rms": 0,
+            "peak": 0,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0
+          }
+        },
+        "engineRMS": {
+          "before": 0.014485911308628918,
+          "during": 0.003697245373414954,
+          "after": 0.013869684320787898
+        },
+        "decodedClips": [
+          {
+            "id": "72ab4b07e6e978f5",
+            "duration": 4.655986394557823,
+            "samples": 205329
+          },
+          {
+            "id": "9ab0ca4e9dbd4de8",
+            "duration": 5.6879818594104306,
+            "samples": 250840
+          },
+          {
+            "id": "7520065e11dc235f",
+            "duration": 5.0639909297052155,
+            "samples": 223322
+          },
+          {
+            "id": "2e4a17bb217c1821",
+            "duration": 4.2719954648526075,
+            "samples": 188395
+          },
+          {
+            "id": "ea7b02c63c41353e",
+            "duration": 3.935986394557823,
+            "samples": 173577
+          },
+          {
+            "id": "00483fef066855d0",
+            "duration": 3.7199773242630387,
+            "samples": 164051
+          },
+          {
+            "id": "56a566177d0224d0",
+            "duration": 3.6959863945578233,
+            "samples": 162993
+          },
+          {
+            "id": "c53048048ea3ee57",
+            "duration": 6.047981859410431,
+            "samples": 266716
+          },
+          {
+            "id": "4af4dae27e0ac22b",
+            "duration": 5.279977324263038,
+            "samples": 232847
+          },
+          {
+            "id": "476371813c825573",
+            "duration": 3.7199773242630387,
+            "samples": 164051
+          },
+          {
+            "id": "3193c6a5e397c8cd",
+            "duration": 6.791995464852608,
+            "samples": 299527
+          },
+          {
+            "id": "edeadae74cd7f4fb",
+            "duration": 4.223990929705216,
+            "samples": 186278
+          },
+          {
+            "id": "c25e8bb2e2fa1dc8",
+            "duration": 4.127981859410431,
+            "samples": 182044
+          },
+          {
+            "id": "852734929e9b31b8",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "72071af262a1d589",
+            "duration": 8.471995464852608,
+            "samples": 373615
+          },
+          {
+            "id": "3b9d4c8f8b73fce1",
+            "duration": 5.279977324263038,
+            "samples": 232847
+          },
+          {
+            "id": "859e7515b70f8ad8",
+            "duration": 6.983990929705215,
+            "samples": 307994
+          },
+          {
+            "id": "ccd9740b78e468f8",
+            "duration": 10.31997732426304,
+            "samples": 455111
+          },
+          {
+            "id": "80c237b84f3eaadb",
+            "duration": 5.2319954648526075,
+            "samples": 230731
+          },
+          {
+            "id": "22e30eeccd93e575",
+            "duration": 9.359977324263038,
+            "samples": 412775
+          },
+          {
+            "id": "95547def54daa061",
+            "duration": 9.383990929705215,
+            "samples": 413834
+          },
+          {
+            "id": "9941a017305d7065",
+            "duration": 9.335986394557823,
+            "samples": 411717
+          },
+          {
+            "id": "ec8db53118bb3f07",
+            "duration": 5.543990929705215,
+            "samples": 244490
+          },
+          {
+            "id": "bc177ef8844d6b6b",
+            "duration": 3.7679818594104306,
+            "samples": 166168
+          },
+          {
+            "id": "35a01351154afb79",
+            "duration": 6.671995464852608,
+            "samples": 294235
+          },
+          {
+            "id": "98dbf9645d530d52",
+            "duration": 5.351995464852608,
+            "samples": 236023
+          },
+          {
+            "id": "fbe990a21bb4103e",
+            "duration": 4.655986394557823,
+            "samples": 205329
+          },
+          {
+            "id": "3e4832ff1c873102",
+            "duration": 5.183990929705216,
+            "samples": 228614
+          },
+          {
+            "id": "7c59e6ca63feaf98",
+            "duration": 5.879977324263039,
+            "samples": 259307
+          },
+          {
+            "id": "595d38d64985be1d",
+            "duration": 5.5199773242630386,
+            "samples": 243431
+          },
+          {
+            "id": "417fe169ef8a9040",
+            "duration": 7.08,
+            "samples": 312228
+          },
+          {
+            "id": "48b06c8d649b4d84",
+            "duration": 7.391995464852608,
+            "samples": 325987
+          },
+          {
+            "id": "20c446a565a8d664",
+            "duration": 5.855986394557823,
+            "samples": 258249
+          },
+          {
+            "id": "94f5f1825c74d394",
+            "duration": 7.4399773242630385,
+            "samples": 328103
+          },
+          {
+            "id": "cafd3b676145e125",
+            "duration": 6.551995464852608,
+            "samples": 288943
+          },
+          {
+            "id": "ed46cd175a6ff22a",
+            "duration": 5.879977324263039,
+            "samples": 259307
+          },
+          {
+            "id": "8e21797950bca7dc",
+            "duration": 4.631995464852608,
+            "samples": 204271
+          },
+          {
+            "id": "f60274ef8983923d",
+            "duration": 6.815986394557823,
+            "samples": 300585
+          },
+          {
+            "id": "5b2ffea950dac020",
+            "duration": 6.96,
+            "samples": 306936
+          },
+          {
+            "id": "480320a15a917c3c",
+            "duration": 5.639977324263039,
+            "samples": 248723
+          },
+          {
+            "id": "c4f2051086aa5ed1",
+            "duration": 7.535986394557823,
+            "samples": 332337
+          },
+          {
+            "id": "04ae0f529cfc1e27",
+            "duration": 5.423990929705216,
+            "samples": 239198
+          },
+          {
+            "id": "fb1307dd53bd2cc9",
+            "duration": 5.6879818594104306,
+            "samples": 250840
+          },
+          {
+            "id": "7b8f30983ca70c38",
+            "duration": 4.751995464852608,
+            "samples": 209563
+          },
+          {
+            "id": "7658eeacc1153f42",
+            "duration": 4.127981859410431,
+            "samples": 182044
+          },
+          {
+            "id": "ab116082e88c27c3",
+            "duration": 4.127981859410431,
+            "samples": 182044
+          },
+          {
+            "id": "49daad375af7a13b",
+            "duration": 4.007981859410431,
+            "samples": 176752
+          },
+          {
+            "id": "07151d52d0cd5100",
+            "duration": 5.351995464852608,
+            "samples": 236023
+          },
+          {
+            "id": "b7c62e77723c716f",
+            "duration": 5.3999773242630384,
+            "samples": 238139
+          },
+          {
+            "id": "9d46234a454d2477",
+            "duration": 5.3999773242630384,
+            "samples": 238139
+          },
+          {
+            "id": "ae75c8fba3a3c6c2",
+            "duration": 5.423990929705216,
+            "samples": 239198
+          },
+          {
+            "id": "e9df7e273f9a2ed1",
+            "duration": 6.767981859410431,
+            "samples": 298468
+          },
+          {
+            "id": "bfa133b8fb65aa8a",
+            "duration": 5.111995464852607,
+            "samples": 225439
+          },
+          {
+            "id": "0a73b580dd74ab8b",
+            "duration": 4.511995464852608,
+            "samples": 198979
+          },
+          {
+            "id": "e606e5b360a696a9",
+            "duration": 5.663990929705215,
+            "samples": 249782
+          },
+          {
+            "id": "ffa141e464ac64a3",
+            "duration": 5.927981859410431,
+            "samples": 261424
+          },
+          {
+            "id": "2d9f523707649598",
+            "duration": 4.6079818594104305,
+            "samples": 203212
+          },
+          {
+            "id": "33ce2158e5bd2c8a",
+            "duration": 3.7199773242630387,
+            "samples": 164051
+          },
+          {
+            "id": "615ba10393976218",
+            "duration": 3.7919954648526075,
+            "samples": 167227
+          },
+          {
+            "id": "8763f08b1d991f04",
+            "duration": 3.7439909297052156,
+            "samples": 165110
+          },
+          {
+            "id": "8625bc63a47b8306",
+            "duration": 3.815986394557823,
+            "samples": 168285
+          },
+          {
+            "id": "2b63948e28f6cb2c",
+            "duration": 3.7199773242630387,
+            "samples": 164051
+          },
+          {
+            "id": "02aa37b3e1e42d50",
+            "duration": 3.7679818594104306,
+            "samples": 166168
+          },
+          {
+            "id": "54c20379e266ab5f",
+            "duration": 3.6959863945578233,
+            "samples": 162993
+          },
+          {
+            "id": "a3f202d85fc8fe2c",
+            "duration": 3.7439909297052156,
+            "samples": 165110
+          },
+          {
+            "id": "9ce8d280ee954bc4",
+            "duration": 3.647981859410431,
+            "samples": 160876
+          },
+          {
+            "id": "572fa043defef7ae",
+            "duration": 3.6959863945578233,
+            "samples": 162993
+          },
+          {
+            "id": "c1053076e944eeb0",
+            "duration": 3.9119954648526076,
+            "samples": 172519
+          },
+          {
+            "id": "06cb300130ed14de",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "0621b1a2a3308a5c",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "41a1cdfbcb0bddc7",
+            "duration": 4.031995464852607,
+            "samples": 177811
+          },
+          {
+            "id": "1f23a65320030839",
+            "duration": 4.031995464852607,
+            "samples": 177811
+          },
+          {
+            "id": "494cb899376ca2ea",
+            "duration": 4.1039909297052155,
+            "samples": 180986
+          },
+          {
+            "id": "2d7d2330171840dd",
+            "duration": 4.055986394557823,
+            "samples": 178869
+          },
+          {
+            "id": "612de7e3fe78ccf0",
+            "duration": 4.1039909297052155,
+            "samples": 180986
+          },
+          {
+            "id": "966809372b622879",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "756b0c69f5387f2e",
+            "duration": 4.031995464852607,
+            "samples": 177811
+          },
+          {
+            "id": "b2e140a8a46fd3af",
+            "duration": 3.935986394557823,
+            "samples": 173577
+          },
+          {
+            "id": "6fa5871bbdf98f85",
+            "duration": 4.007981859410431,
+            "samples": 176752
+          },
+          {
+            "id": "66ff037db32359f2",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "8f86ab5dd03ad684",
+            "duration": 4.031995464852607,
+            "samples": 177811
+          },
+          {
+            "id": "547cdbeb5b4b9bf3",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "f5691e787330cb43",
+            "duration": 4.031995464852607,
+            "samples": 177811
+          },
+          {
+            "id": "08e3db7503d5eca8",
+            "duration": 3.9119954648526076,
+            "samples": 172519
+          },
+          {
+            "id": "ecc980a6f05afc5f",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "e4e8f0b77fe62da8",
+            "duration": 3.6959863945578233,
+            "samples": 162993
+          },
+          {
+            "id": "52aac506a023538a",
+            "duration": 3.7439909297052156,
+            "samples": 165110
+          },
+          {
+            "id": "665ec10725461f39",
+            "duration": 4.727981859410431,
+            "samples": 208504
+          },
+          {
+            "id": "7b7e9e0b31249311",
+            "duration": 4.799977324263039,
+            "samples": 211679
+          },
+          {
+            "id": "cdf70e155dd82b9d",
+            "duration": 4.871995464852608,
+            "samples": 214855
+          },
+          {
+            "id": "ac6053d426de7287",
+            "duration": 4.751995464852608,
+            "samples": 209563
+          },
+          {
+            "id": "9c82a8653f40f188",
+            "duration": 11.471995464852608,
+            "samples": 505915
+          },
+          {
+            "id": "5bad43fb68769452",
+            "duration": 10.823990929705216,
+            "samples": 477338
+          },
+          {
+            "id": "a36bcdd75ee3f99c",
+            "duration": 10.871995464852608,
+            "samples": 479455
+          },
+          {
+            "id": "871d94eb9c5f7d5f",
+            "duration": 11.303990929705215,
+            "samples": 498506
+          },
+          {
+            "id": "42d92263b57f91e5",
+            "duration": 12.16798185941043,
+            "samples": 536608
+          }
+        ],
+        "events": [
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 2679.599999997765
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 2684.300000000745
+          },
+          {
+            "event": "pause",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 5.688,
+            "at": 8370.099999997765
+          },
+          {
+            "event": "ended",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 5.688,
+            "at": 8370.099999997765
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 10928.699999999255
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 10933.599999997765
+          },
+          {
+            "event": "pause",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 13394.39999999851
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16529.699999999255
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16534
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16569.599999997765
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16576.5
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16613.300000000745
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16617.89999999851
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16646.699999999255
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16652.300000000745
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16701.199999999255
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16704
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16746.199999999255
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16753.099999997765
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16783.39999999851
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16787.39999999851
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16829.099999997765
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16833
+          },
+          {
+            "event": "pause",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 17277.800000000745
+          }
+        ],
+        "nativeSpeechCalls": 0,
+        "music": "ASSET_BLOCKED; no formal music playback claim"
+      }
+    },
+    {
+      "name": "Prerecorded Chinese + engine/horn actual PCM, duck/recovery, cancellation, peak, master mute, voice volume and browser decode 1920×1080",
+      "status": "PASS",
+      "evidence": {
+        "idle": {
+          "raw": {
+            "samples": 31744,
+            "rms": 0.021145447983015375,
+            "peak": 0.035873331129550934,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.00030804798007011414
+          },
+          "decoded": {
+            "samples": 31680,
+            "rms": 0.02971067225733267,
+            "peak": 0.05260753259062767,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.007740150671452284
+          }
+        },
+        "speechMix": {
+          "raw": {
+            "samples": 289280,
+            "rms": 0.0499282883524846,
+            "peak": 0.3915233910083771,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.121371079236269
+          },
+          "decoded": {
+            "samples": 313920,
+            "rms": 0.07100106509472712,
+            "peak": 0.5699440836906433,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.15725216269493103
+          }
+        },
+        "triple": {
+          "raw": {
+            "samples": 83328,
+            "rms": 0.10617837110788635,
+            "peak": 0.5067528486251831,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.09808554500341415
+          },
+          "decoded": {
+            "samples": 89280,
+            "rms": 0.15013706232530172,
+            "peak": 0.724040687084198,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0.1276968247257173
+          }
+        },
+        "muted": {
+          "raw": {
+            "samples": 36992,
+            "rms": 0,
+            "peak": 0,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0
+          },
+          "decoded": {
+            "samples": 40320,
+            "rms": 0,
+            "peak": 0,
+            "fullScaleSamples": 0,
+            "maxSampleJump": 0
+          }
+        },
+        "engineRMS": {
+          "before": 0.014627174964954946,
+          "during": 0.00361383725528171,
+          "after": 0.013840413259948496
+        },
+        "decodedClips": [
+          {
+            "id": "72ab4b07e6e978f5",
+            "duration": 4.655986394557823,
+            "samples": 205329
+          },
+          {
+            "id": "9ab0ca4e9dbd4de8",
+            "duration": 5.6879818594104306,
+            "samples": 250840
+          },
+          {
+            "id": "7520065e11dc235f",
+            "duration": 5.0639909297052155,
+            "samples": 223322
+          },
+          {
+            "id": "2e4a17bb217c1821",
+            "duration": 4.2719954648526075,
+            "samples": 188395
+          },
+          {
+            "id": "ea7b02c63c41353e",
+            "duration": 3.935986394557823,
+            "samples": 173577
+          },
+          {
+            "id": "00483fef066855d0",
+            "duration": 3.7199773242630387,
+            "samples": 164051
+          },
+          {
+            "id": "56a566177d0224d0",
+            "duration": 3.6959863945578233,
+            "samples": 162993
+          },
+          {
+            "id": "c53048048ea3ee57",
+            "duration": 6.047981859410431,
+            "samples": 266716
+          },
+          {
+            "id": "4af4dae27e0ac22b",
+            "duration": 5.279977324263038,
+            "samples": 232847
+          },
+          {
+            "id": "476371813c825573",
+            "duration": 3.7199773242630387,
+            "samples": 164051
+          },
+          {
+            "id": "3193c6a5e397c8cd",
+            "duration": 6.791995464852608,
+            "samples": 299527
+          },
+          {
+            "id": "edeadae74cd7f4fb",
+            "duration": 4.223990929705216,
+            "samples": 186278
+          },
+          {
+            "id": "c25e8bb2e2fa1dc8",
+            "duration": 4.127981859410431,
+            "samples": 182044
+          },
+          {
+            "id": "852734929e9b31b8",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "72071af262a1d589",
+            "duration": 8.471995464852608,
+            "samples": 373615
+          },
+          {
+            "id": "3b9d4c8f8b73fce1",
+            "duration": 5.279977324263038,
+            "samples": 232847
+          },
+          {
+            "id": "859e7515b70f8ad8",
+            "duration": 6.983990929705215,
+            "samples": 307994
+          },
+          {
+            "id": "ccd9740b78e468f8",
+            "duration": 10.31997732426304,
+            "samples": 455111
+          },
+          {
+            "id": "80c237b84f3eaadb",
+            "duration": 5.2319954648526075,
+            "samples": 230731
+          },
+          {
+            "id": "22e30eeccd93e575",
+            "duration": 9.359977324263038,
+            "samples": 412775
+          },
+          {
+            "id": "95547def54daa061",
+            "duration": 9.383990929705215,
+            "samples": 413834
+          },
+          {
+            "id": "9941a017305d7065",
+            "duration": 9.335986394557823,
+            "samples": 411717
+          },
+          {
+            "id": "ec8db53118bb3f07",
+            "duration": 5.543990929705215,
+            "samples": 244490
+          },
+          {
+            "id": "bc177ef8844d6b6b",
+            "duration": 3.7679818594104306,
+            "samples": 166168
+          },
+          {
+            "id": "35a01351154afb79",
+            "duration": 6.671995464852608,
+            "samples": 294235
+          },
+          {
+            "id": "98dbf9645d530d52",
+            "duration": 5.351995464852608,
+            "samples": 236023
+          },
+          {
+            "id": "fbe990a21bb4103e",
+            "duration": 4.655986394557823,
+            "samples": 205329
+          },
+          {
+            "id": "3e4832ff1c873102",
+            "duration": 5.183990929705216,
+            "samples": 228614
+          },
+          {
+            "id": "7c59e6ca63feaf98",
+            "duration": 5.879977324263039,
+            "samples": 259307
+          },
+          {
+            "id": "595d38d64985be1d",
+            "duration": 5.5199773242630386,
+            "samples": 243431
+          },
+          {
+            "id": "417fe169ef8a9040",
+            "duration": 7.08,
+            "samples": 312228
+          },
+          {
+            "id": "48b06c8d649b4d84",
+            "duration": 7.391995464852608,
+            "samples": 325987
+          },
+          {
+            "id": "20c446a565a8d664",
+            "duration": 5.855986394557823,
+            "samples": 258249
+          },
+          {
+            "id": "94f5f1825c74d394",
+            "duration": 7.4399773242630385,
+            "samples": 328103
+          },
+          {
+            "id": "cafd3b676145e125",
+            "duration": 6.551995464852608,
+            "samples": 288943
+          },
+          {
+            "id": "ed46cd175a6ff22a",
+            "duration": 5.879977324263039,
+            "samples": 259307
+          },
+          {
+            "id": "8e21797950bca7dc",
+            "duration": 4.631995464852608,
+            "samples": 204271
+          },
+          {
+            "id": "f60274ef8983923d",
+            "duration": 6.815986394557823,
+            "samples": 300585
+          },
+          {
+            "id": "5b2ffea950dac020",
+            "duration": 6.96,
+            "samples": 306936
+          },
+          {
+            "id": "480320a15a917c3c",
+            "duration": 5.639977324263039,
+            "samples": 248723
+          },
+          {
+            "id": "c4f2051086aa5ed1",
+            "duration": 7.535986394557823,
+            "samples": 332337
+          },
+          {
+            "id": "04ae0f529cfc1e27",
+            "duration": 5.423990929705216,
+            "samples": 239198
+          },
+          {
+            "id": "fb1307dd53bd2cc9",
+            "duration": 5.6879818594104306,
+            "samples": 250840
+          },
+          {
+            "id": "7b8f30983ca70c38",
+            "duration": 4.751995464852608,
+            "samples": 209563
+          },
+          {
+            "id": "7658eeacc1153f42",
+            "duration": 4.127981859410431,
+            "samples": 182044
+          },
+          {
+            "id": "ab116082e88c27c3",
+            "duration": 4.127981859410431,
+            "samples": 182044
+          },
+          {
+            "id": "49daad375af7a13b",
+            "duration": 4.007981859410431,
+            "samples": 176752
+          },
+          {
+            "id": "07151d52d0cd5100",
+            "duration": 5.351995464852608,
+            "samples": 236023
+          },
+          {
+            "id": "b7c62e77723c716f",
+            "duration": 5.3999773242630384,
+            "samples": 238139
+          },
+          {
+            "id": "9d46234a454d2477",
+            "duration": 5.3999773242630384,
+            "samples": 238139
+          },
+          {
+            "id": "ae75c8fba3a3c6c2",
+            "duration": 5.423990929705216,
+            "samples": 239198
+          },
+          {
+            "id": "e9df7e273f9a2ed1",
+            "duration": 6.767981859410431,
+            "samples": 298468
+          },
+          {
+            "id": "bfa133b8fb65aa8a",
+            "duration": 5.111995464852607,
+            "samples": 225439
+          },
+          {
+            "id": "0a73b580dd74ab8b",
+            "duration": 4.511995464852608,
+            "samples": 198979
+          },
+          {
+            "id": "e606e5b360a696a9",
+            "duration": 5.663990929705215,
+            "samples": 249782
+          },
+          {
+            "id": "ffa141e464ac64a3",
+            "duration": 5.927981859410431,
+            "samples": 261424
+          },
+          {
+            "id": "2d9f523707649598",
+            "duration": 4.6079818594104305,
+            "samples": 203212
+          },
+          {
+            "id": "33ce2158e5bd2c8a",
+            "duration": 3.7199773242630387,
+            "samples": 164051
+          },
+          {
+            "id": "615ba10393976218",
+            "duration": 3.7919954648526075,
+            "samples": 167227
+          },
+          {
+            "id": "8763f08b1d991f04",
+            "duration": 3.7439909297052156,
+            "samples": 165110
+          },
+          {
+            "id": "8625bc63a47b8306",
+            "duration": 3.815986394557823,
+            "samples": 168285
+          },
+          {
+            "id": "2b63948e28f6cb2c",
+            "duration": 3.7199773242630387,
+            "samples": 164051
+          },
+          {
+            "id": "02aa37b3e1e42d50",
+            "duration": 3.7679818594104306,
+            "samples": 166168
+          },
+          {
+            "id": "54c20379e266ab5f",
+            "duration": 3.6959863945578233,
+            "samples": 162993
+          },
+          {
+            "id": "a3f202d85fc8fe2c",
+            "duration": 3.7439909297052156,
+            "samples": 165110
+          },
+          {
+            "id": "9ce8d280ee954bc4",
+            "duration": 3.647981859410431,
+            "samples": 160876
+          },
+          {
+            "id": "572fa043defef7ae",
+            "duration": 3.6959863945578233,
+            "samples": 162993
+          },
+          {
+            "id": "c1053076e944eeb0",
+            "duration": 3.9119954648526076,
+            "samples": 172519
+          },
+          {
+            "id": "06cb300130ed14de",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "0621b1a2a3308a5c",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "41a1cdfbcb0bddc7",
+            "duration": 4.031995464852607,
+            "samples": 177811
+          },
+          {
+            "id": "1f23a65320030839",
+            "duration": 4.031995464852607,
+            "samples": 177811
+          },
+          {
+            "id": "494cb899376ca2ea",
+            "duration": 4.1039909297052155,
+            "samples": 180986
+          },
+          {
+            "id": "2d7d2330171840dd",
+            "duration": 4.055986394557823,
+            "samples": 178869
+          },
+          {
+            "id": "612de7e3fe78ccf0",
+            "duration": 4.1039909297052155,
+            "samples": 180986
+          },
+          {
+            "id": "966809372b622879",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "756b0c69f5387f2e",
+            "duration": 4.031995464852607,
+            "samples": 177811
+          },
+          {
+            "id": "b2e140a8a46fd3af",
+            "duration": 3.935986394557823,
+            "samples": 173577
+          },
+          {
+            "id": "6fa5871bbdf98f85",
+            "duration": 4.007981859410431,
+            "samples": 176752
+          },
+          {
+            "id": "66ff037db32359f2",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "8f86ab5dd03ad684",
+            "duration": 4.031995464852607,
+            "samples": 177811
+          },
+          {
+            "id": "547cdbeb5b4b9bf3",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "f5691e787330cb43",
+            "duration": 4.031995464852607,
+            "samples": 177811
+          },
+          {
+            "id": "08e3db7503d5eca8",
+            "duration": 3.9119954648526076,
+            "samples": 172519
+          },
+          {
+            "id": "ecc980a6f05afc5f",
+            "duration": 3.9839909297052154,
+            "samples": 175694
+          },
+          {
+            "id": "e4e8f0b77fe62da8",
+            "duration": 3.6959863945578233,
+            "samples": 162993
+          },
+          {
+            "id": "52aac506a023538a",
+            "duration": 3.7439909297052156,
+            "samples": 165110
+          },
+          {
+            "id": "665ec10725461f39",
+            "duration": 4.727981859410431,
+            "samples": 208504
+          },
+          {
+            "id": "7b7e9e0b31249311",
+            "duration": 4.799977324263039,
+            "samples": 211679
+          },
+          {
+            "id": "cdf70e155dd82b9d",
+            "duration": 4.871995464852608,
+            "samples": 214855
+          },
+          {
+            "id": "ac6053d426de7287",
+            "duration": 4.751995464852608,
+            "samples": 209563
+          },
+          {
+            "id": "9c82a8653f40f188",
+            "duration": 11.471995464852608,
+            "samples": 505915
+          },
+          {
+            "id": "5bad43fb68769452",
+            "duration": 10.823990929705216,
+            "samples": 477338
+          },
+          {
+            "id": "a36bcdd75ee3f99c",
+            "duration": 10.871995464852608,
+            "samples": 479455
+          },
+          {
+            "id": "871d94eb9c5f7d5f",
+            "duration": 11.303990929705215,
+            "samples": 498506
+          },
+          {
+            "id": "42d92263b57f91e5",
+            "duration": 12.16798185941043,
+            "samples": 536608
+          }
+        ],
+        "events": [
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 2656.60000000149
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 2669.699999999255
+          },
+          {
+            "event": "pause",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 5.688,
+            "at": 8355.5
+          },
+          {
+            "event": "ended",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 5.688,
+            "at": 8355.5
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 10956.199999999255
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 10965.89999999851
+          },
+          {
+            "event": "pause",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 13488.300000000745
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16672.300000000745
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16678.60000000149
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16717.10000000149
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16728.800000000745
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16762.89999999851
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0.005679,
+            "at": 16767.60000000149
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16805.39999999851
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16811.699999999255
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16847.60000000149
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16852
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16894.60000000149
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16903.10000000149
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16940.10000000149
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/7520065e11dc235f.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16944
+          },
+          {
+            "event": "play",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16981.89999999851
+          },
+          {
+            "event": "playing",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 16988.89999999851
+          },
+          {
+            "event": "pause",
+            "src": "http://127.0.0.1:40595/assets/cockpit-voice/9ab0ca4e9dbd4de8.mp3",
+            "trusted": true,
+            "time": 0,
+            "at": 17422.60000000149
+          }
+        ],
+        "nativeSpeechCalls": 0,
+        "music": "ASSET_BLOCKED; no formal music playback claim"
+      }
+    }
+  ],
+  "errors": [],
+  "protection": {
+    "base": "22b53b928dbcd23d7ca4ee6b597693bdd0b57e31",
+    "preserved": 1203,
+    "voiceKeys": 315,
+    "mp3": 638,
+    "perPathSHA256Unchanged": true
+  },
+  "testedSHA256": {
+    "pages/cockpit.html": "d419eecb912cee89e19cb70ee2298fdcf2b818bd91a017f722b8257250c45597",
+    "pages/cockpit-v33.css": "3de05f6694b536d54d0127ef18f16c9a1bafd3b790ac53f1e8bd7e34ef45d1ed",
+    "js/cockpit-v33.js": "0dc1296036e80447ac9e67e090c78d2f0e6b45134c1bf8b04f390eed10cf3799",
+    "js/cockpit-audio.js": "cd1c4a36e8590a4cef7d9d0f60eb4649ca2804a695275c41a06c37ba209af159",
+    "assets/music/manifest.json": "9289441a081a45ea72fcdb17544f7c96864b843f07bbfa56e39390dc39f1f094",
+    "assets/cockpit-voice/manifest.json": "3ea2c8bbbd1fbbc00314f67166117ef3cdacf3e187e11f77717230c12c6c4f8d"
+  }
+}
